@@ -26,6 +26,16 @@
             <artifactId>protobuf-java</artifactId>
             <version>3.15.5</version>
         </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf</artifactId>
+            <version>1.36.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
+            <version>1.36.0</version>
+        </dependency>
     </dependencies>
 
     <build>
