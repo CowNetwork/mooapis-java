@@ -150,6 +150,20 @@ private static final long serialVersionUID = 0L;
             causeCase_ = 7;
             break;
           }
+          case 66: {
+            network.cow.mooapis.session.v1.StopCauseCustom.Builder subBuilder = null;
+            if (causeCase_ == 8) {
+              subBuilder = ((network.cow.mooapis.session.v1.StopCauseCustom) cause_).toBuilder();
+            }
+            cause_ =
+                input.readMessage(network.cow.mooapis.session.v1.StopCauseCustom.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((network.cow.mooapis.session.v1.StopCauseCustom) cause_);
+              cause_ = subBuilder.buildPartial();
+            }
+            causeCase_ = 8;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -194,6 +208,7 @@ private static final long serialVersionUID = 0L;
     KICKED(5),
     BANNED(6),
     BLACKLISTED(7),
+    CUSTOM(8),
     CAUSE_NOT_SET(0);
     private final int value;
     private CauseCase(int value) {
@@ -218,6 +233,7 @@ private static final long serialVersionUID = 0L;
         case 5: return KICKED;
         case 6: return BANNED;
         case 7: return BLACKLISTED;
+        case 8: return CUSTOM;
         case 0: return CAUSE_NOT_SET;
         default: return null;
       }
@@ -450,6 +466,37 @@ private static final long serialVersionUID = 0L;
     return network.cow.mooapis.session.v1.StopCauseBlacklisted.getDefaultInstance();
   }
 
+  public static final int CUSTOM_FIELD_NUMBER = 8;
+  /**
+   * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+   * @return Whether the custom field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustom() {
+    return causeCase_ == 8;
+  }
+  /**
+   * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+   * @return The custom.
+   */
+  @java.lang.Override
+  public network.cow.mooapis.session.v1.StopCauseCustom getCustom() {
+    if (causeCase_ == 8) {
+       return (network.cow.mooapis.session.v1.StopCauseCustom) cause_;
+    }
+    return network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance();
+  }
+  /**
+   * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+   */
+  @java.lang.Override
+  public network.cow.mooapis.session.v1.StopCauseCustomOrBuilder getCustomOrBuilder() {
+    if (causeCase_ == 8) {
+       return (network.cow.mooapis.session.v1.StopCauseCustom) cause_;
+    }
+    return network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -484,6 +531,9 @@ private static final long serialVersionUID = 0L;
     }
     if (causeCase_ == 7) {
       output.writeMessage(7, (network.cow.mooapis.session.v1.StopCauseBlacklisted) cause_);
+    }
+    if (causeCase_ == 8) {
+      output.writeMessage(8, (network.cow.mooapis.session.v1.StopCauseCustom) cause_);
     }
     unknownFields.writeTo(output);
   }
@@ -521,6 +571,10 @@ private static final long serialVersionUID = 0L;
     if (causeCase_ == 7) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, (network.cow.mooapis.session.v1.StopCauseBlacklisted) cause_);
+    }
+    if (causeCase_ == 8) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, (network.cow.mooapis.session.v1.StopCauseCustom) cause_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -567,6 +621,10 @@ private static final long serialVersionUID = 0L;
         if (!getBlacklisted()
             .equals(other.getBlacklisted())) return false;
         break;
+      case 8:
+        if (!getCustom()
+            .equals(other.getCustom())) return false;
+        break;
       case 0:
       default:
     }
@@ -609,6 +667,10 @@ private static final long serialVersionUID = 0L;
       case 7:
         hash = (37 * hash) + BLACKLISTED_FIELD_NUMBER;
         hash = (53 * hash) + getBlacklisted().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + CUSTOM_FIELD_NUMBER;
+        hash = (53 * hash) + getCustom().hashCode();
         break;
       case 0:
       default:
@@ -827,6 +889,13 @@ private static final long serialVersionUID = 0L;
           result.cause_ = blacklistedBuilder_.build();
         }
       }
+      if (causeCase_ == 8) {
+        if (customBuilder_ == null) {
+          result.cause_ = cause_;
+        } else {
+          result.cause_ = customBuilder_.build();
+        }
+      }
       result.causeCase_ = causeCase_;
       onBuilt();
       return result;
@@ -903,6 +972,10 @@ private static final long serialVersionUID = 0L;
         }
         case BLACKLISTED: {
           mergeBlacklisted(other.getBlacklisted());
+          break;
+        }
+        case CUSTOM: {
+          mergeCustom(other.getCustom());
           break;
         }
         case CAUSE_NOT_SET: {
@@ -1938,6 +2011,147 @@ private static final long serialVersionUID = 0L;
       causeCase_ = 7;
       onChanged();;
       return blacklistedBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.StopCauseCustom, network.cow.mooapis.session.v1.StopCauseCustom.Builder, network.cow.mooapis.session.v1.StopCauseCustomOrBuilder> customBuilder_;
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+     * @return Whether the custom field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustom() {
+      return causeCase_ == 8;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+     * @return The custom.
+     */
+    @java.lang.Override
+    public network.cow.mooapis.session.v1.StopCauseCustom getCustom() {
+      if (customBuilder_ == null) {
+        if (causeCase_ == 8) {
+          return (network.cow.mooapis.session.v1.StopCauseCustom) cause_;
+        }
+        return network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance();
+      } else {
+        if (causeCase_ == 8) {
+          return customBuilder_.getMessage();
+        }
+        return network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+     */
+    public Builder setCustom(network.cow.mooapis.session.v1.StopCauseCustom value) {
+      if (customBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cause_ = value;
+        onChanged();
+      } else {
+        customBuilder_.setMessage(value);
+      }
+      causeCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+     */
+    public Builder setCustom(
+        network.cow.mooapis.session.v1.StopCauseCustom.Builder builderForValue) {
+      if (customBuilder_ == null) {
+        cause_ = builderForValue.build();
+        onChanged();
+      } else {
+        customBuilder_.setMessage(builderForValue.build());
+      }
+      causeCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+     */
+    public Builder mergeCustom(network.cow.mooapis.session.v1.StopCauseCustom value) {
+      if (customBuilder_ == null) {
+        if (causeCase_ == 8 &&
+            cause_ != network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance()) {
+          cause_ = network.cow.mooapis.session.v1.StopCauseCustom.newBuilder((network.cow.mooapis.session.v1.StopCauseCustom) cause_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          cause_ = value;
+        }
+        onChanged();
+      } else {
+        if (causeCase_ == 8) {
+          customBuilder_.mergeFrom(value);
+        }
+        customBuilder_.setMessage(value);
+      }
+      causeCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+     */
+    public Builder clearCustom() {
+      if (customBuilder_ == null) {
+        if (causeCase_ == 8) {
+          causeCase_ = 0;
+          cause_ = null;
+          onChanged();
+        }
+      } else {
+        if (causeCase_ == 8) {
+          causeCase_ = 0;
+          cause_ = null;
+        }
+        customBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+     */
+    public network.cow.mooapis.session.v1.StopCauseCustom.Builder getCustomBuilder() {
+      return getCustomFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+     */
+    @java.lang.Override
+    public network.cow.mooapis.session.v1.StopCauseCustomOrBuilder getCustomOrBuilder() {
+      if ((causeCase_ == 8) && (customBuilder_ != null)) {
+        return customBuilder_.getMessageOrBuilder();
+      } else {
+        if (causeCase_ == 8) {
+          return (network.cow.mooapis.session.v1.StopCauseCustom) cause_;
+        }
+        return network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.StopCauseCustom, network.cow.mooapis.session.v1.StopCauseCustom.Builder, network.cow.mooapis.session.v1.StopCauseCustomOrBuilder> 
+        getCustomFieldBuilder() {
+      if (customBuilder_ == null) {
+        if (!(causeCase_ == 8)) {
+          cause_ = network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance();
+        }
+        customBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            network.cow.mooapis.session.v1.StopCauseCustom, network.cow.mooapis.session.v1.StopCauseCustom.Builder, network.cow.mooapis.session.v1.StopCauseCustomOrBuilder>(
+                (network.cow.mooapis.session.v1.StopCauseCustom) cause_,
+                getParentForChildren(),
+                isClean());
+        cause_ = null;
+      }
+      causeCase_ = 8;
+      onChanged();;
+      return customBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

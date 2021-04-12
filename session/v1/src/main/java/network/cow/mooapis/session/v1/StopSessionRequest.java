@@ -49,23 +49,72 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-            identifierCase_ = 1;
-            identifier_ = s;
+            network.cow.mooapis.session.v1.SessionIdentifier.Builder subBuilder = null;
+            if (identifier_ != null) {
+              subBuilder = identifier_.toBuilder();
+            }
+            identifier_ = input.readMessage(network.cow.mooapis.session.v1.SessionIdentifier.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(identifier_);
+              identifier_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           case 18: {
-            network.cow.mooapis.session.v1.Player.Builder subBuilder = null;
-            if (identifierCase_ == 2) {
-              subBuilder = ((network.cow.mooapis.session.v1.Player) identifier_).toBuilder();
+            network.cow.mooapis.session.v1.StopCauseUnknown.Builder subBuilder = null;
+            if (causeCase_ == 2) {
+              subBuilder = ((network.cow.mooapis.session.v1.StopCauseUnknown) cause_).toBuilder();
             }
-            identifier_ =
-                input.readMessage(network.cow.mooapis.session.v1.Player.parser(), extensionRegistry);
+            cause_ =
+                input.readMessage(network.cow.mooapis.session.v1.StopCauseUnknown.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((network.cow.mooapis.session.v1.Player) identifier_);
-              identifier_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom((network.cow.mooapis.session.v1.StopCauseUnknown) cause_);
+              cause_ = subBuilder.buildPartial();
             }
-            identifierCase_ = 2;
+            causeCase_ = 2;
+            break;
+          }
+          case 26: {
+            network.cow.mooapis.session.v1.StopCauseDisconnected.Builder subBuilder = null;
+            if (causeCase_ == 3) {
+              subBuilder = ((network.cow.mooapis.session.v1.StopCauseDisconnected) cause_).toBuilder();
+            }
+            cause_ =
+                input.readMessage(network.cow.mooapis.session.v1.StopCauseDisconnected.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((network.cow.mooapis.session.v1.StopCauseDisconnected) cause_);
+              cause_ = subBuilder.buildPartial();
+            }
+            causeCase_ = 3;
+            break;
+          }
+          case 34: {
+            network.cow.mooapis.session.v1.StopCauseError.Builder subBuilder = null;
+            if (causeCase_ == 4) {
+              subBuilder = ((network.cow.mooapis.session.v1.StopCauseError) cause_).toBuilder();
+            }
+            cause_ =
+                input.readMessage(network.cow.mooapis.session.v1.StopCauseError.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((network.cow.mooapis.session.v1.StopCauseError) cause_);
+              cause_ = subBuilder.buildPartial();
+            }
+            causeCase_ = 4;
+            break;
+          }
+          case 42: {
+            network.cow.mooapis.session.v1.StopCauseCustom.Builder subBuilder = null;
+            if (causeCase_ == 5) {
+              subBuilder = ((network.cow.mooapis.session.v1.StopCauseCustom) cause_).toBuilder();
+            }
+            cause_ =
+                input.readMessage(network.cow.mooapis.session.v1.StopCauseCustom.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((network.cow.mooapis.session.v1.StopCauseCustom) cause_);
+              cause_ = subBuilder.buildPartial();
+            }
+            causeCase_ = 5;
             break;
           }
           default: {
@@ -100,16 +149,18 @@ private static final long serialVersionUID = 0L;
             network.cow.mooapis.session.v1.StopSessionRequest.class, network.cow.mooapis.session.v1.StopSessionRequest.Builder.class);
   }
 
-  private int identifierCase_ = 0;
-  private java.lang.Object identifier_;
-  public enum IdentifierCase
+  private int causeCase_ = 0;
+  private java.lang.Object cause_;
+  public enum CauseCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    SESSION_ID(1),
-    PLAYER(2),
-    IDENTIFIER_NOT_SET(0);
+    UNKNOWN(2),
+    DISCONNECTED(3),
+    ERROR(4),
+    CUSTOM(5),
+    CAUSE_NOT_SET(0);
     private final int value;
-    private IdentifierCase(int value) {
+    private CauseCase(int value) {
       this.value = value;
     }
     /**
@@ -118,15 +169,17 @@ private static final long serialVersionUID = 0L;
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static IdentifierCase valueOf(int value) {
+    public static CauseCase valueOf(int value) {
       return forNumber(value);
     }
 
-    public static IdentifierCase forNumber(int value) {
+    public static CauseCase forNumber(int value) {
       switch (value) {
-        case 1: return SESSION_ID;
-        case 2: return PLAYER;
-        case 0: return IDENTIFIER_NOT_SET;
+        case 2: return UNKNOWN;
+        case 3: return DISCONNECTED;
+        case 4: return ERROR;
+        case 5: return CUSTOM;
+        case 0: return CAUSE_NOT_SET;
         default: return null;
       }
     }
@@ -135,117 +188,160 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public IdentifierCase
-  getIdentifierCase() {
-    return IdentifierCase.forNumber(
-        identifierCase_);
+  public CauseCase
+  getCauseCase() {
+    return CauseCase.forNumber(
+        causeCase_);
   }
 
-  public static final int SESSION_ID_FIELD_NUMBER = 1;
+  public static final int IDENTIFIER_FIELD_NUMBER = 1;
+  private network.cow.mooapis.session.v1.SessionIdentifier identifier_;
   /**
-   * <pre>
-   * The id of the session to stop.
-   * </pre>
-   *
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
-   * @return Whether the sessionId field is set.
+   * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
+   * @return Whether the identifier field is set.
    */
-  public boolean hasSessionId() {
-    return identifierCase_ == 1;
+  @java.lang.Override
+  public boolean hasIdentifier() {
+    return identifier_ != null;
   }
   /**
-   * <pre>
-   * The id of the session to stop.
-   * </pre>
-   *
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
-   * @return The sessionId.
+   * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
+   * @return The identifier.
    */
-  public java.lang.String getSessionId() {
-    java.lang.Object ref = "";
-    if (identifierCase_ == 1) {
-      ref = identifier_;
-    }
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      if (identifierCase_ == 1) {
-        identifier_ = s;
-      }
-      return s;
-    }
+  @java.lang.Override
+  public network.cow.mooapis.session.v1.SessionIdentifier getIdentifier() {
+    return identifier_ == null ? network.cow.mooapis.session.v1.SessionIdentifier.getDefaultInstance() : identifier_;
   }
   /**
-   * <pre>
-   * The id of the session to stop.
-   * </pre>
-   *
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
-   * @return The bytes for sessionId.
+   * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
    */
-  public com.google.protobuf.ByteString
-      getSessionIdBytes() {
-    java.lang.Object ref = "";
-    if (identifierCase_ == 1) {
-      ref = identifier_;
-    }
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      if (identifierCase_ == 1) {
-        identifier_ = b;
-      }
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  @java.lang.Override
+  public network.cow.mooapis.session.v1.SessionIdentifierOrBuilder getIdentifierOrBuilder() {
+    return getIdentifier();
   }
 
-  public static final int PLAYER_FIELD_NUMBER = 2;
+  public static final int UNKNOWN_FIELD_NUMBER = 2;
   /**
-   * <pre>
-   * The player to stop the session for.
-   * </pre>
-   *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return Whether the player field is set.
+   * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
+   * @return Whether the unknown field is set.
    */
   @java.lang.Override
-  public boolean hasPlayer() {
-    return identifierCase_ == 2;
+  public boolean hasUnknown() {
+    return causeCase_ == 2;
   }
   /**
-   * <pre>
-   * The player to stop the session for.
-   * </pre>
-   *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return The player.
+   * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
+   * @return The unknown.
    */
   @java.lang.Override
-  public network.cow.mooapis.session.v1.Player getPlayer() {
-    if (identifierCase_ == 2) {
-       return (network.cow.mooapis.session.v1.Player) identifier_;
+  public network.cow.mooapis.session.v1.StopCauseUnknown getUnknown() {
+    if (causeCase_ == 2) {
+       return (network.cow.mooapis.session.v1.StopCauseUnknown) cause_;
     }
-    return network.cow.mooapis.session.v1.Player.getDefaultInstance();
+    return network.cow.mooapis.session.v1.StopCauseUnknown.getDefaultInstance();
   }
   /**
-   * <pre>
-   * The player to stop the session for.
-   * </pre>
-   *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+   * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
    */
   @java.lang.Override
-  public network.cow.mooapis.session.v1.PlayerOrBuilder getPlayerOrBuilder() {
-    if (identifierCase_ == 2) {
-       return (network.cow.mooapis.session.v1.Player) identifier_;
+  public network.cow.mooapis.session.v1.StopCauseUnknownOrBuilder getUnknownOrBuilder() {
+    if (causeCase_ == 2) {
+       return (network.cow.mooapis.session.v1.StopCauseUnknown) cause_;
     }
-    return network.cow.mooapis.session.v1.Player.getDefaultInstance();
+    return network.cow.mooapis.session.v1.StopCauseUnknown.getDefaultInstance();
+  }
+
+  public static final int DISCONNECTED_FIELD_NUMBER = 3;
+  /**
+   * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+   * @return Whether the disconnected field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisconnected() {
+    return causeCase_ == 3;
+  }
+  /**
+   * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+   * @return The disconnected.
+   */
+  @java.lang.Override
+  public network.cow.mooapis.session.v1.StopCauseDisconnected getDisconnected() {
+    if (causeCase_ == 3) {
+       return (network.cow.mooapis.session.v1.StopCauseDisconnected) cause_;
+    }
+    return network.cow.mooapis.session.v1.StopCauseDisconnected.getDefaultInstance();
+  }
+  /**
+   * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+   */
+  @java.lang.Override
+  public network.cow.mooapis.session.v1.StopCauseDisconnectedOrBuilder getDisconnectedOrBuilder() {
+    if (causeCase_ == 3) {
+       return (network.cow.mooapis.session.v1.StopCauseDisconnected) cause_;
+    }
+    return network.cow.mooapis.session.v1.StopCauseDisconnected.getDefaultInstance();
+  }
+
+  public static final int ERROR_FIELD_NUMBER = 4;
+  /**
+   * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+   * @return Whether the error field is set.
+   */
+  @java.lang.Override
+  public boolean hasError() {
+    return causeCase_ == 4;
+  }
+  /**
+   * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+   * @return The error.
+   */
+  @java.lang.Override
+  public network.cow.mooapis.session.v1.StopCauseError getError() {
+    if (causeCase_ == 4) {
+       return (network.cow.mooapis.session.v1.StopCauseError) cause_;
+    }
+    return network.cow.mooapis.session.v1.StopCauseError.getDefaultInstance();
+  }
+  /**
+   * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+   */
+  @java.lang.Override
+  public network.cow.mooapis.session.v1.StopCauseErrorOrBuilder getErrorOrBuilder() {
+    if (causeCase_ == 4) {
+       return (network.cow.mooapis.session.v1.StopCauseError) cause_;
+    }
+    return network.cow.mooapis.session.v1.StopCauseError.getDefaultInstance();
+  }
+
+  public static final int CUSTOM_FIELD_NUMBER = 5;
+  /**
+   * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+   * @return Whether the custom field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustom() {
+    return causeCase_ == 5;
+  }
+  /**
+   * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+   * @return The custom.
+   */
+  @java.lang.Override
+  public network.cow.mooapis.session.v1.StopCauseCustom getCustom() {
+    if (causeCase_ == 5) {
+       return (network.cow.mooapis.session.v1.StopCauseCustom) cause_;
+    }
+    return network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance();
+  }
+  /**
+   * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+   */
+  @java.lang.Override
+  public network.cow.mooapis.session.v1.StopCauseCustomOrBuilder getCustomOrBuilder() {
+    if (causeCase_ == 5) {
+       return (network.cow.mooapis.session.v1.StopCauseCustom) cause_;
+    }
+    return network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -262,11 +358,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (identifierCase_ == 1) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, identifier_);
+    if (identifier_ != null) {
+      output.writeMessage(1, getIdentifier());
     }
-    if (identifierCase_ == 2) {
-      output.writeMessage(2, (network.cow.mooapis.session.v1.Player) identifier_);
+    if (causeCase_ == 2) {
+      output.writeMessage(2, (network.cow.mooapis.session.v1.StopCauseUnknown) cause_);
+    }
+    if (causeCase_ == 3) {
+      output.writeMessage(3, (network.cow.mooapis.session.v1.StopCauseDisconnected) cause_);
+    }
+    if (causeCase_ == 4) {
+      output.writeMessage(4, (network.cow.mooapis.session.v1.StopCauseError) cause_);
+    }
+    if (causeCase_ == 5) {
+      output.writeMessage(5, (network.cow.mooapis.session.v1.StopCauseCustom) cause_);
     }
     unknownFields.writeTo(output);
   }
@@ -277,12 +382,25 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (identifierCase_ == 1) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, identifier_);
-    }
-    if (identifierCase_ == 2) {
+    if (identifier_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (network.cow.mooapis.session.v1.Player) identifier_);
+        .computeMessageSize(1, getIdentifier());
+    }
+    if (causeCase_ == 2) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, (network.cow.mooapis.session.v1.StopCauseUnknown) cause_);
+    }
+    if (causeCase_ == 3) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, (network.cow.mooapis.session.v1.StopCauseDisconnected) cause_);
+    }
+    if (causeCase_ == 4) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, (network.cow.mooapis.session.v1.StopCauseError) cause_);
+    }
+    if (causeCase_ == 5) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, (network.cow.mooapis.session.v1.StopCauseCustom) cause_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -299,15 +417,28 @@ private static final long serialVersionUID = 0L;
     }
     network.cow.mooapis.session.v1.StopSessionRequest other = (network.cow.mooapis.session.v1.StopSessionRequest) obj;
 
-    if (!getIdentifierCase().equals(other.getIdentifierCase())) return false;
-    switch (identifierCase_) {
-      case 1:
-        if (!getSessionId()
-            .equals(other.getSessionId())) return false;
-        break;
+    if (hasIdentifier() != other.hasIdentifier()) return false;
+    if (hasIdentifier()) {
+      if (!getIdentifier()
+          .equals(other.getIdentifier())) return false;
+    }
+    if (!getCauseCase().equals(other.getCauseCase())) return false;
+    switch (causeCase_) {
       case 2:
-        if (!getPlayer()
-            .equals(other.getPlayer())) return false;
+        if (!getUnknown()
+            .equals(other.getUnknown())) return false;
+        break;
+      case 3:
+        if (!getDisconnected()
+            .equals(other.getDisconnected())) return false;
+        break;
+      case 4:
+        if (!getError()
+            .equals(other.getError())) return false;
+        break;
+      case 5:
+        if (!getCustom()
+            .equals(other.getCustom())) return false;
         break;
       case 0:
       default:
@@ -323,14 +454,26 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    switch (identifierCase_) {
-      case 1:
-        hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getSessionId().hashCode();
-        break;
+    if (hasIdentifier()) {
+      hash = (37 * hash) + IDENTIFIER_FIELD_NUMBER;
+      hash = (53 * hash) + getIdentifier().hashCode();
+    }
+    switch (causeCase_) {
       case 2:
-        hash = (37 * hash) + PLAYER_FIELD_NUMBER;
-        hash = (53 * hash) + getPlayer().hashCode();
+        hash = (37 * hash) + UNKNOWN_FIELD_NUMBER;
+        hash = (53 * hash) + getUnknown().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + DISCONNECTED_FIELD_NUMBER;
+        hash = (53 * hash) + getDisconnected().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + ERROR_FIELD_NUMBER;
+        hash = (53 * hash) + getError().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + CUSTOM_FIELD_NUMBER;
+        hash = (53 * hash) + getCustom().hashCode();
         break;
       case 0:
       default:
@@ -468,8 +611,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      identifierCase_ = 0;
-      identifier_ = null;
+      if (identifierBuilder_ == null) {
+        identifier_ = null;
+      } else {
+        identifier_ = null;
+        identifierBuilder_ = null;
+      }
+      causeCase_ = 0;
+      cause_ = null;
       return this;
     }
 
@@ -496,17 +645,40 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public network.cow.mooapis.session.v1.StopSessionRequest buildPartial() {
       network.cow.mooapis.session.v1.StopSessionRequest result = new network.cow.mooapis.session.v1.StopSessionRequest(this);
-      if (identifierCase_ == 1) {
+      if (identifierBuilder_ == null) {
         result.identifier_ = identifier_;
+      } else {
+        result.identifier_ = identifierBuilder_.build();
       }
-      if (identifierCase_ == 2) {
-        if (playerBuilder_ == null) {
-          result.identifier_ = identifier_;
+      if (causeCase_ == 2) {
+        if (unknownBuilder_ == null) {
+          result.cause_ = cause_;
         } else {
-          result.identifier_ = playerBuilder_.build();
+          result.cause_ = unknownBuilder_.build();
         }
       }
-      result.identifierCase_ = identifierCase_;
+      if (causeCase_ == 3) {
+        if (disconnectedBuilder_ == null) {
+          result.cause_ = cause_;
+        } else {
+          result.cause_ = disconnectedBuilder_.build();
+        }
+      }
+      if (causeCase_ == 4) {
+        if (errorBuilder_ == null) {
+          result.cause_ = cause_;
+        } else {
+          result.cause_ = errorBuilder_.build();
+        }
+      }
+      if (causeCase_ == 5) {
+        if (customBuilder_ == null) {
+          result.cause_ = cause_;
+        } else {
+          result.cause_ = customBuilder_.build();
+        }
+      }
+      result.causeCase_ = causeCase_;
       onBuilt();
       return result;
     }
@@ -555,18 +727,27 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(network.cow.mooapis.session.v1.StopSessionRequest other) {
       if (other == network.cow.mooapis.session.v1.StopSessionRequest.getDefaultInstance()) return this;
-      switch (other.getIdentifierCase()) {
-        case SESSION_ID: {
-          identifierCase_ = 1;
-          identifier_ = other.identifier_;
-          onChanged();
+      if (other.hasIdentifier()) {
+        mergeIdentifier(other.getIdentifier());
+      }
+      switch (other.getCauseCase()) {
+        case UNKNOWN: {
+          mergeUnknown(other.getUnknown());
           break;
         }
-        case PLAYER: {
-          mergePlayer(other.getPlayer());
+        case DISCONNECTED: {
+          mergeDisconnected(other.getDisconnected());
           break;
         }
-        case IDENTIFIER_NOT_SET: {
+        case ERROR: {
+          mergeError(other.getError());
+          break;
+        }
+        case CUSTOM: {
+          mergeCustom(other.getCustom());
+          break;
+        }
+        case CAUSE_NOT_SET: {
           break;
         }
       }
@@ -598,318 +779,703 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int identifierCase_ = 0;
-    private java.lang.Object identifier_;
-    public IdentifierCase
-        getIdentifierCase() {
-      return IdentifierCase.forNumber(
-          identifierCase_);
+    private int causeCase_ = 0;
+    private java.lang.Object cause_;
+    public CauseCase
+        getCauseCase() {
+      return CauseCase.forNumber(
+          causeCase_);
     }
 
-    public Builder clearIdentifier() {
-      identifierCase_ = 0;
-      identifier_ = null;
+    public Builder clearCause() {
+      causeCase_ = 0;
+      cause_ = null;
       onChanged();
       return this;
     }
 
 
-    /**
-     * <pre>
-     * The id of the session to stop.
-     * </pre>
-     *
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
-     * @return Whether the sessionId field is set.
-     */
-    @java.lang.Override
-    public boolean hasSessionId() {
-      return identifierCase_ == 1;
-    }
-    /**
-     * <pre>
-     * The id of the session to stop.
-     * </pre>
-     *
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
-     * @return The sessionId.
-     */
-    @java.lang.Override
-    public java.lang.String getSessionId() {
-      java.lang.Object ref = "";
-      if (identifierCase_ == 1) {
-        ref = identifier_;
-      }
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (identifierCase_ == 1) {
-          identifier_ = s;
-        }
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The id of the session to stop.
-     * </pre>
-     *
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
-     * @return The bytes for sessionId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSessionIdBytes() {
-      java.lang.Object ref = "";
-      if (identifierCase_ == 1) {
-        ref = identifier_;
-      }
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        if (identifierCase_ == 1) {
-          identifier_ = b;
-        }
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The id of the session to stop.
-     * </pre>
-     *
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
-     * @param value The sessionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSessionId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  identifierCase_ = 1;
-      identifier_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The id of the session to stop.
-     * </pre>
-     *
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSessionId() {
-      if (identifierCase_ == 1) {
-        identifierCase_ = 0;
-        identifier_ = null;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * The id of the session to stop.
-     * </pre>
-     *
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
-     * @param value The bytes for sessionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSessionIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      identifierCase_ = 1;
-      identifier_ = value;
-      onChanged();
-      return this;
-    }
-
+    private network.cow.mooapis.session.v1.SessionIdentifier identifier_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        network.cow.mooapis.session.v1.Player, network.cow.mooapis.session.v1.Player.Builder, network.cow.mooapis.session.v1.PlayerOrBuilder> playerBuilder_;
+        network.cow.mooapis.session.v1.SessionIdentifier, network.cow.mooapis.session.v1.SessionIdentifier.Builder, network.cow.mooapis.session.v1.SessionIdentifierOrBuilder> identifierBuilder_;
     /**
-     * <pre>
-     * The player to stop the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     * @return Whether the player field is set.
+     * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
+     * @return Whether the identifier field is set.
      */
-    @java.lang.Override
-    public boolean hasPlayer() {
-      return identifierCase_ == 2;
+    public boolean hasIdentifier() {
+      return identifierBuilder_ != null || identifier_ != null;
     }
     /**
-     * <pre>
-     * The player to stop the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     * @return The player.
+     * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
+     * @return The identifier.
      */
-    @java.lang.Override
-    public network.cow.mooapis.session.v1.Player getPlayer() {
-      if (playerBuilder_ == null) {
-        if (identifierCase_ == 2) {
-          return (network.cow.mooapis.session.v1.Player) identifier_;
-        }
-        return network.cow.mooapis.session.v1.Player.getDefaultInstance();
+    public network.cow.mooapis.session.v1.SessionIdentifier getIdentifier() {
+      if (identifierBuilder_ == null) {
+        return identifier_ == null ? network.cow.mooapis.session.v1.SessionIdentifier.getDefaultInstance() : identifier_;
       } else {
-        if (identifierCase_ == 2) {
-          return playerBuilder_.getMessage();
-        }
-        return network.cow.mooapis.session.v1.Player.getDefaultInstance();
+        return identifierBuilder_.getMessage();
       }
     }
     /**
-     * <pre>
-     * The player to stop the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+     * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
      */
-    public Builder setPlayer(network.cow.mooapis.session.v1.Player value) {
-      if (playerBuilder_ == null) {
+    public Builder setIdentifier(network.cow.mooapis.session.v1.SessionIdentifier value) {
+      if (identifierBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         identifier_ = value;
         onChanged();
       } else {
-        playerBuilder_.setMessage(value);
+        identifierBuilder_.setMessage(value);
       }
-      identifierCase_ = 2;
+
       return this;
     }
     /**
-     * <pre>
-     * The player to stop the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+     * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
      */
-    public Builder setPlayer(
-        network.cow.mooapis.session.v1.Player.Builder builderForValue) {
-      if (playerBuilder_ == null) {
+    public Builder setIdentifier(
+        network.cow.mooapis.session.v1.SessionIdentifier.Builder builderForValue) {
+      if (identifierBuilder_ == null) {
         identifier_ = builderForValue.build();
         onChanged();
       } else {
-        playerBuilder_.setMessage(builderForValue.build());
+        identifierBuilder_.setMessage(builderForValue.build());
       }
-      identifierCase_ = 2;
+
       return this;
     }
     /**
-     * <pre>
-     * The player to stop the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+     * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
      */
-    public Builder mergePlayer(network.cow.mooapis.session.v1.Player value) {
-      if (playerBuilder_ == null) {
-        if (identifierCase_ == 2 &&
-            identifier_ != network.cow.mooapis.session.v1.Player.getDefaultInstance()) {
-          identifier_ = network.cow.mooapis.session.v1.Player.newBuilder((network.cow.mooapis.session.v1.Player) identifier_)
-              .mergeFrom(value).buildPartial();
+    public Builder mergeIdentifier(network.cow.mooapis.session.v1.SessionIdentifier value) {
+      if (identifierBuilder_ == null) {
+        if (identifier_ != null) {
+          identifier_ =
+            network.cow.mooapis.session.v1.SessionIdentifier.newBuilder(identifier_).mergeFrom(value).buildPartial();
         } else {
           identifier_ = value;
         }
         onChanged();
       } else {
-        if (identifierCase_ == 2) {
-          playerBuilder_.mergeFrom(value);
-        }
-        playerBuilder_.setMessage(value);
+        identifierBuilder_.mergeFrom(value);
       }
-      identifierCase_ = 2;
+
       return this;
     }
     /**
-     * <pre>
-     * The player to stop the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+     * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
      */
-    public Builder clearPlayer() {
-      if (playerBuilder_ == null) {
-        if (identifierCase_ == 2) {
-          identifierCase_ = 0;
-          identifier_ = null;
-          onChanged();
-        }
+    public Builder clearIdentifier() {
+      if (identifierBuilder_ == null) {
+        identifier_ = null;
+        onChanged();
       } else {
-        if (identifierCase_ == 2) {
-          identifierCase_ = 0;
-          identifier_ = null;
-        }
-        playerBuilder_.clear();
+        identifier_ = null;
+        identifierBuilder_ = null;
       }
+
       return this;
     }
     /**
-     * <pre>
-     * The player to stop the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+     * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
      */
-    public network.cow.mooapis.session.v1.Player.Builder getPlayerBuilder() {
-      return getPlayerFieldBuilder().getBuilder();
+    public network.cow.mooapis.session.v1.SessionIdentifier.Builder getIdentifierBuilder() {
+      
+      onChanged();
+      return getIdentifierFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * The player to stop the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+     * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
      */
-    @java.lang.Override
-    public network.cow.mooapis.session.v1.PlayerOrBuilder getPlayerOrBuilder() {
-      if ((identifierCase_ == 2) && (playerBuilder_ != null)) {
-        return playerBuilder_.getMessageOrBuilder();
+    public network.cow.mooapis.session.v1.SessionIdentifierOrBuilder getIdentifierOrBuilder() {
+      if (identifierBuilder_ != null) {
+        return identifierBuilder_.getMessageOrBuilder();
       } else {
-        if (identifierCase_ == 2) {
-          return (network.cow.mooapis.session.v1.Player) identifier_;
-        }
-        return network.cow.mooapis.session.v1.Player.getDefaultInstance();
+        return identifier_ == null ?
+            network.cow.mooapis.session.v1.SessionIdentifier.getDefaultInstance() : identifier_;
       }
     }
     /**
-     * <pre>
-     * The player to stop the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+     * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        network.cow.mooapis.session.v1.Player, network.cow.mooapis.session.v1.Player.Builder, network.cow.mooapis.session.v1.PlayerOrBuilder> 
-        getPlayerFieldBuilder() {
-      if (playerBuilder_ == null) {
-        if (!(identifierCase_ == 2)) {
-          identifier_ = network.cow.mooapis.session.v1.Player.getDefaultInstance();
-        }
-        playerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            network.cow.mooapis.session.v1.Player, network.cow.mooapis.session.v1.Player.Builder, network.cow.mooapis.session.v1.PlayerOrBuilder>(
-                (network.cow.mooapis.session.v1.Player) identifier_,
+        network.cow.mooapis.session.v1.SessionIdentifier, network.cow.mooapis.session.v1.SessionIdentifier.Builder, network.cow.mooapis.session.v1.SessionIdentifierOrBuilder> 
+        getIdentifierFieldBuilder() {
+      if (identifierBuilder_ == null) {
+        identifierBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            network.cow.mooapis.session.v1.SessionIdentifier, network.cow.mooapis.session.v1.SessionIdentifier.Builder, network.cow.mooapis.session.v1.SessionIdentifierOrBuilder>(
+                getIdentifier(),
                 getParentForChildren(),
                 isClean());
         identifier_ = null;
       }
-      identifierCase_ = 2;
+      return identifierBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.StopCauseUnknown, network.cow.mooapis.session.v1.StopCauseUnknown.Builder, network.cow.mooapis.session.v1.StopCauseUnknownOrBuilder> unknownBuilder_;
+    /**
+     * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
+     * @return Whether the unknown field is set.
+     */
+    @java.lang.Override
+    public boolean hasUnknown() {
+      return causeCase_ == 2;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
+     * @return The unknown.
+     */
+    @java.lang.Override
+    public network.cow.mooapis.session.v1.StopCauseUnknown getUnknown() {
+      if (unknownBuilder_ == null) {
+        if (causeCase_ == 2) {
+          return (network.cow.mooapis.session.v1.StopCauseUnknown) cause_;
+        }
+        return network.cow.mooapis.session.v1.StopCauseUnknown.getDefaultInstance();
+      } else {
+        if (causeCase_ == 2) {
+          return unknownBuilder_.getMessage();
+        }
+        return network.cow.mooapis.session.v1.StopCauseUnknown.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
+     */
+    public Builder setUnknown(network.cow.mooapis.session.v1.StopCauseUnknown value) {
+      if (unknownBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cause_ = value;
+        onChanged();
+      } else {
+        unknownBuilder_.setMessage(value);
+      }
+      causeCase_ = 2;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
+     */
+    public Builder setUnknown(
+        network.cow.mooapis.session.v1.StopCauseUnknown.Builder builderForValue) {
+      if (unknownBuilder_ == null) {
+        cause_ = builderForValue.build();
+        onChanged();
+      } else {
+        unknownBuilder_.setMessage(builderForValue.build());
+      }
+      causeCase_ = 2;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
+     */
+    public Builder mergeUnknown(network.cow.mooapis.session.v1.StopCauseUnknown value) {
+      if (unknownBuilder_ == null) {
+        if (causeCase_ == 2 &&
+            cause_ != network.cow.mooapis.session.v1.StopCauseUnknown.getDefaultInstance()) {
+          cause_ = network.cow.mooapis.session.v1.StopCauseUnknown.newBuilder((network.cow.mooapis.session.v1.StopCauseUnknown) cause_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          cause_ = value;
+        }
+        onChanged();
+      } else {
+        if (causeCase_ == 2) {
+          unknownBuilder_.mergeFrom(value);
+        }
+        unknownBuilder_.setMessage(value);
+      }
+      causeCase_ = 2;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
+     */
+    public Builder clearUnknown() {
+      if (unknownBuilder_ == null) {
+        if (causeCase_ == 2) {
+          causeCase_ = 0;
+          cause_ = null;
+          onChanged();
+        }
+      } else {
+        if (causeCase_ == 2) {
+          causeCase_ = 0;
+          cause_ = null;
+        }
+        unknownBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
+     */
+    public network.cow.mooapis.session.v1.StopCauseUnknown.Builder getUnknownBuilder() {
+      return getUnknownFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
+     */
+    @java.lang.Override
+    public network.cow.mooapis.session.v1.StopCauseUnknownOrBuilder getUnknownOrBuilder() {
+      if ((causeCase_ == 2) && (unknownBuilder_ != null)) {
+        return unknownBuilder_.getMessageOrBuilder();
+      } else {
+        if (causeCase_ == 2) {
+          return (network.cow.mooapis.session.v1.StopCauseUnknown) cause_;
+        }
+        return network.cow.mooapis.session.v1.StopCauseUnknown.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.StopCauseUnknown, network.cow.mooapis.session.v1.StopCauseUnknown.Builder, network.cow.mooapis.session.v1.StopCauseUnknownOrBuilder> 
+        getUnknownFieldBuilder() {
+      if (unknownBuilder_ == null) {
+        if (!(causeCase_ == 2)) {
+          cause_ = network.cow.mooapis.session.v1.StopCauseUnknown.getDefaultInstance();
+        }
+        unknownBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            network.cow.mooapis.session.v1.StopCauseUnknown, network.cow.mooapis.session.v1.StopCauseUnknown.Builder, network.cow.mooapis.session.v1.StopCauseUnknownOrBuilder>(
+                (network.cow.mooapis.session.v1.StopCauseUnknown) cause_,
+                getParentForChildren(),
+                isClean());
+        cause_ = null;
+      }
+      causeCase_ = 2;
       onChanged();;
-      return playerBuilder_;
+      return unknownBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.StopCauseDisconnected, network.cow.mooapis.session.v1.StopCauseDisconnected.Builder, network.cow.mooapis.session.v1.StopCauseDisconnectedOrBuilder> disconnectedBuilder_;
+    /**
+     * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+     * @return Whether the disconnected field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisconnected() {
+      return causeCase_ == 3;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+     * @return The disconnected.
+     */
+    @java.lang.Override
+    public network.cow.mooapis.session.v1.StopCauseDisconnected getDisconnected() {
+      if (disconnectedBuilder_ == null) {
+        if (causeCase_ == 3) {
+          return (network.cow.mooapis.session.v1.StopCauseDisconnected) cause_;
+        }
+        return network.cow.mooapis.session.v1.StopCauseDisconnected.getDefaultInstance();
+      } else {
+        if (causeCase_ == 3) {
+          return disconnectedBuilder_.getMessage();
+        }
+        return network.cow.mooapis.session.v1.StopCauseDisconnected.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+     */
+    public Builder setDisconnected(network.cow.mooapis.session.v1.StopCauseDisconnected value) {
+      if (disconnectedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cause_ = value;
+        onChanged();
+      } else {
+        disconnectedBuilder_.setMessage(value);
+      }
+      causeCase_ = 3;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+     */
+    public Builder setDisconnected(
+        network.cow.mooapis.session.v1.StopCauseDisconnected.Builder builderForValue) {
+      if (disconnectedBuilder_ == null) {
+        cause_ = builderForValue.build();
+        onChanged();
+      } else {
+        disconnectedBuilder_.setMessage(builderForValue.build());
+      }
+      causeCase_ = 3;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+     */
+    public Builder mergeDisconnected(network.cow.mooapis.session.v1.StopCauseDisconnected value) {
+      if (disconnectedBuilder_ == null) {
+        if (causeCase_ == 3 &&
+            cause_ != network.cow.mooapis.session.v1.StopCauseDisconnected.getDefaultInstance()) {
+          cause_ = network.cow.mooapis.session.v1.StopCauseDisconnected.newBuilder((network.cow.mooapis.session.v1.StopCauseDisconnected) cause_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          cause_ = value;
+        }
+        onChanged();
+      } else {
+        if (causeCase_ == 3) {
+          disconnectedBuilder_.mergeFrom(value);
+        }
+        disconnectedBuilder_.setMessage(value);
+      }
+      causeCase_ = 3;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+     */
+    public Builder clearDisconnected() {
+      if (disconnectedBuilder_ == null) {
+        if (causeCase_ == 3) {
+          causeCase_ = 0;
+          cause_ = null;
+          onChanged();
+        }
+      } else {
+        if (causeCase_ == 3) {
+          causeCase_ = 0;
+          cause_ = null;
+        }
+        disconnectedBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+     */
+    public network.cow.mooapis.session.v1.StopCauseDisconnected.Builder getDisconnectedBuilder() {
+      return getDisconnectedFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+     */
+    @java.lang.Override
+    public network.cow.mooapis.session.v1.StopCauseDisconnectedOrBuilder getDisconnectedOrBuilder() {
+      if ((causeCase_ == 3) && (disconnectedBuilder_ != null)) {
+        return disconnectedBuilder_.getMessageOrBuilder();
+      } else {
+        if (causeCase_ == 3) {
+          return (network.cow.mooapis.session.v1.StopCauseDisconnected) cause_;
+        }
+        return network.cow.mooapis.session.v1.StopCauseDisconnected.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.StopCauseDisconnected, network.cow.mooapis.session.v1.StopCauseDisconnected.Builder, network.cow.mooapis.session.v1.StopCauseDisconnectedOrBuilder> 
+        getDisconnectedFieldBuilder() {
+      if (disconnectedBuilder_ == null) {
+        if (!(causeCase_ == 3)) {
+          cause_ = network.cow.mooapis.session.v1.StopCauseDisconnected.getDefaultInstance();
+        }
+        disconnectedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            network.cow.mooapis.session.v1.StopCauseDisconnected, network.cow.mooapis.session.v1.StopCauseDisconnected.Builder, network.cow.mooapis.session.v1.StopCauseDisconnectedOrBuilder>(
+                (network.cow.mooapis.session.v1.StopCauseDisconnected) cause_,
+                getParentForChildren(),
+                isClean());
+        cause_ = null;
+      }
+      causeCase_ = 3;
+      onChanged();;
+      return disconnectedBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.StopCauseError, network.cow.mooapis.session.v1.StopCauseError.Builder, network.cow.mooapis.session.v1.StopCauseErrorOrBuilder> errorBuilder_;
+    /**
+     * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return causeCase_ == 4;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public network.cow.mooapis.session.v1.StopCauseError getError() {
+      if (errorBuilder_ == null) {
+        if (causeCase_ == 4) {
+          return (network.cow.mooapis.session.v1.StopCauseError) cause_;
+        }
+        return network.cow.mooapis.session.v1.StopCauseError.getDefaultInstance();
+      } else {
+        if (causeCase_ == 4) {
+          return errorBuilder_.getMessage();
+        }
+        return network.cow.mooapis.session.v1.StopCauseError.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+     */
+    public Builder setError(network.cow.mooapis.session.v1.StopCauseError value) {
+      if (errorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cause_ = value;
+        onChanged();
+      } else {
+        errorBuilder_.setMessage(value);
+      }
+      causeCase_ = 4;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+     */
+    public Builder setError(
+        network.cow.mooapis.session.v1.StopCauseError.Builder builderForValue) {
+      if (errorBuilder_ == null) {
+        cause_ = builderForValue.build();
+        onChanged();
+      } else {
+        errorBuilder_.setMessage(builderForValue.build());
+      }
+      causeCase_ = 4;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+     */
+    public Builder mergeError(network.cow.mooapis.session.v1.StopCauseError value) {
+      if (errorBuilder_ == null) {
+        if (causeCase_ == 4 &&
+            cause_ != network.cow.mooapis.session.v1.StopCauseError.getDefaultInstance()) {
+          cause_ = network.cow.mooapis.session.v1.StopCauseError.newBuilder((network.cow.mooapis.session.v1.StopCauseError) cause_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          cause_ = value;
+        }
+        onChanged();
+      } else {
+        if (causeCase_ == 4) {
+          errorBuilder_.mergeFrom(value);
+        }
+        errorBuilder_.setMessage(value);
+      }
+      causeCase_ = 4;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+     */
+    public Builder clearError() {
+      if (errorBuilder_ == null) {
+        if (causeCase_ == 4) {
+          causeCase_ = 0;
+          cause_ = null;
+          onChanged();
+        }
+      } else {
+        if (causeCase_ == 4) {
+          causeCase_ = 0;
+          cause_ = null;
+        }
+        errorBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+     */
+    public network.cow.mooapis.session.v1.StopCauseError.Builder getErrorBuilder() {
+      return getErrorFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+     */
+    @java.lang.Override
+    public network.cow.mooapis.session.v1.StopCauseErrorOrBuilder getErrorOrBuilder() {
+      if ((causeCase_ == 4) && (errorBuilder_ != null)) {
+        return errorBuilder_.getMessageOrBuilder();
+      } else {
+        if (causeCase_ == 4) {
+          return (network.cow.mooapis.session.v1.StopCauseError) cause_;
+        }
+        return network.cow.mooapis.session.v1.StopCauseError.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.StopCauseError, network.cow.mooapis.session.v1.StopCauseError.Builder, network.cow.mooapis.session.v1.StopCauseErrorOrBuilder> 
+        getErrorFieldBuilder() {
+      if (errorBuilder_ == null) {
+        if (!(causeCase_ == 4)) {
+          cause_ = network.cow.mooapis.session.v1.StopCauseError.getDefaultInstance();
+        }
+        errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            network.cow.mooapis.session.v1.StopCauseError, network.cow.mooapis.session.v1.StopCauseError.Builder, network.cow.mooapis.session.v1.StopCauseErrorOrBuilder>(
+                (network.cow.mooapis.session.v1.StopCauseError) cause_,
+                getParentForChildren(),
+                isClean());
+        cause_ = null;
+      }
+      causeCase_ = 4;
+      onChanged();;
+      return errorBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.StopCauseCustom, network.cow.mooapis.session.v1.StopCauseCustom.Builder, network.cow.mooapis.session.v1.StopCauseCustomOrBuilder> customBuilder_;
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+     * @return Whether the custom field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustom() {
+      return causeCase_ == 5;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+     * @return The custom.
+     */
+    @java.lang.Override
+    public network.cow.mooapis.session.v1.StopCauseCustom getCustom() {
+      if (customBuilder_ == null) {
+        if (causeCase_ == 5) {
+          return (network.cow.mooapis.session.v1.StopCauseCustom) cause_;
+        }
+        return network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance();
+      } else {
+        if (causeCase_ == 5) {
+          return customBuilder_.getMessage();
+        }
+        return network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+     */
+    public Builder setCustom(network.cow.mooapis.session.v1.StopCauseCustom value) {
+      if (customBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cause_ = value;
+        onChanged();
+      } else {
+        customBuilder_.setMessage(value);
+      }
+      causeCase_ = 5;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+     */
+    public Builder setCustom(
+        network.cow.mooapis.session.v1.StopCauseCustom.Builder builderForValue) {
+      if (customBuilder_ == null) {
+        cause_ = builderForValue.build();
+        onChanged();
+      } else {
+        customBuilder_.setMessage(builderForValue.build());
+      }
+      causeCase_ = 5;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+     */
+    public Builder mergeCustom(network.cow.mooapis.session.v1.StopCauseCustom value) {
+      if (customBuilder_ == null) {
+        if (causeCase_ == 5 &&
+            cause_ != network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance()) {
+          cause_ = network.cow.mooapis.session.v1.StopCauseCustom.newBuilder((network.cow.mooapis.session.v1.StopCauseCustom) cause_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          cause_ = value;
+        }
+        onChanged();
+      } else {
+        if (causeCase_ == 5) {
+          customBuilder_.mergeFrom(value);
+        }
+        customBuilder_.setMessage(value);
+      }
+      causeCase_ = 5;
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+     */
+    public Builder clearCustom() {
+      if (customBuilder_ == null) {
+        if (causeCase_ == 5) {
+          causeCase_ = 0;
+          cause_ = null;
+          onChanged();
+        }
+      } else {
+        if (causeCase_ == 5) {
+          causeCase_ = 0;
+          cause_ = null;
+        }
+        customBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+     */
+    public network.cow.mooapis.session.v1.StopCauseCustom.Builder getCustomBuilder() {
+      return getCustomFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+     */
+    @java.lang.Override
+    public network.cow.mooapis.session.v1.StopCauseCustomOrBuilder getCustomOrBuilder() {
+      if ((causeCase_ == 5) && (customBuilder_ != null)) {
+        return customBuilder_.getMessageOrBuilder();
+      } else {
+        if (causeCase_ == 5) {
+          return (network.cow.mooapis.session.v1.StopCauseCustom) cause_;
+        }
+        return network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.StopCauseCustom, network.cow.mooapis.session.v1.StopCauseCustom.Builder, network.cow.mooapis.session.v1.StopCauseCustomOrBuilder> 
+        getCustomFieldBuilder() {
+      if (customBuilder_ == null) {
+        if (!(causeCase_ == 5)) {
+          cause_ = network.cow.mooapis.session.v1.StopCauseCustom.getDefaultInstance();
+        }
+        customBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            network.cow.mooapis.session.v1.StopCauseCustom, network.cow.mooapis.session.v1.StopCauseCustom.Builder, network.cow.mooapis.session.v1.StopCauseCustomOrBuilder>(
+                (network.cow.mooapis.session.v1.StopCauseCustom) cause_,
+                getParentForChildren(),
+                isClean());
+        cause_ = null;
+      }
+      causeCase_ = 5;
+      onChanged();;
+      return customBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

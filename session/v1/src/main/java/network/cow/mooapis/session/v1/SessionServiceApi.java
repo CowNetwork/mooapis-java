@@ -44,6 +44,76 @@ public final class SessionServiceApi {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cow_session_v1_StopSessionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_KickPlayerRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_KickPlayerRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_KickPlayerResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_KickPlayerResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_BanPlayerRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_BanPlayerRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_BanPlayerResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_BanPlayerResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_GetBansRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_GetBansRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_GetBansResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_GetBansResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_RevokeBanRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_RevokeBanRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_RevokeBanResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_RevokeBanResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_SetMaintenanceModeRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_SetMaintenanceModeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_SetMaintenanceModeResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_SetMaintenanceModeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_BlacklistPlayerRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_BlacklistPlayerRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_BlacklistPlayerResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_BlacklistPlayerResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_RevokeBlacklistPlayerRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_RevokeBlacklistPlayerRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_session_v1_RevokeBlacklistPlayerResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_session_v1_RevokeBlacklistPlayerResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -58,26 +128,78 @@ public final class SessionServiceApi {
       ".proto\"F\n\024CreateSessionRequest\022.\n\006player" +
       "\030\001 \001(\0132\026.cow.session.v1.PlayerR\006player\"J" +
       "\n\025CreateSessionResponse\0221\n\007session\030\001 \001(\013" +
-      "2\027.cow.session.v1.SessionR\007session\"t\n\021Ge" +
-      "tSessionRequest\022\037\n\nsession_id\030\001 \001(\tH\000R\ts" +
-      "essionId\0220\n\006player\030\002 \001(\0132\026.cow.session.v" +
-      "1.PlayerH\000R\006playerB\014\n\nidentifier\"G\n\022GetS" +
-      "essionResponse\0221\n\007session\030\001 \001(\0132\027.cow.se" +
-      "ssion.v1.SessionR\007session\"u\n\022StopSession" +
-      "Request\022\037\n\nsession_id\030\001 \001(\tH\000R\tsessionId" +
-      "\0220\n\006player\030\002 \001(\0132\026.cow.session.v1.Player" +
-      "H\000R\006playerB\014\n\nidentifier\"H\n\023StopSessionR" +
-      "esponse\0221\n\007session\030\001 \001(\0132\027.cow.session.v" +
-      "1.SessionR\007session2\206\002\n\016SessionService\022U\n" +
-      "\006Create\022$.cow.session.v1.CreateSessionRe" +
-      "quest\032%.cow.session.v1.CreateSessionResp" +
-      "onse\022O\n\004Stop\022\".cow.session.v1.StopSessio" +
-      "nRequest\032#.cow.session.v1.StopSessionRes" +
-      "ponse\022L\n\003Get\022!.cow.session.v1.GetSession" +
-      "Request\032\".cow.session.v1.GetSessionRespo" +
-      "nseBL\n\036network.cow.mooapis.session.v1P\001Z" +
-      "(github.com/cownetwork/session/v1;sessio" +
-      "nb\006proto3"
+      "2\027.cow.session.v1.SessionR\007session\"V\n\021Ge" +
+      "tSessionRequest\022A\n\nidentifier\030\001 \001(\0132!.co" +
+      "w.session.v1.SessionIdentifierR\nidentifi" +
+      "er\"G\n\022GetSessionResponse\0221\n\007session\030\001 \001(" +
+      "\0132\027.cow.session.v1.SessionR\007session\"\336\002\n\022" +
+      "StopSessionRequest\022A\n\nidentifier\030\001 \001(\0132!" +
+      ".cow.session.v1.SessionIdentifierR\nident" +
+      "ifier\022<\n\007unknown\030\002 \001(\0132 .cow.session.v1." +
+      "StopCauseUnknownH\000R\007unknown\022K\n\014disconnec" +
+      "ted\030\003 \001(\0132%.cow.session.v1.StopCauseDisc" +
+      "onnectedH\000R\014disconnected\0226\n\005error\030\004 \001(\0132" +
+      "\036.cow.session.v1.StopCauseErrorH\000R\005error" +
+      "\0229\n\006custom\030\005 \001(\0132\037.cow.session.v1.StopCa" +
+      "useCustomH\000R\006customB\007\n\005cause\"H\n\023StopSess" +
+      "ionResponse\0221\n\007session\030\001 \001(\0132\027.cow.sessi" +
+      "on.v1.SessionR\007session\"\221\001\n\021KickPlayerReq" +
+      "uest\022.\n\006player\030\001 \001(\0132\026.cow.session.v1.Pl" +
+      "ayerR\006player\022\026\n\006reason\030\002 \001(\tR\006reason\0224\n\010" +
+      "executor\030\003 \001(\0132\030.cow.session.v1.Executor" +
+      "R\010executor\">\n\022KickPlayerResponse\022(\n\004kick" +
+      "\030\001 \001(\0132\024.cow.session.v1.KickR\004kick\"\311\001\n\020B" +
+      "anPlayerRequest\022.\n\006player\030\001 \001(\0132\026.cow.se" +
+      "ssion.v1.PlayerR\006player\022\026\n\006reason\030\002 \001(\tR" +
+      "\006reason\022\033\n\tbanned_at\030\003 \001(\004R\010bannedAt\022\032\n\010" +
+      "duration\030\004 \001(\003R\010duration\0224\n\010executor\030\005 \001" +
+      "(\0132\030.cow.session.v1.ExecutorR\010executor\":" +
+      "\n\021BanPlayerResponse\022%\n\003ban\030\001 \001(\0132\023.cow.s" +
+      "ession.v1.BanR\003ban\"@\n\016GetBansRequest\022.\n\006" +
+      "player\030\001 \001(\0132\026.cow.session.v1.PlayerR\006pl" +
+      "ayer\":\n\017GetBansResponse\022\'\n\004bans\030\001 \003(\0132\023." +
+      "cow.session.v1.BanR\004bans\"X\n\020RevokeBanReq" +
+      "uest\022\016\n\002id\030\001 \001(\tR\002id\0224\n\010executor\030\002 \001(\0132\030" +
+      ".cow.session.v1.ExecutorR\010executor\":\n\021Re" +
+      "vokeBanResponse\022%\n\003ban\030\001 \001(\0132\023.cow.sessi" +
+      "on.v1.BanR\003ban\"K\n\031SetMaintenanceModeRequ" +
+      "est\022\024\n\005types\030\001 \003(\tR\005types\022\030\n\007enabled\030\002 \001" +
+      "(\010R\007enabled\"2\n\032SetMaintenanceModeRespons" +
+      "e\022\024\n\005types\030\001 \003(\tR\005types\"b\n\026BlacklistPlay" +
+      "erRequest\022.\n\006player\030\001 \001(\0132\026.cow.session." +
+      "v1.PlayerR\006player\022\030\n\007message\030\002 \001(\tR\007mess" +
+      "age\"O\n\027BlacklistPlayerResponse\0224\n\005entry\030" +
+      "\001 \001(\0132\036.cow.session.v1.BlacklistEntryR\005e" +
+      "ntry\"N\n\034RevokeBlacklistPlayerRequest\022.\n\006" +
+      "player\030\001 \001(\0132\026.cow.session.v1.PlayerR\006pl" +
+      "ayer\"O\n\035RevokeBlacklistPlayerResponse\022.\n" +
+      "\006player\030\001 \001(\0132\026.cow.session.v1.PlayerR\006p" +
+      "layer2\247\007\n\016SessionService\022\\\n\rCreateSessio" +
+      "n\022$.cow.session.v1.CreateSessionRequest\032" +
+      "%.cow.session.v1.CreateSessionResponse\022V" +
+      "\n\013StopSession\022\".cow.session.v1.StopSessi" +
+      "onRequest\032#.cow.session.v1.StopSessionRe" +
+      "sponse\022S\n\nGetSession\022!.cow.session.v1.Ge" +
+      "tSessionRequest\032\".cow.session.v1.GetSess" +
+      "ionResponse\022S\n\nKickPlayer\022!.cow.session." +
+      "v1.KickPlayerRequest\032\".cow.session.v1.Ki" +
+      "ckPlayerResponse\022P\n\tBanPlayer\022 .cow.sess" +
+      "ion.v1.BanPlayerRequest\032!.cow.session.v1" +
+      ".BanPlayerResponse\022J\n\007GetBans\022\036.cow.sess" +
+      "ion.v1.GetBansRequest\032\037.cow.session.v1.G" +
+      "etBansResponse\022P\n\tRevokeBan\022 .cow.sessio" +
+      "n.v1.RevokeBanRequest\032!.cow.session.v1.R" +
+      "evokeBanResponse\022k\n\022SetMaintenanceMode\022)" +
+      ".cow.session.v1.SetMaintenanceModeReques" +
+      "t\032*.cow.session.v1.SetMaintenanceModeRes" +
+      "ponse\022b\n\017BlacklistPlayer\022&.cow.session.v" +
+      "1.BlacklistPlayerRequest\032\'.cow.session.v" +
+      "1.BlacklistPlayerResponse\022t\n\025RevokeBlack" +
+      "listPlayer\022,.cow.session.v1.RevokeBlackl" +
+      "istPlayerRequest\032-.cow.session.v1.Revoke" +
+      "BlacklistPlayerResponseBL\n\036network.cow.m" +
+      "ooapis.session.v1P\001Z(github.com/cownetwo" +
+      "rk/session/v1;sessionb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -101,7 +223,7 @@ public final class SessionServiceApi {
     internal_static_cow_session_v1_GetSessionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_session_v1_GetSessionRequest_descriptor,
-        new java.lang.String[] { "SessionId", "Player", "Identifier", });
+        new java.lang.String[] { "Identifier", });
     internal_static_cow_session_v1_GetSessionResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_cow_session_v1_GetSessionResponse_fieldAccessorTable = new
@@ -113,13 +235,97 @@ public final class SessionServiceApi {
     internal_static_cow_session_v1_StopSessionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_session_v1_StopSessionRequest_descriptor,
-        new java.lang.String[] { "SessionId", "Player", "Identifier", });
+        new java.lang.String[] { "Identifier", "Unknown", "Disconnected", "Error", "Custom", "Cause", });
     internal_static_cow_session_v1_StopSessionResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_cow_session_v1_StopSessionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_session_v1_StopSessionResponse_descriptor,
         new java.lang.String[] { "Session", });
+    internal_static_cow_session_v1_KickPlayerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_cow_session_v1_KickPlayerRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_KickPlayerRequest_descriptor,
+        new java.lang.String[] { "Player", "Reason", "Executor", });
+    internal_static_cow_session_v1_KickPlayerResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_cow_session_v1_KickPlayerResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_KickPlayerResponse_descriptor,
+        new java.lang.String[] { "Kick", });
+    internal_static_cow_session_v1_BanPlayerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_cow_session_v1_BanPlayerRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_BanPlayerRequest_descriptor,
+        new java.lang.String[] { "Player", "Reason", "BannedAt", "Duration", "Executor", });
+    internal_static_cow_session_v1_BanPlayerResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_cow_session_v1_BanPlayerResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_BanPlayerResponse_descriptor,
+        new java.lang.String[] { "Ban", });
+    internal_static_cow_session_v1_GetBansRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_cow_session_v1_GetBansRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_GetBansRequest_descriptor,
+        new java.lang.String[] { "Player", });
+    internal_static_cow_session_v1_GetBansResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_cow_session_v1_GetBansResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_GetBansResponse_descriptor,
+        new java.lang.String[] { "Bans", });
+    internal_static_cow_session_v1_RevokeBanRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_cow_session_v1_RevokeBanRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_RevokeBanRequest_descriptor,
+        new java.lang.String[] { "Id", "Executor", });
+    internal_static_cow_session_v1_RevokeBanResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_cow_session_v1_RevokeBanResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_RevokeBanResponse_descriptor,
+        new java.lang.String[] { "Ban", });
+    internal_static_cow_session_v1_SetMaintenanceModeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_cow_session_v1_SetMaintenanceModeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_SetMaintenanceModeRequest_descriptor,
+        new java.lang.String[] { "Types", "Enabled", });
+    internal_static_cow_session_v1_SetMaintenanceModeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_cow_session_v1_SetMaintenanceModeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_SetMaintenanceModeResponse_descriptor,
+        new java.lang.String[] { "Types", });
+    internal_static_cow_session_v1_BlacklistPlayerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_cow_session_v1_BlacklistPlayerRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_BlacklistPlayerRequest_descriptor,
+        new java.lang.String[] { "Player", "Message", });
+    internal_static_cow_session_v1_BlacklistPlayerResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_cow_session_v1_BlacklistPlayerResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_BlacklistPlayerResponse_descriptor,
+        new java.lang.String[] { "Entry", });
+    internal_static_cow_session_v1_RevokeBlacklistPlayerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_cow_session_v1_RevokeBlacklistPlayerRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_RevokeBlacklistPlayerRequest_descriptor,
+        new java.lang.String[] { "Player", });
+    internal_static_cow_session_v1_RevokeBlacklistPlayerResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_cow_session_v1_RevokeBlacklistPlayerResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_session_v1_RevokeBlacklistPlayerResponse_descriptor,
+        new java.lang.String[] { "Player", });
     network.cow.mooapis.session.v1.Types.getDescriptor();
   }
 

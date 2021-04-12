@@ -8,60 +8,17 @@ public interface GetSessionRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * The id of the session to receive.
-   * </pre>
-   *
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
-   * @return Whether the sessionId field is set.
+   * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
+   * @return Whether the identifier field is set.
    */
-  boolean hasSessionId();
+  boolean hasIdentifier();
   /**
-   * <pre>
-   * The id of the session to receive.
-   * </pre>
-   *
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
-   * @return The sessionId.
+   * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
+   * @return The identifier.
    */
-  java.lang.String getSessionId();
+  network.cow.mooapis.session.v1.SessionIdentifier getIdentifier();
   /**
-   * <pre>
-   * The id of the session to receive.
-   * </pre>
-   *
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
-   * @return The bytes for sessionId.
+   * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
    */
-  com.google.protobuf.ByteString
-      getSessionIdBytes();
-
-  /**
-   * <pre>
-   * The player to receive the session for.
-   * </pre>
-   *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return Whether the player field is set.
-   */
-  boolean hasPlayer();
-  /**
-   * <pre>
-   * The player to receive the session for.
-   * </pre>
-   *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return The player.
-   */
-  network.cow.mooapis.session.v1.Player getPlayer();
-  /**
-   * <pre>
-   * The player to receive the session for.
-   * </pre>
-   *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   */
-  network.cow.mooapis.session.v1.PlayerOrBuilder getPlayerOrBuilder();
-
-  public network.cow.mooapis.session.v1.GetSessionRequest.IdentifierCase getIdentifierCase();
+  network.cow.mooapis.session.v1.SessionIdentifierOrBuilder getIdentifierOrBuilder();
 }

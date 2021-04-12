@@ -8,60 +8,79 @@ public interface StopSessionRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * The id of the session to stop.
-   * </pre>
-   *
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
-   * @return Whether the sessionId field is set.
+   * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
+   * @return Whether the identifier field is set.
    */
-  boolean hasSessionId();
+  boolean hasIdentifier();
   /**
-   * <pre>
-   * The id of the session to stop.
-   * </pre>
-   *
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
-   * @return The sessionId.
+   * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
+   * @return The identifier.
    */
-  java.lang.String getSessionId();
+  network.cow.mooapis.session.v1.SessionIdentifier getIdentifier();
   /**
-   * <pre>
-   * The id of the session to stop.
-   * </pre>
-   *
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
-   * @return The bytes for sessionId.
+   * <code>.cow.session.v1.SessionIdentifier identifier = 1 [json_name = "identifier"];</code>
    */
-  com.google.protobuf.ByteString
-      getSessionIdBytes();
+  network.cow.mooapis.session.v1.SessionIdentifierOrBuilder getIdentifierOrBuilder();
 
   /**
-   * <pre>
-   * The player to stop the session for.
-   * </pre>
-   *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return Whether the player field is set.
+   * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
+   * @return Whether the unknown field is set.
    */
-  boolean hasPlayer();
+  boolean hasUnknown();
   /**
-   * <pre>
-   * The player to stop the session for.
-   * </pre>
-   *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return The player.
+   * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
+   * @return The unknown.
    */
-  network.cow.mooapis.session.v1.Player getPlayer();
+  network.cow.mooapis.session.v1.StopCauseUnknown getUnknown();
   /**
-   * <pre>
-   * The player to stop the session for.
-   * </pre>
-   *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+   * <code>.cow.session.v1.StopCauseUnknown unknown = 2 [json_name = "unknown"];</code>
    */
-  network.cow.mooapis.session.v1.PlayerOrBuilder getPlayerOrBuilder();
+  network.cow.mooapis.session.v1.StopCauseUnknownOrBuilder getUnknownOrBuilder();
 
-  public network.cow.mooapis.session.v1.StopSessionRequest.IdentifierCase getIdentifierCase();
+  /**
+   * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+   * @return Whether the disconnected field is set.
+   */
+  boolean hasDisconnected();
+  /**
+   * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+   * @return The disconnected.
+   */
+  network.cow.mooapis.session.v1.StopCauseDisconnected getDisconnected();
+  /**
+   * <code>.cow.session.v1.StopCauseDisconnected disconnected = 3 [json_name = "disconnected"];</code>
+   */
+  network.cow.mooapis.session.v1.StopCauseDisconnectedOrBuilder getDisconnectedOrBuilder();
+
+  /**
+   * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+   * @return Whether the error field is set.
+   */
+  boolean hasError();
+  /**
+   * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+   * @return The error.
+   */
+  network.cow.mooapis.session.v1.StopCauseError getError();
+  /**
+   * <code>.cow.session.v1.StopCauseError error = 4 [json_name = "error"];</code>
+   */
+  network.cow.mooapis.session.v1.StopCauseErrorOrBuilder getErrorOrBuilder();
+
+  /**
+   * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+   * @return Whether the custom field is set.
+   */
+  boolean hasCustom();
+  /**
+   * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+   * @return The custom.
+   */
+  network.cow.mooapis.session.v1.StopCauseCustom getCustom();
+  /**
+   * <code>.cow.session.v1.StopCauseCustom custom = 5 [json_name = "custom"];</code>
+   */
+  network.cow.mooapis.session.v1.StopCauseCustomOrBuilder getCustomOrBuilder();
+
+  public network.cow.mooapis.session.v1.StopSessionRequest.CauseCase getCauseCase();
 }

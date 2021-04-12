@@ -112,5 +112,20 @@ public interface StateStoppedOrBuilder extends
    */
   network.cow.mooapis.session.v1.StopCauseBlacklistedOrBuilder getBlacklistedOrBuilder();
 
+  /**
+   * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+   * @return Whether the custom field is set.
+   */
+  boolean hasCustom();
+  /**
+   * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+   * @return The custom.
+   */
+  network.cow.mooapis.session.v1.StopCauseCustom getCustom();
+  /**
+   * <code>.cow.session.v1.StopCauseCustom custom = 8 [json_name = "custom"];</code>
+   */
+  network.cow.mooapis.session.v1.StopCauseCustomOrBuilder getCustomOrBuilder();
+
   public network.cow.mooapis.session.v1.StateStopped.CauseCase getCauseCase();
 }

@@ -20,8 +20,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private StopCauseBanned() {
-    banId_ = "";
-    reason_ = "";
   }
 
   @java.lang.Override
@@ -55,25 +53,16 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            network.cow.mooapis.session.v1.Ban.Builder subBuilder = null;
+            if (ban_ != null) {
+              subBuilder = ban_.toBuilder();
+            }
+            ban_ = input.readMessage(network.cow.mooapis.session.v1.Ban.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(ban_);
+              ban_ = subBuilder.buildPartial();
+            }
 
-            banId_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            reason_ = s;
-            break;
-          }
-          case 24: {
-
-            bannedAt_ = input.readInt64();
-            break;
-          }
-          case 32: {
-
-            duration_ = input.readInt64();
             break;
           }
           default: {
@@ -108,126 +97,42 @@ private static final long serialVersionUID = 0L;
             network.cow.mooapis.session.v1.StopCauseBanned.class, network.cow.mooapis.session.v1.StopCauseBanned.Builder.class);
   }
 
-  public static final int BAN_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object banId_;
+  public static final int BAN_FIELD_NUMBER = 1;
+  private network.cow.mooapis.session.v1.Ban ban_;
   /**
    * <pre>
-   * The unique identifier of the underlying ban.
+   * The underlying ban.
    * </pre>
    *
-   * <code>string ban_id = 1 [json_name = "banId"];</code>
-   * @return The banId.
+   * <code>.cow.session.v1.Ban ban = 1 [json_name = "ban"];</code>
+   * @return Whether the ban field is set.
    */
   @java.lang.Override
-  public java.lang.String getBanId() {
-    java.lang.Object ref = banId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      banId_ = s;
-      return s;
-    }
+  public boolean hasBan() {
+    return ban_ != null;
   }
   /**
    * <pre>
-   * The unique identifier of the underlying ban.
+   * The underlying ban.
    * </pre>
    *
-   * <code>string ban_id = 1 [json_name = "banId"];</code>
-   * @return The bytes for banId.
+   * <code>.cow.session.v1.Ban ban = 1 [json_name = "ban"];</code>
+   * @return The ban.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getBanIdBytes() {
-    java.lang.Object ref = banId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      banId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int REASON_FIELD_NUMBER = 2;
-  private volatile java.lang.Object reason_;
-  /**
-   * <pre>
-   * The reason of the ban.
-   * </pre>
-   *
-   * <code>string reason = 2 [json_name = "reason"];</code>
-   * @return The reason.
-   */
-  @java.lang.Override
-  public java.lang.String getReason() {
-    java.lang.Object ref = reason_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      reason_ = s;
-      return s;
-    }
+  public network.cow.mooapis.session.v1.Ban getBan() {
+    return ban_ == null ? network.cow.mooapis.session.v1.Ban.getDefaultInstance() : ban_;
   }
   /**
    * <pre>
-   * The reason of the ban.
+   * The underlying ban.
    * </pre>
    *
-   * <code>string reason = 2 [json_name = "reason"];</code>
-   * @return The bytes for reason.
+   * <code>.cow.session.v1.Ban ban = 1 [json_name = "ban"];</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getReasonBytes() {
-    java.lang.Object ref = reason_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      reason_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int BANNED_AT_FIELD_NUMBER = 3;
-  private long bannedAt_;
-  /**
-   * <pre>
-   * The unix timestamp of the ban.
-   * </pre>
-   *
-   * <code>int64 banned_at = 3 [json_name = "bannedAt"];</code>
-   * @return The bannedAt.
-   */
-  @java.lang.Override
-  public long getBannedAt() {
-    return bannedAt_;
-  }
-
-  public static final int DURATION_FIELD_NUMBER = 4;
-  private long duration_;
-  /**
-   * <pre>
-   * The duration of this ban starting from the banned_at timestamp.
-   * </pre>
-   *
-   * <code>int64 duration = 4 [json_name = "duration"];</code>
-   * @return The duration.
-   */
-  @java.lang.Override
-  public long getDuration() {
-    return duration_;
+  public network.cow.mooapis.session.v1.BanOrBuilder getBanOrBuilder() {
+    return getBan();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -244,17 +149,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getBanIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, banId_);
-    }
-    if (!getReasonBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reason_);
-    }
-    if (bannedAt_ != 0L) {
-      output.writeInt64(3, bannedAt_);
-    }
-    if (duration_ != 0L) {
-      output.writeInt64(4, duration_);
+    if (ban_ != null) {
+      output.writeMessage(1, getBan());
     }
     unknownFields.writeTo(output);
   }
@@ -265,19 +161,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getBanIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, banId_);
-    }
-    if (!getReasonBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reason_);
-    }
-    if (bannedAt_ != 0L) {
+    if (ban_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, bannedAt_);
-    }
-    if (duration_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, duration_);
+        .computeMessageSize(1, getBan());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -294,14 +180,11 @@ private static final long serialVersionUID = 0L;
     }
     network.cow.mooapis.session.v1.StopCauseBanned other = (network.cow.mooapis.session.v1.StopCauseBanned) obj;
 
-    if (!getBanId()
-        .equals(other.getBanId())) return false;
-    if (!getReason()
-        .equals(other.getReason())) return false;
-    if (getBannedAt()
-        != other.getBannedAt()) return false;
-    if (getDuration()
-        != other.getDuration()) return false;
+    if (hasBan() != other.hasBan()) return false;
+    if (hasBan()) {
+      if (!getBan()
+          .equals(other.getBan())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -313,16 +196,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + BAN_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getBanId().hashCode();
-    hash = (37 * hash) + REASON_FIELD_NUMBER;
-    hash = (53 * hash) + getReason().hashCode();
-    hash = (37 * hash) + BANNED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getBannedAt());
-    hash = (37 * hash) + DURATION_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getDuration());
+    if (hasBan()) {
+      hash = (37 * hash) + BAN_FIELD_NUMBER;
+      hash = (53 * hash) + getBan().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -460,14 +337,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      banId_ = "";
-
-      reason_ = "";
-
-      bannedAt_ = 0L;
-
-      duration_ = 0L;
-
+      if (banBuilder_ == null) {
+        ban_ = null;
+      } else {
+        ban_ = null;
+        banBuilder_ = null;
+      }
       return this;
     }
 
@@ -494,10 +369,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public network.cow.mooapis.session.v1.StopCauseBanned buildPartial() {
       network.cow.mooapis.session.v1.StopCauseBanned result = new network.cow.mooapis.session.v1.StopCauseBanned(this);
-      result.banId_ = banId_;
-      result.reason_ = reason_;
-      result.bannedAt_ = bannedAt_;
-      result.duration_ = duration_;
+      if (banBuilder_ == null) {
+        result.ban_ = ban_;
+      } else {
+        result.ban_ = banBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -546,19 +422,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(network.cow.mooapis.session.v1.StopCauseBanned other) {
       if (other == network.cow.mooapis.session.v1.StopCauseBanned.getDefaultInstance()) return this;
-      if (!other.getBanId().isEmpty()) {
-        banId_ = other.banId_;
-        onChanged();
-      }
-      if (!other.getReason().isEmpty()) {
-        reason_ = other.reason_;
-        onChanged();
-      }
-      if (other.getBannedAt() != 0L) {
-        setBannedAt(other.getBannedAt());
-      }
-      if (other.getDuration() != 0L) {
-        setDuration(other.getDuration());
+      if (other.hasBan()) {
+        mergeBan(other.getBan());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -589,282 +454,159 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object banId_ = "";
+    private network.cow.mooapis.session.v1.Ban ban_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.Ban, network.cow.mooapis.session.v1.Ban.Builder, network.cow.mooapis.session.v1.BanOrBuilder> banBuilder_;
     /**
      * <pre>
-     * The unique identifier of the underlying ban.
+     * The underlying ban.
      * </pre>
      *
-     * <code>string ban_id = 1 [json_name = "banId"];</code>
-     * @return The banId.
+     * <code>.cow.session.v1.Ban ban = 1 [json_name = "ban"];</code>
+     * @return Whether the ban field is set.
      */
-    public java.lang.String getBanId() {
-      java.lang.Object ref = banId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        banId_ = s;
-        return s;
+    public boolean hasBan() {
+      return banBuilder_ != null || ban_ != null;
+    }
+    /**
+     * <pre>
+     * The underlying ban.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Ban ban = 1 [json_name = "ban"];</code>
+     * @return The ban.
+     */
+    public network.cow.mooapis.session.v1.Ban getBan() {
+      if (banBuilder_ == null) {
+        return ban_ == null ? network.cow.mooapis.session.v1.Ban.getDefaultInstance() : ban_;
       } else {
-        return (java.lang.String) ref;
+        return banBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * The unique identifier of the underlying ban.
+     * The underlying ban.
      * </pre>
      *
-     * <code>string ban_id = 1 [json_name = "banId"];</code>
-     * @return The bytes for banId.
+     * <code>.cow.session.v1.Ban ban = 1 [json_name = "ban"];</code>
      */
-    public com.google.protobuf.ByteString
-        getBanIdBytes() {
-      java.lang.Object ref = banId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        banId_ = b;
-        return b;
+    public Builder setBan(network.cow.mooapis.session.v1.Ban value) {
+      if (banBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ban_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        banBuilder_.setMessage(value);
       }
-    }
-    /**
-     * <pre>
-     * The unique identifier of the underlying ban.
-     * </pre>
-     *
-     * <code>string ban_id = 1 [json_name = "banId"];</code>
-     * @param value The banId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBanId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      banId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The unique identifier of the underlying ban.
-     * </pre>
-     *
-     * <code>string ban_id = 1 [json_name = "banId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBanId() {
-      
-      banId_ = getDefaultInstance().getBanId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The unique identifier of the underlying ban.
-     * </pre>
-     *
-     * <code>string ban_id = 1 [json_name = "banId"];</code>
-     * @param value The bytes for banId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBanIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      banId_ = value;
-      onChanged();
-      return this;
-    }
 
-    private java.lang.Object reason_ = "";
+      return this;
+    }
     /**
      * <pre>
-     * The reason of the ban.
+     * The underlying ban.
      * </pre>
      *
-     * <code>string reason = 2 [json_name = "reason"];</code>
-     * @return The reason.
+     * <code>.cow.session.v1.Ban ban = 1 [json_name = "ban"];</code>
      */
-    public java.lang.String getReason() {
-      java.lang.Object ref = reason_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        reason_ = s;
-        return s;
+    public Builder setBan(
+        network.cow.mooapis.session.v1.Ban.Builder builderForValue) {
+      if (banBuilder_ == null) {
+        ban_ = builderForValue.build();
+        onChanged();
       } else {
-        return (java.lang.String) ref;
+        banBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The underlying ban.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Ban ban = 1 [json_name = "ban"];</code>
+     */
+    public Builder mergeBan(network.cow.mooapis.session.v1.Ban value) {
+      if (banBuilder_ == null) {
+        if (ban_ != null) {
+          ban_ =
+            network.cow.mooapis.session.v1.Ban.newBuilder(ban_).mergeFrom(value).buildPartial();
+        } else {
+          ban_ = value;
+        }
+        onChanged();
+      } else {
+        banBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The underlying ban.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Ban ban = 1 [json_name = "ban"];</code>
+     */
+    public Builder clearBan() {
+      if (banBuilder_ == null) {
+        ban_ = null;
+        onChanged();
+      } else {
+        ban_ = null;
+        banBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The underlying ban.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Ban ban = 1 [json_name = "ban"];</code>
+     */
+    public network.cow.mooapis.session.v1.Ban.Builder getBanBuilder() {
+      
+      onChanged();
+      return getBanFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The underlying ban.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Ban ban = 1 [json_name = "ban"];</code>
+     */
+    public network.cow.mooapis.session.v1.BanOrBuilder getBanOrBuilder() {
+      if (banBuilder_ != null) {
+        return banBuilder_.getMessageOrBuilder();
+      } else {
+        return ban_ == null ?
+            network.cow.mooapis.session.v1.Ban.getDefaultInstance() : ban_;
       }
     }
     /**
      * <pre>
-     * The reason of the ban.
+     * The underlying ban.
      * </pre>
      *
-     * <code>string reason = 2 [json_name = "reason"];</code>
-     * @return The bytes for reason.
+     * <code>.cow.session.v1.Ban ban = 1 [json_name = "ban"];</code>
      */
-    public com.google.protobuf.ByteString
-        getReasonBytes() {
-      java.lang.Object ref = reason_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        reason_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.Ban, network.cow.mooapis.session.v1.Ban.Builder, network.cow.mooapis.session.v1.BanOrBuilder> 
+        getBanFieldBuilder() {
+      if (banBuilder_ == null) {
+        banBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            network.cow.mooapis.session.v1.Ban, network.cow.mooapis.session.v1.Ban.Builder, network.cow.mooapis.session.v1.BanOrBuilder>(
+                getBan(),
+                getParentForChildren(),
+                isClean());
+        ban_ = null;
       }
-    }
-    /**
-     * <pre>
-     * The reason of the ban.
-     * </pre>
-     *
-     * <code>string reason = 2 [json_name = "reason"];</code>
-     * @param value The reason to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReason(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      reason_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The reason of the ban.
-     * </pre>
-     *
-     * <code>string reason = 2 [json_name = "reason"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearReason() {
-      
-      reason_ = getDefaultInstance().getReason();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The reason of the ban.
-     * </pre>
-     *
-     * <code>string reason = 2 [json_name = "reason"];</code>
-     * @param value The bytes for reason to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReasonBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      reason_ = value;
-      onChanged();
-      return this;
-    }
-
-    private long bannedAt_ ;
-    /**
-     * <pre>
-     * The unix timestamp of the ban.
-     * </pre>
-     *
-     * <code>int64 banned_at = 3 [json_name = "bannedAt"];</code>
-     * @return The bannedAt.
-     */
-    @java.lang.Override
-    public long getBannedAt() {
-      return bannedAt_;
-    }
-    /**
-     * <pre>
-     * The unix timestamp of the ban.
-     * </pre>
-     *
-     * <code>int64 banned_at = 3 [json_name = "bannedAt"];</code>
-     * @param value The bannedAt to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBannedAt(long value) {
-      
-      bannedAt_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The unix timestamp of the ban.
-     * </pre>
-     *
-     * <code>int64 banned_at = 3 [json_name = "bannedAt"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBannedAt() {
-      
-      bannedAt_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long duration_ ;
-    /**
-     * <pre>
-     * The duration of this ban starting from the banned_at timestamp.
-     * </pre>
-     *
-     * <code>int64 duration = 4 [json_name = "duration"];</code>
-     * @return The duration.
-     */
-    @java.lang.Override
-    public long getDuration() {
-      return duration_;
-    }
-    /**
-     * <pre>
-     * The duration of this ban starting from the banned_at timestamp.
-     * </pre>
-     *
-     * <code>int64 duration = 4 [json_name = "duration"];</code>
-     * @param value The duration to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDuration(long value) {
-      
-      duration_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The duration of this ban starting from the banned_at timestamp.
-     * </pre>
-     *
-     * <code>int64 duration = 4 [json_name = "duration"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDuration() {
-      
-      duration_ = 0L;
-      onChanged();
-      return this;
+      return banBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

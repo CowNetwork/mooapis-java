@@ -20,7 +20,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private StopCauseBlacklisted() {
-    message_ = "";
   }
 
   @java.lang.Override
@@ -54,9 +53,16 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            network.cow.mooapis.session.v1.BlacklistEntry.Builder subBuilder = null;
+            if (entry_ != null) {
+              subBuilder = entry_.toBuilder();
+            }
+            entry_ = input.readMessage(network.cow.mooapis.session.v1.BlacklistEntry.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(entry_);
+              entry_ = subBuilder.buildPartial();
+            }
 
-            message_ = s;
             break;
           }
           default: {
@@ -91,50 +97,42 @@ private static final long serialVersionUID = 0L;
             network.cow.mooapis.session.v1.StopCauseBlacklisted.class, network.cow.mooapis.session.v1.StopCauseBlacklisted.Builder.class);
   }
 
-  public static final int MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object message_;
+  public static final int ENTRY_FIELD_NUMBER = 1;
+  private network.cow.mooapis.session.v1.BlacklistEntry entry_;
   /**
    * <pre>
-   * The blacklist message.
+   * The blacklist entry.
    * </pre>
    *
-   * <code>string message = 1 [json_name = "message"];</code>
-   * @return The message.
+   * <code>.cow.session.v1.BlacklistEntry entry = 1 [json_name = "entry"];</code>
+   * @return Whether the entry field is set.
    */
   @java.lang.Override
-  public java.lang.String getMessage() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      message_ = s;
-      return s;
-    }
+  public boolean hasEntry() {
+    return entry_ != null;
   }
   /**
    * <pre>
-   * The blacklist message.
+   * The blacklist entry.
    * </pre>
    *
-   * <code>string message = 1 [json_name = "message"];</code>
-   * @return The bytes for message.
+   * <code>.cow.session.v1.BlacklistEntry entry = 1 [json_name = "entry"];</code>
+   * @return The entry.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getMessageBytes() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      message_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public network.cow.mooapis.session.v1.BlacklistEntry getEntry() {
+    return entry_ == null ? network.cow.mooapis.session.v1.BlacklistEntry.getDefaultInstance() : entry_;
+  }
+  /**
+   * <pre>
+   * The blacklist entry.
+   * </pre>
+   *
+   * <code>.cow.session.v1.BlacklistEntry entry = 1 [json_name = "entry"];</code>
+   */
+  @java.lang.Override
+  public network.cow.mooapis.session.v1.BlacklistEntryOrBuilder getEntryOrBuilder() {
+    return getEntry();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -151,8 +149,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
+    if (entry_ != null) {
+      output.writeMessage(1, getEntry());
     }
     unknownFields.writeTo(output);
   }
@@ -163,8 +161,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
+    if (entry_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getEntry());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -181,8 +180,11 @@ private static final long serialVersionUID = 0L;
     }
     network.cow.mooapis.session.v1.StopCauseBlacklisted other = (network.cow.mooapis.session.v1.StopCauseBlacklisted) obj;
 
-    if (!getMessage()
-        .equals(other.getMessage())) return false;
+    if (hasEntry() != other.hasEntry()) return false;
+    if (hasEntry()) {
+      if (!getEntry()
+          .equals(other.getEntry())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -194,8 +196,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getMessage().hashCode();
+    if (hasEntry()) {
+      hash = (37 * hash) + ENTRY_FIELD_NUMBER;
+      hash = (53 * hash) + getEntry().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -333,8 +337,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      message_ = "";
-
+      if (entryBuilder_ == null) {
+        entry_ = null;
+      } else {
+        entry_ = null;
+        entryBuilder_ = null;
+      }
       return this;
     }
 
@@ -361,7 +369,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public network.cow.mooapis.session.v1.StopCauseBlacklisted buildPartial() {
       network.cow.mooapis.session.v1.StopCauseBlacklisted result = new network.cow.mooapis.session.v1.StopCauseBlacklisted(this);
-      result.message_ = message_;
+      if (entryBuilder_ == null) {
+        result.entry_ = entry_;
+      } else {
+        result.entry_ = entryBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -410,9 +422,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(network.cow.mooapis.session.v1.StopCauseBlacklisted other) {
       if (other == network.cow.mooapis.session.v1.StopCauseBlacklisted.getDefaultInstance()) return this;
-      if (!other.getMessage().isEmpty()) {
-        message_ = other.message_;
-        onChanged();
+      if (other.hasEntry()) {
+        mergeEntry(other.getEntry());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -443,100 +454,159 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object message_ = "";
+    private network.cow.mooapis.session.v1.BlacklistEntry entry_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.BlacklistEntry, network.cow.mooapis.session.v1.BlacklistEntry.Builder, network.cow.mooapis.session.v1.BlacklistEntryOrBuilder> entryBuilder_;
     /**
      * <pre>
-     * The blacklist message.
+     * The blacklist entry.
      * </pre>
      *
-     * <code>string message = 1 [json_name = "message"];</code>
-     * @return The message.
+     * <code>.cow.session.v1.BlacklistEntry entry = 1 [json_name = "entry"];</code>
+     * @return Whether the entry field is set.
      */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
+    public boolean hasEntry() {
+      return entryBuilder_ != null || entry_ != null;
+    }
+    /**
+     * <pre>
+     * The blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.BlacklistEntry entry = 1 [json_name = "entry"];</code>
+     * @return The entry.
+     */
+    public network.cow.mooapis.session.v1.BlacklistEntry getEntry() {
+      if (entryBuilder_ == null) {
+        return entry_ == null ? network.cow.mooapis.session.v1.BlacklistEntry.getDefaultInstance() : entry_;
       } else {
-        return (java.lang.String) ref;
+        return entryBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * The blacklist message.
+     * The blacklist entry.
      * </pre>
      *
-     * <code>string message = 1 [json_name = "message"];</code>
-     * @return The bytes for message.
+     * <code>.cow.session.v1.BlacklistEntry entry = 1 [json_name = "entry"];</code>
      */
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
+    public Builder setEntry(network.cow.mooapis.session.v1.BlacklistEntry value) {
+      if (entryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        entry_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        entryBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.BlacklistEntry entry = 1 [json_name = "entry"];</code>
+     */
+    public Builder setEntry(
+        network.cow.mooapis.session.v1.BlacklistEntry.Builder builderForValue) {
+      if (entryBuilder_ == null) {
+        entry_ = builderForValue.build();
+        onChanged();
+      } else {
+        entryBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.BlacklistEntry entry = 1 [json_name = "entry"];</code>
+     */
+    public Builder mergeEntry(network.cow.mooapis.session.v1.BlacklistEntry value) {
+      if (entryBuilder_ == null) {
+        if (entry_ != null) {
+          entry_ =
+            network.cow.mooapis.session.v1.BlacklistEntry.newBuilder(entry_).mergeFrom(value).buildPartial();
+        } else {
+          entry_ = value;
+        }
+        onChanged();
+      } else {
+        entryBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.BlacklistEntry entry = 1 [json_name = "entry"];</code>
+     */
+    public Builder clearEntry() {
+      if (entryBuilder_ == null) {
+        entry_ = null;
+        onChanged();
+      } else {
+        entry_ = null;
+        entryBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.BlacklistEntry entry = 1 [json_name = "entry"];</code>
+     */
+    public network.cow.mooapis.session.v1.BlacklistEntry.Builder getEntryBuilder() {
+      
+      onChanged();
+      return getEntryFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.BlacklistEntry entry = 1 [json_name = "entry"];</code>
+     */
+    public network.cow.mooapis.session.v1.BlacklistEntryOrBuilder getEntryOrBuilder() {
+      if (entryBuilder_ != null) {
+        return entryBuilder_.getMessageOrBuilder();
+      } else {
+        return entry_ == null ?
+            network.cow.mooapis.session.v1.BlacklistEntry.getDefaultInstance() : entry_;
       }
     }
     /**
      * <pre>
-     * The blacklist message.
+     * The blacklist entry.
      * </pre>
      *
-     * <code>string message = 1 [json_name = "message"];</code>
-     * @param value The message to set.
-     * @return This builder for chaining.
+     * <code>.cow.session.v1.BlacklistEntry entry = 1 [json_name = "entry"];</code>
      */
-    public Builder setMessage(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      message_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The blacklist message.
-     * </pre>
-     *
-     * <code>string message = 1 [json_name = "message"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMessage() {
-      
-      message_ = getDefaultInstance().getMessage();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The blacklist message.
-     * </pre>
-     *
-     * <code>string message = 1 [json_name = "message"];</code>
-     * @param value The bytes for message to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMessageBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      message_ = value;
-      onChanged();
-      return this;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.BlacklistEntry, network.cow.mooapis.session.v1.BlacklistEntry.Builder, network.cow.mooapis.session.v1.BlacklistEntryOrBuilder> 
+        getEntryFieldBuilder() {
+      if (entryBuilder_ == null) {
+        entryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            network.cow.mooapis.session.v1.BlacklistEntry, network.cow.mooapis.session.v1.BlacklistEntry.Builder, network.cow.mooapis.session.v1.BlacklistEntryOrBuilder>(
+                getEntry(),
+                getParentForChildren(),
+                isClean());
+        entry_ = null;
+      }
+      return entryBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
