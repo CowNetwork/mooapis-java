@@ -64,6 +64,21 @@ public final class UserServiceApi {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cow_user_v1_GetUserPlayersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_user_v1_User_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_user_v1_User_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_user_v1_Player_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_user_v1_Player_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_user_v1_PlayerIdentifier_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_user_v1_PlayerIdentifier_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -74,42 +89,46 @@ public final class UserServiceApi {
   static {
     java.lang.String[] descriptorData = {
       "\n\"cow/user/v1/user_service_api.proto\022\013co" +
-      "w.user.v1\032\027cow/user/v1/types.proto\"Q\n\020Ge" +
-      "tPlayerRequest\022=\n\nidentifier\030\001 \001(\0132\035.cow" +
-      ".user.v1.PlayerIdentifierR\nidentifier\"@\n" +
-      "\021GetPlayerResponse\022+\n\006player\030\001 \001(\0132\023.cow" +
-      ".user.v1.PlayerR\006player\"T\n\021GetPlayersReq" +
-      "uest\022?\n\013identifiers\030\001 \003(\0132\035.cow.user.v1." +
-      "PlayerIdentifierR\013identifiers\"C\n\022GetPlay" +
-      "ersResponse\022-\n\007players\030\001 \003(\0132\023.cow.user." +
-      "v1.PlayerR\007players\"U\n\024GetPlayerUserReque" +
-      "st\022=\n\nidentifier\030\001 \001(\0132\035.cow.user.v1.Pla" +
-      "yerIdentifierR\nidentifier\">\n\025GetPlayerUs" +
-      "erResponse\022%\n\004user\030\001 \001(\0132\021.cow.user.v1.U" +
-      "serR\004user\")\n\016GetUserRequest\022\027\n\007user_id\030\001" +
-      " \001(\tR\006userId\"8\n\017GetUserResponse\022%\n\004user\030" +
-      "\001 \001(\0132\021.cow.user.v1.UserR\004user\"0\n\025GetUse" +
-      "rPlayersRequest\022\027\n\007user_id\030\001 \001(\tR\006userId" +
-      "\"G\n\026GetUserPlayersResponse\022-\n\007players\030\002 " +
-      "\003(\0132\023.cow.user.v1.PlayerR\007players2\241\003\n\013Us" +
-      "erService\022J\n\tGetPlayer\022\035.cow.user.v1.Get" +
-      "PlayerRequest\032\036.cow.user.v1.GetPlayerRes" +
-      "ponse\022M\n\nGetPlayers\022\036.cow.user.v1.GetPla" +
-      "yersRequest\032\037.cow.user.v1.GetPlayersResp" +
-      "onse\022V\n\rGetPlayerUser\022!.cow.user.v1.GetP" +
-      "layerUserRequest\032\".cow.user.v1.GetPlayer" +
-      "UserResponse\022D\n\007GetUser\022\033.cow.user.v1.Ge" +
-      "tUserRequest\032\034.cow.user.v1.GetUserRespon" +
-      "se\022Y\n\016GetUserPlayers\022\".cow.user.v1.GetUs" +
-      "erPlayersRequest\032#.cow.user.v1.GetUserPl" +
-      "ayersResponseBC\n\033network.cow.mooapis.use" +
-      "r.v1P\001Z\"github.com/cownetwork/user/v1;us" +
-      "erb\006proto3"
+      "w.user.v1\"Q\n\020GetPlayerRequest\022=\n\nidentif" +
+      "ier\030\001 \001(\0132\035.cow.user.v1.PlayerIdentifier" +
+      "R\nidentifier\"@\n\021GetPlayerResponse\022+\n\006pla" +
+      "yer\030\001 \001(\0132\023.cow.user.v1.PlayerR\006player\"T" +
+      "\n\021GetPlayersRequest\022?\n\013identifiers\030\001 \003(\013" +
+      "2\035.cow.user.v1.PlayerIdentifierR\013identif" +
+      "iers\"C\n\022GetPlayersResponse\022-\n\007players\030\001 " +
+      "\003(\0132\023.cow.user.v1.PlayerR\007players\"U\n\024Get" +
+      "PlayerUserRequest\022=\n\nidentifier\030\001 \001(\0132\035." +
+      "cow.user.v1.PlayerIdentifierR\nidentifier" +
+      "\">\n\025GetPlayerUserResponse\022%\n\004user\030\001 \001(\0132" +
+      "\021.cow.user.v1.UserR\004user\")\n\016GetUserReque" +
+      "st\022\027\n\007user_id\030\001 \001(\tR\006userId\"8\n\017GetUserRe" +
+      "sponse\022%\n\004user\030\001 \001(\0132\021.cow.user.v1.UserR" +
+      "\004user\"0\n\025GetUserPlayersRequest\022\027\n\007user_i" +
+      "d\030\001 \001(\tR\006userId\"G\n\026GetUserPlayersRespons" +
+      "e\022-\n\007players\030\002 \003(\0132\023.cow.user.v1.PlayerR" +
+      "\007players\"\026\n\004User\022\016\n\002id\030\001 \001(\tR\002id\"~\n\006Play" +
+      "er\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014reference_id\030\002 \001(\t" +
+      "R\013referenceId\022%\n\016reference_type\030\003 \001(\tR\rr" +
+      "eferenceType\022\032\n\010username\030\004 \001(\tR\010username" +
+      "\"d\n\020PlayerIdentifier\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004" +
+      "type\030\002 \001(\tR\004type\022\037\n\010username\030\003 \001(\tH\000R\010us" +
+      "ername\210\001\001B\013\n\t_username2\241\003\n\013UserService\022J" +
+      "\n\tGetPlayer\022\035.cow.user.v1.GetPlayerReque" +
+      "st\032\036.cow.user.v1.GetPlayerResponse\022M\n\nGe" +
+      "tPlayers\022\036.cow.user.v1.GetPlayersRequest" +
+      "\032\037.cow.user.v1.GetPlayersResponse\022V\n\rGet" +
+      "PlayerUser\022!.cow.user.v1.GetPlayerUserRe" +
+      "quest\032\".cow.user.v1.GetPlayerUserRespons" +
+      "e\022D\n\007GetUser\022\033.cow.user.v1.GetUserReques" +
+      "t\032\034.cow.user.v1.GetUserResponse\022Y\n\016GetUs" +
+      "erPlayers\022\".cow.user.v1.GetUserPlayersRe" +
+      "quest\032#.cow.user.v1.GetUserPlayersRespon" +
+      "seBC\n\033network.cow.mooapis.user.v1P\001Z\"git" +
+      "hub.com/cownetwork/user/v1;userb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          network.cow.mooapis.user.v1.Types.getDescriptor(),
         });
     internal_static_cow_user_v1_GetPlayerRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -171,7 +190,24 @@ public final class UserServiceApi {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_GetUserPlayersResponse_descriptor,
         new java.lang.String[] { "Players", });
-    network.cow.mooapis.user.v1.Types.getDescriptor();
+    internal_static_cow_user_v1_User_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_cow_user_v1_User_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_user_v1_User_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_cow_user_v1_Player_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_cow_user_v1_Player_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_user_v1_Player_descriptor,
+        new java.lang.String[] { "Id", "ReferenceId", "ReferenceType", "Username", });
+    internal_static_cow_user_v1_PlayerIdentifier_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_cow_user_v1_PlayerIdentifier_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_user_v1_PlayerIdentifier_descriptor,
+        new java.lang.String[] { "Id", "Type", "Username", "Username", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
