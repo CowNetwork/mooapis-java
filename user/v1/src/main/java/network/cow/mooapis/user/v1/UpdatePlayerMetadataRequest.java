@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private UpdatePlayerMetadataRequest() {
     playerId_ = "";
+    username_ = "";
   }
 
   @java.lang.Override
@@ -56,6 +57,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            username_ = s;
+            break;
+          }
+          case 26: {
             network.cow.mooapis.user.v1.Metadata.Builder subBuilder = null;
             if (metadata_ != null) {
               subBuilder = metadata_.toBuilder();
@@ -138,10 +145,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int METADATA_FIELD_NUMBER = 2;
+  public static final int USERNAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object username_;
+  /**
+   * <code>string username = 2 [json_name = "username"];</code>
+   * @return The username.
+   */
+  @java.lang.Override
+  public java.lang.String getUsername() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      username_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string username = 2 [json_name = "username"];</code>
+   * @return The bytes for username.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUsernameBytes() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      username_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 3;
   private network.cow.mooapis.user.v1.Metadata metadata_;
   /**
-   * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+   * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
    * @return Whether the metadata field is set.
    */
   @java.lang.Override
@@ -149,7 +194,7 @@ private static final long serialVersionUID = 0L;
     return metadata_ != null;
   }
   /**
-   * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+   * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
    * @return The metadata.
    */
   @java.lang.Override
@@ -157,7 +202,7 @@ private static final long serialVersionUID = 0L;
     return metadata_ == null ? network.cow.mooapis.user.v1.Metadata.getDefaultInstance() : metadata_;
   }
   /**
-   * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+   * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
    */
   @java.lang.Override
   public network.cow.mooapis.user.v1.MetadataOrBuilder getMetadataOrBuilder() {
@@ -181,8 +226,11 @@ private static final long serialVersionUID = 0L;
     if (!getPlayerIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, playerId_);
     }
+    if (!getUsernameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
+    }
     if (metadata_ != null) {
-      output.writeMessage(2, getMetadata());
+      output.writeMessage(3, getMetadata());
     }
     unknownFields.writeTo(output);
   }
@@ -196,9 +244,12 @@ private static final long serialVersionUID = 0L;
     if (!getPlayerIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, playerId_);
     }
+    if (!getUsernameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
+    }
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getMetadata());
+        .computeMessageSize(3, getMetadata());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -217,6 +268,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getPlayerId()
         .equals(other.getPlayerId())) return false;
+    if (!getUsername()
+        .equals(other.getUsername())) return false;
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
       if (!getMetadata()
@@ -235,6 +288,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PLAYER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getPlayerId().hashCode();
+    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getUsername().hashCode();
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
@@ -374,6 +429,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       playerId_ = "";
 
+      username_ = "";
+
       if (metadataBuilder_ == null) {
         metadata_ = null;
       } else {
@@ -407,6 +464,7 @@ private static final long serialVersionUID = 0L;
     public network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest buildPartial() {
       network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest result = new network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest(this);
       result.playerId_ = playerId_;
+      result.username_ = username_;
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
       } else {
@@ -462,6 +520,10 @@ private static final long serialVersionUID = 0L;
       if (other == network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest.getDefaultInstance()) return this;
       if (!other.getPlayerId().isEmpty()) {
         playerId_ = other.playerId_;
+        onChanged();
+      }
+      if (!other.getUsername().isEmpty()) {
+        username_ = other.username_;
         onChanged();
       }
       if (other.hasMetadata()) {
@@ -572,18 +634,94 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object username_ = "";
+    /**
+     * <code>string username = 2 [json_name = "username"];</code>
+     * @return The username.
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string username = 2 [json_name = "username"];</code>
+     * @return The bytes for username.
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string username = 2 [json_name = "username"];</code>
+     * @param value The username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsername(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      username_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string username = 2 [json_name = "username"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUsername() {
+      
+      username_ = getDefaultInstance().getUsername();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string username = 2 [json_name = "username"];</code>
+     * @param value The bytes for username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsernameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      username_ = value;
+      onChanged();
+      return this;
+    }
+
     private network.cow.mooapis.user.v1.Metadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
         network.cow.mooapis.user.v1.Metadata, network.cow.mooapis.user.v1.Metadata.Builder, network.cow.mooapis.user.v1.MetadataOrBuilder> metadataBuilder_;
     /**
-     * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+     * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
     }
     /**
-     * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+     * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
      * @return The metadata.
      */
     public network.cow.mooapis.user.v1.Metadata getMetadata() {
@@ -594,7 +732,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+     * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
      */
     public Builder setMetadata(network.cow.mooapis.user.v1.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -610,7 +748,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+     * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
      */
     public Builder setMetadata(
         network.cow.mooapis.user.v1.Metadata.Builder builderForValue) {
@@ -624,7 +762,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+     * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
      */
     public Builder mergeMetadata(network.cow.mooapis.user.v1.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -642,7 +780,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+     * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
      */
     public Builder clearMetadata() {
       if (metadataBuilder_ == null) {
@@ -656,7 +794,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+     * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
      */
     public network.cow.mooapis.user.v1.Metadata.Builder getMetadataBuilder() {
       
@@ -664,7 +802,7 @@ private static final long serialVersionUID = 0L;
       return getMetadataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+     * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
      */
     public network.cow.mooapis.user.v1.MetadataOrBuilder getMetadataOrBuilder() {
       if (metadataBuilder_ != null) {
@@ -675,7 +813,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+     * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         network.cow.mooapis.user.v1.Metadata, network.cow.mooapis.user.v1.Metadata.Builder, network.cow.mooapis.user.v1.MetadataOrBuilder> 

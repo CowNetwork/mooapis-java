@@ -20,17 +20,29 @@ public interface UpdatePlayerMetadataRequestOrBuilder extends
       getPlayerIdBytes();
 
   /**
-   * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+   * <code>string username = 2 [json_name = "username"];</code>
+   * @return The username.
+   */
+  java.lang.String getUsername();
+  /**
+   * <code>string username = 2 [json_name = "username"];</code>
+   * @return The bytes for username.
+   */
+  com.google.protobuf.ByteString
+      getUsernameBytes();
+
+  /**
+   * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
-   * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+   * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
    * @return The metadata.
    */
   network.cow.mooapis.user.v1.Metadata getMetadata();
   /**
-   * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
+   * <code>.cow.user.v1.Metadata metadata = 3 [json_name = "metadata"];</code>
    */
   network.cow.mooapis.user.v1.MetadataOrBuilder getMetadataOrBuilder();
 }
