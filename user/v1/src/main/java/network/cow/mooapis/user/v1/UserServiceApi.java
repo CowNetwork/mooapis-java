@@ -138,51 +138,51 @@ public final class UserServiceApi {
       "ifiers\030\001 \003(\0132\035.cow.user.v1.PlayerIdentif" +
       "ierR\013identifiers\"C\n\022GetPlayersResponse\022-" +
       "\n\007players\030\001 \003(\0132\023.cow.user.v1.PlayerR\007pl" +
-      "ayers\"\211\001\n\033UpdatePlayerMetadataRequest\022\033\n" +
-      "\tplayer_id\030\001 \001(\tR\010playerId\022\032\n\010username\030\002" +
-      " \001(\tR\010username\0221\n\010metadata\030\003 \001(\0132\025.cow.u" +
-      "ser.v1.MetadataR\010metadata\"K\n\034UpdatePlaye" +
-      "rMetadataResponse\022+\n\006player\030\001 \001(\0132\023.cow." +
-      "user.v1.PlayerR\006player\")\n\016GetUserRequest" +
-      "\022\027\n\007user_id\030\001 \001(\tR\006userId\"8\n\017GetUserResp" +
-      "onse\022%\n\004user\030\001 \001(\0132\021.cow.user.v1.UserR\004u" +
-      "ser\"0\n\025GetUserPlayersRequest\022\027\n\007user_id\030" +
-      "\001 \001(\tR\006userId\"G\n\026GetUserPlayersResponse\022" +
-      "-\n\007players\030\001 \003(\0132\023.cow.user.v1.PlayerR\007p" +
-      "layers\"g\n\031UpdateUserMetadataRequest\022\027\n\007u" +
-      "ser_id\030\001 \001(\tR\006userId\0221\n\010metadata\030\002 \001(\0132\025" +
-      ".cow.user.v1.MetadataR\010metadata\"C\n\032Updat" +
-      "eUserMetadataResponse\022%\n\004user\030\001 \001(\0132\021.co" +
-      "w.user.v1.UserR\004user\"I\n\004User\022\016\n\002id\030\001 \001(\t" +
-      "R\002id\0221\n\010metadata\030\002 \001(\0132\025.cow.user.v1.Met" +
-      "adataR\010metadata\"\312\001\n\006Player\022\016\n\002id\030\001 \001(\tR\002" +
-      "id\022!\n\014reference_id\030\002 \001(\tR\013referenceId\022%\n" +
-      "\016reference_type\030\003 \001(\tR\rreferenceType\022\032\n\010" +
-      "username\030\004 \001(\tR\010username\022\027\n\007user_id\030\005 \001(" +
-      "\tR\006userId\0221\n\010metadata\030\006 \001(\0132\025.cow.user.v" +
-      "1.MetadataR\010metadata\"6\n\020PlayerIdentifier" +
-      "\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004type\030\002 \001(\tR\004type\"\"\n\010" +
-      "Metadata\022\026\n\006locale\030\001 \001(\tR\006locale2\320\005\n\013Use" +
-      "rService\022J\n\tGetPlayer\022\035.cow.user.v1.GetP" +
-      "layerRequest\032\036.cow.user.v1.GetPlayerResp" +
-      "onse\022V\n\rGetPlayerById\022!.cow.user.v1.GetP" +
-      "layerByIdRequest\032\".cow.user.v1.GetPlayer" +
-      "ByIdResponse\022M\n\nGetPlayers\022\036.cow.user.v1" +
-      ".GetPlayersRequest\032\037.cow.user.v1.GetPlay" +
-      "ersResponse\022Y\n\016GetPlayersById\022\".cow.user" +
-      ".v1.GetPlayersByIdRequest\032#.cow.user.v1." +
-      "GetPlayersByIdResponse\022D\n\007GetUser\022\033.cow." +
-      "user.v1.GetUserRequest\032\034.cow.user.v1.Get" +
-      "UserResponse\022Y\n\016GetUserPlayers\022\".cow.use" +
-      "r.v1.GetUserPlayersRequest\032#.cow.user.v1" +
-      ".GetUserPlayersResponse\022k\n\024UpdatePlayerM" +
-      "etadata\022(.cow.user.v1.UpdatePlayerMetada" +
-      "taRequest\032).cow.user.v1.UpdatePlayerMeta" +
-      "dataResponse\022e\n\022UpdateUserMetadata\022&.cow" +
-      ".user.v1.UpdateUserMetadataRequest\032\'.cow" +
-      ".user.v1.UpdateUserMetadataResponseBC\n\033n" +
-      "etwork.cow.mooapis.user.v1P\001Z\"github.com" +
-      "/cownetwork/user/v1;userb\006proto3"
+      "ayers\"m\n\033UpdatePlayerMetadataRequest\022\033\n\t" +
+      "player_id\030\001 \001(\tR\010playerId\0221\n\010metadata\030\002 " +
+      "\001(\0132\025.cow.user.v1.MetadataR\010metadata\"K\n\034" +
+      "UpdatePlayerMetadataResponse\022+\n\006player\030\001" +
+      " \001(\0132\023.cow.user.v1.PlayerR\006player\")\n\016Get" +
+      "UserRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"8\n\017" +
+      "GetUserResponse\022%\n\004user\030\001 \001(\0132\021.cow.user" +
+      ".v1.UserR\004user\"0\n\025GetUserPlayersRequest\022" +
+      "\027\n\007user_id\030\001 \001(\tR\006userId\"G\n\026GetUserPlaye" +
+      "rsResponse\022-\n\007players\030\001 \003(\0132\023.cow.user.v" +
+      "1.PlayerR\007players\"g\n\031UpdateUserMetadataR" +
+      "equest\022\027\n\007user_id\030\001 \001(\tR\006userId\0221\n\010metad" +
+      "ata\030\002 \001(\0132\025.cow.user.v1.MetadataR\010metada" +
+      "ta\"C\n\032UpdateUserMetadataResponse\022%\n\004user" +
+      "\030\001 \001(\0132\021.cow.user.v1.UserR\004user\"I\n\004User\022" +
+      "\016\n\002id\030\001 \001(\tR\002id\0221\n\010metadata\030\002 \001(\0132\025.cow." +
+      "user.v1.MetadataR\010metadata\"\256\001\n\006Player\022\016\n" +
+      "\002id\030\001 \001(\tR\002id\022!\n\014reference_id\030\002 \001(\tR\013ref" +
+      "erenceId\022%\n\016reference_type\030\003 \001(\tR\rrefere" +
+      "nceType\022\027\n\007user_id\030\004 \001(\tR\006userId\0221\n\010meta" +
+      "data\030\005 \001(\0132\025.cow.user.v1.MetadataR\010metad" +
+      "ata\"6\n\020PlayerIdentifier\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "\022\n\004type\030\002 \001(\tR\004type\"P\n\010Metadata\022\037\n\010usern" +
+      "ame\030\001 \001(\tH\000R\010username\210\001\001\022\026\n\006locale\030\002 \001(\t" +
+      "R\006localeB\013\n\t_username2\320\005\n\013UserService\022J\n" +
+      "\tGetPlayer\022\035.cow.user.v1.GetPlayerReques" +
+      "t\032\036.cow.user.v1.GetPlayerResponse\022V\n\rGet" +
+      "PlayerById\022!.cow.user.v1.GetPlayerByIdRe" +
+      "quest\032\".cow.user.v1.GetPlayerByIdRespons" +
+      "e\022M\n\nGetPlayers\022\036.cow.user.v1.GetPlayers" +
+      "Request\032\037.cow.user.v1.GetPlayersResponse" +
+      "\022Y\n\016GetPlayersById\022\".cow.user.v1.GetPlay" +
+      "ersByIdRequest\032#.cow.user.v1.GetPlayersB" +
+      "yIdResponse\022D\n\007GetUser\022\033.cow.user.v1.Get" +
+      "UserRequest\032\034.cow.user.v1.GetUserRespons" +
+      "e\022Y\n\016GetUserPlayers\022\".cow.user.v1.GetUse" +
+      "rPlayersRequest\032#.cow.user.v1.GetUserPla" +
+      "yersResponse\022k\n\024UpdatePlayerMetadata\022(.c" +
+      "ow.user.v1.UpdatePlayerMetadataRequest\032)" +
+      ".cow.user.v1.UpdatePlayerMetadataRespons" +
+      "e\022e\n\022UpdateUserMetadata\022&.cow.user.v1.Up" +
+      "dateUserMetadataRequest\032\'.cow.user.v1.Up" +
+      "dateUserMetadataResponseBC\n\033network.cow." +
+      "mooapis.user.v1P\001Z\"github.com/cownetwork" +
+      "/user/v1;userb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -241,7 +241,7 @@ public final class UserServiceApi {
     internal_static_cow_user_v1_UpdatePlayerMetadataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_UpdatePlayerMetadataRequest_descriptor,
-        new java.lang.String[] { "PlayerId", "Username", "Metadata", });
+        new java.lang.String[] { "PlayerId", "Metadata", });
     internal_static_cow_user_v1_UpdatePlayerMetadataResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_cow_user_v1_UpdatePlayerMetadataResponse_fieldAccessorTable = new
@@ -295,7 +295,7 @@ public final class UserServiceApi {
     internal_static_cow_user_v1_Player_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_Player_descriptor,
-        new java.lang.String[] { "Id", "ReferenceId", "ReferenceType", "Username", "UserId", "Metadata", });
+        new java.lang.String[] { "Id", "ReferenceId", "ReferenceType", "UserId", "Metadata", });
     internal_static_cow_user_v1_PlayerIdentifier_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_cow_user_v1_PlayerIdentifier_fieldAccessorTable = new
@@ -307,7 +307,7 @@ public final class UserServiceApi {
     internal_static_cow_user_v1_Metadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_Metadata_descriptor,
-        new java.lang.String[] { "Locale", });
+        new java.lang.String[] { "Username", "Locale", "Username", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

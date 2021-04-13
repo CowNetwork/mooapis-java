@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Metadata() {
+    username_ = "";
     locale_ = "";
   }
 
@@ -39,6 +40,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -50,6 +52,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+            bitField0_ |= 0x00000001;
+            username_ = s;
+            break;
+          }
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             locale_ = s;
@@ -87,14 +95,73 @@ private static final long serialVersionUID = 0L;
             network.cow.mooapis.user.v1.Metadata.class, network.cow.mooapis.user.v1.Metadata.Builder.class);
   }
 
-  public static final int LOCALE_FIELD_NUMBER = 1;
+  private int bitField0_;
+  public static final int USERNAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object username_;
+  /**
+   * <pre>
+   * The username associated to this user/player.
+   * </pre>
+   *
+   * <code>string username = 1 [json_name = "username"];</code>
+   * @return Whether the username field is set.
+   */
+  @java.lang.Override
+  public boolean hasUsername() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * The username associated to this user/player.
+   * </pre>
+   *
+   * <code>string username = 1 [json_name = "username"];</code>
+   * @return The username.
+   */
+  @java.lang.Override
+  public java.lang.String getUsername() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      username_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The username associated to this user/player.
+   * </pre>
+   *
+   * <code>string username = 1 [json_name = "username"];</code>
+   * @return The bytes for username.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUsernameBytes() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      username_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LOCALE_FIELD_NUMBER = 2;
   private volatile java.lang.Object locale_;
   /**
    * <pre>
    * The locale this player uses.
    * </pre>
    *
-   * <code>string locale = 1 [json_name = "locale"];</code>
+   * <code>string locale = 2 [json_name = "locale"];</code>
    * @return The locale.
    */
   @java.lang.Override
@@ -115,7 +182,7 @@ private static final long serialVersionUID = 0L;
    * The locale this player uses.
    * </pre>
    *
-   * <code>string locale = 1 [json_name = "locale"];</code>
+   * <code>string locale = 2 [json_name = "locale"];</code>
    * @return The bytes for locale.
    */
   @java.lang.Override
@@ -147,8 +214,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
+    }
     if (!getLocaleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, locale_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, locale_);
     }
     unknownFields.writeTo(output);
   }
@@ -159,8 +229,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
+    }
     if (!getLocaleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, locale_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, locale_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -177,6 +250,11 @@ private static final long serialVersionUID = 0L;
     }
     network.cow.mooapis.user.v1.Metadata other = (network.cow.mooapis.user.v1.Metadata) obj;
 
+    if (hasUsername() != other.hasUsername()) return false;
+    if (hasUsername()) {
+      if (!getUsername()
+          .equals(other.getUsername())) return false;
+    }
     if (!getLocale()
         .equals(other.getLocale())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -190,6 +268,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasUsername()) {
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
+    }
     hash = (37 * hash) + LOCALE_FIELD_NUMBER;
     hash = (53 * hash) + getLocale().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -325,6 +407,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      username_ = "";
+      bitField0_ = (bitField0_ & ~0x00000001);
       locale_ = "";
 
       return this;
@@ -353,7 +437,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public network.cow.mooapis.user.v1.Metadata buildPartial() {
       network.cow.mooapis.user.v1.Metadata result = new network.cow.mooapis.user.v1.Metadata(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
+      result.username_ = username_;
       result.locale_ = locale_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -402,6 +493,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(network.cow.mooapis.user.v1.Metadata other) {
       if (other == network.cow.mooapis.user.v1.Metadata.getDefaultInstance()) return this;
+      if (other.hasUsername()) {
+        bitField0_ |= 0x00000001;
+        username_ = other.username_;
+        onChanged();
+      }
       if (!other.getLocale().isEmpty()) {
         locale_ = other.locale_;
         onChanged();
@@ -434,6 +530,114 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
+
+    private java.lang.Object username_ = "";
+    /**
+     * <pre>
+     * The username associated to this user/player.
+     * </pre>
+     *
+     * <code>string username = 1 [json_name = "username"];</code>
+     * @return Whether the username field is set.
+     */
+    public boolean hasUsername() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * The username associated to this user/player.
+     * </pre>
+     *
+     * <code>string username = 1 [json_name = "username"];</code>
+     * @return The username.
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The username associated to this user/player.
+     * </pre>
+     *
+     * <code>string username = 1 [json_name = "username"];</code>
+     * @return The bytes for username.
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The username associated to this user/player.
+     * </pre>
+     *
+     * <code>string username = 1 [json_name = "username"];</code>
+     * @param value The username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsername(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+      username_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The username associated to this user/player.
+     * </pre>
+     *
+     * <code>string username = 1 [json_name = "username"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUsername() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      username_ = getDefaultInstance().getUsername();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The username associated to this user/player.
+     * </pre>
+     *
+     * <code>string username = 1 [json_name = "username"];</code>
+     * @param value The bytes for username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsernameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      username_ = value;
+      onChanged();
+      return this;
+    }
 
     private java.lang.Object locale_ = "";
     /**
@@ -441,7 +645,7 @@ private static final long serialVersionUID = 0L;
      * The locale this player uses.
      * </pre>
      *
-     * <code>string locale = 1 [json_name = "locale"];</code>
+     * <code>string locale = 2 [json_name = "locale"];</code>
      * @return The locale.
      */
     public java.lang.String getLocale() {
@@ -461,7 +665,7 @@ private static final long serialVersionUID = 0L;
      * The locale this player uses.
      * </pre>
      *
-     * <code>string locale = 1 [json_name = "locale"];</code>
+     * <code>string locale = 2 [json_name = "locale"];</code>
      * @return The bytes for locale.
      */
     public com.google.protobuf.ByteString
@@ -482,7 +686,7 @@ private static final long serialVersionUID = 0L;
      * The locale this player uses.
      * </pre>
      *
-     * <code>string locale = 1 [json_name = "locale"];</code>
+     * <code>string locale = 2 [json_name = "locale"];</code>
      * @param value The locale to set.
      * @return This builder for chaining.
      */
@@ -501,7 +705,7 @@ private static final long serialVersionUID = 0L;
      * The locale this player uses.
      * </pre>
      *
-     * <code>string locale = 1 [json_name = "locale"];</code>
+     * <code>string locale = 2 [json_name = "locale"];</code>
      * @return This builder for chaining.
      */
     public Builder clearLocale() {
@@ -515,7 +719,7 @@ private static final long serialVersionUID = 0L;
      * The locale this player uses.
      * </pre>
      *
-     * <code>string locale = 1 [json_name = "locale"];</code>
+     * <code>string locale = 2 [json_name = "locale"];</code>
      * @param value The bytes for locale to set.
      * @return This builder for chaining.
      */

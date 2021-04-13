@@ -69,30 +69,10 @@ public interface PlayerOrBuilder extends
 
   /**
    * <pre>
-   * e.g. minecraft username
-   * </pre>
-   *
-   * <code>string username = 4 [json_name = "username"];</code>
-   * @return The username.
-   */
-  java.lang.String getUsername();
-  /**
-   * <pre>
-   * e.g. minecraft username
-   * </pre>
-   *
-   * <code>string username = 4 [json_name = "username"];</code>
-   * @return The bytes for username.
-   */
-  com.google.protobuf.ByteString
-      getUsernameBytes();
-
-  /**
-   * <pre>
    * The underlying user id.
    * </pre>
    *
-   * <code>string user_id = 5 [json_name = "userId"];</code>
+   * <code>string user_id = 4 [json_name = "userId"];</code>
    * @return The userId.
    */
   java.lang.String getUserId();
@@ -101,7 +81,7 @@ public interface PlayerOrBuilder extends
    * The underlying user id.
    * </pre>
    *
-   * <code>string user_id = 5 [json_name = "userId"];</code>
+   * <code>string user_id = 4 [json_name = "userId"];</code>
    * @return The bytes for userId.
    */
   com.google.protobuf.ByteString
@@ -112,7 +92,7 @@ public interface PlayerOrBuilder extends
    * The metadata assigned to the player.
    * </pre>
    *
-   * <code>.cow.user.v1.Metadata metadata = 6 [json_name = "metadata"];</code>
+   * <code>.cow.user.v1.Metadata metadata = 5 [json_name = "metadata"];</code>
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
@@ -121,7 +101,7 @@ public interface PlayerOrBuilder extends
    * The metadata assigned to the player.
    * </pre>
    *
-   * <code>.cow.user.v1.Metadata metadata = 6 [json_name = "metadata"];</code>
+   * <code>.cow.user.v1.Metadata metadata = 5 [json_name = "metadata"];</code>
    * @return The metadata.
    */
   network.cow.mooapis.user.v1.Metadata getMetadata();
@@ -130,7 +110,7 @@ public interface PlayerOrBuilder extends
    * The metadata assigned to the player.
    * </pre>
    *
-   * <code>.cow.user.v1.Metadata metadata = 6 [json_name = "metadata"];</code>
+   * <code>.cow.user.v1.Metadata metadata = 5 [json_name = "metadata"];</code>
    */
   network.cow.mooapis.user.v1.MetadataOrBuilder getMetadataOrBuilder();
 }

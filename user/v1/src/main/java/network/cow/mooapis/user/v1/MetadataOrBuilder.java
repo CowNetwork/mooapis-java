@@ -9,10 +9,39 @@ public interface MetadataOrBuilder extends
 
   /**
    * <pre>
+   * The username associated to this user/player.
+   * </pre>
+   *
+   * <code>string username = 1 [json_name = "username"];</code>
+   * @return Whether the username field is set.
+   */
+  boolean hasUsername();
+  /**
+   * <pre>
+   * The username associated to this user/player.
+   * </pre>
+   *
+   * <code>string username = 1 [json_name = "username"];</code>
+   * @return The username.
+   */
+  java.lang.String getUsername();
+  /**
+   * <pre>
+   * The username associated to this user/player.
+   * </pre>
+   *
+   * <code>string username = 1 [json_name = "username"];</code>
+   * @return The bytes for username.
+   */
+  com.google.protobuf.ByteString
+      getUsernameBytes();
+
+  /**
+   * <pre>
    * The locale this player uses.
    * </pre>
    *
-   * <code>string locale = 1 [json_name = "locale"];</code>
+   * <code>string locale = 2 [json_name = "locale"];</code>
    * @return The locale.
    */
   java.lang.String getLocale();
@@ -21,7 +50,7 @@ public interface MetadataOrBuilder extends
    * The locale this player uses.
    * </pre>
    *
-   * <code>string locale = 1 [json_name = "locale"];</code>
+   * <code>string locale = 2 [json_name = "locale"];</code>
    * @return The bytes for locale.
    */
   com.google.protobuf.ByteString
