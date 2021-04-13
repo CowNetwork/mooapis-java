@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetPlayersByIdResponse() {
+    players_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -38,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -49,16 +51,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            network.cow.mooapis.user.v1.Player.Builder subBuilder = null;
-            if (player_ != null) {
-              subBuilder = player_.toBuilder();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              players_ = new java.util.ArrayList<network.cow.mooapis.user.v1.Player>();
+              mutable_bitField0_ |= 0x00000001;
             }
-            player_ = input.readMessage(network.cow.mooapis.user.v1.Player.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(player_);
-              player_ = subBuilder.buildPartial();
-            }
-
+            players_.add(
+                input.readMessage(network.cow.mooapis.user.v1.Player.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -76,6 +74,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        players_ = java.util.Collections.unmodifiableList(players_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -93,30 +94,44 @@ private static final long serialVersionUID = 0L;
             network.cow.mooapis.user.v1.GetPlayersByIdResponse.class, network.cow.mooapis.user.v1.GetPlayersByIdResponse.Builder.class);
   }
 
-  public static final int PLAYER_FIELD_NUMBER = 1;
-  private network.cow.mooapis.user.v1.Player player_;
+  public static final int PLAYERS_FIELD_NUMBER = 1;
+  private java.util.List<network.cow.mooapis.user.v1.Player> players_;
   /**
-   * <code>.cow.user.v1.Player player = 1 [json_name = "player"];</code>
-   * @return Whether the player field is set.
+   * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
    */
   @java.lang.Override
-  public boolean hasPlayer() {
-    return player_ != null;
+  public java.util.List<network.cow.mooapis.user.v1.Player> getPlayersList() {
+    return players_;
   }
   /**
-   * <code>.cow.user.v1.Player player = 1 [json_name = "player"];</code>
-   * @return The player.
+   * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
    */
   @java.lang.Override
-  public network.cow.mooapis.user.v1.Player getPlayer() {
-    return player_ == null ? network.cow.mooapis.user.v1.Player.getDefaultInstance() : player_;
+  public java.util.List<? extends network.cow.mooapis.user.v1.PlayerOrBuilder> 
+      getPlayersOrBuilderList() {
+    return players_;
   }
   /**
-   * <code>.cow.user.v1.Player player = 1 [json_name = "player"];</code>
+   * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
    */
   @java.lang.Override
-  public network.cow.mooapis.user.v1.PlayerOrBuilder getPlayerOrBuilder() {
-    return getPlayer();
+  public int getPlayersCount() {
+    return players_.size();
+  }
+  /**
+   * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
+   */
+  @java.lang.Override
+  public network.cow.mooapis.user.v1.Player getPlayers(int index) {
+    return players_.get(index);
+  }
+  /**
+   * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
+   */
+  @java.lang.Override
+  public network.cow.mooapis.user.v1.PlayerOrBuilder getPlayersOrBuilder(
+      int index) {
+    return players_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +148,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (player_ != null) {
-      output.writeMessage(1, getPlayer());
+    for (int i = 0; i < players_.size(); i++) {
+      output.writeMessage(1, players_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +160,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (player_ != null) {
+    for (int i = 0; i < players_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getPlayer());
+        .computeMessageSize(1, players_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -164,11 +179,8 @@ private static final long serialVersionUID = 0L;
     }
     network.cow.mooapis.user.v1.GetPlayersByIdResponse other = (network.cow.mooapis.user.v1.GetPlayersByIdResponse) obj;
 
-    if (hasPlayer() != other.hasPlayer()) return false;
-    if (hasPlayer()) {
-      if (!getPlayer()
-          .equals(other.getPlayer())) return false;
-    }
+    if (!getPlayersList()
+        .equals(other.getPlayersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,9 +192,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasPlayer()) {
-      hash = (37 * hash) + PLAYER_FIELD_NUMBER;
-      hash = (53 * hash) + getPlayer().hashCode();
+    if (getPlayersCount() > 0) {
+      hash = (37 * hash) + PLAYERS_FIELD_NUMBER;
+      hash = (53 * hash) + getPlayersList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -312,16 +324,17 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getPlayersFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (playerBuilder_ == null) {
-        player_ = null;
+      if (playersBuilder_ == null) {
+        players_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        player_ = null;
-        playerBuilder_ = null;
+        playersBuilder_.clear();
       }
       return this;
     }
@@ -349,10 +362,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public network.cow.mooapis.user.v1.GetPlayersByIdResponse buildPartial() {
       network.cow.mooapis.user.v1.GetPlayersByIdResponse result = new network.cow.mooapis.user.v1.GetPlayersByIdResponse(this);
-      if (playerBuilder_ == null) {
-        result.player_ = player_;
+      int from_bitField0_ = bitField0_;
+      if (playersBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          players_ = java.util.Collections.unmodifiableList(players_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.players_ = players_;
       } else {
-        result.player_ = playerBuilder_.build();
+        result.players_ = playersBuilder_.build();
       }
       onBuilt();
       return result;
@@ -402,8 +420,31 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(network.cow.mooapis.user.v1.GetPlayersByIdResponse other) {
       if (other == network.cow.mooapis.user.v1.GetPlayersByIdResponse.getDefaultInstance()) return this;
-      if (other.hasPlayer()) {
-        mergePlayer(other.getPlayer());
+      if (playersBuilder_ == null) {
+        if (!other.players_.isEmpty()) {
+          if (players_.isEmpty()) {
+            players_ = other.players_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensurePlayersIsMutable();
+            players_.addAll(other.players_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.players_.isEmpty()) {
+          if (playersBuilder_.isEmpty()) {
+            playersBuilder_.dispose();
+            playersBuilder_ = null;
+            players_ = other.players_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            playersBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getPlayersFieldBuilder() : null;
+          } else {
+            playersBuilder_.addAllMessages(other.players_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -433,124 +474,246 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
-    private network.cow.mooapis.user.v1.Player player_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        network.cow.mooapis.user.v1.Player, network.cow.mooapis.user.v1.Player.Builder, network.cow.mooapis.user.v1.PlayerOrBuilder> playerBuilder_;
-    /**
-     * <code>.cow.user.v1.Player player = 1 [json_name = "player"];</code>
-     * @return Whether the player field is set.
-     */
-    public boolean hasPlayer() {
-      return playerBuilder_ != null || player_ != null;
+    private java.util.List<network.cow.mooapis.user.v1.Player> players_ =
+      java.util.Collections.emptyList();
+    private void ensurePlayersIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        players_ = new java.util.ArrayList<network.cow.mooapis.user.v1.Player>(players_);
+        bitField0_ |= 0x00000001;
+       }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        network.cow.mooapis.user.v1.Player, network.cow.mooapis.user.v1.Player.Builder, network.cow.mooapis.user.v1.PlayerOrBuilder> playersBuilder_;
+
     /**
-     * <code>.cow.user.v1.Player player = 1 [json_name = "player"];</code>
-     * @return The player.
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
      */
-    public network.cow.mooapis.user.v1.Player getPlayer() {
-      if (playerBuilder_ == null) {
-        return player_ == null ? network.cow.mooapis.user.v1.Player.getDefaultInstance() : player_;
+    public java.util.List<network.cow.mooapis.user.v1.Player> getPlayersList() {
+      if (playersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(players_);
       } else {
-        return playerBuilder_.getMessage();
+        return playersBuilder_.getMessageList();
       }
     }
     /**
-     * <code>.cow.user.v1.Player player = 1 [json_name = "player"];</code>
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
      */
-    public Builder setPlayer(network.cow.mooapis.user.v1.Player value) {
-      if (playerBuilder_ == null) {
+    public int getPlayersCount() {
+      if (playersBuilder_ == null) {
+        return players_.size();
+      } else {
+        return playersBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
+     */
+    public network.cow.mooapis.user.v1.Player getPlayers(int index) {
+      if (playersBuilder_ == null) {
+        return players_.get(index);
+      } else {
+        return playersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
+     */
+    public Builder setPlayers(
+        int index, network.cow.mooapis.user.v1.Player value) {
+      if (playersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        player_ = value;
+        ensurePlayersIsMutable();
+        players_.set(index, value);
         onChanged();
       } else {
-        playerBuilder_.setMessage(value);
+        playersBuilder_.setMessage(index, value);
       }
-
       return this;
     }
     /**
-     * <code>.cow.user.v1.Player player = 1 [json_name = "player"];</code>
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
      */
-    public Builder setPlayer(
-        network.cow.mooapis.user.v1.Player.Builder builderForValue) {
-      if (playerBuilder_ == null) {
-        player_ = builderForValue.build();
+    public Builder setPlayers(
+        int index, network.cow.mooapis.user.v1.Player.Builder builderForValue) {
+      if (playersBuilder_ == null) {
+        ensurePlayersIsMutable();
+        players_.set(index, builderForValue.build());
         onChanged();
       } else {
-        playerBuilder_.setMessage(builderForValue.build());
+        playersBuilder_.setMessage(index, builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.cow.user.v1.Player player = 1 [json_name = "player"];</code>
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
      */
-    public Builder mergePlayer(network.cow.mooapis.user.v1.Player value) {
-      if (playerBuilder_ == null) {
-        if (player_ != null) {
-          player_ =
-            network.cow.mooapis.user.v1.Player.newBuilder(player_).mergeFrom(value).buildPartial();
-        } else {
-          player_ = value;
+    public Builder addPlayers(network.cow.mooapis.user.v1.Player value) {
+      if (playersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
         }
+        ensurePlayersIsMutable();
+        players_.add(value);
         onChanged();
       } else {
-        playerBuilder_.mergeFrom(value);
+        playersBuilder_.addMessage(value);
       }
-
       return this;
     }
     /**
-     * <code>.cow.user.v1.Player player = 1 [json_name = "player"];</code>
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
      */
-    public Builder clearPlayer() {
-      if (playerBuilder_ == null) {
-        player_ = null;
+    public Builder addPlayers(
+        int index, network.cow.mooapis.user.v1.Player value) {
+      if (playersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePlayersIsMutable();
+        players_.add(index, value);
         onChanged();
       } else {
-        player_ = null;
-        playerBuilder_ = null;
+        playersBuilder_.addMessage(index, value);
       }
-
       return this;
     }
     /**
-     * <code>.cow.user.v1.Player player = 1 [json_name = "player"];</code>
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
      */
-    public network.cow.mooapis.user.v1.Player.Builder getPlayerBuilder() {
-      
-      onChanged();
-      return getPlayerFieldBuilder().getBuilder();
+    public Builder addPlayers(
+        network.cow.mooapis.user.v1.Player.Builder builderForValue) {
+      if (playersBuilder_ == null) {
+        ensurePlayersIsMutable();
+        players_.add(builderForValue.build());
+        onChanged();
+      } else {
+        playersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
     }
     /**
-     * <code>.cow.user.v1.Player player = 1 [json_name = "player"];</code>
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
      */
-    public network.cow.mooapis.user.v1.PlayerOrBuilder getPlayerOrBuilder() {
-      if (playerBuilder_ != null) {
-        return playerBuilder_.getMessageOrBuilder();
+    public Builder addPlayers(
+        int index, network.cow.mooapis.user.v1.Player.Builder builderForValue) {
+      if (playersBuilder_ == null) {
+        ensurePlayersIsMutable();
+        players_.add(index, builderForValue.build());
+        onChanged();
       } else {
-        return player_ == null ?
-            network.cow.mooapis.user.v1.Player.getDefaultInstance() : player_;
+        playersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
+     */
+    public Builder addAllPlayers(
+        java.lang.Iterable<? extends network.cow.mooapis.user.v1.Player> values) {
+      if (playersBuilder_ == null) {
+        ensurePlayersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, players_);
+        onChanged();
+      } else {
+        playersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
+     */
+    public Builder clearPlayers() {
+      if (playersBuilder_ == null) {
+        players_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        playersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
+     */
+    public Builder removePlayers(int index) {
+      if (playersBuilder_ == null) {
+        ensurePlayersIsMutable();
+        players_.remove(index);
+        onChanged();
+      } else {
+        playersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
+     */
+    public network.cow.mooapis.user.v1.Player.Builder getPlayersBuilder(
+        int index) {
+      return getPlayersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
+     */
+    public network.cow.mooapis.user.v1.PlayerOrBuilder getPlayersOrBuilder(
+        int index) {
+      if (playersBuilder_ == null) {
+        return players_.get(index);  } else {
+        return playersBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>.cow.user.v1.Player player = 1 [json_name = "player"];</code>
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    public java.util.List<? extends network.cow.mooapis.user.v1.PlayerOrBuilder> 
+         getPlayersOrBuilderList() {
+      if (playersBuilder_ != null) {
+        return playersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(players_);
+      }
+    }
+    /**
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
+     */
+    public network.cow.mooapis.user.v1.Player.Builder addPlayersBuilder() {
+      return getPlayersFieldBuilder().addBuilder(
+          network.cow.mooapis.user.v1.Player.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
+     */
+    public network.cow.mooapis.user.v1.Player.Builder addPlayersBuilder(
+        int index) {
+      return getPlayersFieldBuilder().addBuilder(
+          index, network.cow.mooapis.user.v1.Player.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
+     */
+    public java.util.List<network.cow.mooapis.user.v1.Player.Builder> 
+         getPlayersBuilderList() {
+      return getPlayersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         network.cow.mooapis.user.v1.Player, network.cow.mooapis.user.v1.Player.Builder, network.cow.mooapis.user.v1.PlayerOrBuilder> 
-        getPlayerFieldBuilder() {
-      if (playerBuilder_ == null) {
-        playerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getPlayersFieldBuilder() {
+      if (playersBuilder_ == null) {
+        playersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             network.cow.mooapis.user.v1.Player, network.cow.mooapis.user.v1.Player.Builder, network.cow.mooapis.user.v1.PlayerOrBuilder>(
-                getPlayer(),
+                players_,
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        player_ = null;
+        players_ = null;
       }
-      return playerBuilder_;
+      return playersBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

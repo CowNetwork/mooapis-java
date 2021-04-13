@@ -132,57 +132,57 @@ public final class UserServiceApi {
       "ierR\nidentifier\"@\n\021GetPlayerResponse\022+\n\006" +
       "player\030\001 \001(\0132\023.cow.user.v1.PlayerR\006playe" +
       "r\"6\n\025GetPlayersByIdRequest\022\035\n\nplayer_ids" +
-      "\030\001 \003(\tR\tplayerIds\"E\n\026GetPlayersByIdRespo" +
-      "nse\022+\n\006player\030\001 \001(\0132\023.cow.user.v1.Player" +
-      "R\006player\"T\n\021GetPlayersRequest\022?\n\013identif" +
-      "iers\030\001 \003(\0132\035.cow.user.v1.PlayerIdentifie" +
-      "rR\013identifiers\"C\n\022GetPlayersResponse\022-\n\007" +
-      "players\030\001 \003(\0132\023.cow.user.v1.PlayerR\007play" +
-      "ers\"m\n\033UpdatePlayerMetadataRequest\022\033\n\tpl" +
-      "ayer_id\030\001 \001(\tR\010playerId\0221\n\010metadata\030\002 \001(" +
-      "\0132\025.cow.user.v1.MetadataR\010metadata\"K\n\034Up" +
-      "datePlayerMetadataResponse\022+\n\006player\030\001 \001" +
-      "(\0132\023.cow.user.v1.PlayerR\006player\")\n\016GetUs" +
-      "erRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"8\n\017Ge" +
-      "tUserResponse\022%\n\004user\030\001 \001(\0132\021.cow.user.v" +
-      "1.UserR\004user\"0\n\025GetUserPlayersRequest\022\027\n" +
-      "\007user_id\030\001 \001(\tR\006userId\"G\n\026GetUserPlayers" +
-      "Response\022-\n\007players\030\001 \003(\0132\023.cow.user.v1." +
-      "PlayerR\007players\"g\n\031UpdateUserMetadataReq" +
-      "uest\022\027\n\007user_id\030\001 \001(\tR\006userId\0221\n\010metadat" +
-      "a\030\002 \001(\0132\025.cow.user.v1.MetadataR\010metadata" +
-      "\"C\n\032UpdateUserMetadataResponse\022%\n\004user\030\001" +
-      " \001(\0132\021.cow.user.v1.UserR\004user\"I\n\004User\022\016\n" +
-      "\002id\030\001 \001(\tR\002id\0221\n\010metadata\030\002 \001(\0132\025.cow.us" +
-      "er.v1.MetadataR\010metadata\"\312\001\n\006Player\022\016\n\002i" +
-      "d\030\001 \001(\tR\002id\022!\n\014reference_id\030\002 \001(\tR\013refer" +
-      "enceId\022%\n\016reference_type\030\003 \001(\tR\rreferenc" +
-      "eType\022\032\n\010username\030\004 \001(\tR\010username\022\027\n\007use" +
-      "r_id\030\005 \001(\tR\006userId\0221\n\010metadata\030\006 \001(\0132\025.c" +
-      "ow.user.v1.MetadataR\010metadata\"6\n\020PlayerI" +
-      "dentifier\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004type\030\002 \001(\tR" +
-      "\004type\"\"\n\010Metadata\022\026\n\006locale\030\001 \001(\tR\006local" +
-      "e2\320\005\n\013UserService\022J\n\tGetPlayer\022\035.cow.use" +
-      "r.v1.GetPlayerRequest\032\036.cow.user.v1.GetP" +
-      "layerResponse\022V\n\rGetPlayerById\022!.cow.use" +
-      "r.v1.GetPlayerByIdRequest\032\".cow.user.v1." +
-      "GetPlayerByIdResponse\022M\n\nGetPlayers\022\036.co" +
-      "w.user.v1.GetPlayersRequest\032\037.cow.user.v" +
-      "1.GetPlayersResponse\022Y\n\016GetPlayersById\022\"" +
-      ".cow.user.v1.GetPlayersByIdRequest\032#.cow" +
-      ".user.v1.GetPlayersByIdResponse\022D\n\007GetUs" +
-      "er\022\033.cow.user.v1.GetUserRequest\032\034.cow.us" +
-      "er.v1.GetUserResponse\022Y\n\016GetUserPlayers\022" +
-      "\".cow.user.v1.GetUserPlayersRequest\032#.co" +
-      "w.user.v1.GetUserPlayersResponse\022k\n\024Upda" +
-      "tePlayerMetadata\022(.cow.user.v1.UpdatePla" +
-      "yerMetadataRequest\032).cow.user.v1.UpdateP" +
-      "layerMetadataResponse\022e\n\022UpdateUserMetad" +
-      "ata\022&.cow.user.v1.UpdateUserMetadataRequ" +
-      "est\032\'.cow.user.v1.UpdateUserMetadataResp" +
-      "onseBC\n\033network.cow.mooapis.user.v1P\001Z\"g" +
-      "ithub.com/cownetwork/user/v1;userb\006proto" +
-      "3"
+      "\030\001 \003(\tR\tplayerIds\"G\n\026GetPlayersByIdRespo" +
+      "nse\022-\n\007players\030\001 \003(\0132\023.cow.user.v1.Playe" +
+      "rR\007players\"T\n\021GetPlayersRequest\022?\n\013ident" +
+      "ifiers\030\001 \003(\0132\035.cow.user.v1.PlayerIdentif" +
+      "ierR\013identifiers\"C\n\022GetPlayersResponse\022-" +
+      "\n\007players\030\001 \003(\0132\023.cow.user.v1.PlayerR\007pl" +
+      "ayers\"m\n\033UpdatePlayerMetadataRequest\022\033\n\t" +
+      "player_id\030\001 \001(\tR\010playerId\0221\n\010metadata\030\002 " +
+      "\001(\0132\025.cow.user.v1.MetadataR\010metadata\"K\n\034" +
+      "UpdatePlayerMetadataResponse\022+\n\006player\030\001" +
+      " \001(\0132\023.cow.user.v1.PlayerR\006player\")\n\016Get" +
+      "UserRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"8\n\017" +
+      "GetUserResponse\022%\n\004user\030\001 \001(\0132\021.cow.user" +
+      ".v1.UserR\004user\"0\n\025GetUserPlayersRequest\022" +
+      "\027\n\007user_id\030\001 \001(\tR\006userId\"G\n\026GetUserPlaye" +
+      "rsResponse\022-\n\007players\030\001 \003(\0132\023.cow.user.v" +
+      "1.PlayerR\007players\"g\n\031UpdateUserMetadataR" +
+      "equest\022\027\n\007user_id\030\001 \001(\tR\006userId\0221\n\010metad" +
+      "ata\030\002 \001(\0132\025.cow.user.v1.MetadataR\010metada" +
+      "ta\"C\n\032UpdateUserMetadataResponse\022%\n\004user" +
+      "\030\001 \001(\0132\021.cow.user.v1.UserR\004user\"I\n\004User\022" +
+      "\016\n\002id\030\001 \001(\tR\002id\0221\n\010metadata\030\002 \001(\0132\025.cow." +
+      "user.v1.MetadataR\010metadata\"\312\001\n\006Player\022\016\n" +
+      "\002id\030\001 \001(\tR\002id\022!\n\014reference_id\030\002 \001(\tR\013ref" +
+      "erenceId\022%\n\016reference_type\030\003 \001(\tR\rrefere" +
+      "nceType\022\032\n\010username\030\004 \001(\tR\010username\022\027\n\007u" +
+      "ser_id\030\005 \001(\tR\006userId\0221\n\010metadata\030\006 \001(\0132\025" +
+      ".cow.user.v1.MetadataR\010metadata\"6\n\020Playe" +
+      "rIdentifier\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004type\030\002 \001(" +
+      "\tR\004type\"\"\n\010Metadata\022\026\n\006locale\030\001 \001(\tR\006loc" +
+      "ale2\320\005\n\013UserService\022J\n\tGetPlayer\022\035.cow.u" +
+      "ser.v1.GetPlayerRequest\032\036.cow.user.v1.Ge" +
+      "tPlayerResponse\022V\n\rGetPlayerById\022!.cow.u" +
+      "ser.v1.GetPlayerByIdRequest\032\".cow.user.v" +
+      "1.GetPlayerByIdResponse\022M\n\nGetPlayers\022\036." +
+      "cow.user.v1.GetPlayersRequest\032\037.cow.user" +
+      ".v1.GetPlayersResponse\022Y\n\016GetPlayersById" +
+      "\022\".cow.user.v1.GetPlayersByIdRequest\032#.c" +
+      "ow.user.v1.GetPlayersByIdResponse\022D\n\007Get" +
+      "User\022\033.cow.user.v1.GetUserRequest\032\034.cow." +
+      "user.v1.GetUserResponse\022Y\n\016GetUserPlayer" +
+      "s\022\".cow.user.v1.GetUserPlayersRequest\032#." +
+      "cow.user.v1.GetUserPlayersResponse\022k\n\024Up" +
+      "datePlayerMetadata\022(.cow.user.v1.UpdateP" +
+      "layerMetadataRequest\032).cow.user.v1.Updat" +
+      "ePlayerMetadataResponse\022e\n\022UpdateUserMet" +
+      "adata\022&.cow.user.v1.UpdateUserMetadataRe" +
+      "quest\032\'.cow.user.v1.UpdateUserMetadataRe" +
+      "sponseBC\n\033network.cow.mooapis.user.v1P\001Z" +
+      "\"github.com/cownetwork/user/v1;userb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -223,7 +223,7 @@ public final class UserServiceApi {
     internal_static_cow_user_v1_GetPlayersByIdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_GetPlayersByIdResponse_descriptor,
-        new java.lang.String[] { "Player", });
+        new java.lang.String[] { "Players", });
     internal_static_cow_user_v1_GetPlayersRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_cow_user_v1_GetPlayersRequest_fieldAccessorTable = new
