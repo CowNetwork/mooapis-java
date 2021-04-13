@@ -121,6 +121,10 @@ private static final long serialVersionUID = 0L;
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
+   * <pre>
+   * The id of the role, e.g. `minecraft_player`
+   * </pre>
+   *
    * <code>string id = 1 [json_name = "id"];</code>
    * @return The id.
    */
@@ -138,6 +142,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * The id of the role, e.g. `minecraft_player`
+   * </pre>
+   *
    * <code>string id = 1 [json_name = "id"];</code>
    * @return The bytes for id.
    */
@@ -159,6 +167,12 @@ private static final long serialVersionUID = 0L;
   public static final int PRIORITY_FIELD_NUMBER = 2;
   private int priority_;
   /**
+   * <pre>
+   * Priority of the role is used when multiple roles
+   * get assigned to a user and we have to determine which
+   * properties get inherited or overwritten by which roles.
+   * </pre>
+   *
    * <code>int32 priority = 2 [json_name = "priority"];</code>
    * @return The priority.
    */
@@ -170,6 +184,13 @@ private static final long serialVersionUID = 0L;
   public static final int TRANSIENT_FIELD_NUMBER = 3;
   private boolean transient_;
   /**
+   * <pre>
+   * Transient means that the role is simply used for inheritance purposes
+   * and will not overwrite any permissions from any role.
+   * The exception is when checking with two transient roles, than the priority
+   * will be used to determine which overwrites which.
+   * </pre>
+   *
    * <code>bool transient = 3 [json_name = "transient"];</code>
    * @return The transient.
    */
@@ -181,6 +202,11 @@ private static final long serialVersionUID = 0L;
   public static final int COLOR_FIELD_NUMBER = 4;
   private volatile java.lang.Object color_;
   /**
+   * <pre>
+   * A hex color string (e.g. `4a2f30`) to set the general display color
+   * for this role across all systems (Minecraft network, webpages, ...).
+   * </pre>
+   *
    * <code>string color = 4 [json_name = "color"];</code>
    * @return The color.
    */
@@ -198,6 +224,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * A hex color string (e.g. `4a2f30`) to set the general display color
+   * for this role across all systems (Minecraft network, webpages, ...).
+   * </pre>
+   *
    * <code>string color = 4 [json_name = "color"];</code>
    * @return The bytes for color.
    */
@@ -219,6 +250,11 @@ private static final long serialVersionUID = 0L;
   public static final int PERMISSIONS_FIELD_NUMBER = 5;
   private com.google.protobuf.LazyStringList permissions_;
   /**
+   * <pre>
+   * A list of permissions that are directly binded to this role.
+   * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
+   * </pre>
+   *
    * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
    * @return A list containing the permissions.
    */
@@ -227,6 +263,11 @@ private static final long serialVersionUID = 0L;
     return permissions_;
   }
   /**
+   * <pre>
+   * A list of permissions that are directly binded to this role.
+   * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
+   * </pre>
+   *
    * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
    * @return The count of permissions.
    */
@@ -234,6 +275,11 @@ private static final long serialVersionUID = 0L;
     return permissions_.size();
   }
   /**
+   * <pre>
+   * A list of permissions that are directly binded to this role.
+   * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
+   * </pre>
+   *
    * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
    * @param index The index of the element to return.
    * @return The permissions at the given index.
@@ -242,6 +288,11 @@ private static final long serialVersionUID = 0L;
     return permissions_.get(index);
   }
   /**
+   * <pre>
+   * A list of permissions that are directly binded to this role.
+   * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
+   * </pre>
+   *
    * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the permissions at the given index.
@@ -643,6 +694,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object id_ = "";
     /**
+     * <pre>
+     * The id of the role, e.g. `minecraft_player`
+     * </pre>
+     *
      * <code>string id = 1 [json_name = "id"];</code>
      * @return The id.
      */
@@ -659,6 +714,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The id of the role, e.g. `minecraft_player`
+     * </pre>
+     *
      * <code>string id = 1 [json_name = "id"];</code>
      * @return The bytes for id.
      */
@@ -676,6 +735,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The id of the role, e.g. `minecraft_player`
+     * </pre>
+     *
      * <code>string id = 1 [json_name = "id"];</code>
      * @param value The id to set.
      * @return This builder for chaining.
@@ -691,6 +754,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The id of the role, e.g. `minecraft_player`
+     * </pre>
+     *
      * <code>string id = 1 [json_name = "id"];</code>
      * @return This builder for chaining.
      */
@@ -701,6 +768,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The id of the role, e.g. `minecraft_player`
+     * </pre>
+     *
      * <code>string id = 1 [json_name = "id"];</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
@@ -719,6 +790,12 @@ private static final long serialVersionUID = 0L;
 
     private int priority_ ;
     /**
+     * <pre>
+     * Priority of the role is used when multiple roles
+     * get assigned to a user and we have to determine which
+     * properties get inherited or overwritten by which roles.
+     * </pre>
+     *
      * <code>int32 priority = 2 [json_name = "priority"];</code>
      * @return The priority.
      */
@@ -727,6 +804,12 @@ private static final long serialVersionUID = 0L;
       return priority_;
     }
     /**
+     * <pre>
+     * Priority of the role is used when multiple roles
+     * get assigned to a user and we have to determine which
+     * properties get inherited or overwritten by which roles.
+     * </pre>
+     *
      * <code>int32 priority = 2 [json_name = "priority"];</code>
      * @param value The priority to set.
      * @return This builder for chaining.
@@ -738,6 +821,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Priority of the role is used when multiple roles
+     * get assigned to a user and we have to determine which
+     * properties get inherited or overwritten by which roles.
+     * </pre>
+     *
      * <code>int32 priority = 2 [json_name = "priority"];</code>
      * @return This builder for chaining.
      */
@@ -750,6 +839,13 @@ private static final long serialVersionUID = 0L;
 
     private boolean transient_ ;
     /**
+     * <pre>
+     * Transient means that the role is simply used for inheritance purposes
+     * and will not overwrite any permissions from any role.
+     * The exception is when checking with two transient roles, than the priority
+     * will be used to determine which overwrites which.
+     * </pre>
+     *
      * <code>bool transient = 3 [json_name = "transient"];</code>
      * @return The transient.
      */
@@ -758,6 +854,13 @@ private static final long serialVersionUID = 0L;
       return transient_;
     }
     /**
+     * <pre>
+     * Transient means that the role is simply used for inheritance purposes
+     * and will not overwrite any permissions from any role.
+     * The exception is when checking with two transient roles, than the priority
+     * will be used to determine which overwrites which.
+     * </pre>
+     *
      * <code>bool transient = 3 [json_name = "transient"];</code>
      * @param value The transient to set.
      * @return This builder for chaining.
@@ -769,6 +872,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Transient means that the role is simply used for inheritance purposes
+     * and will not overwrite any permissions from any role.
+     * The exception is when checking with two transient roles, than the priority
+     * will be used to determine which overwrites which.
+     * </pre>
+     *
      * <code>bool transient = 3 [json_name = "transient"];</code>
      * @return This builder for chaining.
      */
@@ -781,6 +891,11 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object color_ = "";
     /**
+     * <pre>
+     * A hex color string (e.g. `4a2f30`) to set the general display color
+     * for this role across all systems (Minecraft network, webpages, ...).
+     * </pre>
+     *
      * <code>string color = 4 [json_name = "color"];</code>
      * @return The color.
      */
@@ -797,6 +912,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * A hex color string (e.g. `4a2f30`) to set the general display color
+     * for this role across all systems (Minecraft network, webpages, ...).
+     * </pre>
+     *
      * <code>string color = 4 [json_name = "color"];</code>
      * @return The bytes for color.
      */
@@ -814,6 +934,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * A hex color string (e.g. `4a2f30`) to set the general display color
+     * for this role across all systems (Minecraft network, webpages, ...).
+     * </pre>
+     *
      * <code>string color = 4 [json_name = "color"];</code>
      * @param value The color to set.
      * @return This builder for chaining.
@@ -829,6 +954,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A hex color string (e.g. `4a2f30`) to set the general display color
+     * for this role across all systems (Minecraft network, webpages, ...).
+     * </pre>
+     *
      * <code>string color = 4 [json_name = "color"];</code>
      * @return This builder for chaining.
      */
@@ -839,6 +969,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A hex color string (e.g. `4a2f30`) to set the general display color
+     * for this role across all systems (Minecraft network, webpages, ...).
+     * </pre>
+     *
      * <code>string color = 4 [json_name = "color"];</code>
      * @param value The bytes for color to set.
      * @return This builder for chaining.
@@ -863,6 +998,11 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
+     * <pre>
+     * A list of permissions that are directly binded to this role.
+     * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
+     * </pre>
+     *
      * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
      * @return A list containing the permissions.
      */
@@ -871,6 +1011,11 @@ private static final long serialVersionUID = 0L;
       return permissions_.getUnmodifiableView();
     }
     /**
+     * <pre>
+     * A list of permissions that are directly binded to this role.
+     * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
+     * </pre>
+     *
      * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
      * @return The count of permissions.
      */
@@ -878,6 +1023,11 @@ private static final long serialVersionUID = 0L;
       return permissions_.size();
     }
     /**
+     * <pre>
+     * A list of permissions that are directly binded to this role.
+     * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
+     * </pre>
+     *
      * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
      * @param index The index of the element to return.
      * @return The permissions at the given index.
@@ -886,6 +1036,11 @@ private static final long serialVersionUID = 0L;
       return permissions_.get(index);
     }
     /**
+     * <pre>
+     * A list of permissions that are directly binded to this role.
+     * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
+     * </pre>
+     *
      * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the permissions at the given index.
@@ -895,6 +1050,11 @@ private static final long serialVersionUID = 0L;
       return permissions_.getByteString(index);
     }
     /**
+     * <pre>
+     * A list of permissions that are directly binded to this role.
+     * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
+     * </pre>
+     *
      * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
      * @param index The index to set the value at.
      * @param value The permissions to set.
@@ -911,6 +1071,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A list of permissions that are directly binded to this role.
+     * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
+     * </pre>
+     *
      * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
      * @param value The permissions to add.
      * @return This builder for chaining.
@@ -926,6 +1091,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A list of permissions that are directly binded to this role.
+     * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
+     * </pre>
+     *
      * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
      * @param values The permissions to add.
      * @return This builder for chaining.
@@ -939,6 +1109,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A list of permissions that are directly binded to this role.
+     * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
+     * </pre>
+     *
      * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
      * @return This builder for chaining.
      */
@@ -949,6 +1124,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A list of permissions that are directly binded to this role.
+     * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
+     * </pre>
+     *
      * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
      * @param value The bytes of the permissions to add.
      * @return This builder for chaining.

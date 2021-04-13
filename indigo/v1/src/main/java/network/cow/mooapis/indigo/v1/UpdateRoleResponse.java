@@ -4,25 +4,25 @@
 package network.cow.mooapis.indigo.v1;
 
 /**
- * Protobuf type {@code cow.indigo.v1.InsertRoleResponse}
+ * Protobuf type {@code cow.indigo.v1.UpdateRoleResponse}
  */
-public final class InsertRoleResponse extends
+public final class UpdateRoleResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:cow.indigo.v1.InsertRoleResponse)
-    InsertRoleResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:cow.indigo.v1.UpdateRoleResponse)
+    UpdateRoleResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use InsertRoleResponse.newBuilder() to construct.
-  private InsertRoleResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateRoleResponse.newBuilder() to construct.
+  private UpdateRoleResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private InsertRoleResponse() {
+  private UpdateRoleResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new InsertRoleResponse();
+    return new UpdateRoleResponse();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private InsertRoleResponse(
+  private UpdateRoleResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -50,13 +50,13 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             network.cow.mooapis.indigo.v1.Role.Builder subBuilder = null;
-            if (insertedRole_ != null) {
-              subBuilder = insertedRole_.toBuilder();
+            if (updatedRole_ != null) {
+              subBuilder = updatedRole_.toBuilder();
             }
-            insertedRole_ = input.readMessage(network.cow.mooapis.indigo.v1.Role.parser(), extensionRegistry);
+            updatedRole_ = input.readMessage(network.cow.mooapis.indigo.v1.Role.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(insertedRole_);
-              insertedRole_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(updatedRole_);
+              updatedRole_ = subBuilder.buildPartial();
             }
 
             break;
@@ -82,41 +82,41 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return network.cow.mooapis.indigo.v1.Indigo.internal_static_cow_indigo_v1_InsertRoleResponse_descriptor;
+    return network.cow.mooapis.indigo.v1.Indigo.internal_static_cow_indigo_v1_UpdateRoleResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return network.cow.mooapis.indigo.v1.Indigo.internal_static_cow_indigo_v1_InsertRoleResponse_fieldAccessorTable
+    return network.cow.mooapis.indigo.v1.Indigo.internal_static_cow_indigo_v1_UpdateRoleResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            network.cow.mooapis.indigo.v1.InsertRoleResponse.class, network.cow.mooapis.indigo.v1.InsertRoleResponse.Builder.class);
+            network.cow.mooapis.indigo.v1.UpdateRoleResponse.class, network.cow.mooapis.indigo.v1.UpdateRoleResponse.Builder.class);
   }
 
-  public static final int INSERTED_ROLE_FIELD_NUMBER = 1;
-  private network.cow.mooapis.indigo.v1.Role insertedRole_;
+  public static final int UPDATED_ROLE_FIELD_NUMBER = 1;
+  private network.cow.mooapis.indigo.v1.Role updatedRole_;
   /**
-   * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
-   * @return Whether the insertedRole field is set.
+   * <code>.cow.indigo.v1.Role updated_role = 1 [json_name = "updatedRole"];</code>
+   * @return Whether the updatedRole field is set.
    */
   @java.lang.Override
-  public boolean hasInsertedRole() {
-    return insertedRole_ != null;
+  public boolean hasUpdatedRole() {
+    return updatedRole_ != null;
   }
   /**
-   * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
-   * @return The insertedRole.
+   * <code>.cow.indigo.v1.Role updated_role = 1 [json_name = "updatedRole"];</code>
+   * @return The updatedRole.
    */
   @java.lang.Override
-  public network.cow.mooapis.indigo.v1.Role getInsertedRole() {
-    return insertedRole_ == null ? network.cow.mooapis.indigo.v1.Role.getDefaultInstance() : insertedRole_;
+  public network.cow.mooapis.indigo.v1.Role getUpdatedRole() {
+    return updatedRole_ == null ? network.cow.mooapis.indigo.v1.Role.getDefaultInstance() : updatedRole_;
   }
   /**
-   * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
+   * <code>.cow.indigo.v1.Role updated_role = 1 [json_name = "updatedRole"];</code>
    */
   @java.lang.Override
-  public network.cow.mooapis.indigo.v1.RoleOrBuilder getInsertedRoleOrBuilder() {
-    return getInsertedRole();
+  public network.cow.mooapis.indigo.v1.RoleOrBuilder getUpdatedRoleOrBuilder() {
+    return getUpdatedRole();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (insertedRole_ != null) {
-      output.writeMessage(1, getInsertedRole());
+    if (updatedRole_ != null) {
+      output.writeMessage(1, getUpdatedRole());
     }
     unknownFields.writeTo(output);
   }
@@ -145,9 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (insertedRole_ != null) {
+    if (updatedRole_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getInsertedRole());
+        .computeMessageSize(1, getUpdatedRole());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -159,15 +159,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof network.cow.mooapis.indigo.v1.InsertRoleResponse)) {
+    if (!(obj instanceof network.cow.mooapis.indigo.v1.UpdateRoleResponse)) {
       return super.equals(obj);
     }
-    network.cow.mooapis.indigo.v1.InsertRoleResponse other = (network.cow.mooapis.indigo.v1.InsertRoleResponse) obj;
+    network.cow.mooapis.indigo.v1.UpdateRoleResponse other = (network.cow.mooapis.indigo.v1.UpdateRoleResponse) obj;
 
-    if (hasInsertedRole() != other.hasInsertedRole()) return false;
-    if (hasInsertedRole()) {
-      if (!getInsertedRole()
-          .equals(other.getInsertedRole())) return false;
+    if (hasUpdatedRole() != other.hasUpdatedRole()) return false;
+    if (hasUpdatedRole()) {
+      if (!getUpdatedRole()
+          .equals(other.getUpdatedRole())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -180,78 +180,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasInsertedRole()) {
-      hash = (37 * hash) + INSERTED_ROLE_FIELD_NUMBER;
-      hash = (53 * hash) + getInsertedRole().hashCode();
+    if (hasUpdatedRole()) {
+      hash = (37 * hash) + UPDATED_ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatedRole().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static network.cow.mooapis.indigo.v1.InsertRoleResponse parseFrom(
+  public static network.cow.mooapis.indigo.v1.UpdateRoleResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static network.cow.mooapis.indigo.v1.InsertRoleResponse parseFrom(
+  public static network.cow.mooapis.indigo.v1.UpdateRoleResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static network.cow.mooapis.indigo.v1.InsertRoleResponse parseFrom(
+  public static network.cow.mooapis.indigo.v1.UpdateRoleResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static network.cow.mooapis.indigo.v1.InsertRoleResponse parseFrom(
+  public static network.cow.mooapis.indigo.v1.UpdateRoleResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static network.cow.mooapis.indigo.v1.InsertRoleResponse parseFrom(byte[] data)
+  public static network.cow.mooapis.indigo.v1.UpdateRoleResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static network.cow.mooapis.indigo.v1.InsertRoleResponse parseFrom(
+  public static network.cow.mooapis.indigo.v1.UpdateRoleResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static network.cow.mooapis.indigo.v1.InsertRoleResponse parseFrom(java.io.InputStream input)
+  public static network.cow.mooapis.indigo.v1.UpdateRoleResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static network.cow.mooapis.indigo.v1.InsertRoleResponse parseFrom(
+  public static network.cow.mooapis.indigo.v1.UpdateRoleResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static network.cow.mooapis.indigo.v1.InsertRoleResponse parseDelimitedFrom(java.io.InputStream input)
+  public static network.cow.mooapis.indigo.v1.UpdateRoleResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static network.cow.mooapis.indigo.v1.InsertRoleResponse parseDelimitedFrom(
+  public static network.cow.mooapis.indigo.v1.UpdateRoleResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static network.cow.mooapis.indigo.v1.InsertRoleResponse parseFrom(
+  public static network.cow.mooapis.indigo.v1.UpdateRoleResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static network.cow.mooapis.indigo.v1.InsertRoleResponse parseFrom(
+  public static network.cow.mooapis.indigo.v1.UpdateRoleResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -264,7 +264,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(network.cow.mooapis.indigo.v1.InsertRoleResponse prototype) {
+  public static Builder newBuilder(network.cow.mooapis.indigo.v1.UpdateRoleResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -280,26 +280,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code cow.indigo.v1.InsertRoleResponse}
+   * Protobuf type {@code cow.indigo.v1.UpdateRoleResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:cow.indigo.v1.InsertRoleResponse)
-      network.cow.mooapis.indigo.v1.InsertRoleResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:cow.indigo.v1.UpdateRoleResponse)
+      network.cow.mooapis.indigo.v1.UpdateRoleResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return network.cow.mooapis.indigo.v1.Indigo.internal_static_cow_indigo_v1_InsertRoleResponse_descriptor;
+      return network.cow.mooapis.indigo.v1.Indigo.internal_static_cow_indigo_v1_UpdateRoleResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return network.cow.mooapis.indigo.v1.Indigo.internal_static_cow_indigo_v1_InsertRoleResponse_fieldAccessorTable
+      return network.cow.mooapis.indigo.v1.Indigo.internal_static_cow_indigo_v1_UpdateRoleResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              network.cow.mooapis.indigo.v1.InsertRoleResponse.class, network.cow.mooapis.indigo.v1.InsertRoleResponse.Builder.class);
+              network.cow.mooapis.indigo.v1.UpdateRoleResponse.class, network.cow.mooapis.indigo.v1.UpdateRoleResponse.Builder.class);
     }
 
-    // Construct using network.cow.mooapis.indigo.v1.InsertRoleResponse.newBuilder()
+    // Construct using network.cow.mooapis.indigo.v1.UpdateRoleResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -317,11 +317,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (insertedRoleBuilder_ == null) {
-        insertedRole_ = null;
+      if (updatedRoleBuilder_ == null) {
+        updatedRole_ = null;
       } else {
-        insertedRole_ = null;
-        insertedRoleBuilder_ = null;
+        updatedRole_ = null;
+        updatedRoleBuilder_ = null;
       }
       return this;
     }
@@ -329,17 +329,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return network.cow.mooapis.indigo.v1.Indigo.internal_static_cow_indigo_v1_InsertRoleResponse_descriptor;
+      return network.cow.mooapis.indigo.v1.Indigo.internal_static_cow_indigo_v1_UpdateRoleResponse_descriptor;
     }
 
     @java.lang.Override
-    public network.cow.mooapis.indigo.v1.InsertRoleResponse getDefaultInstanceForType() {
-      return network.cow.mooapis.indigo.v1.InsertRoleResponse.getDefaultInstance();
+    public network.cow.mooapis.indigo.v1.UpdateRoleResponse getDefaultInstanceForType() {
+      return network.cow.mooapis.indigo.v1.UpdateRoleResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public network.cow.mooapis.indigo.v1.InsertRoleResponse build() {
-      network.cow.mooapis.indigo.v1.InsertRoleResponse result = buildPartial();
+    public network.cow.mooapis.indigo.v1.UpdateRoleResponse build() {
+      network.cow.mooapis.indigo.v1.UpdateRoleResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -347,12 +347,12 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public network.cow.mooapis.indigo.v1.InsertRoleResponse buildPartial() {
-      network.cow.mooapis.indigo.v1.InsertRoleResponse result = new network.cow.mooapis.indigo.v1.InsertRoleResponse(this);
-      if (insertedRoleBuilder_ == null) {
-        result.insertedRole_ = insertedRole_;
+    public network.cow.mooapis.indigo.v1.UpdateRoleResponse buildPartial() {
+      network.cow.mooapis.indigo.v1.UpdateRoleResponse result = new network.cow.mooapis.indigo.v1.UpdateRoleResponse(this);
+      if (updatedRoleBuilder_ == null) {
+        result.updatedRole_ = updatedRole_;
       } else {
-        result.insertedRole_ = insertedRoleBuilder_.build();
+        result.updatedRole_ = updatedRoleBuilder_.build();
       }
       onBuilt();
       return result;
@@ -392,18 +392,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof network.cow.mooapis.indigo.v1.InsertRoleResponse) {
-        return mergeFrom((network.cow.mooapis.indigo.v1.InsertRoleResponse)other);
+      if (other instanceof network.cow.mooapis.indigo.v1.UpdateRoleResponse) {
+        return mergeFrom((network.cow.mooapis.indigo.v1.UpdateRoleResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(network.cow.mooapis.indigo.v1.InsertRoleResponse other) {
-      if (other == network.cow.mooapis.indigo.v1.InsertRoleResponse.getDefaultInstance()) return this;
-      if (other.hasInsertedRole()) {
-        mergeInsertedRole(other.getInsertedRole());
+    public Builder mergeFrom(network.cow.mooapis.indigo.v1.UpdateRoleResponse other) {
+      if (other == network.cow.mooapis.indigo.v1.UpdateRoleResponse.getDefaultInstance()) return this;
+      if (other.hasUpdatedRole()) {
+        mergeUpdatedRole(other.getUpdatedRole());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -420,11 +420,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      network.cow.mooapis.indigo.v1.InsertRoleResponse parsedMessage = null;
+      network.cow.mooapis.indigo.v1.UpdateRoleResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (network.cow.mooapis.indigo.v1.InsertRoleResponse) e.getUnfinishedMessage();
+        parsedMessage = (network.cow.mooapis.indigo.v1.UpdateRoleResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -434,123 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private network.cow.mooapis.indigo.v1.Role insertedRole_;
+    private network.cow.mooapis.indigo.v1.Role updatedRole_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        network.cow.mooapis.indigo.v1.Role, network.cow.mooapis.indigo.v1.Role.Builder, network.cow.mooapis.indigo.v1.RoleOrBuilder> insertedRoleBuilder_;
+        network.cow.mooapis.indigo.v1.Role, network.cow.mooapis.indigo.v1.Role.Builder, network.cow.mooapis.indigo.v1.RoleOrBuilder> updatedRoleBuilder_;
     /**
-     * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
-     * @return Whether the insertedRole field is set.
+     * <code>.cow.indigo.v1.Role updated_role = 1 [json_name = "updatedRole"];</code>
+     * @return Whether the updatedRole field is set.
      */
-    public boolean hasInsertedRole() {
-      return insertedRoleBuilder_ != null || insertedRole_ != null;
+    public boolean hasUpdatedRole() {
+      return updatedRoleBuilder_ != null || updatedRole_ != null;
     }
     /**
-     * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
-     * @return The insertedRole.
+     * <code>.cow.indigo.v1.Role updated_role = 1 [json_name = "updatedRole"];</code>
+     * @return The updatedRole.
      */
-    public network.cow.mooapis.indigo.v1.Role getInsertedRole() {
-      if (insertedRoleBuilder_ == null) {
-        return insertedRole_ == null ? network.cow.mooapis.indigo.v1.Role.getDefaultInstance() : insertedRole_;
+    public network.cow.mooapis.indigo.v1.Role getUpdatedRole() {
+      if (updatedRoleBuilder_ == null) {
+        return updatedRole_ == null ? network.cow.mooapis.indigo.v1.Role.getDefaultInstance() : updatedRole_;
       } else {
-        return insertedRoleBuilder_.getMessage();
+        return updatedRoleBuilder_.getMessage();
       }
     }
     /**
-     * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
+     * <code>.cow.indigo.v1.Role updated_role = 1 [json_name = "updatedRole"];</code>
      */
-    public Builder setInsertedRole(network.cow.mooapis.indigo.v1.Role value) {
-      if (insertedRoleBuilder_ == null) {
+    public Builder setUpdatedRole(network.cow.mooapis.indigo.v1.Role value) {
+      if (updatedRoleBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        insertedRole_ = value;
+        updatedRole_ = value;
         onChanged();
       } else {
-        insertedRoleBuilder_.setMessage(value);
+        updatedRoleBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
+     * <code>.cow.indigo.v1.Role updated_role = 1 [json_name = "updatedRole"];</code>
      */
-    public Builder setInsertedRole(
+    public Builder setUpdatedRole(
         network.cow.mooapis.indigo.v1.Role.Builder builderForValue) {
-      if (insertedRoleBuilder_ == null) {
-        insertedRole_ = builderForValue.build();
+      if (updatedRoleBuilder_ == null) {
+        updatedRole_ = builderForValue.build();
         onChanged();
       } else {
-        insertedRoleBuilder_.setMessage(builderForValue.build());
+        updatedRoleBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
+     * <code>.cow.indigo.v1.Role updated_role = 1 [json_name = "updatedRole"];</code>
      */
-    public Builder mergeInsertedRole(network.cow.mooapis.indigo.v1.Role value) {
-      if (insertedRoleBuilder_ == null) {
-        if (insertedRole_ != null) {
-          insertedRole_ =
-            network.cow.mooapis.indigo.v1.Role.newBuilder(insertedRole_).mergeFrom(value).buildPartial();
+    public Builder mergeUpdatedRole(network.cow.mooapis.indigo.v1.Role value) {
+      if (updatedRoleBuilder_ == null) {
+        if (updatedRole_ != null) {
+          updatedRole_ =
+            network.cow.mooapis.indigo.v1.Role.newBuilder(updatedRole_).mergeFrom(value).buildPartial();
         } else {
-          insertedRole_ = value;
+          updatedRole_ = value;
         }
         onChanged();
       } else {
-        insertedRoleBuilder_.mergeFrom(value);
+        updatedRoleBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
+     * <code>.cow.indigo.v1.Role updated_role = 1 [json_name = "updatedRole"];</code>
      */
-    public Builder clearInsertedRole() {
-      if (insertedRoleBuilder_ == null) {
-        insertedRole_ = null;
+    public Builder clearUpdatedRole() {
+      if (updatedRoleBuilder_ == null) {
+        updatedRole_ = null;
         onChanged();
       } else {
-        insertedRole_ = null;
-        insertedRoleBuilder_ = null;
+        updatedRole_ = null;
+        updatedRoleBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
+     * <code>.cow.indigo.v1.Role updated_role = 1 [json_name = "updatedRole"];</code>
      */
-    public network.cow.mooapis.indigo.v1.Role.Builder getInsertedRoleBuilder() {
+    public network.cow.mooapis.indigo.v1.Role.Builder getUpdatedRoleBuilder() {
       
       onChanged();
-      return getInsertedRoleFieldBuilder().getBuilder();
+      return getUpdatedRoleFieldBuilder().getBuilder();
     }
     /**
-     * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
+     * <code>.cow.indigo.v1.Role updated_role = 1 [json_name = "updatedRole"];</code>
      */
-    public network.cow.mooapis.indigo.v1.RoleOrBuilder getInsertedRoleOrBuilder() {
-      if (insertedRoleBuilder_ != null) {
-        return insertedRoleBuilder_.getMessageOrBuilder();
+    public network.cow.mooapis.indigo.v1.RoleOrBuilder getUpdatedRoleOrBuilder() {
+      if (updatedRoleBuilder_ != null) {
+        return updatedRoleBuilder_.getMessageOrBuilder();
       } else {
-        return insertedRole_ == null ?
-            network.cow.mooapis.indigo.v1.Role.getDefaultInstance() : insertedRole_;
+        return updatedRole_ == null ?
+            network.cow.mooapis.indigo.v1.Role.getDefaultInstance() : updatedRole_;
       }
     }
     /**
-     * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
+     * <code>.cow.indigo.v1.Role updated_role = 1 [json_name = "updatedRole"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         network.cow.mooapis.indigo.v1.Role, network.cow.mooapis.indigo.v1.Role.Builder, network.cow.mooapis.indigo.v1.RoleOrBuilder> 
-        getInsertedRoleFieldBuilder() {
-      if (insertedRoleBuilder_ == null) {
-        insertedRoleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getUpdatedRoleFieldBuilder() {
+      if (updatedRoleBuilder_ == null) {
+        updatedRoleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             network.cow.mooapis.indigo.v1.Role, network.cow.mooapis.indigo.v1.Role.Builder, network.cow.mooapis.indigo.v1.RoleOrBuilder>(
-                getInsertedRole(),
+                getUpdatedRole(),
                 getParentForChildren(),
                 isClean());
-        insertedRole_ = null;
+        updatedRole_ = null;
       }
-      return insertedRoleBuilder_;
+      return updatedRoleBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -565,41 +565,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:cow.indigo.v1.InsertRoleResponse)
+    // @@protoc_insertion_point(builder_scope:cow.indigo.v1.UpdateRoleResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:cow.indigo.v1.InsertRoleResponse)
-  private static final network.cow.mooapis.indigo.v1.InsertRoleResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:cow.indigo.v1.UpdateRoleResponse)
+  private static final network.cow.mooapis.indigo.v1.UpdateRoleResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new network.cow.mooapis.indigo.v1.InsertRoleResponse();
+    DEFAULT_INSTANCE = new network.cow.mooapis.indigo.v1.UpdateRoleResponse();
   }
 
-  public static network.cow.mooapis.indigo.v1.InsertRoleResponse getDefaultInstance() {
+  public static network.cow.mooapis.indigo.v1.UpdateRoleResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<InsertRoleResponse>
-      PARSER = new com.google.protobuf.AbstractParser<InsertRoleResponse>() {
+  private static final com.google.protobuf.Parser<UpdateRoleResponse>
+      PARSER = new com.google.protobuf.AbstractParser<UpdateRoleResponse>() {
     @java.lang.Override
-    public InsertRoleResponse parsePartialFrom(
+    public UpdateRoleResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new InsertRoleResponse(input, extensionRegistry);
+      return new UpdateRoleResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<InsertRoleResponse> parser() {
+  public static com.google.protobuf.Parser<UpdateRoleResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<InsertRoleResponse> getParserForType() {
+  public com.google.protobuf.Parser<UpdateRoleResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public network.cow.mooapis.indigo.v1.InsertRoleResponse getDefaultInstanceForType() {
+  public network.cow.mooapis.indigo.v1.UpdateRoleResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

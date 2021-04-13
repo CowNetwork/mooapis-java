@@ -15,6 +15,16 @@ public final class Indigo {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_indigo_v1_ListRolesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_indigo_v1_ListRolesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_indigo_v1_ListRolesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_indigo_v1_ListRolesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cow_indigo_v1_GetRoleRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -34,6 +44,26 @@ public final class Indigo {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cow_indigo_v1_InsertRoleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_indigo_v1_UpdateRoleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_indigo_v1_UpdateRoleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_indigo_v1_UpdateRoleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_indigo_v1_UpdateRoleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_indigo_v1_DeleteRoleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_indigo_v1_DeleteRoleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_indigo_v1_DeleteRoleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_indigo_v1_DeleteRoleResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cow_indigo_v1_AddRolePermissionRequest_descriptor;
   static final 
@@ -119,183 +149,234 @@ public final class Indigo {
   static {
     java.lang.String[] descriptorData = {
       "\n\032cow/indigo/v1/indigo.proto\022\rcow.indigo" +
-      ".v1\")\n\016GetRoleRequest\022\027\n\007role_id\030\001 \001(\tR\006" +
-      "roleId\":\n\017GetRoleResponse\022\'\n\004role\030\001 \001(\0132" +
-      "\023.cow.indigo.v1.RoleR\004role\"<\n\021InsertRole" +
-      "Request\022\'\n\004role\030\001 \001(\0132\023.cow.indigo.v1.Ro" +
-      "leR\004role\"4\n\022InsertRoleResponse\022\036\n\nsucces" +
-      "sful\030\001 \001(\010R\nsuccessful\"U\n\030AddRolePermiss" +
-      "ionRequest\022\027\n\007role_id\030\001 \001(\tR\006roleId\022 \n\013p" +
-      "ermissions\030\002 \003(\tR\013permissions\"H\n\031AddRole" +
-      "PermissionResponse\022+\n\021added_permissions\030" +
-      "\001 \003(\tR\020addedPermissions\"X\n\033RemoveRolePer" +
-      "missionRequest\022\027\n\007role_id\030\001 \001(\tR\006roleId\022" +
-      " \n\013permissions\030\002 \003(\tR\013permissions\"O\n\034Rem" +
-      "oveRolePermissionResponse\022/\n\023removed_per" +
-      "missions\030\001 \003(\tR\022removedPermissions\"=\n\023Ge" +
-      "tUserRolesRequest\022&\n\017user_account_id\030\001 \001" +
-      "(\tR\ruserAccountId\"A\n\024GetUserRolesRespons" +
-      "e\022)\n\005roles\030\002 \003(\0132\023.cow.indigo.v1.RoleR\005r" +
-      "oles\"W\n\022AddUserRoleRequest\022&\n\017user_accou" +
-      "nt_id\030\001 \001(\tR\ruserAccountId\022\031\n\010role_ids\030\002" +
-      " \003(\tR\007roleIds\";\n\023AddUserRoleResponse\022$\n\016" +
-      "added_role_ids\030\001 \003(\tR\014addedRoleIds\"Z\n\025Re" +
-      "moveUserRoleRequest\022&\n\017user_account_id\030\001" +
-      " \001(\tR\ruserAccountId\022\031\n\010role_ids\030\002 \003(\tR\007r" +
-      "oleIds\"B\n\026RemoveUserRoleResponse\022(\n\020remo" +
-      "ved_role_ids\030\001 \003(\tR\016removedRoleIds\"d\n\030Ad" +
-      "dUserPermissionRequest\022&\n\017user_account_i" +
-      "d\030\001 \001(\tR\ruserAccountId\022 \n\013permissions\030\002 " +
-      "\003(\tR\013permissions\"H\n\031AddUserPermissionRes" +
-      "ponse\022+\n\021added_permissions\030\001 \003(\tR\020addedP" +
-      "ermissions\"g\n\033RemoveUserPermissionReques" +
-      "t\022&\n\017user_account_id\030\001 \001(\tR\ruserAccountI" +
-      "d\022 \n\013permissions\030\002 \003(\tR\013permissions\"O\n\034R" +
-      "emoveUserPermissionResponse\022/\n\023removed_p" +
-      "ermissions\030\001 \003(\tR\022removedPermissions\"\210\001\n" +
-      "\004Role\022\016\n\002id\030\001 \001(\tR\002id\022\032\n\010priority\030\002 \001(\005R" +
-      "\010priority\022\034\n\ttransient\030\003 \001(\010R\ttransient\022" +
-      "\024\n\005color\030\004 \001(\tR\005color\022 \n\013permissions\030\005 \003" +
-      "(\tR\013permissions2\376\006\n\rIndigoService\022J\n\007Get" +
-      "Role\022\035.cow.indigo.v1.GetRoleRequest\032\036.co" +
-      "w.indigo.v1.GetRoleResponse\"\000\022S\n\nInsertR" +
-      "ole\022 .cow.indigo.v1.InsertRoleRequest\032!." +
-      "cow.indigo.v1.InsertRoleResponse\"\000\022h\n\021Ad" +
-      "dRolePermission\022\'.cow.indigo.v1.AddRoleP" +
-      "ermissionRequest\032(.cow.indigo.v1.AddRole" +
-      "PermissionResponse\"\000\022q\n\024RemoveRolePermis" +
-      "sion\022*.cow.indigo.v1.RemoveRolePermissio" +
-      "nRequest\032+.cow.indigo.v1.RemoveRolePermi" +
-      "ssionResponse\"\000\022Y\n\014GetUserRoles\022\".cow.in" +
-      "digo.v1.GetUserRolesRequest\032#.cow.indigo" +
-      ".v1.GetUserRolesResponse\"\000\022V\n\013AddUserRol" +
-      "e\022!.cow.indigo.v1.AddUserRoleRequest\032\".c" +
-      "ow.indigo.v1.AddUserRoleResponse\"\000\022_\n\016Re" +
-      "moveUserRole\022$.cow.indigo.v1.RemoveUserR" +
-      "oleRequest\032%.cow.indigo.v1.RemoveUserRol" +
-      "eResponse\"\000\022h\n\021AddUserPermission\022\'.cow.i" +
-      "ndigo.v1.AddUserPermissionRequest\032(.cow." +
-      "indigo.v1.AddUserPermissionResponse\"\000\022q\n" +
-      "\024RemoveUserPermission\022*.cow.indigo.v1.Re" +
-      "moveUserPermissionRequest\032+.cow.indigo.v" +
-      "1.RemoveUserPermissionResponse\"\000BI\n\035netw" +
-      "ork.cow.mooapis.indigo.v1P\001Z&github.com/" +
-      "cownetwork/indigo/v1;indigob\006proto3"
+      ".v1\"\022\n\020ListRolesRequest\">\n\021ListRolesResp" +
+      "onse\022)\n\005roles\030\001 \003(\0132\023.cow.indigo.v1.Role" +
+      "R\005roles\")\n\016GetRoleRequest\022\027\n\007role_id\030\001 \001" +
+      "(\tR\006roleId\":\n\017GetRoleResponse\022\'\n\004role\030\001 " +
+      "\001(\0132\023.cow.indigo.v1.RoleR\004role\"<\n\021Insert" +
+      "RoleRequest\022\'\n\004role\030\001 \001(\0132\023.cow.indigo.v" +
+      "1.RoleR\004role\"N\n\022InsertRoleResponse\0228\n\rin" +
+      "serted_role\030\001 \001(\0132\023.cow.indigo.v1.RoleR\014" +
+      "insertedRole\"^\n\021UpdateRoleRequest\022\027\n\007rol" +
+      "e_id\030\001 \001(\tR\006roleId\0220\n\trole_data\030\002 \001(\0132\023." +
+      "cow.indigo.v1.RoleR\010roleData\"L\n\022UpdateRo" +
+      "leResponse\0226\n\014updated_role\030\001 \001(\0132\023.cow.i" +
+      "ndigo.v1.RoleR\013updatedRole\",\n\021DeleteRole" +
+      "Request\022\027\n\007role_id\030\001 \001(\tR\006roleId\"\024\n\022Dele" +
+      "teRoleResponse\"U\n\030AddRolePermissionReque" +
+      "st\022\027\n\007role_id\030\001 \001(\tR\006roleId\022 \n\013permissio" +
+      "ns\030\002 \003(\tR\013permissions\"H\n\031AddRolePermissi" +
+      "onResponse\022+\n\021added_permissions\030\001 \003(\tR\020a" +
+      "ddedPermissions\"X\n\033RemoveRolePermissionR" +
+      "equest\022\027\n\007role_id\030\001 \001(\tR\006roleId\022 \n\013permi" +
+      "ssions\030\002 \003(\tR\013permissions\"O\n\034RemoveRoleP" +
+      "ermissionResponse\022/\n\023removed_permissions" +
+      "\030\001 \003(\tR\022removedPermissions\"=\n\023GetUserRol" +
+      "esRequest\022&\n\017user_account_id\030\001 \001(\tR\ruser" +
+      "AccountId\"A\n\024GetUserRolesResponse\022)\n\005rol" +
+      "es\030\002 \003(\0132\023.cow.indigo.v1.RoleR\005roles\"W\n\022" +
+      "AddUserRoleRequest\022&\n\017user_account_id\030\001 " +
+      "\001(\tR\ruserAccountId\022\031\n\010role_ids\030\002 \003(\tR\007ro" +
+      "leIds\";\n\023AddUserRoleResponse\022$\n\016added_ro" +
+      "le_ids\030\001 \003(\tR\014addedRoleIds\"Z\n\025RemoveUser" +
+      "RoleRequest\022&\n\017user_account_id\030\001 \001(\tR\rus" +
+      "erAccountId\022\031\n\010role_ids\030\002 \003(\tR\007roleIds\"B" +
+      "\n\026RemoveUserRoleResponse\022(\n\020removed_role" +
+      "_ids\030\001 \003(\tR\016removedRoleIds\"d\n\030AddUserPer" +
+      "missionRequest\022&\n\017user_account_id\030\001 \001(\tR" +
+      "\ruserAccountId\022 \n\013permissions\030\002 \003(\tR\013per" +
+      "missions\"H\n\031AddUserPermissionResponse\022+\n" +
+      "\021added_permissions\030\001 \003(\tR\020addedPermissio" +
+      "ns\"g\n\033RemoveUserPermissionRequest\022&\n\017use" +
+      "r_account_id\030\001 \001(\tR\ruserAccountId\022 \n\013per" +
+      "missions\030\002 \003(\tR\013permissions\"O\n\034RemoveUse" +
+      "rPermissionResponse\022/\n\023removed_permissio" +
+      "ns\030\001 \003(\tR\022removedPermissions\"\210\001\n\004Role\022\016\n" +
+      "\002id\030\001 \001(\tR\002id\022\032\n\010priority\030\002 \001(\005R\010priorit" +
+      "y\022\034\n\ttransient\030\003 \001(\010R\ttransient\022\024\n\005color" +
+      "\030\004 \001(\tR\005color\022 \n\013permissions\030\005 \003(\tR\013perm" +
+      "issions2\372\010\n\rIndigoService\022P\n\tListRoles\022\037" +
+      ".cow.indigo.v1.ListRolesRequest\032 .cow.in" +
+      "digo.v1.ListRolesResponse\"\000\022J\n\007GetRole\022\035" +
+      ".cow.indigo.v1.GetRoleRequest\032\036.cow.indi" +
+      "go.v1.GetRoleResponse\"\000\022S\n\nInsertRole\022 ." +
+      "cow.indigo.v1.InsertRoleRequest\032!.cow.in" +
+      "digo.v1.InsertRoleResponse\"\000\022S\n\nUpdateRo" +
+      "le\022 .cow.indigo.v1.UpdateRoleRequest\032!.c" +
+      "ow.indigo.v1.UpdateRoleResponse\"\000\022S\n\nDel" +
+      "eteRole\022 .cow.indigo.v1.DeleteRoleReques" +
+      "t\032!.cow.indigo.v1.DeleteRoleResponse\"\000\022h" +
+      "\n\021AddRolePermission\022\'.cow.indigo.v1.AddR" +
+      "olePermissionRequest\032(.cow.indigo.v1.Add" +
+      "RolePermissionResponse\"\000\022q\n\024RemoveRolePe" +
+      "rmission\022*.cow.indigo.v1.RemoveRolePermi" +
+      "ssionRequest\032+.cow.indigo.v1.RemoveRoleP" +
+      "ermissionResponse\"\000\022Y\n\014GetUserRoles\022\".co" +
+      "w.indigo.v1.GetUserRolesRequest\032#.cow.in" +
+      "digo.v1.GetUserRolesResponse\"\000\022V\n\013AddUse" +
+      "rRole\022!.cow.indigo.v1.AddUserRoleRequest" +
+      "\032\".cow.indigo.v1.AddUserRoleResponse\"\000\022_" +
+      "\n\016RemoveUserRole\022$.cow.indigo.v1.RemoveU" +
+      "serRoleRequest\032%.cow.indigo.v1.RemoveUse" +
+      "rRoleResponse\"\000\022h\n\021AddUserPermission\022\'.c" +
+      "ow.indigo.v1.AddUserPermissionRequest\032(." +
+      "cow.indigo.v1.AddUserPermissionResponse\"" +
+      "\000\022q\n\024RemoveUserPermission\022*.cow.indigo.v" +
+      "1.RemoveUserPermissionRequest\032+.cow.indi" +
+      "go.v1.RemoveUserPermissionResponse\"\000BI\n\035" +
+      "network.cow.mooapis.indigo.v1P\001Z&github." +
+      "com/cownetwork/indigo/v1;indigob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_cow_indigo_v1_GetRoleRequest_descriptor =
+    internal_static_cow_indigo_v1_ListRolesRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_cow_indigo_v1_ListRolesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_indigo_v1_ListRolesRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_cow_indigo_v1_ListRolesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_cow_indigo_v1_ListRolesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_indigo_v1_ListRolesResponse_descriptor,
+        new java.lang.String[] { "Roles", });
+    internal_static_cow_indigo_v1_GetRoleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_cow_indigo_v1_GetRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_GetRoleRequest_descriptor,
         new java.lang.String[] { "RoleId", });
     internal_static_cow_indigo_v1_GetRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_cow_indigo_v1_GetRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_GetRoleResponse_descriptor,
         new java.lang.String[] { "Role", });
     internal_static_cow_indigo_v1_InsertRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_cow_indigo_v1_InsertRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_InsertRoleRequest_descriptor,
         new java.lang.String[] { "Role", });
     internal_static_cow_indigo_v1_InsertRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_cow_indigo_v1_InsertRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_InsertRoleResponse_descriptor,
-        new java.lang.String[] { "Successful", });
+        new java.lang.String[] { "InsertedRole", });
+    internal_static_cow_indigo_v1_UpdateRoleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_cow_indigo_v1_UpdateRoleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_indigo_v1_UpdateRoleRequest_descriptor,
+        new java.lang.String[] { "RoleId", "RoleData", });
+    internal_static_cow_indigo_v1_UpdateRoleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_cow_indigo_v1_UpdateRoleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_indigo_v1_UpdateRoleResponse_descriptor,
+        new java.lang.String[] { "UpdatedRole", });
+    internal_static_cow_indigo_v1_DeleteRoleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_cow_indigo_v1_DeleteRoleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_indigo_v1_DeleteRoleRequest_descriptor,
+        new java.lang.String[] { "RoleId", });
+    internal_static_cow_indigo_v1_DeleteRoleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_cow_indigo_v1_DeleteRoleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_indigo_v1_DeleteRoleResponse_descriptor,
+        new java.lang.String[] { });
     internal_static_cow_indigo_v1_AddRolePermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_cow_indigo_v1_AddRolePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_AddRolePermissionRequest_descriptor,
         new java.lang.String[] { "RoleId", "Permissions", });
     internal_static_cow_indigo_v1_AddRolePermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_cow_indigo_v1_AddRolePermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_AddRolePermissionResponse_descriptor,
         new java.lang.String[] { "AddedPermissions", });
     internal_static_cow_indigo_v1_RemoveRolePermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_cow_indigo_v1_RemoveRolePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_RemoveRolePermissionRequest_descriptor,
         new java.lang.String[] { "RoleId", "Permissions", });
     internal_static_cow_indigo_v1_RemoveRolePermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_cow_indigo_v1_RemoveRolePermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_RemoveRolePermissionResponse_descriptor,
         new java.lang.String[] { "RemovedPermissions", });
     internal_static_cow_indigo_v1_GetUserRolesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_cow_indigo_v1_GetUserRolesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_GetUserRolesRequest_descriptor,
         new java.lang.String[] { "UserAccountId", });
     internal_static_cow_indigo_v1_GetUserRolesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_cow_indigo_v1_GetUserRolesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_GetUserRolesResponse_descriptor,
         new java.lang.String[] { "Roles", });
     internal_static_cow_indigo_v1_AddUserRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_cow_indigo_v1_AddUserRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_AddUserRoleRequest_descriptor,
         new java.lang.String[] { "UserAccountId", "RoleIds", });
     internal_static_cow_indigo_v1_AddUserRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_cow_indigo_v1_AddUserRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_AddUserRoleResponse_descriptor,
         new java.lang.String[] { "AddedRoleIds", });
     internal_static_cow_indigo_v1_RemoveUserRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_cow_indigo_v1_RemoveUserRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_RemoveUserRoleRequest_descriptor,
         new java.lang.String[] { "UserAccountId", "RoleIds", });
     internal_static_cow_indigo_v1_RemoveUserRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_cow_indigo_v1_RemoveUserRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_RemoveUserRoleResponse_descriptor,
         new java.lang.String[] { "RemovedRoleIds", });
     internal_static_cow_indigo_v1_AddUserPermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_cow_indigo_v1_AddUserPermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_AddUserPermissionRequest_descriptor,
         new java.lang.String[] { "UserAccountId", "Permissions", });
     internal_static_cow_indigo_v1_AddUserPermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_cow_indigo_v1_AddUserPermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_AddUserPermissionResponse_descriptor,
         new java.lang.String[] { "AddedPermissions", });
     internal_static_cow_indigo_v1_RemoveUserPermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_cow_indigo_v1_RemoveUserPermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_RemoveUserPermissionRequest_descriptor,
         new java.lang.String[] { "UserAccountId", "Permissions", });
     internal_static_cow_indigo_v1_RemoveUserPermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_cow_indigo_v1_RemoveUserPermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_RemoveUserPermissionResponse_descriptor,
         new java.lang.String[] { "RemovedPermissions", });
     internal_static_cow_indigo_v1_Role_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_cow_indigo_v1_Role_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_indigo_v1_Role_descriptor,

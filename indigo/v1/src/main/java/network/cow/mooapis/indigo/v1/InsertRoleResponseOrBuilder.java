@@ -8,8 +8,17 @@ public interface InsertRoleResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>bool successful = 1 [json_name = "successful"];</code>
-   * @return The successful.
+   * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
+   * @return Whether the insertedRole field is set.
    */
-  boolean getSuccessful();
+  boolean hasInsertedRole();
+  /**
+   * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
+   * @return The insertedRole.
+   */
+  network.cow.mooapis.indigo.v1.Role getInsertedRole();
+  /**
+   * <code>.cow.indigo.v1.Role inserted_role = 1 [json_name = "insertedRole"];</code>
+   */
+  network.cow.mooapis.indigo.v1.RoleOrBuilder getInsertedRoleOrBuilder();
 }
