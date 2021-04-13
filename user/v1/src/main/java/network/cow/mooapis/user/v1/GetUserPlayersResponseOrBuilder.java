@@ -8,25 +8,25 @@ public interface GetUserPlayersResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .cow.user.v1.Player players = 2 [json_name = "players"];</code>
+   * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
    */
   java.util.List<network.cow.mooapis.user.v1.Player> 
       getPlayersList();
   /**
-   * <code>repeated .cow.user.v1.Player players = 2 [json_name = "players"];</code>
+   * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
    */
   network.cow.mooapis.user.v1.Player getPlayers(int index);
   /**
-   * <code>repeated .cow.user.v1.Player players = 2 [json_name = "players"];</code>
+   * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
    */
   int getPlayersCount();
   /**
-   * <code>repeated .cow.user.v1.Player players = 2 [json_name = "players"];</code>
+   * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
    */
   java.util.List<? extends network.cow.mooapis.user.v1.PlayerOrBuilder> 
       getPlayersOrBuilderList();
   /**
-   * <code>repeated .cow.user.v1.Player players = 2 [json_name = "players"];</code>
+   * <code>repeated .cow.user.v1.Player players = 1 [json_name = "players"];</code>
    */
   network.cow.mooapis.user.v1.PlayerOrBuilder getPlayersOrBuilder(
       int index);

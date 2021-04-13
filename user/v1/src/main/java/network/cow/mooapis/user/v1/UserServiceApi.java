@@ -15,6 +15,16 @@ public final class UserServiceApi {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_user_v1_GetPlayerByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_user_v1_GetPlayerByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_user_v1_GetPlayerByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_user_v1_GetPlayerByIdResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cow_user_v1_GetPlayerRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -24,6 +34,16 @@ public final class UserServiceApi {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cow_user_v1_GetPlayerResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_user_v1_GetPlayersByIdRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_user_v1_GetPlayersByIdRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_user_v1_GetPlayersByIdResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_user_v1_GetPlayersByIdResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cow_user_v1_GetPlayersRequest_descriptor;
   static final 
@@ -35,15 +55,15 @@ public final class UserServiceApi {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cow_user_v1_GetPlayersResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cow_user_v1_GetPlayerUserRequest_descriptor;
+    internal_static_cow_user_v1_UpdatePlayerMetadataRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cow_user_v1_GetPlayerUserRequest_fieldAccessorTable;
+      internal_static_cow_user_v1_UpdatePlayerMetadataRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cow_user_v1_GetPlayerUserResponse_descriptor;
+    internal_static_cow_user_v1_UpdatePlayerMetadataResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cow_user_v1_GetPlayerUserResponse_fieldAccessorTable;
+      internal_static_cow_user_v1_UpdatePlayerMetadataResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cow_user_v1_GetUserRequest_descriptor;
   static final 
@@ -65,6 +85,16 @@ public final class UserServiceApi {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cow_user_v1_GetUserPlayersResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_user_v1_UpdateUserMetadataRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_user_v1_UpdateUserMetadataRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_user_v1_UpdateUserMetadataResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_user_v1_UpdateUserMetadataResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cow_user_v1_User_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -79,6 +109,11 @@ public final class UserServiceApi {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cow_user_v1_PlayerIdentifier_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_user_v1_Metadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_user_v1_Metadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -89,125 +124,190 @@ public final class UserServiceApi {
   static {
     java.lang.String[] descriptorData = {
       "\n\"cow/user/v1/user_service_api.proto\022\013co" +
-      "w.user.v1\"Q\n\020GetPlayerRequest\022=\n\nidentif" +
-      "ier\030\001 \001(\0132\035.cow.user.v1.PlayerIdentifier" +
-      "R\nidentifier\"@\n\021GetPlayerResponse\022+\n\006pla" +
-      "yer\030\001 \001(\0132\023.cow.user.v1.PlayerR\006player\"T" +
-      "\n\021GetPlayersRequest\022?\n\013identifiers\030\001 \003(\013" +
-      "2\035.cow.user.v1.PlayerIdentifierR\013identif" +
-      "iers\"C\n\022GetPlayersResponse\022-\n\007players\030\001 " +
-      "\003(\0132\023.cow.user.v1.PlayerR\007players\"U\n\024Get" +
-      "PlayerUserRequest\022=\n\nidentifier\030\001 \001(\0132\035." +
-      "cow.user.v1.PlayerIdentifierR\nidentifier" +
-      "\">\n\025GetPlayerUserResponse\022%\n\004user\030\001 \001(\0132" +
-      "\021.cow.user.v1.UserR\004user\")\n\016GetUserReque" +
-      "st\022\027\n\007user_id\030\001 \001(\tR\006userId\"8\n\017GetUserRe" +
-      "sponse\022%\n\004user\030\001 \001(\0132\021.cow.user.v1.UserR" +
-      "\004user\"0\n\025GetUserPlayersRequest\022\027\n\007user_i" +
-      "d\030\001 \001(\tR\006userId\"G\n\026GetUserPlayersRespons" +
-      "e\022-\n\007players\030\002 \003(\0132\023.cow.user.v1.PlayerR" +
-      "\007players\"\026\n\004User\022\016\n\002id\030\001 \001(\tR\002id\"~\n\006Play" +
-      "er\022\016\n\002id\030\001 \001(\tR\002id\022!\n\014reference_id\030\002 \001(\t" +
-      "R\013referenceId\022%\n\016reference_type\030\003 \001(\tR\rr" +
-      "eferenceType\022\032\n\010username\030\004 \001(\tR\010username" +
-      "\"d\n\020PlayerIdentifier\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004" +
-      "type\030\002 \001(\tR\004type\022\037\n\010username\030\003 \001(\tH\000R\010us" +
-      "ername\210\001\001B\013\n\t_username2\241\003\n\013UserService\022J" +
-      "\n\tGetPlayer\022\035.cow.user.v1.GetPlayerReque" +
-      "st\032\036.cow.user.v1.GetPlayerResponse\022M\n\nGe" +
-      "tPlayers\022\036.cow.user.v1.GetPlayersRequest" +
-      "\032\037.cow.user.v1.GetPlayersResponse\022V\n\rGet" +
-      "PlayerUser\022!.cow.user.v1.GetPlayerUserRe" +
-      "quest\032\".cow.user.v1.GetPlayerUserRespons" +
-      "e\022D\n\007GetUser\022\033.cow.user.v1.GetUserReques" +
-      "t\032\034.cow.user.v1.GetUserResponse\022Y\n\016GetUs" +
-      "erPlayers\022\".cow.user.v1.GetUserPlayersRe" +
-      "quest\032#.cow.user.v1.GetUserPlayersRespon" +
-      "seBC\n\033network.cow.mooapis.user.v1P\001Z\"git" +
-      "hub.com/cownetwork/user/v1;userb\006proto3"
+      "w.user.v1\"3\n\024GetPlayerByIdRequest\022\033\n\tpla" +
+      "yer_id\030\001 \001(\tR\010playerId\"D\n\025GetPlayerByIdR" +
+      "esponse\022+\n\006player\030\001 \001(\0132\023.cow.user.v1.Pl" +
+      "ayerR\006player\"Q\n\020GetPlayerRequest\022=\n\niden" +
+      "tifier\030\001 \001(\0132\035.cow.user.v1.PlayerIdentif" +
+      "ierR\nidentifier\"@\n\021GetPlayerResponse\022+\n\006" +
+      "player\030\001 \001(\0132\023.cow.user.v1.PlayerR\006playe" +
+      "r\"6\n\025GetPlayersByIdRequest\022\035\n\nplayer_ids" +
+      "\030\001 \003(\tR\tplayerIds\"E\n\026GetPlayersByIdRespo" +
+      "nse\022+\n\006player\030\001 \001(\0132\023.cow.user.v1.Player" +
+      "R\006player\"T\n\021GetPlayersRequest\022?\n\013identif" +
+      "iers\030\001 \003(\0132\035.cow.user.v1.PlayerIdentifie" +
+      "rR\013identifiers\"C\n\022GetPlayersResponse\022-\n\007" +
+      "players\030\001 \003(\0132\023.cow.user.v1.PlayerR\007play" +
+      "ers\"m\n\033UpdatePlayerMetadataRequest\022\033\n\tpl" +
+      "ayer_id\030\001 \001(\tR\010playerId\0221\n\010metadata\030\002 \001(" +
+      "\0132\025.cow.user.v1.MetadataR\010metadata\"K\n\034Up" +
+      "datePlayerMetadataResponse\022+\n\006player\030\001 \001" +
+      "(\0132\023.cow.user.v1.PlayerR\006player\")\n\016GetUs" +
+      "erRequest\022\027\n\007user_id\030\001 \001(\tR\006userId\"8\n\017Ge" +
+      "tUserResponse\022%\n\004user\030\001 \001(\0132\021.cow.user.v" +
+      "1.UserR\004user\"0\n\025GetUserPlayersRequest\022\027\n" +
+      "\007user_id\030\001 \001(\tR\006userId\"G\n\026GetUserPlayers" +
+      "Response\022-\n\007players\030\001 \003(\0132\023.cow.user.v1." +
+      "PlayerR\007players\"g\n\031UpdateUserMetadataReq" +
+      "uest\022\027\n\007user_id\030\001 \001(\tR\006userId\0221\n\010metadat" +
+      "a\030\002 \001(\0132\025.cow.user.v1.MetadataR\010metadata" +
+      "\"C\n\032UpdateUserMetadataResponse\022%\n\004user\030\001" +
+      " \001(\0132\021.cow.user.v1.UserR\004user\"I\n\004User\022\016\n" +
+      "\002id\030\001 \001(\tR\002id\0221\n\010metadata\030\002 \001(\0132\025.cow.us" +
+      "er.v1.MetadataR\010metadata\"\312\001\n\006Player\022\016\n\002i" +
+      "d\030\001 \001(\tR\002id\022!\n\014reference_id\030\002 \001(\tR\013refer" +
+      "enceId\022%\n\016reference_type\030\003 \001(\tR\rreferenc" +
+      "eType\022\032\n\010username\030\004 \001(\tR\010username\022\027\n\007use" +
+      "r_id\030\005 \001(\tR\006userId\0221\n\010metadata\030\006 \001(\0132\025.c" +
+      "ow.user.v1.MetadataR\010metadata\"6\n\020PlayerI" +
+      "dentifier\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004type\030\002 \001(\tR" +
+      "\004type\"\"\n\010Metadata\022\026\n\006locale\030\001 \001(\tR\006local" +
+      "e2\320\005\n\013UserService\022J\n\tGetPlayer\022\035.cow.use" +
+      "r.v1.GetPlayerRequest\032\036.cow.user.v1.GetP" +
+      "layerResponse\022V\n\rGetPlayerById\022!.cow.use" +
+      "r.v1.GetPlayerByIdRequest\032\".cow.user.v1." +
+      "GetPlayerByIdResponse\022M\n\nGetPlayers\022\036.co" +
+      "w.user.v1.GetPlayersRequest\032\037.cow.user.v" +
+      "1.GetPlayersResponse\022Y\n\016GetPlayersById\022\"" +
+      ".cow.user.v1.GetPlayersByIdRequest\032#.cow" +
+      ".user.v1.GetPlayersByIdResponse\022D\n\007GetUs" +
+      "er\022\033.cow.user.v1.GetUserRequest\032\034.cow.us" +
+      "er.v1.GetUserResponse\022Y\n\016GetUserPlayers\022" +
+      "\".cow.user.v1.GetUserPlayersRequest\032#.co" +
+      "w.user.v1.GetUserPlayersResponse\022k\n\024Upda" +
+      "tePlayerMetadata\022(.cow.user.v1.UpdatePla" +
+      "yerMetadataRequest\032).cow.user.v1.UpdateP" +
+      "layerMetadataResponse\022e\n\022UpdateUserMetad" +
+      "ata\022&.cow.user.v1.UpdateUserMetadataRequ" +
+      "est\032\'.cow.user.v1.UpdateUserMetadataResp" +
+      "onseBC\n\033network.cow.mooapis.user.v1P\001Z\"g" +
+      "ithub.com/cownetwork/user/v1;userb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_cow_user_v1_GetPlayerRequest_descriptor =
+    internal_static_cow_user_v1_GetPlayerByIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_cow_user_v1_GetPlayerByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_user_v1_GetPlayerByIdRequest_descriptor,
+        new java.lang.String[] { "PlayerId", });
+    internal_static_cow_user_v1_GetPlayerByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_cow_user_v1_GetPlayerByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_user_v1_GetPlayerByIdResponse_descriptor,
+        new java.lang.String[] { "Player", });
+    internal_static_cow_user_v1_GetPlayerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_cow_user_v1_GetPlayerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_GetPlayerRequest_descriptor,
         new java.lang.String[] { "Identifier", });
     internal_static_cow_user_v1_GetPlayerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_cow_user_v1_GetPlayerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_GetPlayerResponse_descriptor,
         new java.lang.String[] { "Player", });
+    internal_static_cow_user_v1_GetPlayersByIdRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_cow_user_v1_GetPlayersByIdRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_user_v1_GetPlayersByIdRequest_descriptor,
+        new java.lang.String[] { "PlayerIds", });
+    internal_static_cow_user_v1_GetPlayersByIdResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_cow_user_v1_GetPlayersByIdResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_user_v1_GetPlayersByIdResponse_descriptor,
+        new java.lang.String[] { "Player", });
     internal_static_cow_user_v1_GetPlayersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_cow_user_v1_GetPlayersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_GetPlayersRequest_descriptor,
         new java.lang.String[] { "Identifiers", });
     internal_static_cow_user_v1_GetPlayersResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_cow_user_v1_GetPlayersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_GetPlayersResponse_descriptor,
         new java.lang.String[] { "Players", });
-    internal_static_cow_user_v1_GetPlayerUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_cow_user_v1_GetPlayerUserRequest_fieldAccessorTable = new
+    internal_static_cow_user_v1_UpdatePlayerMetadataRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_cow_user_v1_UpdatePlayerMetadataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cow_user_v1_GetPlayerUserRequest_descriptor,
-        new java.lang.String[] { "Identifier", });
-    internal_static_cow_user_v1_GetPlayerUserResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_cow_user_v1_GetPlayerUserResponse_fieldAccessorTable = new
+        internal_static_cow_user_v1_UpdatePlayerMetadataRequest_descriptor,
+        new java.lang.String[] { "PlayerId", "Metadata", });
+    internal_static_cow_user_v1_UpdatePlayerMetadataResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_cow_user_v1_UpdatePlayerMetadataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cow_user_v1_GetPlayerUserResponse_descriptor,
-        new java.lang.String[] { "User", });
+        internal_static_cow_user_v1_UpdatePlayerMetadataResponse_descriptor,
+        new java.lang.String[] { "Player", });
     internal_static_cow_user_v1_GetUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_cow_user_v1_GetUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_GetUserRequest_descriptor,
         new java.lang.String[] { "UserId", });
     internal_static_cow_user_v1_GetUserResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_cow_user_v1_GetUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_GetUserResponse_descriptor,
         new java.lang.String[] { "User", });
     internal_static_cow_user_v1_GetUserPlayersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_cow_user_v1_GetUserPlayersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_GetUserPlayersRequest_descriptor,
         new java.lang.String[] { "UserId", });
     internal_static_cow_user_v1_GetUserPlayersResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_cow_user_v1_GetUserPlayersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_GetUserPlayersResponse_descriptor,
         new java.lang.String[] { "Players", });
+    internal_static_cow_user_v1_UpdateUserMetadataRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_cow_user_v1_UpdateUserMetadataRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_user_v1_UpdateUserMetadataRequest_descriptor,
+        new java.lang.String[] { "UserId", "Metadata", });
+    internal_static_cow_user_v1_UpdateUserMetadataResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_cow_user_v1_UpdateUserMetadataResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_user_v1_UpdateUserMetadataResponse_descriptor,
+        new java.lang.String[] { "User", });
     internal_static_cow_user_v1_User_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_cow_user_v1_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_User_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "Metadata", });
     internal_static_cow_user_v1_Player_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_cow_user_v1_Player_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_Player_descriptor,
-        new java.lang.String[] { "Id", "ReferenceId", "ReferenceType", "Username", });
+        new java.lang.String[] { "Id", "ReferenceId", "ReferenceType", "Username", "UserId", "Metadata", });
     internal_static_cow_user_v1_PlayerIdentifier_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_cow_user_v1_PlayerIdentifier_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_user_v1_PlayerIdentifier_descriptor,
-        new java.lang.String[] { "Id", "Type", "Username", "Username", });
+        new java.lang.String[] { "Id", "Type", });
+    internal_static_cow_user_v1_Metadata_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_cow_user_v1_Metadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_user_v1_Metadata_descriptor,
+        new java.lang.String[] { "Locale", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

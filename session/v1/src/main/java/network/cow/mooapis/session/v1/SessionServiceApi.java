@@ -214,130 +214,130 @@ public final class SessionServiceApi {
   static {
     java.lang.String[] descriptorData = {
       "\n(cow/session/v1/session_service_api.pro" +
-      "to\022\016cow.session.v1\"3\n\024CreateSessionReque" +
-      "st\022\033\n\tplayer_id\030\001 \001(\tR\010playerId\"J\n\025Creat" +
-      "eSessionResponse\0221\n\007session\030\001 \001(\0132\027.cow." +
-      "session.v1.SessionR\007session\"V\n\021GetSessio" +
-      "nRequest\022A\n\nidentifier\030\001 \001(\0132!.cow.sessi" +
-      "on.v1.SessionIdentifierR\nidentifier\"G\n\022G" +
-      "etSessionResponse\0221\n\007session\030\001 \001(\0132\027.cow" +
-      ".session.v1.SessionR\007session\"\336\002\n\022StopSes" +
-      "sionRequest\022A\n\nidentifier\030\001 \001(\0132!.cow.se" +
-      "ssion.v1.SessionIdentifierR\nidentifier\022<" +
-      "\n\007unknown\030\002 \001(\0132 .cow.session.v1.StopCau" +
-      "seUnknownH\000R\007unknown\022K\n\014disconnected\030\003 \001" +
-      "(\0132%.cow.session.v1.StopCauseDisconnecte" +
-      "dH\000R\014disconnected\0226\n\005error\030\004 \001(\0132\036.cow.s" +
-      "ession.v1.StopCauseErrorH\000R\005error\0229\n\006cus" +
-      "tom\030\005 \001(\0132\037.cow.session.v1.StopCauseCust" +
-      "omH\000R\006customB\007\n\005cause\"H\n\023StopSessionResp" +
-      "onse\0221\n\007session\030\001 \001(\0132\027.cow.session.v1.S" +
-      "essionR\007session\"~\n\021KickPlayerRequest\022\033\n\t" +
-      "player_id\030\001 \001(\tR\010playerId\022\026\n\006reason\030\002 \001(" +
-      "\tR\006reason\0224\n\010executor\030\003 \001(\0132\030.cow.sessio" +
-      "n.v1.ExecutorR\010executor\">\n\022KickPlayerRes" +
-      "ponse\022(\n\004kick\030\001 \001(\0132\024.cow.session.v1.Kic" +
-      "kR\004kick\"\266\001\n\020BanPlayerRequest\022\033\n\tplayer_i" +
-      "d\030\001 \001(\tR\010playerId\022\026\n\006reason\030\002 \001(\tR\006reaso" +
-      "n\022\033\n\tbanned_at\030\003 \001(\004R\010bannedAt\022\032\n\010durati" +
-      "on\030\004 \001(\003R\010duration\0224\n\010executor\030\005 \001(\0132\030.c" +
-      "ow.session.v1.ExecutorR\010executor\":\n\021BanP" +
-      "layerResponse\022%\n\003ban\030\001 \001(\0132\023.cow.session" +
-      ".v1.BanR\003ban\"-\n\016GetBansRequest\022\033\n\tplayer" +
-      "_id\030\001 \001(\tR\010playerId\":\n\017GetBansResponse\022\'" +
-      "\n\004bans\030\001 \003(\0132\023.cow.session.v1.BanR\004bans\"" +
-      "X\n\020RevokeBanRequest\022\016\n\002id\030\001 \001(\tR\002id\0224\n\010e" +
-      "xecutor\030\002 \001(\0132\030.cow.session.v1.ExecutorR" +
-      "\010executor\":\n\021RevokeBanResponse\022%\n\003ban\030\001 " +
-      "\001(\0132\023.cow.session.v1.BanR\003ban\"K\n\031SetMain" +
-      "tenanceModeRequest\022\024\n\005types\030\001 \003(\tR\005types" +
-      "\022\030\n\007enabled\030\002 \001(\010R\007enabled\"2\n\032SetMainten" +
-      "anceModeResponse\022\024\n\005types\030\001 \003(\tR\005types\"O" +
-      "\n\026BlacklistPlayerRequest\022\033\n\tplayer_id\030\001 " +
-      "\001(\tR\010playerId\022\030\n\007message\030\002 \001(\tR\007message\"" +
-      "O\n\027BlacklistPlayerResponse\0224\n\005entry\030\001 \001(" +
-      "\0132\036.cow.session.v1.BlacklistEntryR\005entry" +
-      "\";\n\034RevokeBlacklistPlayerRequest\022\033\n\tplay" +
-      "er_id\030\001 \001(\tR\010playerId\"<\n\035RevokeBlacklist" +
-      "PlayerResponse\022\033\n\tplayer_id\030\001 \001(\tR\010playe" +
-      "rId\"\211\002\n\007Session\022\016\n\002id\030\001 \001(\tR\002id\022\033\n\tplaye" +
-      "r_id\030\002 \001(\tR\010playerId\0228\n\007unknown\030\003 \001(\0132\034." +
-      "cow.session.v1.StateUnknownH\000R\007unknown\022D" +
-      "\n\013initialized\030\004 \001(\0132 .cow.session.v1.Sta" +
-      "teInitializedH\000R\013initialized\0228\n\007stopped\030" +
-      "\005 \001(\0132\034.cow.session.v1.StateStoppedH\000R\007s" +
-      "topped\022\016\n\002ip\030\006 \001(\tR\002ipB\007\n\005state\"\016\n\014State" +
-      "Unknown\"\022\n\020StateInitialized\"\237\004\n\014StateSto" +
-      "pped\022<\n\007unknown\030\001 \001(\0132 .cow.session.v1.S" +
-      "topCauseUnknownH\000R\007unknown\022K\n\014disconnect" +
-      "ed\030\002 \001(\0132%.cow.session.v1.StopCauseDisco" +
-      "nnectedH\000R\014disconnected\022H\n\013maintenance\030\003" +
-      " \001(\0132$.cow.session.v1.StopCauseMaintenan" +
-      "ceH\000R\013maintenance\0226\n\005error\030\004 \001(\0132\036.cow.s" +
-      "ession.v1.StopCauseErrorH\000R\005error\0229\n\006kic" +
-      "ked\030\005 \001(\0132\037.cow.session.v1.StopCauseKick" +
-      "edH\000R\006kicked\0229\n\006banned\030\006 \001(\0132\037.cow.sessi" +
-      "on.v1.StopCauseBannedH\000R\006banned\022H\n\013black" +
-      "listed\030\007 \001(\0132$.cow.session.v1.StopCauseB" +
-      "lacklistedH\000R\013blacklisted\0229\n\006custom\030\010 \001(" +
-      "\0132\037.cow.session.v1.StopCauseCustomH\000R\006cu" +
-      "stomB\007\n\005cause\"\022\n\020StopCauseUnknown\"\027\n\025Sto" +
-      "pCauseDisconnected\"\026\n\024StopCauseMaintenan" +
-      "ce\"*\n\016StopCauseError\022\030\n\007message\030\001 \001(\tR\007m" +
-      "essage\";\n\017StopCauseKicked\022(\n\004kick\030\001 \001(\0132" +
-      "\024.cow.session.v1.KickR\004kick\"8\n\017StopCause" +
-      "Banned\022%\n\003ban\030\001 \001(\0132\023.cow.session.v1.Ban" +
-      "R\003ban\"L\n\024StopCauseBlacklisted\0224\n\005entry\030\001" +
-      " \001(\0132\036.cow.session.v1.BlacklistEntryR\005en" +
-      "try\"+\n\017StopCauseCustom\022\030\n\007message\030\001 \001(\tR" +
-      "\007message\"\374\001\n\003Ban\022\016\n\002id\030\001 \001(\tR\002id\022\033\n\tplay" +
-      "er_id\030\002 \001(\tR\010playerId\022\026\n\006reason\030\003 \001(\tR\006r" +
-      "eason\022\033\n\tbanned_at\030\004 \001(\004R\010bannedAt\022\032\n\010du" +
-      "ration\030\005 \001(\003R\010duration\0224\n\010executor\030\006 \001(\013" +
-      "2\030.cow.session.v1.ExecutorR\010executor\0226\n\006" +
-      "revoke\030\007 \001(\0132\031.cow.session.v1.BanRevokeH" +
-      "\000R\006revoke\210\001\001B\t\n\007_revoke\"p\n\tBanRevoke\022\016\n\002" +
-      "id\030\001 \001(\tR\002id\022\035\n\nrevoked_at\030\002 \001(\004R\trevoke" +
-      "dAt\0224\n\010executor\030\003 \001(\0132\030.cow.session.v1.E" +
-      "xecutorR\010executor\"\236\001\n\004Kick\022\016\n\002id\030\001 \001(\tR\002" +
-      "id\022\033\n\tplayer_id\030\002 \001(\tR\010playerId\022\026\n\006reaso" +
-      "n\030\003 \001(\tR\006reason\022\033\n\tkicked_at\030\004 \001(\004R\010kick" +
-      "edAt\0224\n\010executor\030\005 \001(\0132\030.cow.session.v1." +
-      "ExecutorR\010executor\"W\n\016BlacklistEntry\022\016\n\002" +
-      "id\030\001 \001(\tR\002id\022\033\n\tplayer_id\030\002 \001(\tR\010playerI" +
-      "d\022\030\n\007message\030\003 \001(\tR\007message\"a\n\021SessionId" +
-      "entifier\022\037\n\nsession_id\030\001 \001(\tH\000R\tsessionI" +
-      "d\022\035\n\tplayer_id\030\002 \001(\tH\000R\010playerIdB\014\n\niden" +
-      "tifier\"\227\001\n\010Executor\0221\n\004type\030\001 \001(\0162\035.cow." +
-      "session.v1.Executor.TypeR\004type\022\016\n\002id\030\002 \001" +
-      "(\tR\002id\"H\n\004Type\022\017\n\013TYPE_CUSTOM\020\000\022\r\n\tTYPE_" +
-      "USER\020\001\022\017\n\013TYPE_PLAYER\020\002\022\017\n\013TYPE_SYSTEM\020\003" +
-      "2\247\007\n\016SessionService\022\\\n\rCreateSession\022$.c" +
-      "ow.session.v1.CreateSessionRequest\032%.cow" +
-      ".session.v1.CreateSessionResponse\022V\n\013Sto" +
-      "pSession\022\".cow.session.v1.StopSessionReq" +
-      "uest\032#.cow.session.v1.StopSessionRespons" +
-      "e\022S\n\nGetSession\022!.cow.session.v1.GetSess" +
-      "ionRequest\032\".cow.session.v1.GetSessionRe" +
-      "sponse\022S\n\nKickPlayer\022!.cow.session.v1.Ki" +
-      "ckPlayerRequest\032\".cow.session.v1.KickPla" +
-      "yerResponse\022P\n\tBanPlayer\022 .cow.session.v" +
-      "1.BanPlayerRequest\032!.cow.session.v1.BanP" +
-      "layerResponse\022J\n\007GetBans\022\036.cow.session.v" +
-      "1.GetBansRequest\032\037.cow.session.v1.GetBan" +
-      "sResponse\022P\n\tRevokeBan\022 .cow.session.v1." +
-      "RevokeBanRequest\032!.cow.session.v1.Revoke" +
-      "BanResponse\022k\n\022SetMaintenanceMode\022).cow." +
-      "session.v1.SetMaintenanceModeRequest\032*.c" +
-      "ow.session.v1.SetMaintenanceModeResponse" +
-      "\022b\n\017BlacklistPlayer\022&.cow.session.v1.Bla" +
-      "cklistPlayerRequest\032\'.cow.session.v1.Bla" +
-      "cklistPlayerResponse\022t\n\025RevokeBlacklistP" +
-      "layer\022,.cow.session.v1.RevokeBlacklistPl" +
-      "ayerRequest\032-.cow.session.v1.RevokeBlack" +
-      "listPlayerResponseBL\n\036network.cow.mooapi" +
-      "s.session.v1P\001Z(github.com/cownetwork/se" +
-      "ssion/v1;sessionb\006proto3"
+      "to\022\016cow.session.v1\"C\n\024CreateSessionReque" +
+      "st\022\033\n\tplayer_id\030\001 \001(\tR\010playerId\022\016\n\002ip\030\002 " +
+      "\001(\tR\002ip\"J\n\025CreateSessionResponse\0221\n\007sess" +
+      "ion\030\001 \001(\0132\027.cow.session.v1.SessionR\007sess" +
+      "ion\"V\n\021GetSessionRequest\022A\n\nidentifier\030\001" +
+      " \001(\0132!.cow.session.v1.SessionIdentifierR" +
+      "\nidentifier\"G\n\022GetSessionResponse\0221\n\007ses" +
+      "sion\030\001 \001(\0132\027.cow.session.v1.SessionR\007ses" +
+      "sion\"\336\002\n\022StopSessionRequest\022A\n\nidentifie" +
+      "r\030\001 \001(\0132!.cow.session.v1.SessionIdentifi" +
+      "erR\nidentifier\022<\n\007unknown\030\002 \001(\0132 .cow.se" +
+      "ssion.v1.StopCauseUnknownH\000R\007unknown\022K\n\014" +
+      "disconnected\030\003 \001(\0132%.cow.session.v1.Stop" +
+      "CauseDisconnectedH\000R\014disconnected\0226\n\005err" +
+      "or\030\004 \001(\0132\036.cow.session.v1.StopCauseError" +
+      "H\000R\005error\0229\n\006custom\030\005 \001(\0132\037.cow.session." +
+      "v1.StopCauseCustomH\000R\006customB\007\n\005cause\"H\n" +
+      "\023StopSessionResponse\0221\n\007session\030\001 \001(\0132\027." +
+      "cow.session.v1.SessionR\007session\"~\n\021KickP" +
+      "layerRequest\022\033\n\tplayer_id\030\001 \001(\tR\010playerI" +
+      "d\022\026\n\006reason\030\002 \001(\tR\006reason\0224\n\010executor\030\003 " +
+      "\001(\0132\030.cow.session.v1.ExecutorR\010executor\"" +
+      ">\n\022KickPlayerResponse\022(\n\004kick\030\001 \001(\0132\024.co" +
+      "w.session.v1.KickR\004kick\"\266\001\n\020BanPlayerReq" +
+      "uest\022\033\n\tplayer_id\030\001 \001(\tR\010playerId\022\026\n\006rea" +
+      "son\030\002 \001(\tR\006reason\022\033\n\tbanned_at\030\003 \001(\004R\010ba" +
+      "nnedAt\022\032\n\010duration\030\004 \001(\003R\010duration\0224\n\010ex" +
+      "ecutor\030\005 \001(\0132\030.cow.session.v1.ExecutorR\010" +
+      "executor\":\n\021BanPlayerResponse\022%\n\003ban\030\001 \001" +
+      "(\0132\023.cow.session.v1.BanR\003ban\"-\n\016GetBansR" +
+      "equest\022\033\n\tplayer_id\030\001 \001(\tR\010playerId\":\n\017G" +
+      "etBansResponse\022\'\n\004bans\030\001 \003(\0132\023.cow.sessi" +
+      "on.v1.BanR\004bans\"X\n\020RevokeBanRequest\022\016\n\002i" +
+      "d\030\001 \001(\tR\002id\0224\n\010executor\030\002 \001(\0132\030.cow.sess" +
+      "ion.v1.ExecutorR\010executor\":\n\021RevokeBanRe" +
+      "sponse\022%\n\003ban\030\001 \001(\0132\023.cow.session.v1.Ban" +
+      "R\003ban\"K\n\031SetMaintenanceModeRequest\022\024\n\005ty" +
+      "pes\030\001 \003(\tR\005types\022\030\n\007enabled\030\002 \001(\010R\007enabl" +
+      "ed\"2\n\032SetMaintenanceModeResponse\022\024\n\005type" +
+      "s\030\001 \003(\tR\005types\"O\n\026BlacklistPlayerRequest" +
+      "\022\033\n\tplayer_id\030\001 \001(\tR\010playerId\022\030\n\007message" +
+      "\030\002 \001(\tR\007message\"O\n\027BlacklistPlayerRespon" +
+      "se\0224\n\005entry\030\001 \001(\0132\036.cow.session.v1.Black" +
+      "listEntryR\005entry\";\n\034RevokeBlacklistPlaye" +
+      "rRequest\022\033\n\tplayer_id\030\001 \001(\tR\010playerId\"<\n" +
+      "\035RevokeBlacklistPlayerResponse\022\033\n\tplayer" +
+      "_id\030\001 \001(\tR\010playerId\"\211\002\n\007Session\022\016\n\002id\030\001 " +
+      "\001(\tR\002id\022\033\n\tplayer_id\030\002 \001(\tR\010playerId\0228\n\007" +
+      "unknown\030\003 \001(\0132\034.cow.session.v1.StateUnkn" +
+      "ownH\000R\007unknown\022D\n\013initialized\030\004 \001(\0132 .co" +
+      "w.session.v1.StateInitializedH\000R\013initial" +
+      "ized\0228\n\007stopped\030\005 \001(\0132\034.cow.session.v1.S" +
+      "tateStoppedH\000R\007stopped\022\016\n\002ip\030\006 \001(\tR\002ipB\007" +
+      "\n\005state\"\016\n\014StateUnknown\"\022\n\020StateInitiali" +
+      "zed\"\237\004\n\014StateStopped\022<\n\007unknown\030\001 \001(\0132 ." +
+      "cow.session.v1.StopCauseUnknownH\000R\007unkno" +
+      "wn\022K\n\014disconnected\030\002 \001(\0132%.cow.session.v" +
+      "1.StopCauseDisconnectedH\000R\014disconnected\022" +
+      "H\n\013maintenance\030\003 \001(\0132$.cow.session.v1.St" +
+      "opCauseMaintenanceH\000R\013maintenance\0226\n\005err" +
+      "or\030\004 \001(\0132\036.cow.session.v1.StopCauseError" +
+      "H\000R\005error\0229\n\006kicked\030\005 \001(\0132\037.cow.session." +
+      "v1.StopCauseKickedH\000R\006kicked\0229\n\006banned\030\006" +
+      " \001(\0132\037.cow.session.v1.StopCauseBannedH\000R" +
+      "\006banned\022H\n\013blacklisted\030\007 \001(\0132$.cow.sessi" +
+      "on.v1.StopCauseBlacklistedH\000R\013blackliste" +
+      "d\0229\n\006custom\030\010 \001(\0132\037.cow.session.v1.StopC" +
+      "auseCustomH\000R\006customB\007\n\005cause\"\022\n\020StopCau" +
+      "seUnknown\"\027\n\025StopCauseDisconnected\"\026\n\024St" +
+      "opCauseMaintenance\"*\n\016StopCauseError\022\030\n\007" +
+      "message\030\001 \001(\tR\007message\";\n\017StopCauseKicke" +
+      "d\022(\n\004kick\030\001 \001(\0132\024.cow.session.v1.KickR\004k" +
+      "ick\"8\n\017StopCauseBanned\022%\n\003ban\030\001 \001(\0132\023.co" +
+      "w.session.v1.BanR\003ban\"L\n\024StopCauseBlackl" +
+      "isted\0224\n\005entry\030\001 \001(\0132\036.cow.session.v1.Bl" +
+      "acklistEntryR\005entry\"+\n\017StopCauseCustom\022\030" +
+      "\n\007message\030\001 \001(\tR\007message\"\374\001\n\003Ban\022\016\n\002id\030\001" +
+      " \001(\tR\002id\022\033\n\tplayer_id\030\002 \001(\tR\010playerId\022\026\n" +
+      "\006reason\030\003 \001(\tR\006reason\022\033\n\tbanned_at\030\004 \001(\004" +
+      "R\010bannedAt\022\032\n\010duration\030\005 \001(\003R\010duration\0224" +
+      "\n\010executor\030\006 \001(\0132\030.cow.session.v1.Execut" +
+      "orR\010executor\0226\n\006revoke\030\007 \001(\0132\031.cow.sessi" +
+      "on.v1.BanRevokeH\000R\006revoke\210\001\001B\t\n\007_revoke\"" +
+      "p\n\tBanRevoke\022\016\n\002id\030\001 \001(\tR\002id\022\035\n\nrevoked_" +
+      "at\030\002 \001(\004R\trevokedAt\0224\n\010executor\030\003 \001(\0132\030." +
+      "cow.session.v1.ExecutorR\010executor\"\236\001\n\004Ki" +
+      "ck\022\016\n\002id\030\001 \001(\tR\002id\022\033\n\tplayer_id\030\002 \001(\tR\010p" +
+      "layerId\022\026\n\006reason\030\003 \001(\tR\006reason\022\033\n\tkicke" +
+      "d_at\030\004 \001(\004R\010kickedAt\0224\n\010executor\030\005 \001(\0132\030" +
+      ".cow.session.v1.ExecutorR\010executor\"W\n\016Bl" +
+      "acklistEntry\022\016\n\002id\030\001 \001(\tR\002id\022\033\n\tplayer_i" +
+      "d\030\002 \001(\tR\010playerId\022\030\n\007message\030\003 \001(\tR\007mess" +
+      "age\"a\n\021SessionIdentifier\022\037\n\nsession_id\030\001" +
+      " \001(\tH\000R\tsessionId\022\035\n\tplayer_id\030\002 \001(\tH\000R\010" +
+      "playerIdB\014\n\nidentifier\"\227\001\n\010Executor\0221\n\004t" +
+      "ype\030\001 \001(\0162\035.cow.session.v1.Executor.Type" +
+      "R\004type\022\016\n\002id\030\002 \001(\tR\002id\"H\n\004Type\022\017\n\013TYPE_C" +
+      "USTOM\020\000\022\r\n\tTYPE_USER\020\001\022\017\n\013TYPE_PLAYER\020\002\022" +
+      "\017\n\013TYPE_SYSTEM\020\0032\247\007\n\016SessionService\022\\\n\rC" +
+      "reateSession\022$.cow.session.v1.CreateSess" +
+      "ionRequest\032%.cow.session.v1.CreateSessio" +
+      "nResponse\022V\n\013StopSession\022\".cow.session.v" +
+      "1.StopSessionRequest\032#.cow.session.v1.St" +
+      "opSessionResponse\022S\n\nGetSession\022!.cow.se" +
+      "ssion.v1.GetSessionRequest\032\".cow.session" +
+      ".v1.GetSessionResponse\022S\n\nKickPlayer\022!.c" +
+      "ow.session.v1.KickPlayerRequest\032\".cow.se" +
+      "ssion.v1.KickPlayerResponse\022P\n\tBanPlayer" +
+      "\022 .cow.session.v1.BanPlayerRequest\032!.cow" +
+      ".session.v1.BanPlayerResponse\022J\n\007GetBans" +
+      "\022\036.cow.session.v1.GetBansRequest\032\037.cow.s" +
+      "ession.v1.GetBansResponse\022P\n\tRevokeBan\022 " +
+      ".cow.session.v1.RevokeBanRequest\032!.cow.s" +
+      "ession.v1.RevokeBanResponse\022k\n\022SetMainte" +
+      "nanceMode\022).cow.session.v1.SetMaintenanc" +
+      "eModeRequest\032*.cow.session.v1.SetMainten" +
+      "anceModeResponse\022b\n\017BlacklistPlayer\022&.co" +
+      "w.session.v1.BlacklistPlayerRequest\032\'.co" +
+      "w.session.v1.BlacklistPlayerResponse\022t\n\025" +
+      "RevokeBlacklistPlayer\022,.cow.session.v1.R" +
+      "evokeBlacklistPlayerRequest\032-.cow.sessio" +
+      "n.v1.RevokeBlacklistPlayerResponseBL\n\036ne" +
+      "twork.cow.mooapis.session.v1P\001Z(github.c" +
+      "om/cownetwork/session/v1;sessionb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -348,7 +348,7 @@ public final class SessionServiceApi {
     internal_static_cow_session_v1_CreateSessionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_session_v1_CreateSessionRequest_descriptor,
-        new java.lang.String[] { "PlayerId", });
+        new java.lang.String[] { "PlayerId", "Ip", });
     internal_static_cow_session_v1_CreateSessionResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_cow_session_v1_CreateSessionResponse_fieldAccessorTable = new

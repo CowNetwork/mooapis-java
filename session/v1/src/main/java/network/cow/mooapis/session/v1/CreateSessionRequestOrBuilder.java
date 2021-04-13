@@ -26,4 +26,24 @@ public interface CreateSessionRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPlayerIdBytes();
+
+  /**
+   * <pre>
+   * The ip address the player connects with.
+   * </pre>
+   *
+   * <code>string ip = 2 [json_name = "ip"];</code>
+   * @return The ip.
+   */
+  java.lang.String getIp();
+  /**
+   * <pre>
+   * The ip address the player connects with.
+   * </pre>
+   *
+   * <code>string ip = 2 [json_name = "ip"];</code>
+   * @return The bytes for ip.
+   */
+  com.google.protobuf.ByteString
+      getIpBytes();
 }

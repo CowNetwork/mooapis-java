@@ -46,33 +46,4 @@ public interface PlayerIdentifierOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTypeBytes();
-
-  /**
-   * <pre>
-   * The username assigned to the reference/source account (e.g. the minecraft username).
-   * </pre>
-   *
-   * <code>string username = 3 [json_name = "username"];</code>
-   * @return Whether the username field is set.
-   */
-  boolean hasUsername();
-  /**
-   * <pre>
-   * The username assigned to the reference/source account (e.g. the minecraft username).
-   * </pre>
-   *
-   * <code>string username = 3 [json_name = "username"];</code>
-   * @return The username.
-   */
-  java.lang.String getUsername();
-  /**
-   * <pre>
-   * The username assigned to the reference/source account (e.g. the minecraft username).
-   * </pre>
-   *
-   * <code>string username = 3 [json_name = "username"];</code>
-   * @return The bytes for username.
-   */
-  com.google.protobuf.ByteString
-      getUsernameBytes();
 }

@@ -4,31 +4,26 @@
 package network.cow.mooapis.user.v1;
 
 /**
- * <pre>
- * The identifier used to determine which player to return.
- * </pre>
- *
- * Protobuf type {@code cow.user.v1.PlayerIdentifier}
+ * Protobuf type {@code cow.user.v1.Metadata}
  */
-public final class PlayerIdentifier extends
+public final class Metadata extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:cow.user.v1.PlayerIdentifier)
-    PlayerIdentifierOrBuilder {
+    // @@protoc_insertion_point(message_implements:cow.user.v1.Metadata)
+    MetadataOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use PlayerIdentifier.newBuilder() to construct.
-  private PlayerIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Metadata.newBuilder() to construct.
+  private Metadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private PlayerIdentifier() {
-    id_ = "";
-    type_ = "";
+  private Metadata() {
+    locale_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new PlayerIdentifier();
+    return new Metadata();
   }
 
   @java.lang.Override
@@ -36,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private PlayerIdentifier(
+  private Metadata(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -57,13 +52,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            id_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            type_ = s;
+            locale_ = s;
             break;
           }
           default: {
@@ -87,103 +76,57 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_PlayerIdentifier_descriptor;
+    return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_Metadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_PlayerIdentifier_fieldAccessorTable
+    return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_Metadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            network.cow.mooapis.user.v1.PlayerIdentifier.class, network.cow.mooapis.user.v1.PlayerIdentifier.Builder.class);
+            network.cow.mooapis.user.v1.Metadata.class, network.cow.mooapis.user.v1.Metadata.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+  public static final int LOCALE_FIELD_NUMBER = 1;
+  private volatile java.lang.Object locale_;
   /**
    * <pre>
-   * The reference id of the corresponding source (e.g. the minecraft uuid).
+   * The locale this player uses.
    * </pre>
    *
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return The id.
+   * <code>string locale = 1 [json_name = "locale"];</code>
+   * @return The locale.
    */
   @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
+  public java.lang.String getLocale() {
+    java.lang.Object ref = locale_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      id_ = s;
+      locale_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The reference id of the corresponding source (e.g. the minecraft uuid).
+   * The locale this player uses.
    * </pre>
    *
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return The bytes for id.
+   * <code>string locale = 1 [json_name = "locale"];</code>
+   * @return The bytes for locale.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getIdBytes() {
-    java.lang.Object ref = id_;
+      getLocaleBytes() {
+    java.lang.Object ref = locale_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object type_;
-  /**
-   * <pre>
-   * The type of the reference/source id (e.g. "minecraft")
-   * </pre>
-   *
-   * <code>string type = 2 [json_name = "type"];</code>
-   * @return The type.
-   */
-  @java.lang.Override
-  public java.lang.String getType() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      type_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The type of the reference/source id (e.g. "minecraft")
-   * </pre>
-   *
-   * <code>string type = 2 [json_name = "type"];</code>
-   * @return The bytes for type.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTypeBytes() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      type_ = b;
+      locale_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -204,11 +147,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
-    }
-    if (!getTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
+    if (!getLocaleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, locale_);
     }
     unknownFields.writeTo(output);
   }
@@ -219,11 +159,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
-    }
-    if (!getTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
+    if (!getLocaleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, locale_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -235,15 +172,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof network.cow.mooapis.user.v1.PlayerIdentifier)) {
+    if (!(obj instanceof network.cow.mooapis.user.v1.Metadata)) {
       return super.equals(obj);
     }
-    network.cow.mooapis.user.v1.PlayerIdentifier other = (network.cow.mooapis.user.v1.PlayerIdentifier) obj;
+    network.cow.mooapis.user.v1.Metadata other = (network.cow.mooapis.user.v1.Metadata) obj;
 
-    if (!getId()
-        .equals(other.getId())) return false;
-    if (!getType()
-        .equals(other.getType())) return false;
+    if (!getLocale()
+        .equals(other.getLocale())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -255,78 +190,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getType().hashCode();
+    hash = (37 * hash) + LOCALE_FIELD_NUMBER;
+    hash = (53 * hash) + getLocale().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static network.cow.mooapis.user.v1.PlayerIdentifier parseFrom(
+  public static network.cow.mooapis.user.v1.Metadata parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static network.cow.mooapis.user.v1.PlayerIdentifier parseFrom(
+  public static network.cow.mooapis.user.v1.Metadata parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static network.cow.mooapis.user.v1.PlayerIdentifier parseFrom(
+  public static network.cow.mooapis.user.v1.Metadata parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static network.cow.mooapis.user.v1.PlayerIdentifier parseFrom(
+  public static network.cow.mooapis.user.v1.Metadata parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static network.cow.mooapis.user.v1.PlayerIdentifier parseFrom(byte[] data)
+  public static network.cow.mooapis.user.v1.Metadata parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static network.cow.mooapis.user.v1.PlayerIdentifier parseFrom(
+  public static network.cow.mooapis.user.v1.Metadata parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static network.cow.mooapis.user.v1.PlayerIdentifier parseFrom(java.io.InputStream input)
+  public static network.cow.mooapis.user.v1.Metadata parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static network.cow.mooapis.user.v1.PlayerIdentifier parseFrom(
+  public static network.cow.mooapis.user.v1.Metadata parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static network.cow.mooapis.user.v1.PlayerIdentifier parseDelimitedFrom(java.io.InputStream input)
+  public static network.cow.mooapis.user.v1.Metadata parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static network.cow.mooapis.user.v1.PlayerIdentifier parseDelimitedFrom(
+  public static network.cow.mooapis.user.v1.Metadata parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static network.cow.mooapis.user.v1.PlayerIdentifier parseFrom(
+  public static network.cow.mooapis.user.v1.Metadata parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static network.cow.mooapis.user.v1.PlayerIdentifier parseFrom(
+  public static network.cow.mooapis.user.v1.Metadata parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -339,7 +272,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(network.cow.mooapis.user.v1.PlayerIdentifier prototype) {
+  public static Builder newBuilder(network.cow.mooapis.user.v1.Metadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -355,30 +288,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * The identifier used to determine which player to return.
-   * </pre>
-   *
-   * Protobuf type {@code cow.user.v1.PlayerIdentifier}
+   * Protobuf type {@code cow.user.v1.Metadata}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:cow.user.v1.PlayerIdentifier)
-      network.cow.mooapis.user.v1.PlayerIdentifierOrBuilder {
+      // @@protoc_insertion_point(builder_implements:cow.user.v1.Metadata)
+      network.cow.mooapis.user.v1.MetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_PlayerIdentifier_descriptor;
+      return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_Metadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_PlayerIdentifier_fieldAccessorTable
+      return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_Metadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              network.cow.mooapis.user.v1.PlayerIdentifier.class, network.cow.mooapis.user.v1.PlayerIdentifier.Builder.class);
+              network.cow.mooapis.user.v1.Metadata.class, network.cow.mooapis.user.v1.Metadata.Builder.class);
     }
 
-    // Construct using network.cow.mooapis.user.v1.PlayerIdentifier.newBuilder()
+    // Construct using network.cow.mooapis.user.v1.Metadata.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -396,9 +325,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = "";
-
-      type_ = "";
+      locale_ = "";
 
       return this;
     }
@@ -406,17 +333,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_PlayerIdentifier_descriptor;
+      return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_Metadata_descriptor;
     }
 
     @java.lang.Override
-    public network.cow.mooapis.user.v1.PlayerIdentifier getDefaultInstanceForType() {
-      return network.cow.mooapis.user.v1.PlayerIdentifier.getDefaultInstance();
+    public network.cow.mooapis.user.v1.Metadata getDefaultInstanceForType() {
+      return network.cow.mooapis.user.v1.Metadata.getDefaultInstance();
     }
 
     @java.lang.Override
-    public network.cow.mooapis.user.v1.PlayerIdentifier build() {
-      network.cow.mooapis.user.v1.PlayerIdentifier result = buildPartial();
+    public network.cow.mooapis.user.v1.Metadata build() {
+      network.cow.mooapis.user.v1.Metadata result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -424,10 +351,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public network.cow.mooapis.user.v1.PlayerIdentifier buildPartial() {
-      network.cow.mooapis.user.v1.PlayerIdentifier result = new network.cow.mooapis.user.v1.PlayerIdentifier(this);
-      result.id_ = id_;
-      result.type_ = type_;
+    public network.cow.mooapis.user.v1.Metadata buildPartial() {
+      network.cow.mooapis.user.v1.Metadata result = new network.cow.mooapis.user.v1.Metadata(this);
+      result.locale_ = locale_;
       onBuilt();
       return result;
     }
@@ -466,22 +392,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof network.cow.mooapis.user.v1.PlayerIdentifier) {
-        return mergeFrom((network.cow.mooapis.user.v1.PlayerIdentifier)other);
+      if (other instanceof network.cow.mooapis.user.v1.Metadata) {
+        return mergeFrom((network.cow.mooapis.user.v1.Metadata)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(network.cow.mooapis.user.v1.PlayerIdentifier other) {
-      if (other == network.cow.mooapis.user.v1.PlayerIdentifier.getDefaultInstance()) return this;
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
-        onChanged();
-      }
-      if (!other.getType().isEmpty()) {
-        type_ = other.type_;
+    public Builder mergeFrom(network.cow.mooapis.user.v1.Metadata other) {
+      if (other == network.cow.mooapis.user.v1.Metadata.getDefaultInstance()) return this;
+      if (!other.getLocale().isEmpty()) {
+        locale_ = other.locale_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -499,11 +421,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      network.cow.mooapis.user.v1.PlayerIdentifier parsedMessage = null;
+      network.cow.mooapis.user.v1.Metadata parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (network.cow.mooapis.user.v1.PlayerIdentifier) e.getUnfinishedMessage();
+        parsedMessage = (network.cow.mooapis.user.v1.Metadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -513,22 +435,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object id_ = "";
+    private java.lang.Object locale_ = "";
     /**
      * <pre>
-     * The reference id of the corresponding source (e.g. the minecraft uuid).
+     * The locale this player uses.
      * </pre>
      *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string locale = 1 [json_name = "locale"];</code>
+     * @return The locale.
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
+    public java.lang.String getLocale() {
+      java.lang.Object ref = locale_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        locale_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -536,20 +458,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The reference id of the corresponding source (e.g. the minecraft uuid).
+     * The locale this player uses.
      * </pre>
      *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The bytes for id.
+     * <code>string locale = 1 [json_name = "locale"];</code>
+     * @return The bytes for locale.
      */
     public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
+        getLocaleBytes() {
+      java.lang.Object ref = locale_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        id_ = b;
+        locale_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -557,150 +479,54 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The reference id of the corresponding source (e.g. the minecraft uuid).
+     * The locale this player uses.
      * </pre>
      *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @param value The id to set.
+     * <code>string locale = 1 [json_name = "locale"];</code>
+     * @param value The locale to set.
      * @return This builder for chaining.
      */
-    public Builder setId(
+    public Builder setLocale(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      id_ = value;
+      locale_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The reference id of the corresponding source (e.g. the minecraft uuid).
+     * The locale this player uses.
      * </pre>
      *
-     * <code>string id = 1 [json_name = "id"];</code>
+     * <code>string locale = 1 [json_name = "locale"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    public Builder clearLocale() {
       
-      id_ = getDefaultInstance().getId();
+      locale_ = getDefaultInstance().getLocale();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The reference id of the corresponding source (e.g. the minecraft uuid).
+     * The locale this player uses.
      * </pre>
      *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @param value The bytes for id to set.
+     * <code>string locale = 1 [json_name = "locale"];</code>
+     * @param value The bytes for locale to set.
      * @return This builder for chaining.
      */
-    public Builder setIdBytes(
+    public Builder setLocaleBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      id_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object type_ = "";
-    /**
-     * <pre>
-     * The type of the reference/source id (e.g. "minecraft")
-     * </pre>
-     *
-     * <code>string type = 2 [json_name = "type"];</code>
-     * @return The type.
-     */
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        type_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The type of the reference/source id (e.g. "minecraft")
-     * </pre>
-     *
-     * <code>string type = 2 [json_name = "type"];</code>
-     * @return The bytes for type.
-     */
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        type_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The type of the reference/source id (e.g. "minecraft")
-     * </pre>
-     *
-     * <code>string type = 2 [json_name = "type"];</code>
-     * @param value The type to set.
-     * @return This builder for chaining.
-     */
-    public Builder setType(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      type_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The type of the reference/source id (e.g. "minecraft")
-     * </pre>
-     *
-     * <code>string type = 2 [json_name = "type"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearType() {
-      
-      type_ = getDefaultInstance().getType();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The type of the reference/source id (e.g. "minecraft")
-     * </pre>
-     *
-     * <code>string type = 2 [json_name = "type"];</code>
-     * @param value The bytes for type to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      type_ = value;
+      locale_ = value;
       onChanged();
       return this;
     }
@@ -717,41 +543,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:cow.user.v1.PlayerIdentifier)
+    // @@protoc_insertion_point(builder_scope:cow.user.v1.Metadata)
   }
 
-  // @@protoc_insertion_point(class_scope:cow.user.v1.PlayerIdentifier)
-  private static final network.cow.mooapis.user.v1.PlayerIdentifier DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:cow.user.v1.Metadata)
+  private static final network.cow.mooapis.user.v1.Metadata DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new network.cow.mooapis.user.v1.PlayerIdentifier();
+    DEFAULT_INSTANCE = new network.cow.mooapis.user.v1.Metadata();
   }
 
-  public static network.cow.mooapis.user.v1.PlayerIdentifier getDefaultInstance() {
+  public static network.cow.mooapis.user.v1.Metadata getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PlayerIdentifier>
-      PARSER = new com.google.protobuf.AbstractParser<PlayerIdentifier>() {
+  private static final com.google.protobuf.Parser<Metadata>
+      PARSER = new com.google.protobuf.AbstractParser<Metadata>() {
     @java.lang.Override
-    public PlayerIdentifier parsePartialFrom(
+    public Metadata parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PlayerIdentifier(input, extensionRegistry);
+      return new Metadata(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<PlayerIdentifier> parser() {
+  public static com.google.protobuf.Parser<Metadata> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<PlayerIdentifier> getParserForType() {
+  public com.google.protobuf.Parser<Metadata> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public network.cow.mooapis.user.v1.PlayerIdentifier getDefaultInstanceForType() {
+  public network.cow.mooapis.user.v1.Metadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

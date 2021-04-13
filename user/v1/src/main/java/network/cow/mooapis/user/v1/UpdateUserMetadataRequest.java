@@ -4,26 +4,26 @@
 package network.cow.mooapis.user.v1;
 
 /**
- * Protobuf type {@code cow.user.v1.User}
+ * Protobuf type {@code cow.user.v1.UpdateUserMetadataRequest}
  */
-public final class User extends
+public final class UpdateUserMetadataRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:cow.user.v1.User)
-    UserOrBuilder {
+    // @@protoc_insertion_point(message_implements:cow.user.v1.UpdateUserMetadataRequest)
+    UpdateUserMetadataRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use User.newBuilder() to construct.
-  private User(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateUserMetadataRequest.newBuilder() to construct.
+  private UpdateUserMetadataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private User() {
-    id_ = "";
+  private UpdateUserMetadataRequest() {
+    userId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new User();
+    return new UpdateUserMetadataRequest();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private User(
+  private UpdateUserMetadataRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -52,7 +52,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            id_ = s;
+            userId_ = s;
             break;
           }
           case 18: {
@@ -89,57 +89,49 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_User_descriptor;
+    return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_UpdateUserMetadataRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_User_fieldAccessorTable
+    return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_UpdateUserMetadataRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            network.cow.mooapis.user.v1.User.class, network.cow.mooapis.user.v1.User.Builder.class);
+            network.cow.mooapis.user.v1.UpdateUserMetadataRequest.class, network.cow.mooapis.user.v1.UpdateUserMetadataRequest.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+  public static final int USER_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object userId_;
   /**
-   * <pre>
-   * The unique identifier of the user.
-   * </pre>
-   *
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return The id.
+   * <code>string user_id = 1 [json_name = "userId"];</code>
+   * @return The userId.
    */
   @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
+  public java.lang.String getUserId() {
+    java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      id_ = s;
+      userId_ = s;
       return s;
     }
   }
   /**
-   * <pre>
-   * The unique identifier of the user.
-   * </pre>
-   *
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return The bytes for id.
+   * <code>string user_id = 1 [json_name = "userId"];</code>
+   * @return The bytes for userId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getIdBytes() {
-    java.lang.Object ref = id_;
+      getUserIdBytes() {
+    java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      id_ = b;
+      userId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -149,10 +141,6 @@ private static final long serialVersionUID = 0L;
   public static final int METADATA_FIELD_NUMBER = 2;
   private network.cow.mooapis.user.v1.Metadata metadata_;
   /**
-   * <pre>
-   * The metadata assigned to the user.
-   * </pre>
-   *
    * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
    * @return Whether the metadata field is set.
    */
@@ -161,10 +149,6 @@ private static final long serialVersionUID = 0L;
     return metadata_ != null;
   }
   /**
-   * <pre>
-   * The metadata assigned to the user.
-   * </pre>
-   *
    * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
    * @return The metadata.
    */
@@ -173,10 +157,6 @@ private static final long serialVersionUID = 0L;
     return metadata_ == null ? network.cow.mooapis.user.v1.Metadata.getDefaultInstance() : metadata_;
   }
   /**
-   * <pre>
-   * The metadata assigned to the user.
-   * </pre>
-   *
    * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
    */
   @java.lang.Override
@@ -198,8 +178,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+    if (!getUserIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
     }
     if (metadata_ != null) {
       output.writeMessage(2, getMetadata());
@@ -213,8 +193,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+    if (!getUserIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
     }
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -230,13 +210,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof network.cow.mooapis.user.v1.User)) {
+    if (!(obj instanceof network.cow.mooapis.user.v1.UpdateUserMetadataRequest)) {
       return super.equals(obj);
     }
-    network.cow.mooapis.user.v1.User other = (network.cow.mooapis.user.v1.User) obj;
+    network.cow.mooapis.user.v1.UpdateUserMetadataRequest other = (network.cow.mooapis.user.v1.UpdateUserMetadataRequest) obj;
 
-    if (!getId()
-        .equals(other.getId())) return false;
+    if (!getUserId()
+        .equals(other.getUserId())) return false;
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
       if (!getMetadata()
@@ -253,8 +233,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getUserId().hashCode();
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
@@ -264,69 +244,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static network.cow.mooapis.user.v1.User parseFrom(
+  public static network.cow.mooapis.user.v1.UpdateUserMetadataRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static network.cow.mooapis.user.v1.User parseFrom(
+  public static network.cow.mooapis.user.v1.UpdateUserMetadataRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static network.cow.mooapis.user.v1.User parseFrom(
+  public static network.cow.mooapis.user.v1.UpdateUserMetadataRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static network.cow.mooapis.user.v1.User parseFrom(
+  public static network.cow.mooapis.user.v1.UpdateUserMetadataRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static network.cow.mooapis.user.v1.User parseFrom(byte[] data)
+  public static network.cow.mooapis.user.v1.UpdateUserMetadataRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static network.cow.mooapis.user.v1.User parseFrom(
+  public static network.cow.mooapis.user.v1.UpdateUserMetadataRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static network.cow.mooapis.user.v1.User parseFrom(java.io.InputStream input)
+  public static network.cow.mooapis.user.v1.UpdateUserMetadataRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static network.cow.mooapis.user.v1.User parseFrom(
+  public static network.cow.mooapis.user.v1.UpdateUserMetadataRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static network.cow.mooapis.user.v1.User parseDelimitedFrom(java.io.InputStream input)
+  public static network.cow.mooapis.user.v1.UpdateUserMetadataRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static network.cow.mooapis.user.v1.User parseDelimitedFrom(
+  public static network.cow.mooapis.user.v1.UpdateUserMetadataRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static network.cow.mooapis.user.v1.User parseFrom(
+  public static network.cow.mooapis.user.v1.UpdateUserMetadataRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static network.cow.mooapis.user.v1.User parseFrom(
+  public static network.cow.mooapis.user.v1.UpdateUserMetadataRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -339,7 +319,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(network.cow.mooapis.user.v1.User prototype) {
+  public static Builder newBuilder(network.cow.mooapis.user.v1.UpdateUserMetadataRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -355,26 +335,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code cow.user.v1.User}
+   * Protobuf type {@code cow.user.v1.UpdateUserMetadataRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:cow.user.v1.User)
-      network.cow.mooapis.user.v1.UserOrBuilder {
+      // @@protoc_insertion_point(builder_implements:cow.user.v1.UpdateUserMetadataRequest)
+      network.cow.mooapis.user.v1.UpdateUserMetadataRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_User_descriptor;
+      return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_UpdateUserMetadataRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_User_fieldAccessorTable
+      return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_UpdateUserMetadataRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              network.cow.mooapis.user.v1.User.class, network.cow.mooapis.user.v1.User.Builder.class);
+              network.cow.mooapis.user.v1.UpdateUserMetadataRequest.class, network.cow.mooapis.user.v1.UpdateUserMetadataRequest.Builder.class);
     }
 
-    // Construct using network.cow.mooapis.user.v1.User.newBuilder()
+    // Construct using network.cow.mooapis.user.v1.UpdateUserMetadataRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -392,7 +372,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = "";
+      userId_ = "";
 
       if (metadataBuilder_ == null) {
         metadata_ = null;
@@ -406,17 +386,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_User_descriptor;
+      return network.cow.mooapis.user.v1.UserServiceApi.internal_static_cow_user_v1_UpdateUserMetadataRequest_descriptor;
     }
 
     @java.lang.Override
-    public network.cow.mooapis.user.v1.User getDefaultInstanceForType() {
-      return network.cow.mooapis.user.v1.User.getDefaultInstance();
+    public network.cow.mooapis.user.v1.UpdateUserMetadataRequest getDefaultInstanceForType() {
+      return network.cow.mooapis.user.v1.UpdateUserMetadataRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public network.cow.mooapis.user.v1.User build() {
-      network.cow.mooapis.user.v1.User result = buildPartial();
+    public network.cow.mooapis.user.v1.UpdateUserMetadataRequest build() {
+      network.cow.mooapis.user.v1.UpdateUserMetadataRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -424,9 +404,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public network.cow.mooapis.user.v1.User buildPartial() {
-      network.cow.mooapis.user.v1.User result = new network.cow.mooapis.user.v1.User(this);
-      result.id_ = id_;
+    public network.cow.mooapis.user.v1.UpdateUserMetadataRequest buildPartial() {
+      network.cow.mooapis.user.v1.UpdateUserMetadataRequest result = new network.cow.mooapis.user.v1.UpdateUserMetadataRequest(this);
+      result.userId_ = userId_;
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
       } else {
@@ -470,18 +450,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof network.cow.mooapis.user.v1.User) {
-        return mergeFrom((network.cow.mooapis.user.v1.User)other);
+      if (other instanceof network.cow.mooapis.user.v1.UpdateUserMetadataRequest) {
+        return mergeFrom((network.cow.mooapis.user.v1.UpdateUserMetadataRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(network.cow.mooapis.user.v1.User other) {
-      if (other == network.cow.mooapis.user.v1.User.getDefaultInstance()) return this;
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
+    public Builder mergeFrom(network.cow.mooapis.user.v1.UpdateUserMetadataRequest other) {
+      if (other == network.cow.mooapis.user.v1.UpdateUserMetadataRequest.getDefaultInstance()) return this;
+      if (!other.getUserId().isEmpty()) {
+        userId_ = other.userId_;
         onChanged();
       }
       if (other.hasMetadata()) {
@@ -502,11 +482,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      network.cow.mooapis.user.v1.User parsedMessage = null;
+      network.cow.mooapis.user.v1.UpdateUserMetadataRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (network.cow.mooapis.user.v1.User) e.getUnfinishedMessage();
+        parsedMessage = (network.cow.mooapis.user.v1.UpdateUserMetadataRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -516,98 +496,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object id_ = "";
+    private java.lang.Object userId_ = "";
     /**
-     * <pre>
-     * The unique identifier of the user.
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string user_id = 1 [json_name = "userId"];</code>
+     * @return The userId.
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        userId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <pre>
-     * The unique identifier of the user.
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The bytes for id.
+     * <code>string user_id = 1 [json_name = "userId"];</code>
+     * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        id_ = b;
+        userId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <pre>
-     * The unique identifier of the user.
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @param value The id to set.
+     * <code>string user_id = 1 [json_name = "userId"];</code>
+     * @param value The userId to set.
      * @return This builder for chaining.
      */
-    public Builder setId(
+    public Builder setUserId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      id_ = value;
+      userId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * The unique identifier of the user.
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id"];</code>
+     * <code>string user_id = 1 [json_name = "userId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    public Builder clearUserId() {
       
-      id_ = getDefaultInstance().getId();
+      userId_ = getDefaultInstance().getUserId();
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * The unique identifier of the user.
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @param value The bytes for id to set.
+     * <code>string user_id = 1 [json_name = "userId"];</code>
+     * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */
-    public Builder setIdBytes(
+    public Builder setUserIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      id_ = value;
+      userId_ = value;
       onChanged();
       return this;
     }
@@ -616,10 +576,6 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         network.cow.mooapis.user.v1.Metadata, network.cow.mooapis.user.v1.Metadata.Builder, network.cow.mooapis.user.v1.MetadataOrBuilder> metadataBuilder_;
     /**
-     * <pre>
-     * The metadata assigned to the user.
-     * </pre>
-     *
      * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
      * @return Whether the metadata field is set.
      */
@@ -627,10 +583,6 @@ private static final long serialVersionUID = 0L;
       return metadataBuilder_ != null || metadata_ != null;
     }
     /**
-     * <pre>
-     * The metadata assigned to the user.
-     * </pre>
-     *
      * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
      * @return The metadata.
      */
@@ -642,10 +594,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * The metadata assigned to the user.
-     * </pre>
-     *
      * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
      */
     public Builder setMetadata(network.cow.mooapis.user.v1.Metadata value) {
@@ -662,10 +610,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * The metadata assigned to the user.
-     * </pre>
-     *
      * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
      */
     public Builder setMetadata(
@@ -680,10 +624,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * The metadata assigned to the user.
-     * </pre>
-     *
      * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
      */
     public Builder mergeMetadata(network.cow.mooapis.user.v1.Metadata value) {
@@ -702,10 +642,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * The metadata assigned to the user.
-     * </pre>
-     *
      * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
      */
     public Builder clearMetadata() {
@@ -720,10 +656,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * The metadata assigned to the user.
-     * </pre>
-     *
      * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
      */
     public network.cow.mooapis.user.v1.Metadata.Builder getMetadataBuilder() {
@@ -732,10 +664,6 @@ private static final long serialVersionUID = 0L;
       return getMetadataFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * The metadata assigned to the user.
-     * </pre>
-     *
      * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
      */
     public network.cow.mooapis.user.v1.MetadataOrBuilder getMetadataOrBuilder() {
@@ -747,10 +675,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * The metadata assigned to the user.
-     * </pre>
-     *
      * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -779,41 +703,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:cow.user.v1.User)
+    // @@protoc_insertion_point(builder_scope:cow.user.v1.UpdateUserMetadataRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:cow.user.v1.User)
-  private static final network.cow.mooapis.user.v1.User DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:cow.user.v1.UpdateUserMetadataRequest)
+  private static final network.cow.mooapis.user.v1.UpdateUserMetadataRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new network.cow.mooapis.user.v1.User();
+    DEFAULT_INSTANCE = new network.cow.mooapis.user.v1.UpdateUserMetadataRequest();
   }
 
-  public static network.cow.mooapis.user.v1.User getDefaultInstance() {
+  public static network.cow.mooapis.user.v1.UpdateUserMetadataRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<User>
-      PARSER = new com.google.protobuf.AbstractParser<User>() {
+  private static final com.google.protobuf.Parser<UpdateUserMetadataRequest>
+      PARSER = new com.google.protobuf.AbstractParser<UpdateUserMetadataRequest>() {
     @java.lang.Override
-    public User parsePartialFrom(
+    public UpdateUserMetadataRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new User(input, extensionRegistry);
+      return new UpdateUserMetadataRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<User> parser() {
+  public static com.google.protobuf.Parser<UpdateUserMetadataRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<User> getParserForType() {
+  public com.google.protobuf.Parser<UpdateUserMetadataRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public network.cow.mooapis.user.v1.User getDefaultInstanceForType() {
+  public network.cow.mooapis.user.v1.UpdateUserMetadataRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

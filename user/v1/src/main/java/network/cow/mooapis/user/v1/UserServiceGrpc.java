@@ -61,6 +61,37 @@ public final class UserServiceGrpc {
     return getGetPlayerMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.GetPlayerByIdRequest,
+      network.cow.mooapis.user.v1.GetPlayerByIdResponse> getGetPlayerByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPlayerById",
+      requestType = network.cow.mooapis.user.v1.GetPlayerByIdRequest.class,
+      responseType = network.cow.mooapis.user.v1.GetPlayerByIdResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.GetPlayerByIdRequest,
+      network.cow.mooapis.user.v1.GetPlayerByIdResponse> getGetPlayerByIdMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.GetPlayerByIdRequest, network.cow.mooapis.user.v1.GetPlayerByIdResponse> getGetPlayerByIdMethod;
+    if ((getGetPlayerByIdMethod = UserServiceGrpc.getGetPlayerByIdMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getGetPlayerByIdMethod = UserServiceGrpc.getGetPlayerByIdMethod) == null) {
+          UserServiceGrpc.getGetPlayerByIdMethod = getGetPlayerByIdMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.user.v1.GetPlayerByIdRequest, network.cow.mooapis.user.v1.GetPlayerByIdResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPlayerById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  network.cow.mooapis.user.v1.GetPlayerByIdRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  network.cow.mooapis.user.v1.GetPlayerByIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("GetPlayerById"))
+              .build();
+        }
+      }
+    }
+    return getGetPlayerByIdMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.GetPlayersRequest,
       network.cow.mooapis.user.v1.GetPlayersResponse> getGetPlayersMethod;
 
@@ -92,35 +123,35 @@ public final class UserServiceGrpc {
     return getGetPlayersMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.GetPlayerUserRequest,
-      network.cow.mooapis.user.v1.GetPlayerUserResponse> getGetPlayerUserMethod;
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.GetPlayersByIdRequest,
+      network.cow.mooapis.user.v1.GetPlayersByIdResponse> getGetPlayersByIdMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetPlayerUser",
-      requestType = network.cow.mooapis.user.v1.GetPlayerUserRequest.class,
-      responseType = network.cow.mooapis.user.v1.GetPlayerUserResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetPlayersById",
+      requestType = network.cow.mooapis.user.v1.GetPlayersByIdRequest.class,
+      responseType = network.cow.mooapis.user.v1.GetPlayersByIdResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.GetPlayerUserRequest,
-      network.cow.mooapis.user.v1.GetPlayerUserResponse> getGetPlayerUserMethod() {
-    io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.GetPlayerUserRequest, network.cow.mooapis.user.v1.GetPlayerUserResponse> getGetPlayerUserMethod;
-    if ((getGetPlayerUserMethod = UserServiceGrpc.getGetPlayerUserMethod) == null) {
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.GetPlayersByIdRequest,
+      network.cow.mooapis.user.v1.GetPlayersByIdResponse> getGetPlayersByIdMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.GetPlayersByIdRequest, network.cow.mooapis.user.v1.GetPlayersByIdResponse> getGetPlayersByIdMethod;
+    if ((getGetPlayersByIdMethod = UserServiceGrpc.getGetPlayersByIdMethod) == null) {
       synchronized (UserServiceGrpc.class) {
-        if ((getGetPlayerUserMethod = UserServiceGrpc.getGetPlayerUserMethod) == null) {
-          UserServiceGrpc.getGetPlayerUserMethod = getGetPlayerUserMethod =
-              io.grpc.MethodDescriptor.<network.cow.mooapis.user.v1.GetPlayerUserRequest, network.cow.mooapis.user.v1.GetPlayerUserResponse>newBuilder()
+        if ((getGetPlayersByIdMethod = UserServiceGrpc.getGetPlayersByIdMethod) == null) {
+          UserServiceGrpc.getGetPlayersByIdMethod = getGetPlayersByIdMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.user.v1.GetPlayersByIdRequest, network.cow.mooapis.user.v1.GetPlayersByIdResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPlayerUser"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPlayersById"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.user.v1.GetPlayerUserRequest.getDefaultInstance()))
+                  network.cow.mooapis.user.v1.GetPlayersByIdRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.user.v1.GetPlayerUserResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("GetPlayerUser"))
+                  network.cow.mooapis.user.v1.GetPlayersByIdResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("GetPlayersById"))
               .build();
         }
       }
     }
-    return getGetPlayerUserMethod;
+    return getGetPlayersByIdMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.GetUserRequest,
@@ -185,6 +216,68 @@ public final class UserServiceGrpc {
     return getGetUserPlayersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest,
+      network.cow.mooapis.user.v1.UpdatePlayerMetadataResponse> getUpdatePlayerMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePlayerMetadata",
+      requestType = network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest.class,
+      responseType = network.cow.mooapis.user.v1.UpdatePlayerMetadataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest,
+      network.cow.mooapis.user.v1.UpdatePlayerMetadataResponse> getUpdatePlayerMetadataMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest, network.cow.mooapis.user.v1.UpdatePlayerMetadataResponse> getUpdatePlayerMetadataMethod;
+    if ((getUpdatePlayerMetadataMethod = UserServiceGrpc.getUpdatePlayerMetadataMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getUpdatePlayerMetadataMethod = UserServiceGrpc.getUpdatePlayerMetadataMethod) == null) {
+          UserServiceGrpc.getUpdatePlayerMetadataMethod = getUpdatePlayerMetadataMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest, network.cow.mooapis.user.v1.UpdatePlayerMetadataResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePlayerMetadata"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  network.cow.mooapis.user.v1.UpdatePlayerMetadataResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("UpdatePlayerMetadata"))
+              .build();
+        }
+      }
+    }
+    return getUpdatePlayerMetadataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.UpdateUserMetadataRequest,
+      network.cow.mooapis.user.v1.UpdateUserMetadataResponse> getUpdateUserMetadataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateUserMetadata",
+      requestType = network.cow.mooapis.user.v1.UpdateUserMetadataRequest.class,
+      responseType = network.cow.mooapis.user.v1.UpdateUserMetadataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.UpdateUserMetadataRequest,
+      network.cow.mooapis.user.v1.UpdateUserMetadataResponse> getUpdateUserMetadataMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.user.v1.UpdateUserMetadataRequest, network.cow.mooapis.user.v1.UpdateUserMetadataResponse> getUpdateUserMetadataMethod;
+    if ((getUpdateUserMetadataMethod = UserServiceGrpc.getUpdateUserMetadataMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getUpdateUserMetadataMethod = UserServiceGrpc.getUpdateUserMetadataMethod) == null) {
+          UserServiceGrpc.getUpdateUserMetadataMethod = getUpdateUserMetadataMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.user.v1.UpdateUserMetadataRequest, network.cow.mooapis.user.v1.UpdateUserMetadataResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateUserMetadata"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  network.cow.mooapis.user.v1.UpdateUserMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  network.cow.mooapis.user.v1.UpdateUserMetadataResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("UpdateUserMetadata"))
+              .build();
+        }
+      }
+    }
+    return getUpdateUserMetadataMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -227,6 +320,16 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
+     * Returns the player or creates/updates it.
+     * </pre>
+     */
+    public void getPlayerById(network.cow.mooapis.user.v1.GetPlayerByIdRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.GetPlayerByIdResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetPlayerByIdMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Returns the players or creates/updates them.
      * </pre>
      */
@@ -237,12 +340,12 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Returns the user this player is assigned to.
+     * Returns the players or creates/updates them.
      * </pre>
      */
-    public void getPlayerUser(network.cow.mooapis.user.v1.GetPlayerUserRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.GetPlayerUserResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetPlayerUserMethod(), responseObserver);
+    public void getPlayersById(network.cow.mooapis.user.v1.GetPlayersByIdRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.GetPlayersByIdResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetPlayersByIdMethod(), responseObserver);
     }
 
     /**
@@ -265,6 +368,26 @@ public final class UserServiceGrpc {
       asyncUnimplementedUnaryCall(getGetUserPlayersMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Updates the metadata and returns the player.
+     * </pre>
+     */
+    public void updatePlayerMetadata(network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.UpdatePlayerMetadataResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdatePlayerMetadataMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Updates the metadata and returns the user.
+     * </pre>
+     */
+    public void updateUserMetadata(network.cow.mooapis.user.v1.UpdateUserMetadataRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.UpdateUserMetadataResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateUserMetadataMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -275,6 +398,13 @@ public final class UserServiceGrpc {
                 network.cow.mooapis.user.v1.GetPlayerResponse>(
                   this, METHODID_GET_PLAYER)))
           .addMethod(
+            getGetPlayerByIdMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                network.cow.mooapis.user.v1.GetPlayerByIdRequest,
+                network.cow.mooapis.user.v1.GetPlayerByIdResponse>(
+                  this, METHODID_GET_PLAYER_BY_ID)))
+          .addMethod(
             getGetPlayersMethod(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -282,12 +412,12 @@ public final class UserServiceGrpc {
                 network.cow.mooapis.user.v1.GetPlayersResponse>(
                   this, METHODID_GET_PLAYERS)))
           .addMethod(
-            getGetPlayerUserMethod(),
+            getGetPlayersByIdMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                network.cow.mooapis.user.v1.GetPlayerUserRequest,
-                network.cow.mooapis.user.v1.GetPlayerUserResponse>(
-                  this, METHODID_GET_PLAYER_USER)))
+                network.cow.mooapis.user.v1.GetPlayersByIdRequest,
+                network.cow.mooapis.user.v1.GetPlayersByIdResponse>(
+                  this, METHODID_GET_PLAYERS_BY_ID)))
           .addMethod(
             getGetUserMethod(),
             asyncUnaryCall(
@@ -302,6 +432,20 @@ public final class UserServiceGrpc {
                 network.cow.mooapis.user.v1.GetUserPlayersRequest,
                 network.cow.mooapis.user.v1.GetUserPlayersResponse>(
                   this, METHODID_GET_USER_PLAYERS)))
+          .addMethod(
+            getUpdatePlayerMetadataMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest,
+                network.cow.mooapis.user.v1.UpdatePlayerMetadataResponse>(
+                  this, METHODID_UPDATE_PLAYER_METADATA)))
+          .addMethod(
+            getUpdateUserMetadataMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                network.cow.mooapis.user.v1.UpdateUserMetadataRequest,
+                network.cow.mooapis.user.v1.UpdateUserMetadataResponse>(
+                  this, METHODID_UPDATE_USER_METADATA)))
           .build();
     }
   }
@@ -340,6 +484,17 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
+     * Returns the player or creates/updates it.
+     * </pre>
+     */
+    public void getPlayerById(network.cow.mooapis.user.v1.GetPlayerByIdRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.GetPlayerByIdResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetPlayerByIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Returns the players or creates/updates them.
      * </pre>
      */
@@ -351,13 +506,13 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Returns the user this player is assigned to.
+     * Returns the players or creates/updates them.
      * </pre>
      */
-    public void getPlayerUser(network.cow.mooapis.user.v1.GetPlayerUserRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.GetPlayerUserResponse> responseObserver) {
+    public void getPlayersById(network.cow.mooapis.user.v1.GetPlayersByIdRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.GetPlayersByIdResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetPlayerUserMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetPlayersByIdMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -380,6 +535,28 @@ public final class UserServiceGrpc {
         io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.GetUserPlayersResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetUserPlayersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Updates the metadata and returns the player.
+     * </pre>
+     */
+    public void updatePlayerMetadata(network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.UpdatePlayerMetadataResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdatePlayerMetadataMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Updates the metadata and returns the user.
+     * </pre>
+     */
+    public void updateUserMetadata(network.cow.mooapis.user.v1.UpdateUserMetadataRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.UpdateUserMetadataResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateUserMetadataMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -416,6 +593,16 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
+     * Returns the player or creates/updates it.
+     * </pre>
+     */
+    public network.cow.mooapis.user.v1.GetPlayerByIdResponse getPlayerById(network.cow.mooapis.user.v1.GetPlayerByIdRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetPlayerByIdMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Returns the players or creates/updates them.
      * </pre>
      */
@@ -426,12 +613,12 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Returns the user this player is assigned to.
+     * Returns the players or creates/updates them.
      * </pre>
      */
-    public network.cow.mooapis.user.v1.GetPlayerUserResponse getPlayerUser(network.cow.mooapis.user.v1.GetPlayerUserRequest request) {
+    public network.cow.mooapis.user.v1.GetPlayersByIdResponse getPlayersById(network.cow.mooapis.user.v1.GetPlayersByIdRequest request) {
       return blockingUnaryCall(
-          getChannel(), getGetPlayerUserMethod(), getCallOptions(), request);
+          getChannel(), getGetPlayersByIdMethod(), getCallOptions(), request);
     }
 
     /**
@@ -452,6 +639,26 @@ public final class UserServiceGrpc {
     public network.cow.mooapis.user.v1.GetUserPlayersResponse getUserPlayers(network.cow.mooapis.user.v1.GetUserPlayersRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetUserPlayersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Updates the metadata and returns the player.
+     * </pre>
+     */
+    public network.cow.mooapis.user.v1.UpdatePlayerMetadataResponse updatePlayerMetadata(network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdatePlayerMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Updates the metadata and returns the user.
+     * </pre>
+     */
+    public network.cow.mooapis.user.v1.UpdateUserMetadataResponse updateUserMetadata(network.cow.mooapis.user.v1.UpdateUserMetadataRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateUserMetadataMethod(), getCallOptions(), request);
     }
   }
 
@@ -489,6 +696,17 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
+     * Returns the player or creates/updates it.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.user.v1.GetPlayerByIdResponse> getPlayerById(
+        network.cow.mooapis.user.v1.GetPlayerByIdRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetPlayerByIdMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Returns the players or creates/updates them.
      * </pre>
      */
@@ -500,13 +718,13 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Returns the user this player is assigned to.
+     * Returns the players or creates/updates them.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.user.v1.GetPlayerUserResponse> getPlayerUser(
-        network.cow.mooapis.user.v1.GetPlayerUserRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.user.v1.GetPlayersByIdResponse> getPlayersById(
+        network.cow.mooapis.user.v1.GetPlayersByIdRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetPlayerUserMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetPlayersByIdMethod(), getCallOptions()), request);
     }
 
     /**
@@ -530,13 +748,38 @@ public final class UserServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getGetUserPlayersMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Updates the metadata and returns the player.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.user.v1.UpdatePlayerMetadataResponse> updatePlayerMetadata(
+        network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdatePlayerMetadataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Updates the metadata and returns the user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.user.v1.UpdateUserMetadataResponse> updateUserMetadata(
+        network.cow.mooapis.user.v1.UpdateUserMetadataRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateUserMetadataMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_PLAYER = 0;
-  private static final int METHODID_GET_PLAYERS = 1;
-  private static final int METHODID_GET_PLAYER_USER = 2;
-  private static final int METHODID_GET_USER = 3;
-  private static final int METHODID_GET_USER_PLAYERS = 4;
+  private static final int METHODID_GET_PLAYER_BY_ID = 1;
+  private static final int METHODID_GET_PLAYERS = 2;
+  private static final int METHODID_GET_PLAYERS_BY_ID = 3;
+  private static final int METHODID_GET_USER = 4;
+  private static final int METHODID_GET_USER_PLAYERS = 5;
+  private static final int METHODID_UPDATE_PLAYER_METADATA = 6;
+  private static final int METHODID_UPDATE_USER_METADATA = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -559,13 +802,17 @@ public final class UserServiceGrpc {
           serviceImpl.getPlayer((network.cow.mooapis.user.v1.GetPlayerRequest) request,
               (io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.GetPlayerResponse>) responseObserver);
           break;
+        case METHODID_GET_PLAYER_BY_ID:
+          serviceImpl.getPlayerById((network.cow.mooapis.user.v1.GetPlayerByIdRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.GetPlayerByIdResponse>) responseObserver);
+          break;
         case METHODID_GET_PLAYERS:
           serviceImpl.getPlayers((network.cow.mooapis.user.v1.GetPlayersRequest) request,
               (io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.GetPlayersResponse>) responseObserver);
           break;
-        case METHODID_GET_PLAYER_USER:
-          serviceImpl.getPlayerUser((network.cow.mooapis.user.v1.GetPlayerUserRequest) request,
-              (io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.GetPlayerUserResponse>) responseObserver);
+        case METHODID_GET_PLAYERS_BY_ID:
+          serviceImpl.getPlayersById((network.cow.mooapis.user.v1.GetPlayersByIdRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.GetPlayersByIdResponse>) responseObserver);
           break;
         case METHODID_GET_USER:
           serviceImpl.getUser((network.cow.mooapis.user.v1.GetUserRequest) request,
@@ -574,6 +821,14 @@ public final class UserServiceGrpc {
         case METHODID_GET_USER_PLAYERS:
           serviceImpl.getUserPlayers((network.cow.mooapis.user.v1.GetUserPlayersRequest) request,
               (io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.GetUserPlayersResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_PLAYER_METADATA:
+          serviceImpl.updatePlayerMetadata((network.cow.mooapis.user.v1.UpdatePlayerMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.UpdatePlayerMetadataResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_USER_METADATA:
+          serviceImpl.updateUserMetadata((network.cow.mooapis.user.v1.UpdateUserMetadataRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.user.v1.UpdateUserMetadataResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -637,10 +892,13 @@ public final class UserServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new UserServiceFileDescriptorSupplier())
               .addMethod(getGetPlayerMethod())
+              .addMethod(getGetPlayerByIdMethod())
               .addMethod(getGetPlayersMethod())
-              .addMethod(getGetPlayerUserMethod())
+              .addMethod(getGetPlayersByIdMethod())
               .addMethod(getGetUserMethod())
               .addMethod(getGetUserPlayersMethod())
+              .addMethod(getUpdatePlayerMetadataMethod())
+              .addMethod(getUpdateUserMetadataMethod())
               .build();
         }
       }

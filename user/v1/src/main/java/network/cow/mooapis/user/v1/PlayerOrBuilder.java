@@ -86,4 +86,51 @@ public interface PlayerOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUsernameBytes();
+
+  /**
+   * <pre>
+   * The underlying user id.
+   * </pre>
+   *
+   * <code>string user_id = 5 [json_name = "userId"];</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <pre>
+   * The underlying user id.
+   * </pre>
+   *
+   * <code>string user_id = 5 [json_name = "userId"];</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
+
+  /**
+   * <pre>
+   * The metadata assigned to the player.
+   * </pre>
+   *
+   * <code>.cow.user.v1.Metadata metadata = 6 [json_name = "metadata"];</code>
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   * <pre>
+   * The metadata assigned to the player.
+   * </pre>
+   *
+   * <code>.cow.user.v1.Metadata metadata = 6 [json_name = "metadata"];</code>
+   * @return The metadata.
+   */
+  network.cow.mooapis.user.v1.Metadata getMetadata();
+  /**
+   * <pre>
+   * The metadata assigned to the player.
+   * </pre>
+   *
+   * <code>.cow.user.v1.Metadata metadata = 6 [json_name = "metadata"];</code>
+   */
+  network.cow.mooapis.user.v1.MetadataOrBuilder getMetadataOrBuilder();
 }

@@ -3,53 +3,33 @@
 
 package network.cow.mooapis.user.v1;
 
-public interface UserOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:cow.user.v1.User)
+public interface UpdatePlayerMetadataRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:cow.user.v1.UpdatePlayerMetadataRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * The unique identifier of the user.
-   * </pre>
-   *
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return The id.
+   * <code>string player_id = 1 [json_name = "playerId"];</code>
+   * @return The playerId.
    */
-  java.lang.String getId();
+  java.lang.String getPlayerId();
   /**
-   * <pre>
-   * The unique identifier of the user.
-   * </pre>
-   *
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return The bytes for id.
+   * <code>string player_id = 1 [json_name = "playerId"];</code>
+   * @return The bytes for playerId.
    */
   com.google.protobuf.ByteString
-      getIdBytes();
+      getPlayerIdBytes();
 
   /**
-   * <pre>
-   * The metadata assigned to the user.
-   * </pre>
-   *
    * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
-   * <pre>
-   * The metadata assigned to the user.
-   * </pre>
-   *
    * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
    * @return The metadata.
    */
   network.cow.mooapis.user.v1.Metadata getMetadata();
   /**
-   * <pre>
-   * The metadata assigned to the user.
-   * </pre>
-   *
    * <code>.cow.user.v1.Metadata metadata = 2 [json_name = "metadata"];</code>
    */
   network.cow.mooapis.user.v1.MetadataOrBuilder getMetadataOrBuilder();
