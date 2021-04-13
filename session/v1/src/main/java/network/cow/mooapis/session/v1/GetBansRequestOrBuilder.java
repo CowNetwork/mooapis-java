@@ -12,25 +12,18 @@ public interface GetBansRequestOrBuilder extends
    * The player to receive ban information for.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 1 [json_name = "player"];</code>
-   * @return Whether the player field is set.
+   * <code>string player_id = 1 [json_name = "playerId"];</code>
+   * @return The playerId.
    */
-  boolean hasPlayer();
+  java.lang.String getPlayerId();
   /**
    * <pre>
    * The player to receive ban information for.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 1 [json_name = "player"];</code>
-   * @return The player.
+   * <code>string player_id = 1 [json_name = "playerId"];</code>
+   * @return The bytes for playerId.
    */
-  network.cow.mooapis.session.v1.Player getPlayer();
-  /**
-   * <pre>
-   * The player to receive ban information for.
-   * </pre>
-   *
-   * <code>.cow.session.v1.Player player = 1 [json_name = "player"];</code>
-   */
-  network.cow.mooapis.session.v1.PlayerOrBuilder getPlayerOrBuilder();
+  com.google.protobuf.ByteString
+      getPlayerIdBytes();
 }

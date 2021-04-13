@@ -55,17 +55,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            network.cow.mooapis.session.v1.Player.Builder subBuilder = null;
-            if (identifierCase_ == 2) {
-              subBuilder = ((network.cow.mooapis.session.v1.Player) identifier_).toBuilder();
-            }
-            identifier_ =
-                input.readMessage(network.cow.mooapis.session.v1.Player.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((network.cow.mooapis.session.v1.Player) identifier_);
-              identifier_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
             identifierCase_ = 2;
+            identifier_ = s;
             break;
           }
           default: {
@@ -105,8 +97,8 @@ private static final long serialVersionUID = 0L;
   public enum IdentifierCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    ID(1),
-    PLAYER(2),
+    SESSION_ID(1),
+    PLAYER_ID(2),
     IDENTIFIER_NOT_SET(0);
     private final int value;
     private IdentifierCase(int value) {
@@ -124,8 +116,8 @@ private static final long serialVersionUID = 0L;
 
     public static IdentifierCase forNumber(int value) {
       switch (value) {
-        case 1: return ID;
-        case 2: return PLAYER;
+        case 1: return SESSION_ID;
+        case 2: return PLAYER_ID;
         case 0: return IDENTIFIER_NOT_SET;
         default: return null;
       }
@@ -141,16 +133,16 @@ private static final long serialVersionUID = 0L;
         identifierCase_);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
+  public static final int SESSION_ID_FIELD_NUMBER = 1;
   /**
    * <pre>
    * The id of the session to receive.
    * </pre>
    *
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return Whether the id field is set.
+   * <code>string session_id = 1 [json_name = "sessionId"];</code>
+   * @return Whether the sessionId field is set.
    */
-  public boolean hasId() {
+  public boolean hasSessionId() {
     return identifierCase_ == 1;
   }
   /**
@@ -158,10 +150,10 @@ private static final long serialVersionUID = 0L;
    * The id of the session to receive.
    * </pre>
    *
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return The id.
+   * <code>string session_id = 1 [json_name = "sessionId"];</code>
+   * @return The sessionId.
    */
-  public java.lang.String getId() {
+  public java.lang.String getSessionId() {
     java.lang.Object ref = "";
     if (identifierCase_ == 1) {
       ref = identifier_;
@@ -183,11 +175,11 @@ private static final long serialVersionUID = 0L;
    * The id of the session to receive.
    * </pre>
    *
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return The bytes for id.
+   * <code>string session_id = 1 [json_name = "sessionId"];</code>
+   * @return The bytes for sessionId.
    */
   public com.google.protobuf.ByteString
-      getIdBytes() {
+      getSessionIdBytes() {
     java.lang.Object ref = "";
     if (identifierCase_ == 1) {
       ref = identifier_;
@@ -205,17 +197,16 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PLAYER_FIELD_NUMBER = 2;
+  public static final int PLAYER_ID_FIELD_NUMBER = 2;
   /**
    * <pre>
    * The player to receive the session for.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return Whether the player field is set.
+   * <code>string player_id = 2 [json_name = "playerId"];</code>
+   * @return Whether the playerId field is set.
    */
-  @java.lang.Override
-  public boolean hasPlayer() {
+  public boolean hasPlayerId() {
     return identifierCase_ == 2;
   }
   /**
@@ -223,29 +214,51 @@ private static final long serialVersionUID = 0L;
    * The player to receive the session for.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return The player.
+   * <code>string player_id = 2 [json_name = "playerId"];</code>
+   * @return The playerId.
    */
-  @java.lang.Override
-  public network.cow.mooapis.session.v1.Player getPlayer() {
+  public java.lang.String getPlayerId() {
+    java.lang.Object ref = "";
     if (identifierCase_ == 2) {
-       return (network.cow.mooapis.session.v1.Player) identifier_;
+      ref = identifier_;
     }
-    return network.cow.mooapis.session.v1.Player.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (identifierCase_ == 2) {
+        identifier_ = s;
+      }
+      return s;
+    }
   }
   /**
    * <pre>
    * The player to receive the session for.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+   * <code>string player_id = 2 [json_name = "playerId"];</code>
+   * @return The bytes for playerId.
    */
-  @java.lang.Override
-  public network.cow.mooapis.session.v1.PlayerOrBuilder getPlayerOrBuilder() {
+  public com.google.protobuf.ByteString
+      getPlayerIdBytes() {
+    java.lang.Object ref = "";
     if (identifierCase_ == 2) {
-       return (network.cow.mooapis.session.v1.Player) identifier_;
+      ref = identifier_;
     }
-    return network.cow.mooapis.session.v1.Player.getDefaultInstance();
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (identifierCase_ == 2) {
+        identifier_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -266,7 +279,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, identifier_);
     }
     if (identifierCase_ == 2) {
-      output.writeMessage(2, (network.cow.mooapis.session.v1.Player) identifier_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, identifier_);
     }
     unknownFields.writeTo(output);
   }
@@ -281,8 +294,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, identifier_);
     }
     if (identifierCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (network.cow.mooapis.session.v1.Player) identifier_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, identifier_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -302,12 +314,12 @@ private static final long serialVersionUID = 0L;
     if (!getIdentifierCase().equals(other.getIdentifierCase())) return false;
     switch (identifierCase_) {
       case 1:
-        if (!getId()
-            .equals(other.getId())) return false;
+        if (!getSessionId()
+            .equals(other.getSessionId())) return false;
         break;
       case 2:
-        if (!getPlayer()
-            .equals(other.getPlayer())) return false;
+        if (!getPlayerId()
+            .equals(other.getPlayerId())) return false;
         break;
       case 0:
       default:
@@ -325,12 +337,12 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     switch (identifierCase_) {
       case 1:
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId().hashCode();
+        hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getSessionId().hashCode();
         break;
       case 2:
-        hash = (37 * hash) + PLAYER_FIELD_NUMBER;
-        hash = (53 * hash) + getPlayer().hashCode();
+        hash = (37 * hash) + PLAYER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerId().hashCode();
         break;
       case 0:
       default:
@@ -500,11 +512,7 @@ private static final long serialVersionUID = 0L;
         result.identifier_ = identifier_;
       }
       if (identifierCase_ == 2) {
-        if (playerBuilder_ == null) {
-          result.identifier_ = identifier_;
-        } else {
-          result.identifier_ = playerBuilder_.build();
-        }
+        result.identifier_ = identifier_;
       }
       result.identifierCase_ = identifierCase_;
       onBuilt();
@@ -556,14 +564,16 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(network.cow.mooapis.session.v1.SessionIdentifier other) {
       if (other == network.cow.mooapis.session.v1.SessionIdentifier.getDefaultInstance()) return this;
       switch (other.getIdentifierCase()) {
-        case ID: {
+        case SESSION_ID: {
           identifierCase_ = 1;
           identifier_ = other.identifier_;
           onChanged();
           break;
         }
-        case PLAYER: {
-          mergePlayer(other.getPlayer());
+        case PLAYER_ID: {
+          identifierCase_ = 2;
+          identifier_ = other.identifier_;
+          onChanged();
           break;
         }
         case IDENTIFIER_NOT_SET: {
@@ -619,11 +629,11 @@ private static final long serialVersionUID = 0L;
      * The id of the session to receive.
      * </pre>
      *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return Whether the id field is set.
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * @return Whether the sessionId field is set.
      */
     @java.lang.Override
-    public boolean hasId() {
+    public boolean hasSessionId() {
       return identifierCase_ == 1;
     }
     /**
@@ -631,11 +641,11 @@ private static final long serialVersionUID = 0L;
      * The id of the session to receive.
      * </pre>
      *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The id.
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * @return The sessionId.
      */
     @java.lang.Override
-    public java.lang.String getId() {
+    public java.lang.String getSessionId() {
       java.lang.Object ref = "";
       if (identifierCase_ == 1) {
         ref = identifier_;
@@ -657,12 +667,12 @@ private static final long serialVersionUID = 0L;
      * The id of the session to receive.
      * </pre>
      *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The bytes for id.
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * @return The bytes for sessionId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getIdBytes() {
+        getSessionIdBytes() {
       java.lang.Object ref = "";
       if (identifierCase_ == 1) {
         ref = identifier_;
@@ -684,11 +694,11 @@ private static final long serialVersionUID = 0L;
      * The id of the session to receive.
      * </pre>
      *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @param value The id to set.
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * @param value The sessionId to set.
      * @return This builder for chaining.
      */
-    public Builder setId(
+    public Builder setSessionId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -703,10 +713,10 @@ private static final long serialVersionUID = 0L;
      * The id of the session to receive.
      * </pre>
      *
-     * <code>string id = 1 [json_name = "id"];</code>
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    public Builder clearSessionId() {
       if (identifierCase_ == 1) {
         identifierCase_ = 0;
         identifier_ = null;
@@ -719,11 +729,11 @@ private static final long serialVersionUID = 0L;
      * The id of the session to receive.
      * </pre>
      *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @param value The bytes for id to set.
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * @param value The bytes for sessionId to set.
      * @return This builder for chaining.
      */
-    public Builder setIdBytes(
+    public Builder setSessionIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -735,18 +745,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        network.cow.mooapis.session.v1.Player, network.cow.mooapis.session.v1.Player.Builder, network.cow.mooapis.session.v1.PlayerOrBuilder> playerBuilder_;
     /**
      * <pre>
      * The player to receive the session for.
      * </pre>
      *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     * @return Whether the player field is set.
+     * <code>string player_id = 2 [json_name = "playerId"];</code>
+     * @return Whether the playerId field is set.
      */
     @java.lang.Override
-    public boolean hasPlayer() {
+    public boolean hasPlayerId() {
       return identifierCase_ == 2;
     }
     /**
@@ -754,21 +762,25 @@ private static final long serialVersionUID = 0L;
      * The player to receive the session for.
      * </pre>
      *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     * @return The player.
+     * <code>string player_id = 2 [json_name = "playerId"];</code>
+     * @return The playerId.
      */
     @java.lang.Override
-    public network.cow.mooapis.session.v1.Player getPlayer() {
-      if (playerBuilder_ == null) {
+    public java.lang.String getPlayerId() {
+      java.lang.Object ref = "";
+      if (identifierCase_ == 2) {
+        ref = identifier_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         if (identifierCase_ == 2) {
-          return (network.cow.mooapis.session.v1.Player) identifier_;
+          identifier_ = s;
         }
-        return network.cow.mooapis.session.v1.Player.getDefaultInstance();
+        return s;
       } else {
-        if (identifierCase_ == 2) {
-          return playerBuilder_.getMessage();
-        }
-        return network.cow.mooapis.session.v1.Player.getDefaultInstance();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -776,114 +788,26 @@ private static final long serialVersionUID = 0L;
      * The player to receive the session for.
      * </pre>
      *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     */
-    public Builder setPlayer(network.cow.mooapis.session.v1.Player value) {
-      if (playerBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        identifier_ = value;
-        onChanged();
-      } else {
-        playerBuilder_.setMessage(value);
-      }
-      identifierCase_ = 2;
-      return this;
-    }
-    /**
-     * <pre>
-     * The player to receive the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     */
-    public Builder setPlayer(
-        network.cow.mooapis.session.v1.Player.Builder builderForValue) {
-      if (playerBuilder_ == null) {
-        identifier_ = builderForValue.build();
-        onChanged();
-      } else {
-        playerBuilder_.setMessage(builderForValue.build());
-      }
-      identifierCase_ = 2;
-      return this;
-    }
-    /**
-     * <pre>
-     * The player to receive the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     */
-    public Builder mergePlayer(network.cow.mooapis.session.v1.Player value) {
-      if (playerBuilder_ == null) {
-        if (identifierCase_ == 2 &&
-            identifier_ != network.cow.mooapis.session.v1.Player.getDefaultInstance()) {
-          identifier_ = network.cow.mooapis.session.v1.Player.newBuilder((network.cow.mooapis.session.v1.Player) identifier_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          identifier_ = value;
-        }
-        onChanged();
-      } else {
-        if (identifierCase_ == 2) {
-          playerBuilder_.mergeFrom(value);
-        }
-        playerBuilder_.setMessage(value);
-      }
-      identifierCase_ = 2;
-      return this;
-    }
-    /**
-     * <pre>
-     * The player to receive the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     */
-    public Builder clearPlayer() {
-      if (playerBuilder_ == null) {
-        if (identifierCase_ == 2) {
-          identifierCase_ = 0;
-          identifier_ = null;
-          onChanged();
-        }
-      } else {
-        if (identifierCase_ == 2) {
-          identifierCase_ = 0;
-          identifier_ = null;
-        }
-        playerBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * The player to receive the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     */
-    public network.cow.mooapis.session.v1.Player.Builder getPlayerBuilder() {
-      return getPlayerFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * The player to receive the session for.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+     * <code>string player_id = 2 [json_name = "playerId"];</code>
+     * @return The bytes for playerId.
      */
     @java.lang.Override
-    public network.cow.mooapis.session.v1.PlayerOrBuilder getPlayerOrBuilder() {
-      if ((identifierCase_ == 2) && (playerBuilder_ != null)) {
-        return playerBuilder_.getMessageOrBuilder();
-      } else {
+    public com.google.protobuf.ByteString
+        getPlayerIdBytes() {
+      java.lang.Object ref = "";
+      if (identifierCase_ == 2) {
+        ref = identifier_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         if (identifierCase_ == 2) {
-          return (network.cow.mooapis.session.v1.Player) identifier_;
+          identifier_ = b;
         }
-        return network.cow.mooapis.session.v1.Player.getDefaultInstance();
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
@@ -891,25 +815,55 @@ private static final long serialVersionUID = 0L;
      * The player to receive the session for.
      * </pre>
      *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+     * <code>string player_id = 2 [json_name = "playerId"];</code>
+     * @param value The playerId to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        network.cow.mooapis.session.v1.Player, network.cow.mooapis.session.v1.Player.Builder, network.cow.mooapis.session.v1.PlayerOrBuilder> 
-        getPlayerFieldBuilder() {
-      if (playerBuilder_ == null) {
-        if (!(identifierCase_ == 2)) {
-          identifier_ = network.cow.mooapis.session.v1.Player.getDefaultInstance();
-        }
-        playerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            network.cow.mooapis.session.v1.Player, network.cow.mooapis.session.v1.Player.Builder, network.cow.mooapis.session.v1.PlayerOrBuilder>(
-                (network.cow.mooapis.session.v1.Player) identifier_,
-                getParentForChildren(),
-                isClean());
+    public Builder setPlayerId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  identifierCase_ = 2;
+      identifier_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The player to receive the session for.
+     * </pre>
+     *
+     * <code>string player_id = 2 [json_name = "playerId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPlayerId() {
+      if (identifierCase_ == 2) {
+        identifierCase_ = 0;
         identifier_ = null;
+        onChanged();
       }
+      return this;
+    }
+    /**
+     * <pre>
+     * The player to receive the session for.
+     * </pre>
+     *
+     * <code>string player_id = 2 [json_name = "playerId"];</code>
+     * @param value The bytes for playerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlayerIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       identifierCase_ = 2;
-      onChanged();;
-      return playerBuilder_;
+      identifier_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

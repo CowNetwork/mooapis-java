@@ -32,27 +32,20 @@ public interface SessionOrBuilder extends
    * The player this session belongs to.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return Whether the player field is set.
+   * <code>string player_id = 2 [json_name = "playerId"];</code>
+   * @return The playerId.
    */
-  boolean hasPlayer();
+  java.lang.String getPlayerId();
   /**
    * <pre>
    * The player this session belongs to.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return The player.
+   * <code>string player_id = 2 [json_name = "playerId"];</code>
+   * @return The bytes for playerId.
    */
-  network.cow.mooapis.session.v1.Player getPlayer();
-  /**
-   * <pre>
-   * The player this session belongs to.
-   * </pre>
-   *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   */
-  network.cow.mooapis.session.v1.PlayerOrBuilder getPlayerOrBuilder();
+  com.google.protobuf.ByteString
+      getPlayerIdBytes();
 
   /**
    * <code>.cow.session.v1.StateUnknown unknown = 3 [json_name = "unknown"];</code>
@@ -98,6 +91,18 @@ public interface SessionOrBuilder extends
    * <code>.cow.session.v1.StateStopped stopped = 5 [json_name = "stopped"];</code>
    */
   network.cow.mooapis.session.v1.StateStoppedOrBuilder getStoppedOrBuilder();
+
+  /**
+   * <code>string ip = 6 [json_name = "ip"];</code>
+   * @return The ip.
+   */
+  java.lang.String getIp();
+  /**
+   * <code>string ip = 6 [json_name = "ip"];</code>
+   * @return The bytes for ip.
+   */
+  com.google.protobuf.ByteString
+      getIpBytes();
 
   public network.cow.mooapis.session.v1.Session.StateCase getStateCase();
 }

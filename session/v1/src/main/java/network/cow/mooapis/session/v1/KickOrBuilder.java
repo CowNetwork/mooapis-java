@@ -32,27 +32,20 @@ public interface KickOrBuilder extends
    * The kicked player.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return Whether the player field is set.
+   * <code>string player_id = 2 [json_name = "playerId"];</code>
+   * @return The playerId.
    */
-  boolean hasPlayer();
+  java.lang.String getPlayerId();
   /**
    * <pre>
    * The kicked player.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return The player.
+   * <code>string player_id = 2 [json_name = "playerId"];</code>
+   * @return The bytes for playerId.
    */
-  network.cow.mooapis.session.v1.Player getPlayer();
-  /**
-   * <pre>
-   * The kicked player.
-   * </pre>
-   *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   */
-  network.cow.mooapis.session.v1.PlayerOrBuilder getPlayerOrBuilder();
+  com.google.protobuf.ByteString
+      getPlayerIdBytes();
 
   /**
    * <pre>

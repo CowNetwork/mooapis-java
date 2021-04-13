@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private Ban() {
     id_ = "";
+    playerId_ = "";
     reason_ = "";
   }
 
@@ -58,16 +59,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            network.cow.mooapis.session.v1.Player.Builder subBuilder = null;
-            if (player_ != null) {
-              subBuilder = player_.toBuilder();
-            }
-            player_ = input.readMessage(network.cow.mooapis.session.v1.Player.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(player_);
-              player_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            playerId_ = s;
             break;
           }
           case 26: {
@@ -191,42 +185,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PLAYER_FIELD_NUMBER = 2;
-  private network.cow.mooapis.session.v1.Player player_;
+  public static final int PLAYER_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object playerId_;
   /**
    * <pre>
    * The banned player.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return Whether the player field is set.
+   * <code>string player_id = 2 [json_name = "playerId"];</code>
+   * @return The playerId.
    */
   @java.lang.Override
-  public boolean hasPlayer() {
-    return player_ != null;
+  public java.lang.String getPlayerId() {
+    java.lang.Object ref = playerId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      playerId_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The banned player.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return The player.
+   * <code>string player_id = 2 [json_name = "playerId"];</code>
+   * @return The bytes for playerId.
    */
   @java.lang.Override
-  public network.cow.mooapis.session.v1.Player getPlayer() {
-    return player_ == null ? network.cow.mooapis.session.v1.Player.getDefaultInstance() : player_;
-  }
-  /**
-   * <pre>
-   * The banned player.
-   * </pre>
-   *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   */
-  @java.lang.Override
-  public network.cow.mooapis.session.v1.PlayerOrBuilder getPlayerOrBuilder() {
-    return getPlayer();
+  public com.google.protobuf.ByteString
+      getPlayerIdBytes() {
+    java.lang.Object ref = playerId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      playerId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int REASON_FIELD_NUMBER = 3;
@@ -398,8 +400,8 @@ private static final long serialVersionUID = 0L;
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (player_ != null) {
-      output.writeMessage(2, getPlayer());
+    if (!getPlayerIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, playerId_);
     }
     if (!getReasonBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reason_);
@@ -428,9 +430,8 @@ private static final long serialVersionUID = 0L;
     if (!getIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (player_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getPlayer());
+    if (!getPlayerIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, playerId_);
     }
     if (!getReasonBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reason_);
@@ -468,11 +469,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
-    if (hasPlayer() != other.hasPlayer()) return false;
-    if (hasPlayer()) {
-      if (!getPlayer()
-          .equals(other.getPlayer())) return false;
-    }
+    if (!getPlayerId()
+        .equals(other.getPlayerId())) return false;
     if (!getReason()
         .equals(other.getReason())) return false;
     if (getBannedAt()
@@ -502,10 +500,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
-    if (hasPlayer()) {
-      hash = (37 * hash) + PLAYER_FIELD_NUMBER;
-      hash = (53 * hash) + getPlayer().hashCode();
-    }
+    hash = (37 * hash) + PLAYER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPlayerId().hashCode();
     hash = (37 * hash) + REASON_FIELD_NUMBER;
     hash = (53 * hash) + getReason().hashCode();
     hash = (37 * hash) + BANNED_AT_FIELD_NUMBER;
@@ -658,12 +654,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
-      if (playerBuilder_ == null) {
-        player_ = null;
-      } else {
-        player_ = null;
-        playerBuilder_ = null;
-      }
+      playerId_ = "";
+
       reason_ = "";
 
       bannedAt_ = 0L;
@@ -711,11 +703,7 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.id_ = id_;
-      if (playerBuilder_ == null) {
-        result.player_ = player_;
-      } else {
-        result.player_ = playerBuilder_.build();
-      }
+      result.playerId_ = playerId_;
       result.reason_ = reason_;
       result.bannedAt_ = bannedAt_;
       result.duration_ = duration_;
@@ -785,8 +773,9 @@ private static final long serialVersionUID = 0L;
         id_ = other.id_;
         onChanged();
       }
-      if (other.hasPlayer()) {
-        mergePlayer(other.getPlayer());
+      if (!other.getPlayerId().isEmpty()) {
+        playerId_ = other.playerId_;
+        onChanged();
       }
       if (!other.getReason().isEmpty()) {
         reason_ = other.reason_;
@@ -930,33 +919,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private network.cow.mooapis.session.v1.Player player_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        network.cow.mooapis.session.v1.Player, network.cow.mooapis.session.v1.Player.Builder, network.cow.mooapis.session.v1.PlayerOrBuilder> playerBuilder_;
+    private java.lang.Object playerId_ = "";
     /**
      * <pre>
      * The banned player.
      * </pre>
      *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     * @return Whether the player field is set.
+     * <code>string player_id = 2 [json_name = "playerId"];</code>
+     * @return The playerId.
      */
-    public boolean hasPlayer() {
-      return playerBuilder_ != null || player_ != null;
-    }
-    /**
-     * <pre>
-     * The banned player.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     * @return The player.
-     */
-    public network.cow.mooapis.session.v1.Player getPlayer() {
-      if (playerBuilder_ == null) {
-        return player_ == null ? network.cow.mooapis.session.v1.Player.getDefaultInstance() : player_;
+    public java.lang.String getPlayerId() {
+      java.lang.Object ref = playerId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        playerId_ = s;
+        return s;
       } else {
-        return playerBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -964,125 +945,74 @@ private static final long serialVersionUID = 0L;
      * The banned player.
      * </pre>
      *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+     * <code>string player_id = 2 [json_name = "playerId"];</code>
+     * @return The bytes for playerId.
      */
-    public Builder setPlayer(network.cow.mooapis.session.v1.Player value) {
-      if (playerBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        player_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getPlayerIdBytes() {
+      java.lang.Object ref = playerId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        playerId_ = b;
+        return b;
       } else {
-        playerBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
      * The banned player.
      * </pre>
      *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+     * <code>string player_id = 2 [json_name = "playerId"];</code>
+     * @param value The playerId to set.
+     * @return This builder for chaining.
      */
-    public Builder setPlayer(
-        network.cow.mooapis.session.v1.Player.Builder builderForValue) {
-      if (playerBuilder_ == null) {
-        player_ = builderForValue.build();
-        onChanged();
-      } else {
-        playerBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The banned player.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     */
-    public Builder mergePlayer(network.cow.mooapis.session.v1.Player value) {
-      if (playerBuilder_ == null) {
-        if (player_ != null) {
-          player_ =
-            network.cow.mooapis.session.v1.Player.newBuilder(player_).mergeFrom(value).buildPartial();
-        } else {
-          player_ = value;
-        }
-        onChanged();
-      } else {
-        playerBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The banned player.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     */
-    public Builder clearPlayer() {
-      if (playerBuilder_ == null) {
-        player_ = null;
-        onChanged();
-      } else {
-        player_ = null;
-        playerBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The banned player.
-     * </pre>
-     *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-     */
-    public network.cow.mooapis.session.v1.Player.Builder getPlayerBuilder() {
-      
+    public Builder setPlayerId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      playerId_ = value;
       onChanged();
-      return getPlayerFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
      * The banned player.
      * </pre>
      *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+     * <code>string player_id = 2 [json_name = "playerId"];</code>
+     * @return This builder for chaining.
      */
-    public network.cow.mooapis.session.v1.PlayerOrBuilder getPlayerOrBuilder() {
-      if (playerBuilder_ != null) {
-        return playerBuilder_.getMessageOrBuilder();
-      } else {
-        return player_ == null ?
-            network.cow.mooapis.session.v1.Player.getDefaultInstance() : player_;
-      }
+    public Builder clearPlayerId() {
+      
+      playerId_ = getDefaultInstance().getPlayerId();
+      onChanged();
+      return this;
     }
     /**
      * <pre>
      * The banned player.
      * </pre>
      *
-     * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+     * <code>string player_id = 2 [json_name = "playerId"];</code>
+     * @param value The bytes for playerId to set.
+     * @return This builder for chaining.
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        network.cow.mooapis.session.v1.Player, network.cow.mooapis.session.v1.Player.Builder, network.cow.mooapis.session.v1.PlayerOrBuilder> 
-        getPlayerFieldBuilder() {
-      if (playerBuilder_ == null) {
-        playerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            network.cow.mooapis.session.v1.Player, network.cow.mooapis.session.v1.Player.Builder, network.cow.mooapis.session.v1.PlayerOrBuilder>(
-                getPlayer(),
-                getParentForChildren(),
-                isClean());
-        player_ = null;
-      }
-      return playerBuilder_;
+    public Builder setPlayerIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      playerId_ = value;
+      onChanged();
+      return this;
     }
 
     private java.lang.Object reason_ = "";

@@ -9,59 +9,61 @@ public interface ExecutorOrBuilder extends
 
   /**
    * <pre>
-   * The globally unique identifier of the executor (e.g. user id).
+   * The globally unique identifier of the executor (e.g. user id or host name).
    * </pre>
    *
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return Whether the id field is set.
+   * <code>string identifier = 1 [json_name = "identifier"];</code>
+   * @return Whether the identifier field is set.
    */
-  boolean hasId();
+  boolean hasIdentifier();
   /**
    * <pre>
-   * The globally unique identifier of the executor (e.g. user id).
+   * The globally unique identifier of the executor (e.g. user id or host name).
    * </pre>
    *
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return The id.
+   * <code>string identifier = 1 [json_name = "identifier"];</code>
+   * @return The identifier.
    */
-  java.lang.String getId();
+  java.lang.String getIdentifier();
   /**
    * <pre>
-   * The globally unique identifier of the executor (e.g. user id).
+   * The globally unique identifier of the executor (e.g. user id or host name).
    * </pre>
    *
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return The bytes for id.
+   * <code>string identifier = 1 [json_name = "identifier"];</code>
+   * @return The bytes for identifier.
    */
   com.google.protobuf.ByteString
-      getIdBytes();
+      getIdentifierBytes();
 
   /**
    * <pre>
    * The executing player.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return Whether the player field is set.
+   * <code>string player_id = 2 [json_name = "playerId"];</code>
+   * @return Whether the playerId field is set.
    */
-  boolean hasPlayer();
+  boolean hasPlayerId();
   /**
    * <pre>
    * The executing player.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
-   * @return The player.
+   * <code>string player_id = 2 [json_name = "playerId"];</code>
+   * @return The playerId.
    */
-  network.cow.mooapis.session.v1.Player getPlayer();
+  java.lang.String getPlayerId();
   /**
    * <pre>
    * The executing player.
    * </pre>
    *
-   * <code>.cow.session.v1.Player player = 2 [json_name = "player"];</code>
+   * <code>string player_id = 2 [json_name = "playerId"];</code>
+   * @return The bytes for playerId.
    */
-  network.cow.mooapis.session.v1.PlayerOrBuilder getPlayerOrBuilder();
+  com.google.protobuf.ByteString
+      getPlayerIdBytes();
 
   public network.cow.mooapis.session.v1.Executor.ExecutorCase getExecutorCase();
 }
