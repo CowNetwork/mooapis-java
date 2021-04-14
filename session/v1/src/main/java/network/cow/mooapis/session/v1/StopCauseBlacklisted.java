@@ -42,6 +42,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -54,7 +55,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             network.cow.mooapis.session.v1.BlacklistEntry.Builder subBuilder = null;
-            if (entry_ != null) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               subBuilder = entry_.toBuilder();
             }
             entry_ = input.readMessage(network.cow.mooapis.session.v1.BlacklistEntry.parser(), extensionRegistry);
@@ -62,7 +63,7 @@ private static final long serialVersionUID = 0L;
               subBuilder.mergeFrom(entry_);
               entry_ = subBuilder.buildPartial();
             }
-
+            bitField0_ |= 0x00000001;
             break;
           }
           default: {
@@ -97,6 +98,7 @@ private static final long serialVersionUID = 0L;
             network.cow.mooapis.session.v1.StopCauseBlacklisted.class, network.cow.mooapis.session.v1.StopCauseBlacklisted.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ENTRY_FIELD_NUMBER = 1;
   private network.cow.mooapis.session.v1.BlacklistEntry entry_;
   /**
@@ -109,7 +111,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasEntry() {
-    return entry_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
@@ -132,7 +134,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public network.cow.mooapis.session.v1.BlacklistEntryOrBuilder getEntryOrBuilder() {
-    return getEntry();
+    return entry_ == null ? network.cow.mooapis.session.v1.BlacklistEntry.getDefaultInstance() : entry_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -149,7 +151,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (entry_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getEntry());
     }
     unknownFields.writeTo(output);
@@ -161,7 +163,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (entry_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getEntry());
     }
@@ -332,6 +334,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getEntryFieldBuilder();
       }
     }
     @java.lang.Override
@@ -340,9 +343,9 @@ private static final long serialVersionUID = 0L;
       if (entryBuilder_ == null) {
         entry_ = null;
       } else {
-        entry_ = null;
-        entryBuilder_ = null;
+        entryBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -369,11 +372,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public network.cow.mooapis.session.v1.StopCauseBlacklisted buildPartial() {
       network.cow.mooapis.session.v1.StopCauseBlacklisted result = new network.cow.mooapis.session.v1.StopCauseBlacklisted(this);
-      if (entryBuilder_ == null) {
-        result.entry_ = entry_;
-      } else {
-        result.entry_ = entryBuilder_.build();
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (entryBuilder_ == null) {
+          result.entry_ = entry_;
+        } else {
+          result.entry_ = entryBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -453,6 +462,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private network.cow.mooapis.session.v1.BlacklistEntry entry_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -466,7 +476,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the entry field is set.
      */
     public boolean hasEntry() {
-      return entryBuilder_ != null || entry_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
@@ -500,7 +510,7 @@ private static final long serialVersionUID = 0L;
       } else {
         entryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -518,7 +528,7 @@ private static final long serialVersionUID = 0L;
       } else {
         entryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -530,7 +540,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeEntry(network.cow.mooapis.session.v1.BlacklistEntry value) {
       if (entryBuilder_ == null) {
-        if (entry_ != null) {
+        if (((bitField0_ & 0x00000001) != 0) &&
+            entry_ != null &&
+            entry_ != network.cow.mooapis.session.v1.BlacklistEntry.getDefaultInstance()) {
           entry_ =
             network.cow.mooapis.session.v1.BlacklistEntry.newBuilder(entry_).mergeFrom(value).buildPartial();
         } else {
@@ -540,7 +552,7 @@ private static final long serialVersionUID = 0L;
       } else {
         entryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -555,10 +567,9 @@ private static final long serialVersionUID = 0L;
         entry_ = null;
         onChanged();
       } else {
-        entry_ = null;
-        entryBuilder_ = null;
+        entryBuilder_.clear();
       }
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
     /**
@@ -569,7 +580,7 @@ private static final long serialVersionUID = 0L;
      * <code>.cow.session.v1.BlacklistEntry entry = 1 [json_name = "entry"];</code>
      */
     public network.cow.mooapis.session.v1.BlacklistEntry.Builder getEntryBuilder() {
-      
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEntryFieldBuilder().getBuilder();
     }

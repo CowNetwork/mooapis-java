@@ -69,6 +69,24 @@ private static final long serialVersionUID = 0L;
             message_ = s;
             break;
           }
+          case 34: {
+            network.cow.mooapis.session.v1.Executor.Builder subBuilder = null;
+            if (executor_ != null) {
+              subBuilder = executor_.toBuilder();
+            }
+            executor_ = input.readMessage(network.cow.mooapis.session.v1.Executor.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(executor_);
+              executor_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 40: {
+
+            active_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -239,6 +257,59 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int EXECUTOR_FIELD_NUMBER = 4;
+  private network.cow.mooapis.session.v1.Executor executor_;
+  /**
+   * <pre>
+   * The initiator of the blacklist entry.
+   * </pre>
+   *
+   * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+   * @return Whether the executor field is set.
+   */
+  @java.lang.Override
+  public boolean hasExecutor() {
+    return executor_ != null;
+  }
+  /**
+   * <pre>
+   * The initiator of the blacklist entry.
+   * </pre>
+   *
+   * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+   * @return The executor.
+   */
+  @java.lang.Override
+  public network.cow.mooapis.session.v1.Executor getExecutor() {
+    return executor_ == null ? network.cow.mooapis.session.v1.Executor.getDefaultInstance() : executor_;
+  }
+  /**
+   * <pre>
+   * The initiator of the blacklist entry.
+   * </pre>
+   *
+   * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+   */
+  @java.lang.Override
+  public network.cow.mooapis.session.v1.ExecutorOrBuilder getExecutorOrBuilder() {
+    return getExecutor();
+  }
+
+  public static final int ACTIVE_FIELD_NUMBER = 5;
+  private boolean active_;
+  /**
+   * <pre>
+   * Whether the blacklist entry is active.
+   * </pre>
+   *
+   * <code>bool active = 5 [json_name = "active"];</code>
+   * @return The active.
+   */
+  @java.lang.Override
+  public boolean getActive() {
+    return active_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -262,6 +333,12 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
     }
+    if (executor_ != null) {
+      output.writeMessage(4, getExecutor());
+    }
+    if (active_ != false) {
+      output.writeBool(5, active_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -279,6 +356,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
+    }
+    if (executor_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getExecutor());
+    }
+    if (active_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, active_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -301,6 +386,13 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPlayerId())) return false;
     if (!getMessage()
         .equals(other.getMessage())) return false;
+    if (hasExecutor() != other.hasExecutor()) return false;
+    if (hasExecutor()) {
+      if (!getExecutor()
+          .equals(other.getExecutor())) return false;
+    }
+    if (getActive()
+        != other.getActive()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -318,6 +410,13 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPlayerId().hashCode();
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
+    if (hasExecutor()) {
+      hash = (37 * hash) + EXECUTOR_FIELD_NUMBER;
+      hash = (53 * hash) + getExecutor().hashCode();
+    }
+    hash = (37 * hash) + ACTIVE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getActive());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -457,6 +556,14 @@ private static final long serialVersionUID = 0L;
 
       message_ = "";
 
+      if (executorBuilder_ == null) {
+        executor_ = null;
+      } else {
+        executor_ = null;
+        executorBuilder_ = null;
+      }
+      active_ = false;
+
       return this;
     }
 
@@ -486,6 +593,12 @@ private static final long serialVersionUID = 0L;
       result.id_ = id_;
       result.playerId_ = playerId_;
       result.message_ = message_;
+      if (executorBuilder_ == null) {
+        result.executor_ = executor_;
+      } else {
+        result.executor_ = executorBuilder_.build();
+      }
+      result.active_ = active_;
       onBuilt();
       return result;
     }
@@ -545,6 +658,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
         onChanged();
+      }
+      if (other.hasExecutor()) {
+        mergeExecutor(other.getExecutor());
+      }
+      if (other.getActive() != false) {
+        setActive(other.getActive());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -859,6 +978,204 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       message_ = value;
+      onChanged();
+      return this;
+    }
+
+    private network.cow.mooapis.session.v1.Executor executor_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.Executor, network.cow.mooapis.session.v1.Executor.Builder, network.cow.mooapis.session.v1.ExecutorOrBuilder> executorBuilder_;
+    /**
+     * <pre>
+     * The initiator of the blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+     * @return Whether the executor field is set.
+     */
+    public boolean hasExecutor() {
+      return executorBuilder_ != null || executor_ != null;
+    }
+    /**
+     * <pre>
+     * The initiator of the blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+     * @return The executor.
+     */
+    public network.cow.mooapis.session.v1.Executor getExecutor() {
+      if (executorBuilder_ == null) {
+        return executor_ == null ? network.cow.mooapis.session.v1.Executor.getDefaultInstance() : executor_;
+      } else {
+        return executorBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The initiator of the blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+     */
+    public Builder setExecutor(network.cow.mooapis.session.v1.Executor value) {
+      if (executorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        executor_ = value;
+        onChanged();
+      } else {
+        executorBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The initiator of the blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+     */
+    public Builder setExecutor(
+        network.cow.mooapis.session.v1.Executor.Builder builderForValue) {
+      if (executorBuilder_ == null) {
+        executor_ = builderForValue.build();
+        onChanged();
+      } else {
+        executorBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The initiator of the blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+     */
+    public Builder mergeExecutor(network.cow.mooapis.session.v1.Executor value) {
+      if (executorBuilder_ == null) {
+        if (executor_ != null) {
+          executor_ =
+            network.cow.mooapis.session.v1.Executor.newBuilder(executor_).mergeFrom(value).buildPartial();
+        } else {
+          executor_ = value;
+        }
+        onChanged();
+      } else {
+        executorBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The initiator of the blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+     */
+    public Builder clearExecutor() {
+      if (executorBuilder_ == null) {
+        executor_ = null;
+        onChanged();
+      } else {
+        executor_ = null;
+        executorBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The initiator of the blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+     */
+    public network.cow.mooapis.session.v1.Executor.Builder getExecutorBuilder() {
+      
+      onChanged();
+      return getExecutorFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The initiator of the blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+     */
+    public network.cow.mooapis.session.v1.ExecutorOrBuilder getExecutorOrBuilder() {
+      if (executorBuilder_ != null) {
+        return executorBuilder_.getMessageOrBuilder();
+      } else {
+        return executor_ == null ?
+            network.cow.mooapis.session.v1.Executor.getDefaultInstance() : executor_;
+      }
+    }
+    /**
+     * <pre>
+     * The initiator of the blacklist entry.
+     * </pre>
+     *
+     * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.session.v1.Executor, network.cow.mooapis.session.v1.Executor.Builder, network.cow.mooapis.session.v1.ExecutorOrBuilder> 
+        getExecutorFieldBuilder() {
+      if (executorBuilder_ == null) {
+        executorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            network.cow.mooapis.session.v1.Executor, network.cow.mooapis.session.v1.Executor.Builder, network.cow.mooapis.session.v1.ExecutorOrBuilder>(
+                getExecutor(),
+                getParentForChildren(),
+                isClean());
+        executor_ = null;
+      }
+      return executorBuilder_;
+    }
+
+    private boolean active_ ;
+    /**
+     * <pre>
+     * Whether the blacklist entry is active.
+     * </pre>
+     *
+     * <code>bool active = 5 [json_name = "active"];</code>
+     * @return The active.
+     */
+    @java.lang.Override
+    public boolean getActive() {
+      return active_;
+    }
+    /**
+     * <pre>
+     * Whether the blacklist entry is active.
+     * </pre>
+     *
+     * <code>bool active = 5 [json_name = "active"];</code>
+     * @param value The active to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActive(boolean value) {
+      
+      active_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether the blacklist entry is active.
+     * </pre>
+     *
+     * <code>bool active = 5 [json_name = "active"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearActive() {
+      
+      active_ = false;
       onChanged();
       return this;
     }

@@ -66,4 +66,41 @@ public interface BlacklistEntryOrBuilder extends
    */
   com.google.protobuf.ByteString
       getMessageBytes();
+
+  /**
+   * <pre>
+   * The initiator of the blacklist entry.
+   * </pre>
+   *
+   * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+   * @return Whether the executor field is set.
+   */
+  boolean hasExecutor();
+  /**
+   * <pre>
+   * The initiator of the blacklist entry.
+   * </pre>
+   *
+   * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+   * @return The executor.
+   */
+  network.cow.mooapis.session.v1.Executor getExecutor();
+  /**
+   * <pre>
+   * The initiator of the blacklist entry.
+   * </pre>
+   *
+   * <code>.cow.session.v1.Executor executor = 4 [json_name = "executor"];</code>
+   */
+  network.cow.mooapis.session.v1.ExecutorOrBuilder getExecutorOrBuilder();
+
+  /**
+   * <pre>
+   * Whether the blacklist entry is active.
+   * </pre>
+   *
+   * <code>bool active = 5 [json_name = "active"];</code>
+   * @return The active.
+   */
+  boolean getActive();
 }

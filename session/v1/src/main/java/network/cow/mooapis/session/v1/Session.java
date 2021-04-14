@@ -41,6 +41,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -111,6 +112,16 @@ private static final long serialVersionUID = 0L;
             ip_ = s;
             break;
           }
+          case 56: {
+
+            startedAt_ = input.readUInt64();
+            break;
+          }
+          case 64: {
+            bitField0_ |= 0x00000001;
+            stoppedAt_ = input.readUInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -143,6 +154,7 @@ private static final long serialVersionUID = 0L;
             network.cow.mooapis.session.v1.Session.class, network.cow.mooapis.session.v1.Session.Builder.class);
   }
 
+  private int bitField0_;
   private int stateCase_ = 0;
   private java.lang.Object state_;
   public enum StateCase
@@ -409,6 +421,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int STARTED_AT_FIELD_NUMBER = 7;
+  private long startedAt_;
+  /**
+   * <pre>
+   * The unix timestamp of when the session started.
+   * </pre>
+   *
+   * <code>uint64 started_at = 7 [json_name = "startedAt"];</code>
+   * @return The startedAt.
+   */
+  @java.lang.Override
+  public long getStartedAt() {
+    return startedAt_;
+  }
+
+  public static final int STOPPED_AT_FIELD_NUMBER = 8;
+  private long stoppedAt_;
+  /**
+   * <pre>
+   * The unix timestamp of when the session stopped.
+   * </pre>
+   *
+   * <code>uint64 stopped_at = 8 [json_name = "stoppedAt"];</code>
+   * @return Whether the stoppedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasStoppedAt() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * The unix timestamp of when the session stopped.
+   * </pre>
+   *
+   * <code>uint64 stopped_at = 8 [json_name = "stoppedAt"];</code>
+   * @return The stoppedAt.
+   */
+  @java.lang.Override
+  public long getStoppedAt() {
+    return stoppedAt_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -441,6 +495,12 @@ private static final long serialVersionUID = 0L;
     if (!getIpBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, ip_);
     }
+    if (startedAt_ != 0L) {
+      output.writeUInt64(7, startedAt_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeUInt64(8, stoppedAt_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -471,6 +531,14 @@ private static final long serialVersionUID = 0L;
     if (!getIpBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, ip_);
     }
+    if (startedAt_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt64Size(7, startedAt_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt64Size(8, stoppedAt_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -492,6 +560,13 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPlayerId())) return false;
     if (!getIp()
         .equals(other.getIp())) return false;
+    if (getStartedAt()
+        != other.getStartedAt()) return false;
+    if (hasStoppedAt() != other.hasStoppedAt()) return false;
+    if (hasStoppedAt()) {
+      if (getStoppedAt()
+          != other.getStoppedAt()) return false;
+    }
     if (!getStateCase().equals(other.getStateCase())) return false;
     switch (stateCase_) {
       case 3:
@@ -526,6 +601,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPlayerId().hashCode();
     hash = (37 * hash) + IP_FIELD_NUMBER;
     hash = (53 * hash) + getIp().hashCode();
+    hash = (37 * hash) + STARTED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getStartedAt());
+    if (hasStoppedAt()) {
+      hash = (37 * hash) + STOPPED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStoppedAt());
+    }
     switch (stateCase_) {
       case 3:
         hash = (37 * hash) + UNKNOWN_FIELD_NUMBER;
@@ -681,6 +764,10 @@ private static final long serialVersionUID = 0L;
 
       ip_ = "";
 
+      startedAt_ = 0L;
+
+      stoppedAt_ = 0L;
+      bitField0_ = (bitField0_ & ~0x00000001);
       stateCase_ = 0;
       state_ = null;
       return this;
@@ -709,6 +796,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public network.cow.mooapis.session.v1.Session buildPartial() {
       network.cow.mooapis.session.v1.Session result = new network.cow.mooapis.session.v1.Session(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.id_ = id_;
       result.playerId_ = playerId_;
       if (stateCase_ == 3) {
@@ -733,6 +822,12 @@ private static final long serialVersionUID = 0L;
         }
       }
       result.ip_ = ip_;
+      result.startedAt_ = startedAt_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.stoppedAt_ = stoppedAt_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       result.stateCase_ = stateCase_;
       onBuilt();
       return result;
@@ -794,6 +889,12 @@ private static final long serialVersionUID = 0L;
         ip_ = other.ip_;
         onChanged();
       }
+      if (other.getStartedAt() != 0L) {
+        setStartedAt(other.getStartedAt());
+      }
+      if (other.hasStoppedAt()) {
+        setStoppedAt(other.getStoppedAt());
+      }
       switch (other.getStateCase()) {
         case UNKNOWN: {
           mergeUnknown(other.getUnknown());
@@ -854,6 +955,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -1542,6 +1644,104 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       ip_ = value;
+      onChanged();
+      return this;
+    }
+
+    private long startedAt_ ;
+    /**
+     * <pre>
+     * The unix timestamp of when the session started.
+     * </pre>
+     *
+     * <code>uint64 started_at = 7 [json_name = "startedAt"];</code>
+     * @return The startedAt.
+     */
+    @java.lang.Override
+    public long getStartedAt() {
+      return startedAt_;
+    }
+    /**
+     * <pre>
+     * The unix timestamp of when the session started.
+     * </pre>
+     *
+     * <code>uint64 started_at = 7 [json_name = "startedAt"];</code>
+     * @param value The startedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartedAt(long value) {
+      
+      startedAt_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The unix timestamp of when the session started.
+     * </pre>
+     *
+     * <code>uint64 started_at = 7 [json_name = "startedAt"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStartedAt() {
+      
+      startedAt_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long stoppedAt_ ;
+    /**
+     * <pre>
+     * The unix timestamp of when the session stopped.
+     * </pre>
+     *
+     * <code>uint64 stopped_at = 8 [json_name = "stoppedAt"];</code>
+     * @return Whether the stoppedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasStoppedAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * The unix timestamp of when the session stopped.
+     * </pre>
+     *
+     * <code>uint64 stopped_at = 8 [json_name = "stoppedAt"];</code>
+     * @return The stoppedAt.
+     */
+    @java.lang.Override
+    public long getStoppedAt() {
+      return stoppedAt_;
+    }
+    /**
+     * <pre>
+     * The unix timestamp of when the session stopped.
+     * </pre>
+     *
+     * <code>uint64 stopped_at = 8 [json_name = "stoppedAt"];</code>
+     * @param value The stoppedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStoppedAt(long value) {
+      bitField0_ |= 0x00000001;
+      stoppedAt_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The unix timestamp of when the session stopped.
+     * </pre>
+     *
+     * <code>uint64 stopped_at = 8 [json_name = "stoppedAt"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStoppedAt() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      stoppedAt_ = 0L;
       onChanged();
       return this;
     }

@@ -104,5 +104,34 @@ public interface SessionOrBuilder extends
   com.google.protobuf.ByteString
       getIpBytes();
 
+  /**
+   * <pre>
+   * The unix timestamp of when the session started.
+   * </pre>
+   *
+   * <code>uint64 started_at = 7 [json_name = "startedAt"];</code>
+   * @return The startedAt.
+   */
+  long getStartedAt();
+
+  /**
+   * <pre>
+   * The unix timestamp of when the session stopped.
+   * </pre>
+   *
+   * <code>uint64 stopped_at = 8 [json_name = "stoppedAt"];</code>
+   * @return Whether the stoppedAt field is set.
+   */
+  boolean hasStoppedAt();
+  /**
+   * <pre>
+   * The unix timestamp of when the session stopped.
+   * </pre>
+   *
+   * <code>uint64 stopped_at = 8 [json_name = "stoppedAt"];</code>
+   * @return The stoppedAt.
+   */
+  long getStoppedAt();
+
   public network.cow.mooapis.session.v1.Session.StateCase getStateCase();
 }

@@ -32,6 +32,15 @@ public interface ExecutorOrBuilder extends
    * </pre>
    *
    * <code>string id = 2 [json_name = "id"];</code>
+   * @return Whether the id field is set.
+   */
+  boolean hasId();
+  /**
+   * <pre>
+   * The identifier based on the given type.
+   * </pre>
+   *
+   * <code>string id = 2 [json_name = "id"];</code>
    * @return The id.
    */
   java.lang.String getId();

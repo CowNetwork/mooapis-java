@@ -40,6 +40,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -58,7 +59,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
-
+            bitField0_ |= 0x00000001;
             id_ = s;
             break;
           }
@@ -220,6 +221,7 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:cow.session.v1.Executor.Type)
   }
 
+  private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
@@ -249,6 +251,18 @@ private static final long serialVersionUID = 0L;
 
   public static final int ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object id_;
+  /**
+   * <pre>
+   * The identifier based on the given type.
+   * </pre>
+   *
+   * <code>string id = 2 [json_name = "id"];</code>
+   * @return Whether the id field is set.
+   */
+  @java.lang.Override
+  public boolean hasId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
   /**
    * <pre>
    * The identifier based on the given type.
@@ -310,7 +324,7 @@ private static final long serialVersionUID = 0L;
     if (type_ != network.cow.mooapis.session.v1.Executor.Type.TYPE_CUSTOM.getNumber()) {
       output.writeEnum(1, type_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
     }
     unknownFields.writeTo(output);
@@ -326,7 +340,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, type_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
     size += unknownFields.getSerializedSize();
@@ -345,8 +359,11 @@ private static final long serialVersionUID = 0L;
     network.cow.mooapis.session.v1.Executor other = (network.cow.mooapis.session.v1.Executor) obj;
 
     if (type_ != other.type_) return false;
-    if (!getId()
-        .equals(other.getId())) return false;
+    if (hasId() != other.hasId()) return false;
+    if (hasId()) {
+      if (!getId()
+          .equals(other.getId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -360,8 +377,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    if (hasId()) {
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -498,7 +517,7 @@ private static final long serialVersionUID = 0L;
       type_ = 0;
 
       id_ = "";
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -525,8 +544,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public network.cow.mooapis.session.v1.Executor buildPartial() {
       network.cow.mooapis.session.v1.Executor result = new network.cow.mooapis.session.v1.Executor(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.type_ = type_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
       result.id_ = id_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -578,7 +603,8 @@ private static final long serialVersionUID = 0L;
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
-      if (!other.getId().isEmpty()) {
+      if (other.hasId()) {
+        bitField0_ |= 0x00000001;
         id_ = other.id_;
         onChanged();
       }
@@ -610,6 +636,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -692,6 +719,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2 [json_name = "id"];</code>
+     * @return Whether the id field is set.
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * The identifier based on the given type.
+     * </pre>
+     *
+     * <code>string id = 2 [json_name = "id"];</code>
      * @return The id.
      */
     public java.lang.String getId() {
@@ -741,7 +779,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
     throw new NullPointerException();
   }
-  
+  bitField0_ |= 0x00000001;
       id_ = value;
       onChanged();
       return this;
@@ -755,7 +793,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -775,7 +813,7 @@ private static final long serialVersionUID = 0L;
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+      bitField0_ |= 0x00000001;
       id_ = value;
       onChanged();
       return this;
