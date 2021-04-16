@@ -16,8 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateInstanceRequest() {
-    name_ = "";
-    manifest_ = "";
   }
 
   @java.lang.Override
@@ -51,15 +49,31 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
+            network.cow.mooapis.instance.v1.TemplateInfo.Builder subBuilder = null;
+            if (instanceCase_ == 1) {
+              subBuilder = ((network.cow.mooapis.instance.v1.TemplateInfo) instance_).toBuilder();
+            }
+            instance_ =
+                input.readMessage(network.cow.mooapis.instance.v1.TemplateInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((network.cow.mooapis.instance.v1.TemplateInfo) instance_);
+              instance_ = subBuilder.buildPartial();
+            }
+            instanceCase_ = 1;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            manifest_ = s;
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (instanceCase_ == 2) {
+              subBuilder = ((com.google.protobuf.Struct) instance_).toBuilder();
+            }
+            instance_ =
+                input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.protobuf.Struct) instance_);
+              instance_ = subBuilder.buildPartial();
+            }
+            instanceCase_ = 2;
             break;
           }
           default: {
@@ -94,75 +108,106 @@ private static final long serialVersionUID = 0L;
             network.cow.mooapis.instance.v1.CreateInstanceRequest.class, network.cow.mooapis.instance.v1.CreateInstanceRequest.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  private int instanceCase_ = 0;
+  private java.lang.Object instance_;
+  public enum InstanceCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    INFO(1),
+    MANIFEST(2),
+    INSTANCE_NOT_SET(0);
+    private final int value;
+    private InstanceCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static InstanceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static InstanceCase forNumber(int value) {
+      switch (value) {
+        case 1: return INFO;
+        case 2: return MANIFEST;
+        case 0: return INSTANCE_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public InstanceCase
+  getInstanceCase() {
+    return InstanceCase.forNumber(
+        instanceCase_);
+  }
+
+  public static final int INFO_FIELD_NUMBER = 1;
   /**
    * <pre>
-   * Name the instance should have
+   * Information for the service about the template that 
+   * should be used to create the instance
    * </pre>
    *
-   * <code>string name = 1 [json_name = "name"];</code>
-   * @return The name.
+   * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+   * @return Whether the info field is set.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
+  public boolean hasInfo() {
+    return instanceCase_ == 1;
   }
   /**
    * <pre>
-   * Name the instance should have
+   * Information for the service about the template that 
+   * should be used to create the instance
    * </pre>
    *
-   * <code>string name = 1 [json_name = "name"];</code>
-   * @return The bytes for name.
+   * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+   * @return The info.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
+  public network.cow.mooapis.instance.v1.TemplateInfo getInfo() {
+    if (instanceCase_ == 1) {
+       return (network.cow.mooapis.instance.v1.TemplateInfo) instance_;
     }
+    return network.cow.mooapis.instance.v1.TemplateInfo.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Information for the service about the template that 
+   * should be used to create the instance
+   * </pre>
+   *
+   * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+   */
+  @java.lang.Override
+  public network.cow.mooapis.instance.v1.TemplateInfoOrBuilder getInfoOrBuilder() {
+    if (instanceCase_ == 1) {
+       return (network.cow.mooapis.instance.v1.TemplateInfo) instance_;
+    }
+    return network.cow.mooapis.instance.v1.TemplateInfo.getDefaultInstance();
   }
 
   public static final int MANIFEST_FIELD_NUMBER = 2;
-  private volatile java.lang.Object manifest_;
   /**
    * <pre>
    * The Kubernetes instance manifest or name of 
    * a manifest template configured in the service
    * </pre>
    *
-   * <code>string manifest = 2 [json_name = "manifest"];</code>
-   * @return The manifest.
+   * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
+   * @return Whether the manifest field is set.
    */
   @java.lang.Override
-  public java.lang.String getManifest() {
-    java.lang.Object ref = manifest_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      manifest_ = s;
-      return s;
-    }
+  public boolean hasManifest() {
+    return instanceCase_ == 2;
   }
   /**
    * <pre>
@@ -170,22 +215,30 @@ private static final long serialVersionUID = 0L;
    * a manifest template configured in the service
    * </pre>
    *
-   * <code>string manifest = 2 [json_name = "manifest"];</code>
-   * @return The bytes for manifest.
+   * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
+   * @return The manifest.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getManifestBytes() {
-    java.lang.Object ref = manifest_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      manifest_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
+  public com.google.protobuf.Struct getManifest() {
+    if (instanceCase_ == 2) {
+       return (com.google.protobuf.Struct) instance_;
     }
+    return com.google.protobuf.Struct.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * The Kubernetes instance manifest or name of 
+   * a manifest template configured in the service
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getManifestOrBuilder() {
+    if (instanceCase_ == 2) {
+       return (com.google.protobuf.Struct) instance_;
+    }
+    return com.google.protobuf.Struct.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -202,11 +255,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (instanceCase_ == 1) {
+      output.writeMessage(1, (network.cow.mooapis.instance.v1.TemplateInfo) instance_);
     }
-    if (!getManifestBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, manifest_);
+    if (instanceCase_ == 2) {
+      output.writeMessage(2, (com.google.protobuf.Struct) instance_);
     }
     unknownFields.writeTo(output);
   }
@@ -217,11 +270,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (instanceCase_ == 1) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, (network.cow.mooapis.instance.v1.TemplateInfo) instance_);
     }
-    if (!getManifestBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, manifest_);
+    if (instanceCase_ == 2) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, (com.google.protobuf.Struct) instance_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -238,10 +293,19 @@ private static final long serialVersionUID = 0L;
     }
     network.cow.mooapis.instance.v1.CreateInstanceRequest other = (network.cow.mooapis.instance.v1.CreateInstanceRequest) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getManifest()
-        .equals(other.getManifest())) return false;
+    if (!getInstanceCase().equals(other.getInstanceCase())) return false;
+    switch (instanceCase_) {
+      case 1:
+        if (!getInfo()
+            .equals(other.getInfo())) return false;
+        break;
+      case 2:
+        if (!getManifest()
+            .equals(other.getManifest())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -253,10 +317,18 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + MANIFEST_FIELD_NUMBER;
-    hash = (53 * hash) + getManifest().hashCode();
+    switch (instanceCase_) {
+      case 1:
+        hash = (37 * hash) + INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getInfo().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + MANIFEST_FIELD_NUMBER;
+        hash = (53 * hash) + getManifest().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -390,10 +462,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
-
-      manifest_ = "";
-
+      instanceCase_ = 0;
+      instance_ = null;
       return this;
     }
 
@@ -420,8 +490,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public network.cow.mooapis.instance.v1.CreateInstanceRequest buildPartial() {
       network.cow.mooapis.instance.v1.CreateInstanceRequest result = new network.cow.mooapis.instance.v1.CreateInstanceRequest(this);
-      result.name_ = name_;
-      result.manifest_ = manifest_;
+      if (instanceCase_ == 1) {
+        if (infoBuilder_ == null) {
+          result.instance_ = instance_;
+        } else {
+          result.instance_ = infoBuilder_.build();
+        }
+      }
+      if (instanceCase_ == 2) {
+        if (manifestBuilder_ == null) {
+          result.instance_ = instance_;
+        } else {
+          result.instance_ = manifestBuilder_.build();
+        }
+      }
+      result.instanceCase_ = instanceCase_;
       onBuilt();
       return result;
     }
@@ -470,13 +553,18 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(network.cow.mooapis.instance.v1.CreateInstanceRequest other) {
       if (other == network.cow.mooapis.instance.v1.CreateInstanceRequest.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
-      if (!other.getManifest().isEmpty()) {
-        manifest_ = other.manifest_;
-        onChanged();
+      switch (other.getInstanceCase()) {
+        case INFO: {
+          mergeInfo(other.getInfo());
+          break;
+        }
+        case MANIFEST: {
+          mergeManifest(other.getManifest());
+          break;
+        }
+        case INSTANCE_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -506,123 +594,244 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int instanceCase_ = 0;
+    private java.lang.Object instance_;
+    public InstanceCase
+        getInstanceCase() {
+      return InstanceCase.forNumber(
+          instanceCase_);
+    }
 
-    private java.lang.Object name_ = "";
-    /**
-     * <pre>
-     * Name the instance should have
-     * </pre>
-     *
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Name the instance should have
-     * </pre>
-     *
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Name the instance should have
-     * </pre>
-     *
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Name the instance should have
-     * </pre>
-     *
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Name the instance should have
-     * </pre>
-     *
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
+    public Builder clearInstance() {
+      instanceCase_ = 0;
+      instance_ = null;
       onChanged();
       return this;
     }
 
-    private java.lang.Object manifest_ = "";
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.instance.v1.TemplateInfo, network.cow.mooapis.instance.v1.TemplateInfo.Builder, network.cow.mooapis.instance.v1.TemplateInfoOrBuilder> infoBuilder_;
+    /**
+     * <pre>
+     * Information for the service about the template that 
+     * should be used to create the instance
+     * </pre>
+     *
+     * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+     * @return Whether the info field is set.
+     */
+    @java.lang.Override
+    public boolean hasInfo() {
+      return instanceCase_ == 1;
+    }
+    /**
+     * <pre>
+     * Information for the service about the template that 
+     * should be used to create the instance
+     * </pre>
+     *
+     * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+     * @return The info.
+     */
+    @java.lang.Override
+    public network.cow.mooapis.instance.v1.TemplateInfo getInfo() {
+      if (infoBuilder_ == null) {
+        if (instanceCase_ == 1) {
+          return (network.cow.mooapis.instance.v1.TemplateInfo) instance_;
+        }
+        return network.cow.mooapis.instance.v1.TemplateInfo.getDefaultInstance();
+      } else {
+        if (instanceCase_ == 1) {
+          return infoBuilder_.getMessage();
+        }
+        return network.cow.mooapis.instance.v1.TemplateInfo.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Information for the service about the template that 
+     * should be used to create the instance
+     * </pre>
+     *
+     * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+     */
+    public Builder setInfo(network.cow.mooapis.instance.v1.TemplateInfo value) {
+      if (infoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instance_ = value;
+        onChanged();
+      } else {
+        infoBuilder_.setMessage(value);
+      }
+      instanceCase_ = 1;
+      return this;
+    }
+    /**
+     * <pre>
+     * Information for the service about the template that 
+     * should be used to create the instance
+     * </pre>
+     *
+     * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+     */
+    public Builder setInfo(
+        network.cow.mooapis.instance.v1.TemplateInfo.Builder builderForValue) {
+      if (infoBuilder_ == null) {
+        instance_ = builderForValue.build();
+        onChanged();
+      } else {
+        infoBuilder_.setMessage(builderForValue.build());
+      }
+      instanceCase_ = 1;
+      return this;
+    }
+    /**
+     * <pre>
+     * Information for the service about the template that 
+     * should be used to create the instance
+     * </pre>
+     *
+     * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+     */
+    public Builder mergeInfo(network.cow.mooapis.instance.v1.TemplateInfo value) {
+      if (infoBuilder_ == null) {
+        if (instanceCase_ == 1 &&
+            instance_ != network.cow.mooapis.instance.v1.TemplateInfo.getDefaultInstance()) {
+          instance_ = network.cow.mooapis.instance.v1.TemplateInfo.newBuilder((network.cow.mooapis.instance.v1.TemplateInfo) instance_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          instance_ = value;
+        }
+        onChanged();
+      } else {
+        if (instanceCase_ == 1) {
+          infoBuilder_.mergeFrom(value);
+        }
+        infoBuilder_.setMessage(value);
+      }
+      instanceCase_ = 1;
+      return this;
+    }
+    /**
+     * <pre>
+     * Information for the service about the template that 
+     * should be used to create the instance
+     * </pre>
+     *
+     * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+     */
+    public Builder clearInfo() {
+      if (infoBuilder_ == null) {
+        if (instanceCase_ == 1) {
+          instanceCase_ = 0;
+          instance_ = null;
+          onChanged();
+        }
+      } else {
+        if (instanceCase_ == 1) {
+          instanceCase_ = 0;
+          instance_ = null;
+        }
+        infoBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Information for the service about the template that 
+     * should be used to create the instance
+     * </pre>
+     *
+     * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+     */
+    public network.cow.mooapis.instance.v1.TemplateInfo.Builder getInfoBuilder() {
+      return getInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Information for the service about the template that 
+     * should be used to create the instance
+     * </pre>
+     *
+     * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+     */
+    @java.lang.Override
+    public network.cow.mooapis.instance.v1.TemplateInfoOrBuilder getInfoOrBuilder() {
+      if ((instanceCase_ == 1) && (infoBuilder_ != null)) {
+        return infoBuilder_.getMessageOrBuilder();
+      } else {
+        if (instanceCase_ == 1) {
+          return (network.cow.mooapis.instance.v1.TemplateInfo) instance_;
+        }
+        return network.cow.mooapis.instance.v1.TemplateInfo.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Information for the service about the template that 
+     * should be used to create the instance
+     * </pre>
+     *
+     * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.instance.v1.TemplateInfo, network.cow.mooapis.instance.v1.TemplateInfo.Builder, network.cow.mooapis.instance.v1.TemplateInfoOrBuilder> 
+        getInfoFieldBuilder() {
+      if (infoBuilder_ == null) {
+        if (!(instanceCase_ == 1)) {
+          instance_ = network.cow.mooapis.instance.v1.TemplateInfo.getDefaultInstance();
+        }
+        infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            network.cow.mooapis.instance.v1.TemplateInfo, network.cow.mooapis.instance.v1.TemplateInfo.Builder, network.cow.mooapis.instance.v1.TemplateInfoOrBuilder>(
+                (network.cow.mooapis.instance.v1.TemplateInfo) instance_,
+                getParentForChildren(),
+                isClean());
+        instance_ = null;
+      }
+      instanceCase_ = 1;
+      onChanged();;
+      return infoBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> manifestBuilder_;
     /**
      * <pre>
      * The Kubernetes instance manifest or name of 
      * a manifest template configured in the service
      * </pre>
      *
-     * <code>string manifest = 2 [json_name = "manifest"];</code>
+     * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
+     * @return Whether the manifest field is set.
+     */
+    @java.lang.Override
+    public boolean hasManifest() {
+      return instanceCase_ == 2;
+    }
+    /**
+     * <pre>
+     * The Kubernetes instance manifest or name of 
+     * a manifest template configured in the service
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
      * @return The manifest.
      */
-    public java.lang.String getManifest() {
-      java.lang.Object ref = manifest_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        manifest_ = s;
-        return s;
+    @java.lang.Override
+    public com.google.protobuf.Struct getManifest() {
+      if (manifestBuilder_ == null) {
+        if (instanceCase_ == 2) {
+          return (com.google.protobuf.Struct) instance_;
+        }
+        return com.google.protobuf.Struct.getDefaultInstance();
       } else {
-        return (java.lang.String) ref;
+        if (instanceCase_ == 2) {
+          return manifestBuilder_.getMessage();
+        }
+        return com.google.protobuf.Struct.getDefaultInstance();
       }
     }
     /**
@@ -631,21 +840,20 @@ private static final long serialVersionUID = 0L;
      * a manifest template configured in the service
      * </pre>
      *
-     * <code>string manifest = 2 [json_name = "manifest"];</code>
-     * @return The bytes for manifest.
+     * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
      */
-    public com.google.protobuf.ByteString
-        getManifestBytes() {
-      java.lang.Object ref = manifest_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        manifest_ = b;
-        return b;
+    public Builder setManifest(com.google.protobuf.Struct value) {
+      if (manifestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instance_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        manifestBuilder_.setMessage(value);
       }
+      instanceCase_ = 2;
+      return this;
     }
     /**
      * <pre>
@@ -653,18 +861,17 @@ private static final long serialVersionUID = 0L;
      * a manifest template configured in the service
      * </pre>
      *
-     * <code>string manifest = 2 [json_name = "manifest"];</code>
-     * @param value The manifest to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
      */
     public Builder setManifest(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      manifest_ = value;
-      onChanged();
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (manifestBuilder_ == null) {
+        instance_ = builderForValue.build();
+        onChanged();
+      } else {
+        manifestBuilder_.setMessage(builderForValue.build());
+      }
+      instanceCase_ = 2;
       return this;
     }
     /**
@@ -673,13 +880,49 @@ private static final long serialVersionUID = 0L;
      * a manifest template configured in the service
      * </pre>
      *
-     * <code>string manifest = 2 [json_name = "manifest"];</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
+     */
+    public Builder mergeManifest(com.google.protobuf.Struct value) {
+      if (manifestBuilder_ == null) {
+        if (instanceCase_ == 2 &&
+            instance_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          instance_ = com.google.protobuf.Struct.newBuilder((com.google.protobuf.Struct) instance_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          instance_ = value;
+        }
+        onChanged();
+      } else {
+        if (instanceCase_ == 2) {
+          manifestBuilder_.mergeFrom(value);
+        }
+        manifestBuilder_.setMessage(value);
+      }
+      instanceCase_ = 2;
+      return this;
+    }
+    /**
+     * <pre>
+     * The Kubernetes instance manifest or name of 
+     * a manifest template configured in the service
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
      */
     public Builder clearManifest() {
-      
-      manifest_ = getDefaultInstance().getManifest();
-      onChanged();
+      if (manifestBuilder_ == null) {
+        if (instanceCase_ == 2) {
+          instanceCase_ = 0;
+          instance_ = null;
+          onChanged();
+        }
+      } else {
+        if (instanceCase_ == 2) {
+          instanceCase_ = 0;
+          instance_ = null;
+        }
+        manifestBuilder_.clear();
+      }
       return this;
     }
     /**
@@ -688,20 +931,55 @@ private static final long serialVersionUID = 0L;
      * a manifest template configured in the service
      * </pre>
      *
-     * <code>string manifest = 2 [json_name = "manifest"];</code>
-     * @param value The bytes for manifest to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
      */
-    public Builder setManifestBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      manifest_ = value;
-      onChanged();
-      return this;
+    public com.google.protobuf.Struct.Builder getManifestBuilder() {
+      return getManifestFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The Kubernetes instance manifest or name of 
+     * a manifest template configured in the service
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getManifestOrBuilder() {
+      if ((instanceCase_ == 2) && (manifestBuilder_ != null)) {
+        return manifestBuilder_.getMessageOrBuilder();
+      } else {
+        if (instanceCase_ == 2) {
+          return (com.google.protobuf.Struct) instance_;
+        }
+        return com.google.protobuf.Struct.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The Kubernetes instance manifest or name of 
+     * a manifest template configured in the service
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getManifestFieldBuilder() {
+      if (manifestBuilder_ == null) {
+        if (!(instanceCase_ == 2)) {
+          instance_ = com.google.protobuf.Struct.getDefaultInstance();
+        }
+        manifestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                (com.google.protobuf.Struct) instance_,
+                getParentForChildren(),
+                isClean());
+        instance_ = null;
+      }
+      instanceCase_ = 2;
+      onChanged();;
+      return manifestBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

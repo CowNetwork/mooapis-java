@@ -29,6 +29,11 @@ public final class Types {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cow_instance_v1_Player_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_instance_v1_TemplateInfo_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_instance_v1_TemplateInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -51,9 +56,11 @@ public final class Types {
       "1\n\007players\030\002 \003(\0132\027.cow.instance.v1.Playe" +
       "rR\007players\"M\n\006Player\022\016\n\002id\030\001 \001(\tR\002id\0223\n\010" +
       "metadata\030\002 \001(\0132\027.google.protobuf.StructR" +
-      "\010metadataBO\n\037network.cow.mooapis.instanc" +
-      "e.v1P\001Z*github.com/cownetwork/instance/v" +
-      "1;instanceb\006proto3"
+      "\010metadata\"X\n\014TemplateInfo\022#\n\rtemplate_na" +
+      "me\030\001 \001(\tR\014templateName\022#\n\rinstance_name\030" +
+      "\002 \001(\tR\014instanceNameBO\n\037network.cow.mooap" +
+      "is.instance.v1P\001Z*github.com/cownetwork/" +
+      "instance/v1;instanceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -78,6 +85,12 @@ public final class Types {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_instance_v1_Player_descriptor,
         new java.lang.String[] { "Id", "Metadata", });
+    internal_static_cow_instance_v1_TemplateInfo_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_cow_instance_v1_TemplateInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_instance_v1_TemplateInfo_descriptor,
+        new java.lang.String[] { "TemplateName", "InstanceName", });
     com.google.protobuf.StructProto.getDescriptor();
   }
 

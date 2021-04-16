@@ -55,37 +55,41 @@ public final class InstanceServiceApi {
     java.lang.String[] descriptorData = {
       "\n*cow/instance/v1/instance_service_api.p" +
       "roto\022\017cow.instance.v1\032\033cow/instance/v1/t" +
-      "ypes.proto\"G\n\025CreateInstanceRequest\022\022\n\004n" +
-      "ame\030\001 \001(\tR\004name\022\032\n\010manifest\030\002 \001(\tR\010manif" +
-      "est\"O\n\026CreateInstanceResponse\0225\n\010instanc" +
-      "e\030\001 \001(\0132\031.cow.instance.v1.InstanceR\010inst" +
-      "ance\"$\n\022EndInstanceRequest\022\016\n\002id\030\001 \001(\tR\002" +
-      "id\"L\n\023EndInstanceResponse\0225\n\010instance\030\001 " +
-      "\001(\0132\031.cow.instance.v1.InstanceR\010instance" +
-      "\"$\n\022GetInstanceRequest\022\016\n\002id\030\001 \001(\tR\002id\"L" +
-      "\n\023GetInstanceResponse\0225\n\010instance\030\001 \001(\0132" +
-      "\031.cow.instance.v1.InstanceR\010instance2\220\002\n" +
-      "\017InstanceService\022Y\n\006Create\022&.cow.instanc" +
-      "e.v1.CreateInstanceRequest\032\'.cow.instanc" +
-      "e.v1.CreateInstanceResponse\022P\n\003End\022#.cow" +
-      ".instance.v1.EndInstanceRequest\032$.cow.in" +
-      "stance.v1.EndInstanceResponse\022P\n\003Get\022#.c" +
-      "ow.instance.v1.GetInstanceRequest\032$.cow." +
-      "instance.v1.GetInstanceResponseBO\n\037netwo" +
-      "rk.cow.mooapis.instance.v1P\001Z*github.com" +
-      "/cownetwork/instance/v1;instanceb\006proto3"
+      "ypes.proto\032\034google/protobuf/struct.proto" +
+      "\"\217\001\n\025CreateInstanceRequest\0223\n\004info\030\001 \001(\013" +
+      "2\035.cow.instance.v1.TemplateInfoH\000R\004info\022" +
+      "5\n\010manifest\030\002 \001(\0132\027.google.protobuf.Stru" +
+      "ctH\000R\010manifestB\n\n\010instance\"O\n\026CreateInst" +
+      "anceResponse\0225\n\010instance\030\001 \001(\0132\031.cow.ins" +
+      "tance.v1.InstanceR\010instance\"$\n\022EndInstan" +
+      "ceRequest\022\016\n\002id\030\001 \001(\tR\002id\"L\n\023EndInstance" +
+      "Response\0225\n\010instance\030\001 \001(\0132\031.cow.instanc" +
+      "e.v1.InstanceR\010instance\"$\n\022GetInstanceRe" +
+      "quest\022\016\n\002id\030\001 \001(\tR\002id\"L\n\023GetInstanceResp" +
+      "onse\0225\n\010instance\030\001 \001(\0132\031.cow.instance.v1" +
+      ".InstanceR\010instance2\220\002\n\017InstanceService\022" +
+      "Y\n\006Create\022&.cow.instance.v1.CreateInstan" +
+      "ceRequest\032\'.cow.instance.v1.CreateInstan" +
+      "ceResponse\022P\n\003End\022#.cow.instance.v1.EndI" +
+      "nstanceRequest\032$.cow.instance.v1.EndInst" +
+      "anceResponse\022P\n\003Get\022#.cow.instance.v1.Ge" +
+      "tInstanceRequest\032$.cow.instance.v1.GetIn" +
+      "stanceResponseBO\n\037network.cow.mooapis.in" +
+      "stance.v1P\001Z*github.com/cownetwork/insta" +
+      "nce/v1;instanceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           network.cow.mooapis.instance.v1.Types.getDescriptor(),
+          com.google.protobuf.StructProto.getDescriptor(),
         });
     internal_static_cow_instance_v1_CreateInstanceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_cow_instance_v1_CreateInstanceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_instance_v1_CreateInstanceRequest_descriptor,
-        new java.lang.String[] { "Name", "Manifest", });
+        new java.lang.String[] { "Info", "Manifest", "Instance", });
     internal_static_cow_instance_v1_CreateInstanceResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_cow_instance_v1_CreateInstanceResponse_fieldAccessorTable = new
@@ -117,6 +121,7 @@ public final class InstanceServiceApi {
         internal_static_cow_instance_v1_GetInstanceResponse_descriptor,
         new java.lang.String[] { "Instance", });
     network.cow.mooapis.instance.v1.Types.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

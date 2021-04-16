@@ -9,23 +9,33 @@ public interface CreateInstanceRequestOrBuilder extends
 
   /**
    * <pre>
-   * Name the instance should have
+   * Information for the service about the template that 
+   * should be used to create the instance
    * </pre>
    *
-   * <code>string name = 1 [json_name = "name"];</code>
-   * @return The name.
+   * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+   * @return Whether the info field is set.
    */
-  java.lang.String getName();
+  boolean hasInfo();
   /**
    * <pre>
-   * Name the instance should have
+   * Information for the service about the template that 
+   * should be used to create the instance
    * </pre>
    *
-   * <code>string name = 1 [json_name = "name"];</code>
-   * @return The bytes for name.
+   * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+   * @return The info.
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  network.cow.mooapis.instance.v1.TemplateInfo getInfo();
+  /**
+   * <pre>
+   * Information for the service about the template that 
+   * should be used to create the instance
+   * </pre>
+   *
+   * <code>.cow.instance.v1.TemplateInfo info = 1 [json_name = "info"];</code>
+   */
+  network.cow.mooapis.instance.v1.TemplateInfoOrBuilder getInfoOrBuilder();
 
   /**
    * <pre>
@@ -33,19 +43,29 @@ public interface CreateInstanceRequestOrBuilder extends
    * a manifest template configured in the service
    * </pre>
    *
-   * <code>string manifest = 2 [json_name = "manifest"];</code>
-   * @return The manifest.
+   * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
+   * @return Whether the manifest field is set.
    */
-  java.lang.String getManifest();
+  boolean hasManifest();
   /**
    * <pre>
    * The Kubernetes instance manifest or name of 
    * a manifest template configured in the service
    * </pre>
    *
-   * <code>string manifest = 2 [json_name = "manifest"];</code>
-   * @return The bytes for manifest.
+   * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
+   * @return The manifest.
    */
-  com.google.protobuf.ByteString
-      getManifestBytes();
+  com.google.protobuf.Struct getManifest();
+  /**
+   * <pre>
+   * The Kubernetes instance manifest or name of 
+   * a manifest template configured in the service
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct manifest = 2 [json_name = "manifest"];</code>
+   */
+  com.google.protobuf.StructOrBuilder getManifestOrBuilder();
+
+  public network.cow.mooapis.instance.v1.CreateInstanceRequest.InstanceCase getInstanceCase();
 }
