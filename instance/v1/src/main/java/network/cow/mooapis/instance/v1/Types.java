@@ -39,16 +39,18 @@ public final class Types {
   static {
     java.lang.String[] descriptorData = {
       "\n\033cow/instance/v1/types.proto\022\017cow.insta" +
-      "nce.v1\"\205\002\n\010Instance\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004n" +
-      "ame\030\002 \001(\tR\004name\022\016\n\002ip\030\003 \001(\tR\002ip\0225\n\005state" +
-      "\030\004 \001(\0162\037.cow.instance.v1.Instance.StateR" +
-      "\005state\0225\n\010metadata\030\005 \001(\0132\031.cow.instance." +
-      "v1.MetadataR\010metadata\"W\n\005State\022\021\n\rSTATE_" +
-      "UNKNOWN\020\000\022\026\n\022STATE_INITIALIZING\020\001\022\021\n\rSTA" +
-      "TE_RUNNING\020\002\022\020\n\014STATE_ENDING\020\003\"S\n\010Metada" +
-      "ta\022\024\n\005state\030\001 \001(\tR\005state\0221\n\007players\030\002 \003(" +
-      "\0132\027.cow.instance.v1.PlayerR\007players\"4\n\006P" +
-      "layer\022\016\n\002id\030\001 \001(\tR\002id\022\032\n\010metadata\030\002 \001(\tR" +
+      "nce.v1\032\034google/protobuf/struct.proto\"\205\002\n" +
+      "\010Instance\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR" +
+      "\004name\022\016\n\002ip\030\003 \001(\tR\002ip\0225\n\005state\030\004 \001(\0162\037.c" +
+      "ow.instance.v1.Instance.StateR\005state\0225\n\010" +
+      "metadata\030\005 \001(\0132\031.cow.instance.v1.Metadat" +
+      "aR\010metadata\"W\n\005State\022\021\n\rSTATE_UNKNOWN\020\000\022" +
+      "\026\n\022STATE_INITIALIZING\020\001\022\021\n\rSTATE_RUNNING" +
+      "\020\002\022\020\n\014STATE_ENDING\020\003\"l\n\010Metadata\022-\n\005stat" +
+      "e\030\001 \001(\0132\027.google.protobuf.StructR\005state\022" +
+      "1\n\007players\030\002 \003(\0132\027.cow.instance.v1.Playe" +
+      "rR\007players\"M\n\006Player\022\016\n\002id\030\001 \001(\tR\002id\0223\n\010" +
+      "metadata\030\002 \001(\0132\027.google.protobuf.StructR" +
       "\010metadataBO\n\037network.cow.mooapis.instanc" +
       "e.v1P\001Z*github.com/cownetwork/instance/v" +
       "1;instanceb\006proto3"
@@ -56,6 +58,7 @@ public final class Types {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.StructProto.getDescriptor(),
         });
     internal_static_cow_instance_v1_Instance_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -75,6 +78,7 @@ public final class Types {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_instance_v1_Player_descriptor,
         new java.lang.String[] { "Id", "Metadata", });
+    com.google.protobuf.StructProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

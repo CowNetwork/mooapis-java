@@ -13,21 +13,29 @@ public interface MetadataOrBuilder extends
    * that is running can define this state
    * </pre>
    *
-   * <code>string state = 1 [json_name = "state"];</code>
-   * @return The state.
+   * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
+   * @return Whether the state field is set.
    */
-  java.lang.String getState();
+  boolean hasState();
   /**
    * <pre>
    * The currently observed state. The underlying application
    * that is running can define this state
    * </pre>
    *
-   * <code>string state = 1 [json_name = "state"];</code>
-   * @return The bytes for state.
+   * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
+   * @return The state.
    */
-  com.google.protobuf.ByteString
-      getStateBytes();
+  com.google.protobuf.Struct getState();
+  /**
+   * <pre>
+   * The currently observed state. The underlying application
+   * that is running can define this state
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
+   */
+  com.google.protobuf.StructOrBuilder getStateOrBuilder();
 
   /**
    * <pre>

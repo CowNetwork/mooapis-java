@@ -62,35 +62,35 @@ public final class InstanceServiceGrpc {
     return getCreateMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.instance.v1.DeleteInstanceRequest,
-      network.cow.mooapis.instance.v1.DeleteInstanceResponse> getDeleteMethod;
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.instance.v1.EndInstanceRequest,
+      network.cow.mooapis.instance.v1.EndInstanceResponse> getEndMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Delete",
-      requestType = network.cow.mooapis.instance.v1.DeleteInstanceRequest.class,
-      responseType = network.cow.mooapis.instance.v1.DeleteInstanceResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "End",
+      requestType = network.cow.mooapis.instance.v1.EndInstanceRequest.class,
+      responseType = network.cow.mooapis.instance.v1.EndInstanceResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<network.cow.mooapis.instance.v1.DeleteInstanceRequest,
-      network.cow.mooapis.instance.v1.DeleteInstanceResponse> getDeleteMethod() {
-    io.grpc.MethodDescriptor<network.cow.mooapis.instance.v1.DeleteInstanceRequest, network.cow.mooapis.instance.v1.DeleteInstanceResponse> getDeleteMethod;
-    if ((getDeleteMethod = InstanceServiceGrpc.getDeleteMethod) == null) {
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.instance.v1.EndInstanceRequest,
+      network.cow.mooapis.instance.v1.EndInstanceResponse> getEndMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.instance.v1.EndInstanceRequest, network.cow.mooapis.instance.v1.EndInstanceResponse> getEndMethod;
+    if ((getEndMethod = InstanceServiceGrpc.getEndMethod) == null) {
       synchronized (InstanceServiceGrpc.class) {
-        if ((getDeleteMethod = InstanceServiceGrpc.getDeleteMethod) == null) {
-          InstanceServiceGrpc.getDeleteMethod = getDeleteMethod =
-              io.grpc.MethodDescriptor.<network.cow.mooapis.instance.v1.DeleteInstanceRequest, network.cow.mooapis.instance.v1.DeleteInstanceResponse>newBuilder()
+        if ((getEndMethod = InstanceServiceGrpc.getEndMethod) == null) {
+          InstanceServiceGrpc.getEndMethod = getEndMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.instance.v1.EndInstanceRequest, network.cow.mooapis.instance.v1.EndInstanceResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Delete"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "End"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.instance.v1.DeleteInstanceRequest.getDefaultInstance()))
+                  network.cow.mooapis.instance.v1.EndInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.instance.v1.DeleteInstanceResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new InstanceServiceMethodDescriptorSupplier("Delete"))
+                  network.cow.mooapis.instance.v1.EndInstanceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new InstanceServiceMethodDescriptorSupplier("End"))
               .build();
         }
       }
     }
-    return getDeleteMethod;
+    return getEndMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.instance.v1.GetInstanceRequest,
@@ -167,12 +167,12 @@ public final class InstanceServiceGrpc {
 
     /**
      * <pre>
-     * Delete deletes an instance running in the cluster
+     * End marks Instance as ended
      * </pre>
      */
-    public void delete(network.cow.mooapis.instance.v1.DeleteInstanceRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.instance.v1.DeleteInstanceResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteMethod(), responseObserver);
+    public void end(network.cow.mooapis.instance.v1.EndInstanceRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.instance.v1.EndInstanceResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getEndMethod(), responseObserver);
     }
 
     /**
@@ -195,12 +195,12 @@ public final class InstanceServiceGrpc {
                 network.cow.mooapis.instance.v1.CreateInstanceResponse>(
                   this, METHODID_CREATE)))
           .addMethod(
-            getDeleteMethod(),
+            getEndMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                network.cow.mooapis.instance.v1.DeleteInstanceRequest,
-                network.cow.mooapis.instance.v1.DeleteInstanceResponse>(
-                  this, METHODID_DELETE)))
+                network.cow.mooapis.instance.v1.EndInstanceRequest,
+                network.cow.mooapis.instance.v1.EndInstanceResponse>(
+                  this, METHODID_END)))
           .addMethod(
             getGetMethod(),
             asyncUnaryCall(
@@ -247,13 +247,13 @@ public final class InstanceServiceGrpc {
 
     /**
      * <pre>
-     * Delete deletes an instance running in the cluster
+     * End marks Instance as ended
      * </pre>
      */
-    public void delete(network.cow.mooapis.instance.v1.DeleteInstanceRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.instance.v1.DeleteInstanceResponse> responseObserver) {
+    public void end(network.cow.mooapis.instance.v1.EndInstanceRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.instance.v1.EndInstanceResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getDeleteMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getEndMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -302,12 +302,12 @@ public final class InstanceServiceGrpc {
 
     /**
      * <pre>
-     * Delete deletes an instance running in the cluster
+     * End marks Instance as ended
      * </pre>
      */
-    public network.cow.mooapis.instance.v1.DeleteInstanceResponse delete(network.cow.mooapis.instance.v1.DeleteInstanceRequest request) {
+    public network.cow.mooapis.instance.v1.EndInstanceResponse end(network.cow.mooapis.instance.v1.EndInstanceRequest request) {
       return blockingUnaryCall(
-          getChannel(), getDeleteMethod(), getCallOptions(), request);
+          getChannel(), getEndMethod(), getCallOptions(), request);
     }
 
     /**
@@ -356,13 +356,13 @@ public final class InstanceServiceGrpc {
 
     /**
      * <pre>
-     * Delete deletes an instance running in the cluster
+     * End marks Instance as ended
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.instance.v1.DeleteInstanceResponse> delete(
-        network.cow.mooapis.instance.v1.DeleteInstanceRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.instance.v1.EndInstanceResponse> end(
+        network.cow.mooapis.instance.v1.EndInstanceRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getDeleteMethod(), getCallOptions()), request);
+          getChannel().newCall(getEndMethod(), getCallOptions()), request);
     }
 
     /**
@@ -378,7 +378,7 @@ public final class InstanceServiceGrpc {
   }
 
   private static final int METHODID_CREATE = 0;
-  private static final int METHODID_DELETE = 1;
+  private static final int METHODID_END = 1;
   private static final int METHODID_GET = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
@@ -402,9 +402,9 @@ public final class InstanceServiceGrpc {
           serviceImpl.create((network.cow.mooapis.instance.v1.CreateInstanceRequest) request,
               (io.grpc.stub.StreamObserver<network.cow.mooapis.instance.v1.CreateInstanceResponse>) responseObserver);
           break;
-        case METHODID_DELETE:
-          serviceImpl.delete((network.cow.mooapis.instance.v1.DeleteInstanceRequest) request,
-              (io.grpc.stub.StreamObserver<network.cow.mooapis.instance.v1.DeleteInstanceResponse>) responseObserver);
+        case METHODID_END:
+          serviceImpl.end((network.cow.mooapis.instance.v1.EndInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.instance.v1.EndInstanceResponse>) responseObserver);
           break;
         case METHODID_GET:
           serviceImpl.get((network.cow.mooapis.instance.v1.GetInstanceRequest) request,
@@ -472,7 +472,7 @@ public final class InstanceServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new InstanceServiceFileDescriptorSupplier())
               .addMethod(getCreateMethod())
-              .addMethod(getDeleteMethod())
+              .addMethod(getEndMethod())
               .addMethod(getGetMethod())
               .build();
         }

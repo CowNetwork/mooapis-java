@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Metadata() {
-    state_ = "";
     players_ = java.util.Collections.emptyList();
   }
 
@@ -52,9 +51,16 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (state_ != null) {
+              subBuilder = state_.toBuilder();
+            }
+            state_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(state_);
+              state_ = subBuilder.buildPartial();
+            }
 
-            state_ = s;
             break;
           }
           case 18: {
@@ -102,28 +108,19 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object state_;
+  private com.google.protobuf.Struct state_;
   /**
    * <pre>
    * The currently observed state. The underlying application
    * that is running can define this state
    * </pre>
    *
-   * <code>string state = 1 [json_name = "state"];</code>
-   * @return The state.
+   * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
+   * @return Whether the state field is set.
    */
   @java.lang.Override
-  public java.lang.String getState() {
-    java.lang.Object ref = state_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      state_ = s;
-      return s;
-    }
+  public boolean hasState() {
+    return state_ != null;
   }
   /**
    * <pre>
@@ -131,22 +128,24 @@ private static final long serialVersionUID = 0L;
    * that is running can define this state
    * </pre>
    *
-   * <code>string state = 1 [json_name = "state"];</code>
-   * @return The bytes for state.
+   * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
+   * @return The state.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getStateBytes() {
-    java.lang.Object ref = state_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      state_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.Struct getState() {
+    return state_ == null ? com.google.protobuf.Struct.getDefaultInstance() : state_;
+  }
+  /**
+   * <pre>
+   * The currently observed state. The underlying application
+   * that is running can define this state
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getStateOrBuilder() {
+    return getState();
   }
 
   public static final int PLAYERS_FIELD_NUMBER = 2;
@@ -223,8 +222,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getStateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, state_);
+    if (state_ != null) {
+      output.writeMessage(1, getState());
     }
     for (int i = 0; i < players_.size(); i++) {
       output.writeMessage(2, players_.get(i));
@@ -238,8 +237,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getStateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, state_);
+    if (state_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getState());
     }
     for (int i = 0; i < players_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -260,8 +260,11 @@ private static final long serialVersionUID = 0L;
     }
     network.cow.mooapis.instance.v1.Metadata other = (network.cow.mooapis.instance.v1.Metadata) obj;
 
-    if (!getState()
-        .equals(other.getState())) return false;
+    if (hasState() != other.hasState()) return false;
+    if (hasState()) {
+      if (!getState()
+          .equals(other.getState())) return false;
+    }
     if (!getPlayersList()
         .equals(other.getPlayersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -275,8 +278,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + STATE_FIELD_NUMBER;
-    hash = (53 * hash) + getState().hashCode();
+    if (hasState()) {
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getState().hashCode();
+    }
     if (getPlayersCount() > 0) {
       hash = (37 * hash) + PLAYERS_FIELD_NUMBER;
       hash = (53 * hash) + getPlayersList().hashCode();
@@ -415,8 +420,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      state_ = "";
-
+      if (stateBuilder_ == null) {
+        state_ = null;
+      } else {
+        state_ = null;
+        stateBuilder_ = null;
+      }
       if (playersBuilder_ == null) {
         players_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -450,7 +459,11 @@ private static final long serialVersionUID = 0L;
     public network.cow.mooapis.instance.v1.Metadata buildPartial() {
       network.cow.mooapis.instance.v1.Metadata result = new network.cow.mooapis.instance.v1.Metadata(this);
       int from_bitField0_ = bitField0_;
-      result.state_ = state_;
+      if (stateBuilder_ == null) {
+        result.state_ = state_;
+      } else {
+        result.state_ = stateBuilder_.build();
+      }
       if (playersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           players_ = java.util.Collections.unmodifiableList(players_);
@@ -508,9 +521,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(network.cow.mooapis.instance.v1.Metadata other) {
       if (other == network.cow.mooapis.instance.v1.Metadata.getDefaultInstance()) return this;
-      if (!other.getState().isEmpty()) {
-        state_ = other.state_;
-        onChanged();
+      if (other.hasState()) {
+        mergeState(other.getState());
       }
       if (playersBuilder_ == null) {
         if (!other.players_.isEmpty()) {
@@ -568,26 +580,35 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object state_ = "";
+    private com.google.protobuf.Struct state_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> stateBuilder_;
     /**
      * <pre>
      * The currently observed state. The underlying application
      * that is running can define this state
      * </pre>
      *
-     * <code>string state = 1 [json_name = "state"];</code>
+     * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
+     * @return Whether the state field is set.
+     */
+    public boolean hasState() {
+      return stateBuilder_ != null || state_ != null;
+    }
+    /**
+     * <pre>
+     * The currently observed state. The underlying application
+     * that is running can define this state
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
      * @return The state.
      */
-    public java.lang.String getState() {
-      java.lang.Object ref = state_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        state_ = s;
-        return s;
+    public com.google.protobuf.Struct getState() {
+      if (stateBuilder_ == null) {
+        return state_ == null ? com.google.protobuf.Struct.getDefaultInstance() : state_;
       } else {
-        return (java.lang.String) ref;
+        return stateBuilder_.getMessage();
       }
     }
     /**
@@ -596,21 +617,20 @@ private static final long serialVersionUID = 0L;
      * that is running can define this state
      * </pre>
      *
-     * <code>string state = 1 [json_name = "state"];</code>
-     * @return The bytes for state.
+     * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
      */
-    public com.google.protobuf.ByteString
-        getStateBytes() {
-      java.lang.Object ref = state_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        state_ = b;
-        return b;
+    public Builder setState(com.google.protobuf.Struct value) {
+      if (stateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        state_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        stateBuilder_.setMessage(value);
       }
+
+      return this;
     }
     /**
      * <pre>
@@ -618,18 +638,17 @@ private static final long serialVersionUID = 0L;
      * that is running can define this state
      * </pre>
      *
-     * <code>string state = 1 [json_name = "state"];</code>
-     * @param value The state to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
      */
     public Builder setState(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      state_ = value;
-      onChanged();
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (stateBuilder_ == null) {
+        state_ = builderForValue.build();
+        onChanged();
+      } else {
+        stateBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
@@ -638,13 +657,40 @@ private static final long serialVersionUID = 0L;
      * that is running can define this state
      * </pre>
      *
-     * <code>string state = 1 [json_name = "state"];</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
+     */
+    public Builder mergeState(com.google.protobuf.Struct value) {
+      if (stateBuilder_ == null) {
+        if (state_ != null) {
+          state_ =
+            com.google.protobuf.Struct.newBuilder(state_).mergeFrom(value).buildPartial();
+        } else {
+          state_ = value;
+        }
+        onChanged();
+      } else {
+        stateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The currently observed state. The underlying application
+     * that is running can define this state
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
      */
     public Builder clearState() {
-      
-      state_ = getDefaultInstance().getState();
-      onChanged();
+      if (stateBuilder_ == null) {
+        state_ = null;
+        onChanged();
+      } else {
+        state_ = null;
+        stateBuilder_ = null;
+      }
+
       return this;
     }
     /**
@@ -653,20 +699,49 @@ private static final long serialVersionUID = 0L;
      * that is running can define this state
      * </pre>
      *
-     * <code>string state = 1 [json_name = "state"];</code>
-     * @param value The bytes for state to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
      */
-    public Builder setStateBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+    public com.google.protobuf.Struct.Builder getStateBuilder() {
       
-      state_ = value;
       onChanged();
-      return this;
+      return getStateFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The currently observed state. The underlying application
+     * that is running can define this state
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
+     */
+    public com.google.protobuf.StructOrBuilder getStateOrBuilder() {
+      if (stateBuilder_ != null) {
+        return stateBuilder_.getMessageOrBuilder();
+      } else {
+        return state_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : state_;
+      }
+    }
+    /**
+     * <pre>
+     * The currently observed state. The underlying application
+     * that is running can define this state
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct state = 1 [json_name = "state"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getStateFieldBuilder() {
+      if (stateBuilder_ == null) {
+        stateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getState(),
+                getParentForChildren(),
+                isClean());
+        state_ = null;
+      }
+      return stateBuilder_;
     }
 
     private java.util.List<network.cow.mooapis.instance.v1.Player> players_ =

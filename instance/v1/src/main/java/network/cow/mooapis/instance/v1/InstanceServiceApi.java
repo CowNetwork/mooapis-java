@@ -25,15 +25,15 @@ public final class InstanceServiceApi {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cow_instance_v1_CreateInstanceResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cow_instance_v1_DeleteInstanceRequest_descriptor;
+    internal_static_cow_instance_v1_EndInstanceRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cow_instance_v1_DeleteInstanceRequest_fieldAccessorTable;
+      internal_static_cow_instance_v1_EndInstanceRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_cow_instance_v1_DeleteInstanceResponse_descriptor;
+    internal_static_cow_instance_v1_EndInstanceResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_cow_instance_v1_DeleteInstanceResponse_fieldAccessorTable;
+      internal_static_cow_instance_v1_EndInstanceResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cow_instance_v1_GetInstanceRequest_descriptor;
   static final 
@@ -59,22 +59,21 @@ public final class InstanceServiceApi {
       "ame\030\001 \001(\tR\004name\022\032\n\010manifest\030\002 \001(\tR\010manif" +
       "est\"O\n\026CreateInstanceResponse\0225\n\010instanc" +
       "e\030\001 \001(\0132\031.cow.instance.v1.InstanceR\010inst" +
-      "ance\"\'\n\025DeleteInstanceRequest\022\016\n\002id\030\001 \001(" +
-      "\tR\002id\"O\n\026DeleteInstanceResponse\0225\n\010insta" +
-      "nce\030\001 \001(\0132\031.cow.instance.v1.InstanceR\010in" +
-      "stance\"$\n\022GetInstanceRequest\022\016\n\002id\030\001 \001(\t" +
-      "R\002id\"L\n\023GetInstanceResponse\0225\n\010instance\030" +
-      "\001 \001(\0132\031.cow.instance.v1.InstanceR\010instan" +
-      "ce2\231\002\n\017InstanceService\022Y\n\006Create\022&.cow.i" +
-      "nstance.v1.CreateInstanceRequest\032\'.cow.i" +
-      "nstance.v1.CreateInstanceResponse\022Y\n\006Del" +
-      "ete\022&.cow.instance.v1.DeleteInstanceRequ" +
-      "est\032\'.cow.instance.v1.DeleteInstanceResp" +
-      "onse\022P\n\003Get\022#.cow.instance.v1.GetInstanc" +
-      "eRequest\032$.cow.instance.v1.GetInstanceRe" +
-      "sponseBO\n\037network.cow.mooapis.instance.v" +
-      "1P\001Z*github.com/cownetwork/instance/v1;i" +
-      "nstanceb\006proto3"
+      "ance\"$\n\022EndInstanceRequest\022\016\n\002id\030\001 \001(\tR\002" +
+      "id\"L\n\023EndInstanceResponse\0225\n\010instance\030\001 " +
+      "\001(\0132\031.cow.instance.v1.InstanceR\010instance" +
+      "\"$\n\022GetInstanceRequest\022\016\n\002id\030\001 \001(\tR\002id\"L" +
+      "\n\023GetInstanceResponse\0225\n\010instance\030\001 \001(\0132" +
+      "\031.cow.instance.v1.InstanceR\010instance2\220\002\n" +
+      "\017InstanceService\022Y\n\006Create\022&.cow.instanc" +
+      "e.v1.CreateInstanceRequest\032\'.cow.instanc" +
+      "e.v1.CreateInstanceResponse\022P\n\003End\022#.cow" +
+      ".instance.v1.EndInstanceRequest\032$.cow.in" +
+      "stance.v1.EndInstanceResponse\022P\n\003Get\022#.c" +
+      "ow.instance.v1.GetInstanceRequest\032$.cow." +
+      "instance.v1.GetInstanceResponseBO\n\037netwo" +
+      "rk.cow.mooapis.instance.v1P\001Z*github.com" +
+      "/cownetwork/instance/v1;instanceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -93,17 +92,17 @@ public final class InstanceServiceApi {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_instance_v1_CreateInstanceResponse_descriptor,
         new java.lang.String[] { "Instance", });
-    internal_static_cow_instance_v1_DeleteInstanceRequest_descriptor =
+    internal_static_cow_instance_v1_EndInstanceRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_cow_instance_v1_DeleteInstanceRequest_fieldAccessorTable = new
+    internal_static_cow_instance_v1_EndInstanceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cow_instance_v1_DeleteInstanceRequest_descriptor,
+        internal_static_cow_instance_v1_EndInstanceRequest_descriptor,
         new java.lang.String[] { "Id", });
-    internal_static_cow_instance_v1_DeleteInstanceResponse_descriptor =
+    internal_static_cow_instance_v1_EndInstanceResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_cow_instance_v1_DeleteInstanceResponse_fieldAccessorTable = new
+    internal_static_cow_instance_v1_EndInstanceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_cow_instance_v1_DeleteInstanceResponse_descriptor,
+        internal_static_cow_instance_v1_EndInstanceResponse_descriptor,
         new java.lang.String[] { "Instance", });
     internal_static_cow_instance_v1_GetInstanceRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);

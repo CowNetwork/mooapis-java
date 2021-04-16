@@ -33,19 +33,27 @@ public interface PlayerOrBuilder extends
    * The underlying application that is running defines this metadata field
    * </pre>
    *
-   * <code>string metadata = 2 [json_name = "metadata"];</code>
-   * @return The metadata.
+   * <code>.google.protobuf.Struct metadata = 2 [json_name = "metadata"];</code>
+   * @return Whether the metadata field is set.
    */
-  java.lang.String getMetadata();
+  boolean hasMetadata();
   /**
    * <pre>
    * Application specific metadata about the player.
    * The underlying application that is running defines this metadata field
    * </pre>
    *
-   * <code>string metadata = 2 [json_name = "metadata"];</code>
-   * @return The bytes for metadata.
+   * <code>.google.protobuf.Struct metadata = 2 [json_name = "metadata"];</code>
+   * @return The metadata.
    */
-  com.google.protobuf.ByteString
-      getMetadataBytes();
+  com.google.protobuf.Struct getMetadata();
+  /**
+   * <pre>
+   * Application specific metadata about the player.
+   * The underlying application that is running defines this metadata field
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 2 [json_name = "metadata"];</code>
+   */
+  com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
 }
