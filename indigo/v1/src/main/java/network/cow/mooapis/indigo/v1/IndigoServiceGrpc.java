@@ -30,6 +30,37 @@ public final class IndigoServiceGrpc {
   public static final String SERVICE_NAME = "cow.indigo.v1.IndigoService";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.HasPermissionRequest,
+      network.cow.mooapis.indigo.v1.HasPermissionResponse> getHasPermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "HasPermission",
+      requestType = network.cow.mooapis.indigo.v1.HasPermissionRequest.class,
+      responseType = network.cow.mooapis.indigo.v1.HasPermissionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.HasPermissionRequest,
+      network.cow.mooapis.indigo.v1.HasPermissionResponse> getHasPermissionMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.HasPermissionRequest, network.cow.mooapis.indigo.v1.HasPermissionResponse> getHasPermissionMethod;
+    if ((getHasPermissionMethod = IndigoServiceGrpc.getHasPermissionMethod) == null) {
+      synchronized (IndigoServiceGrpc.class) {
+        if ((getHasPermissionMethod = IndigoServiceGrpc.getHasPermissionMethod) == null) {
+          IndigoServiceGrpc.getHasPermissionMethod = getHasPermissionMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.HasPermissionRequest, network.cow.mooapis.indigo.v1.HasPermissionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "HasPermission"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  network.cow.mooapis.indigo.v1.HasPermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  network.cow.mooapis.indigo.v1.HasPermissionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("HasPermission"))
+              .build();
+        }
+      }
+    }
+    return getHasPermissionMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.ListRolesRequest,
       network.cow.mooapis.indigo.v1.ListRolesResponse> getListRolesMethod;
 
@@ -185,66 +216,97 @@ public final class IndigoServiceGrpc {
     return getDeleteRoleMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddRolePermissionRequest,
-      network.cow.mooapis.indigo.v1.AddRolePermissionResponse> getAddRolePermissionMethod;
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddRolePermissionsRequest,
+      network.cow.mooapis.indigo.v1.AddRolePermissionsResponse> getAddRolePermissionsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "AddRolePermission",
-      requestType = network.cow.mooapis.indigo.v1.AddRolePermissionRequest.class,
-      responseType = network.cow.mooapis.indigo.v1.AddRolePermissionResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "AddRolePermissions",
+      requestType = network.cow.mooapis.indigo.v1.AddRolePermissionsRequest.class,
+      responseType = network.cow.mooapis.indigo.v1.AddRolePermissionsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddRolePermissionRequest,
-      network.cow.mooapis.indigo.v1.AddRolePermissionResponse> getAddRolePermissionMethod() {
-    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddRolePermissionRequest, network.cow.mooapis.indigo.v1.AddRolePermissionResponse> getAddRolePermissionMethod;
-    if ((getAddRolePermissionMethod = IndigoServiceGrpc.getAddRolePermissionMethod) == null) {
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddRolePermissionsRequest,
+      network.cow.mooapis.indigo.v1.AddRolePermissionsResponse> getAddRolePermissionsMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddRolePermissionsRequest, network.cow.mooapis.indigo.v1.AddRolePermissionsResponse> getAddRolePermissionsMethod;
+    if ((getAddRolePermissionsMethod = IndigoServiceGrpc.getAddRolePermissionsMethod) == null) {
       synchronized (IndigoServiceGrpc.class) {
-        if ((getAddRolePermissionMethod = IndigoServiceGrpc.getAddRolePermissionMethod) == null) {
-          IndigoServiceGrpc.getAddRolePermissionMethod = getAddRolePermissionMethod =
-              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.AddRolePermissionRequest, network.cow.mooapis.indigo.v1.AddRolePermissionResponse>newBuilder()
+        if ((getAddRolePermissionsMethod = IndigoServiceGrpc.getAddRolePermissionsMethod) == null) {
+          IndigoServiceGrpc.getAddRolePermissionsMethod = getAddRolePermissionsMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.AddRolePermissionsRequest, network.cow.mooapis.indigo.v1.AddRolePermissionsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddRolePermission"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddRolePermissions"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.AddRolePermissionRequest.getDefaultInstance()))
+                  network.cow.mooapis.indigo.v1.AddRolePermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.AddRolePermissionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("AddRolePermission"))
+                  network.cow.mooapis.indigo.v1.AddRolePermissionsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("AddRolePermissions"))
               .build();
         }
       }
     }
-    return getAddRolePermissionMethod;
+    return getAddRolePermissionsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveRolePermissionRequest,
-      network.cow.mooapis.indigo.v1.RemoveRolePermissionResponse> getRemoveRolePermissionMethod;
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveRolePermissionsRequest,
+      network.cow.mooapis.indigo.v1.RemoveRolePermissionsResponse> getRemoveRolePermissionsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "RemoveRolePermission",
-      requestType = network.cow.mooapis.indigo.v1.RemoveRolePermissionRequest.class,
-      responseType = network.cow.mooapis.indigo.v1.RemoveRolePermissionResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "RemoveRolePermissions",
+      requestType = network.cow.mooapis.indigo.v1.RemoveRolePermissionsRequest.class,
+      responseType = network.cow.mooapis.indigo.v1.RemoveRolePermissionsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveRolePermissionRequest,
-      network.cow.mooapis.indigo.v1.RemoveRolePermissionResponse> getRemoveRolePermissionMethod() {
-    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveRolePermissionRequest, network.cow.mooapis.indigo.v1.RemoveRolePermissionResponse> getRemoveRolePermissionMethod;
-    if ((getRemoveRolePermissionMethod = IndigoServiceGrpc.getRemoveRolePermissionMethod) == null) {
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveRolePermissionsRequest,
+      network.cow.mooapis.indigo.v1.RemoveRolePermissionsResponse> getRemoveRolePermissionsMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveRolePermissionsRequest, network.cow.mooapis.indigo.v1.RemoveRolePermissionsResponse> getRemoveRolePermissionsMethod;
+    if ((getRemoveRolePermissionsMethod = IndigoServiceGrpc.getRemoveRolePermissionsMethod) == null) {
       synchronized (IndigoServiceGrpc.class) {
-        if ((getRemoveRolePermissionMethod = IndigoServiceGrpc.getRemoveRolePermissionMethod) == null) {
-          IndigoServiceGrpc.getRemoveRolePermissionMethod = getRemoveRolePermissionMethod =
-              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.RemoveRolePermissionRequest, network.cow.mooapis.indigo.v1.RemoveRolePermissionResponse>newBuilder()
+        if ((getRemoveRolePermissionsMethod = IndigoServiceGrpc.getRemoveRolePermissionsMethod) == null) {
+          IndigoServiceGrpc.getRemoveRolePermissionsMethod = getRemoveRolePermissionsMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.RemoveRolePermissionsRequest, network.cow.mooapis.indigo.v1.RemoveRolePermissionsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemoveRolePermission"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemoveRolePermissions"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.RemoveRolePermissionRequest.getDefaultInstance()))
+                  network.cow.mooapis.indigo.v1.RemoveRolePermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.RemoveRolePermissionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("RemoveRolePermission"))
+                  network.cow.mooapis.indigo.v1.RemoveRolePermissionsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("RemoveRolePermissions"))
               .build();
         }
       }
     }
-    return getRemoveRolePermissionMethod;
+    return getRemoveRolePermissionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.GetUserRequest,
+      network.cow.mooapis.indigo.v1.GetUserResponse> getGetUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetUser",
+      requestType = network.cow.mooapis.indigo.v1.GetUserRequest.class,
+      responseType = network.cow.mooapis.indigo.v1.GetUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.GetUserRequest,
+      network.cow.mooapis.indigo.v1.GetUserResponse> getGetUserMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.GetUserRequest, network.cow.mooapis.indigo.v1.GetUserResponse> getGetUserMethod;
+    if ((getGetUserMethod = IndigoServiceGrpc.getGetUserMethod) == null) {
+      synchronized (IndigoServiceGrpc.class) {
+        if ((getGetUserMethod = IndigoServiceGrpc.getGetUserMethod) == null) {
+          IndigoServiceGrpc.getGetUserMethod = getGetUserMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.GetUserRequest, network.cow.mooapis.indigo.v1.GetUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  network.cow.mooapis.indigo.v1.GetUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  network.cow.mooapis.indigo.v1.GetUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("GetUser"))
+              .build();
+        }
+      }
+    }
+    return getGetUserMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.GetUserRolesRequest,
@@ -278,159 +340,159 @@ public final class IndigoServiceGrpc {
     return getGetUserRolesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddUserRoleRequest,
-      network.cow.mooapis.indigo.v1.AddUserRoleResponse> getAddUserRoleMethod;
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddUserRolesRequest,
+      network.cow.mooapis.indigo.v1.AddUserRolesResponse> getAddUserRolesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "AddUserRole",
-      requestType = network.cow.mooapis.indigo.v1.AddUserRoleRequest.class,
-      responseType = network.cow.mooapis.indigo.v1.AddUserRoleResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "AddUserRoles",
+      requestType = network.cow.mooapis.indigo.v1.AddUserRolesRequest.class,
+      responseType = network.cow.mooapis.indigo.v1.AddUserRolesResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddUserRoleRequest,
-      network.cow.mooapis.indigo.v1.AddUserRoleResponse> getAddUserRoleMethod() {
-    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddUserRoleRequest, network.cow.mooapis.indigo.v1.AddUserRoleResponse> getAddUserRoleMethod;
-    if ((getAddUserRoleMethod = IndigoServiceGrpc.getAddUserRoleMethod) == null) {
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddUserRolesRequest,
+      network.cow.mooapis.indigo.v1.AddUserRolesResponse> getAddUserRolesMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddUserRolesRequest, network.cow.mooapis.indigo.v1.AddUserRolesResponse> getAddUserRolesMethod;
+    if ((getAddUserRolesMethod = IndigoServiceGrpc.getAddUserRolesMethod) == null) {
       synchronized (IndigoServiceGrpc.class) {
-        if ((getAddUserRoleMethod = IndigoServiceGrpc.getAddUserRoleMethod) == null) {
-          IndigoServiceGrpc.getAddUserRoleMethod = getAddUserRoleMethod =
-              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.AddUserRoleRequest, network.cow.mooapis.indigo.v1.AddUserRoleResponse>newBuilder()
+        if ((getAddUserRolesMethod = IndigoServiceGrpc.getAddUserRolesMethod) == null) {
+          IndigoServiceGrpc.getAddUserRolesMethod = getAddUserRolesMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.AddUserRolesRequest, network.cow.mooapis.indigo.v1.AddUserRolesResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddUserRole"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddUserRoles"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.AddUserRoleRequest.getDefaultInstance()))
+                  network.cow.mooapis.indigo.v1.AddUserRolesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.AddUserRoleResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("AddUserRole"))
+                  network.cow.mooapis.indigo.v1.AddUserRolesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("AddUserRoles"))
               .build();
         }
       }
     }
-    return getAddUserRoleMethod;
+    return getAddUserRolesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveUserRoleRequest,
-      network.cow.mooapis.indigo.v1.RemoveUserRoleResponse> getRemoveUserRoleMethod;
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveUserRolesRequest,
+      network.cow.mooapis.indigo.v1.RemoveUserRolesResponse> getRemoveUserRolesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "RemoveUserRole",
-      requestType = network.cow.mooapis.indigo.v1.RemoveUserRoleRequest.class,
-      responseType = network.cow.mooapis.indigo.v1.RemoveUserRoleResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "RemoveUserRoles",
+      requestType = network.cow.mooapis.indigo.v1.RemoveUserRolesRequest.class,
+      responseType = network.cow.mooapis.indigo.v1.RemoveUserRolesResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveUserRoleRequest,
-      network.cow.mooapis.indigo.v1.RemoveUserRoleResponse> getRemoveUserRoleMethod() {
-    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveUserRoleRequest, network.cow.mooapis.indigo.v1.RemoveUserRoleResponse> getRemoveUserRoleMethod;
-    if ((getRemoveUserRoleMethod = IndigoServiceGrpc.getRemoveUserRoleMethod) == null) {
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveUserRolesRequest,
+      network.cow.mooapis.indigo.v1.RemoveUserRolesResponse> getRemoveUserRolesMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveUserRolesRequest, network.cow.mooapis.indigo.v1.RemoveUserRolesResponse> getRemoveUserRolesMethod;
+    if ((getRemoveUserRolesMethod = IndigoServiceGrpc.getRemoveUserRolesMethod) == null) {
       synchronized (IndigoServiceGrpc.class) {
-        if ((getRemoveUserRoleMethod = IndigoServiceGrpc.getRemoveUserRoleMethod) == null) {
-          IndigoServiceGrpc.getRemoveUserRoleMethod = getRemoveUserRoleMethod =
-              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.RemoveUserRoleRequest, network.cow.mooapis.indigo.v1.RemoveUserRoleResponse>newBuilder()
+        if ((getRemoveUserRolesMethod = IndigoServiceGrpc.getRemoveUserRolesMethod) == null) {
+          IndigoServiceGrpc.getRemoveUserRolesMethod = getRemoveUserRolesMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.RemoveUserRolesRequest, network.cow.mooapis.indigo.v1.RemoveUserRolesResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemoveUserRole"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemoveUserRoles"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.RemoveUserRoleRequest.getDefaultInstance()))
+                  network.cow.mooapis.indigo.v1.RemoveUserRolesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.RemoveUserRoleResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("RemoveUserRole"))
+                  network.cow.mooapis.indigo.v1.RemoveUserRolesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("RemoveUserRoles"))
               .build();
         }
       }
     }
-    return getRemoveUserRoleMethod;
+    return getRemoveUserRolesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddUserPermissionRequest,
-      network.cow.mooapis.indigo.v1.AddUserPermissionResponse> getAddUserPermissionMethod;
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.GetUserPermissionsRequest,
+      network.cow.mooapis.indigo.v1.GetUserPermissionsResponse> getGetUserPermissionsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "AddUserPermission",
-      requestType = network.cow.mooapis.indigo.v1.AddUserPermissionRequest.class,
-      responseType = network.cow.mooapis.indigo.v1.AddUserPermissionResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetUserPermissions",
+      requestType = network.cow.mooapis.indigo.v1.GetUserPermissionsRequest.class,
+      responseType = network.cow.mooapis.indigo.v1.GetUserPermissionsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddUserPermissionRequest,
-      network.cow.mooapis.indigo.v1.AddUserPermissionResponse> getAddUserPermissionMethod() {
-    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddUserPermissionRequest, network.cow.mooapis.indigo.v1.AddUserPermissionResponse> getAddUserPermissionMethod;
-    if ((getAddUserPermissionMethod = IndigoServiceGrpc.getAddUserPermissionMethod) == null) {
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.GetUserPermissionsRequest,
+      network.cow.mooapis.indigo.v1.GetUserPermissionsResponse> getGetUserPermissionsMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.GetUserPermissionsRequest, network.cow.mooapis.indigo.v1.GetUserPermissionsResponse> getGetUserPermissionsMethod;
+    if ((getGetUserPermissionsMethod = IndigoServiceGrpc.getGetUserPermissionsMethod) == null) {
       synchronized (IndigoServiceGrpc.class) {
-        if ((getAddUserPermissionMethod = IndigoServiceGrpc.getAddUserPermissionMethod) == null) {
-          IndigoServiceGrpc.getAddUserPermissionMethod = getAddUserPermissionMethod =
-              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.AddUserPermissionRequest, network.cow.mooapis.indigo.v1.AddUserPermissionResponse>newBuilder()
+        if ((getGetUserPermissionsMethod = IndigoServiceGrpc.getGetUserPermissionsMethod) == null) {
+          IndigoServiceGrpc.getGetUserPermissionsMethod = getGetUserPermissionsMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.GetUserPermissionsRequest, network.cow.mooapis.indigo.v1.GetUserPermissionsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddUserPermission"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUserPermissions"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.AddUserPermissionRequest.getDefaultInstance()))
+                  network.cow.mooapis.indigo.v1.GetUserPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.AddUserPermissionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("AddUserPermission"))
+                  network.cow.mooapis.indigo.v1.GetUserPermissionsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("GetUserPermissions"))
               .build();
         }
       }
     }
-    return getAddUserPermissionMethod;
+    return getGetUserPermissionsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest,
-      network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse> getRemoveUserPermissionMethod;
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddUserPermissionsRequest,
+      network.cow.mooapis.indigo.v1.AddUserPermissionsResponse> getAddUserPermissionsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "RemoveUserPermission",
-      requestType = network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest.class,
-      responseType = network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "AddUserPermissions",
+      requestType = network.cow.mooapis.indigo.v1.AddUserPermissionsRequest.class,
+      responseType = network.cow.mooapis.indigo.v1.AddUserPermissionsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest,
-      network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse> getRemoveUserPermissionMethod() {
-    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest, network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse> getRemoveUserPermissionMethod;
-    if ((getRemoveUserPermissionMethod = IndigoServiceGrpc.getRemoveUserPermissionMethod) == null) {
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddUserPermissionsRequest,
+      network.cow.mooapis.indigo.v1.AddUserPermissionsResponse> getAddUserPermissionsMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.AddUserPermissionsRequest, network.cow.mooapis.indigo.v1.AddUserPermissionsResponse> getAddUserPermissionsMethod;
+    if ((getAddUserPermissionsMethod = IndigoServiceGrpc.getAddUserPermissionsMethod) == null) {
       synchronized (IndigoServiceGrpc.class) {
-        if ((getRemoveUserPermissionMethod = IndigoServiceGrpc.getRemoveUserPermissionMethod) == null) {
-          IndigoServiceGrpc.getRemoveUserPermissionMethod = getRemoveUserPermissionMethod =
-              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest, network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse>newBuilder()
+        if ((getAddUserPermissionsMethod = IndigoServiceGrpc.getAddUserPermissionsMethod) == null) {
+          IndigoServiceGrpc.getAddUserPermissionsMethod = getAddUserPermissionsMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.AddUserPermissionsRequest, network.cow.mooapis.indigo.v1.AddUserPermissionsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemoveUserPermission"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddUserPermissions"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest.getDefaultInstance()))
+                  network.cow.mooapis.indigo.v1.AddUserPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("RemoveUserPermission"))
+                  network.cow.mooapis.indigo.v1.AddUserPermissionsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("AddUserPermissions"))
               .build();
         }
       }
     }
-    return getRemoveUserPermissionMethod;
+    return getAddUserPermissionsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.HasUserPermissionRequest,
-      network.cow.mooapis.indigo.v1.HasUserPermissionResponse> getHasUserPermissionMethod;
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveUserPermissionsRequest,
+      network.cow.mooapis.indigo.v1.RemoveUserPermissionsResponse> getRemoveUserPermissionsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "HasUserPermission",
-      requestType = network.cow.mooapis.indigo.v1.HasUserPermissionRequest.class,
-      responseType = network.cow.mooapis.indigo.v1.HasUserPermissionResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "RemoveUserPermissions",
+      requestType = network.cow.mooapis.indigo.v1.RemoveUserPermissionsRequest.class,
+      responseType = network.cow.mooapis.indigo.v1.RemoveUserPermissionsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.HasUserPermissionRequest,
-      network.cow.mooapis.indigo.v1.HasUserPermissionResponse> getHasUserPermissionMethod() {
-    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.HasUserPermissionRequest, network.cow.mooapis.indigo.v1.HasUserPermissionResponse> getHasUserPermissionMethod;
-    if ((getHasUserPermissionMethod = IndigoServiceGrpc.getHasUserPermissionMethod) == null) {
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveUserPermissionsRequest,
+      network.cow.mooapis.indigo.v1.RemoveUserPermissionsResponse> getRemoveUserPermissionsMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.RemoveUserPermissionsRequest, network.cow.mooapis.indigo.v1.RemoveUserPermissionsResponse> getRemoveUserPermissionsMethod;
+    if ((getRemoveUserPermissionsMethod = IndigoServiceGrpc.getRemoveUserPermissionsMethod) == null) {
       synchronized (IndigoServiceGrpc.class) {
-        if ((getHasUserPermissionMethod = IndigoServiceGrpc.getHasUserPermissionMethod) == null) {
-          IndigoServiceGrpc.getHasUserPermissionMethod = getHasUserPermissionMethod =
-              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.HasUserPermissionRequest, network.cow.mooapis.indigo.v1.HasUserPermissionResponse>newBuilder()
+        if ((getRemoveUserPermissionsMethod = IndigoServiceGrpc.getRemoveUserPermissionsMethod) == null) {
+          IndigoServiceGrpc.getRemoveUserPermissionsMethod = getRemoveUserPermissionsMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.RemoveUserPermissionsRequest, network.cow.mooapis.indigo.v1.RemoveUserPermissionsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "HasUserPermission"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemoveUserPermissions"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.HasUserPermissionRequest.getDefaultInstance()))
+                  network.cow.mooapis.indigo.v1.RemoveUserPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  network.cow.mooapis.indigo.v1.HasUserPermissionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("HasUserPermission"))
+                  network.cow.mooapis.indigo.v1.RemoveUserPermissionsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("RemoveUserPermissions"))
               .build();
         }
       }
     }
-    return getHasUserPermissionMethod;
+    return getRemoveUserPermissionsMethod;
   }
 
   /**
@@ -464,6 +526,21 @@ public final class IndigoServiceGrpc {
   public static abstract class IndigoServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * Checks if a given user account would succeed the permission
+     * check of given permissions. For that the roles and the custom
+     * permissions of the user will be used.
+     * </pre>
+     */
+    public void hasPermission(network.cow.mooapis.indigo.v1.HasPermissionRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.HasPermissionResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getHasPermissionMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all existing roles.
+     * </pre>
      */
     public void listRoles(network.cow.mooapis.indigo.v1.ListRolesRequest request,
         io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.ListRolesResponse> responseObserver) {
@@ -471,6 +548,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Gets the role with specific name.
+     * </pre>
      */
     public void getRole(network.cow.mooapis.indigo.v1.GetRoleRequest request,
         io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.GetRoleResponse> responseObserver) {
@@ -478,6 +558,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Inserts a new role, if it doesn't exist.
+     * </pre>
      */
     public void insertRole(network.cow.mooapis.indigo.v1.InsertRoleRequest request,
         io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.InsertRoleResponse> responseObserver) {
@@ -485,6 +568,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Updates a roles settings (like priority, ...).
+     * </pre>
      */
     public void updateRole(network.cow.mooapis.indigo.v1.UpdateRoleRequest request,
         io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.UpdateRoleResponse> responseObserver) {
@@ -492,6 +578,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Deletes a role if it exists.
+     * </pre>
      */
     public void deleteRole(network.cow.mooapis.indigo.v1.DeleteRoleRequest request,
         io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.DeleteRoleResponse> responseObserver) {
@@ -499,20 +588,39 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Add multiple or one permission to given role, if the role exists.
+     * </pre>
      */
-    public void addRolePermission(network.cow.mooapis.indigo.v1.AddRolePermissionRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddRolePermissionResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getAddRolePermissionMethod(), responseObserver);
+    public void addRolePermissions(network.cow.mooapis.indigo.v1.AddRolePermissionsRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddRolePermissionsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getAddRolePermissionsMethod(), responseObserver);
     }
 
     /**
+     * <pre>
+     * Remove multiple or one permission from given role, if the role exists.
+     * </pre>
      */
-    public void removeRolePermission(network.cow.mooapis.indigo.v1.RemoveRolePermissionRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveRolePermissionResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRemoveRolePermissionMethod(), responseObserver);
+    public void removeRolePermissions(network.cow.mooapis.indigo.v1.RemoveRolePermissionsRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveRolePermissionsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getRemoveRolePermissionsMethod(), responseObserver);
     }
 
     /**
+     * <pre>
+     * Returns a user by account id.
+     * </pre>
+     */
+    public void getUser(network.cow.mooapis.indigo.v1.GetUserRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.GetUserResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetUserMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get all roles that are bound to given user.
+     * </pre>
      */
     public void getUserRoles(network.cow.mooapis.indigo.v1.GetUserRolesRequest request,
         io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.GetUserRolesResponse> responseObserver) {
@@ -520,42 +628,64 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Binds an existing role to the user.
+     * </pre>
      */
-    public void addUserRole(network.cow.mooapis.indigo.v1.AddUserRoleRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddUserRoleResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getAddUserRoleMethod(), responseObserver);
+    public void addUserRoles(network.cow.mooapis.indigo.v1.AddUserRolesRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddUserRolesResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getAddUserRolesMethod(), responseObserver);
     }
 
     /**
+     * <pre>
+     * Unbinds a role from the user.
+     * </pre>
      */
-    public void removeUserRole(network.cow.mooapis.indigo.v1.RemoveUserRoleRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveUserRoleResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRemoveUserRoleMethod(), responseObserver);
+    public void removeUserRoles(network.cow.mooapis.indigo.v1.RemoveUserRolesRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveUserRolesResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getRemoveUserRolesMethod(), responseObserver);
     }
 
     /**
+     * <pre>
+     * Get all custom bound permissions of given user. 
+     * </pre>
      */
-    public void addUserPermission(network.cow.mooapis.indigo.v1.AddUserPermissionRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddUserPermissionResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getAddUserPermissionMethod(), responseObserver);
+    public void getUserPermissions(network.cow.mooapis.indigo.v1.GetUserPermissionsRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.GetUserPermissionsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetUserPermissionsMethod(), responseObserver);
     }
 
     /**
+     * <pre>
+     * Binds custom permissions to given user.
+     * </pre>
      */
-    public void removeUserPermission(network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRemoveUserPermissionMethod(), responseObserver);
+    public void addUserPermissions(network.cow.mooapis.indigo.v1.AddUserPermissionsRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddUserPermissionsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getAddUserPermissionsMethod(), responseObserver);
     }
 
     /**
+     * <pre>
+     * Unbinds custom permissions from given user.
+     * </pre>
      */
-    public void hasUserPermission(network.cow.mooapis.indigo.v1.HasUserPermissionRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.HasUserPermissionResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getHasUserPermissionMethod(), responseObserver);
+    public void removeUserPermissions(network.cow.mooapis.indigo.v1.RemoveUserPermissionsRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveUserPermissionsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getRemoveUserPermissionsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getHasPermissionMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                network.cow.mooapis.indigo.v1.HasPermissionRequest,
+                network.cow.mooapis.indigo.v1.HasPermissionResponse>(
+                  this, METHODID_HAS_PERMISSION)))
           .addMethod(
             getListRolesMethod(),
             asyncUnaryCall(
@@ -592,19 +722,26 @@ public final class IndigoServiceGrpc {
                 network.cow.mooapis.indigo.v1.DeleteRoleResponse>(
                   this, METHODID_DELETE_ROLE)))
           .addMethod(
-            getAddRolePermissionMethod(),
+            getAddRolePermissionsMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                network.cow.mooapis.indigo.v1.AddRolePermissionRequest,
-                network.cow.mooapis.indigo.v1.AddRolePermissionResponse>(
-                  this, METHODID_ADD_ROLE_PERMISSION)))
+                network.cow.mooapis.indigo.v1.AddRolePermissionsRequest,
+                network.cow.mooapis.indigo.v1.AddRolePermissionsResponse>(
+                  this, METHODID_ADD_ROLE_PERMISSIONS)))
           .addMethod(
-            getRemoveRolePermissionMethod(),
+            getRemoveRolePermissionsMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                network.cow.mooapis.indigo.v1.RemoveRolePermissionRequest,
-                network.cow.mooapis.indigo.v1.RemoveRolePermissionResponse>(
-                  this, METHODID_REMOVE_ROLE_PERMISSION)))
+                network.cow.mooapis.indigo.v1.RemoveRolePermissionsRequest,
+                network.cow.mooapis.indigo.v1.RemoveRolePermissionsResponse>(
+                  this, METHODID_REMOVE_ROLE_PERMISSIONS)))
+          .addMethod(
+            getGetUserMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                network.cow.mooapis.indigo.v1.GetUserRequest,
+                network.cow.mooapis.indigo.v1.GetUserResponse>(
+                  this, METHODID_GET_USER)))
           .addMethod(
             getGetUserRolesMethod(),
             asyncUnaryCall(
@@ -613,40 +750,40 @@ public final class IndigoServiceGrpc {
                 network.cow.mooapis.indigo.v1.GetUserRolesResponse>(
                   this, METHODID_GET_USER_ROLES)))
           .addMethod(
-            getAddUserRoleMethod(),
+            getAddUserRolesMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                network.cow.mooapis.indigo.v1.AddUserRoleRequest,
-                network.cow.mooapis.indigo.v1.AddUserRoleResponse>(
-                  this, METHODID_ADD_USER_ROLE)))
+                network.cow.mooapis.indigo.v1.AddUserRolesRequest,
+                network.cow.mooapis.indigo.v1.AddUserRolesResponse>(
+                  this, METHODID_ADD_USER_ROLES)))
           .addMethod(
-            getRemoveUserRoleMethod(),
+            getRemoveUserRolesMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                network.cow.mooapis.indigo.v1.RemoveUserRoleRequest,
-                network.cow.mooapis.indigo.v1.RemoveUserRoleResponse>(
-                  this, METHODID_REMOVE_USER_ROLE)))
+                network.cow.mooapis.indigo.v1.RemoveUserRolesRequest,
+                network.cow.mooapis.indigo.v1.RemoveUserRolesResponse>(
+                  this, METHODID_REMOVE_USER_ROLES)))
           .addMethod(
-            getAddUserPermissionMethod(),
+            getGetUserPermissionsMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                network.cow.mooapis.indigo.v1.AddUserPermissionRequest,
-                network.cow.mooapis.indigo.v1.AddUserPermissionResponse>(
-                  this, METHODID_ADD_USER_PERMISSION)))
+                network.cow.mooapis.indigo.v1.GetUserPermissionsRequest,
+                network.cow.mooapis.indigo.v1.GetUserPermissionsResponse>(
+                  this, METHODID_GET_USER_PERMISSIONS)))
           .addMethod(
-            getRemoveUserPermissionMethod(),
+            getAddUserPermissionsMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest,
-                network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse>(
-                  this, METHODID_REMOVE_USER_PERMISSION)))
+                network.cow.mooapis.indigo.v1.AddUserPermissionsRequest,
+                network.cow.mooapis.indigo.v1.AddUserPermissionsResponse>(
+                  this, METHODID_ADD_USER_PERMISSIONS)))
           .addMethod(
-            getHasUserPermissionMethod(),
+            getRemoveUserPermissionsMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                network.cow.mooapis.indigo.v1.HasUserPermissionRequest,
-                network.cow.mooapis.indigo.v1.HasUserPermissionResponse>(
-                  this, METHODID_HAS_USER_PERMISSION)))
+                network.cow.mooapis.indigo.v1.RemoveUserPermissionsRequest,
+                network.cow.mooapis.indigo.v1.RemoveUserPermissionsResponse>(
+                  this, METHODID_REMOVE_USER_PERMISSIONS)))
           .build();
     }
   }
@@ -673,6 +810,22 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Checks if a given user account would succeed the permission
+     * check of given permissions. For that the roles and the custom
+     * permissions of the user will be used.
+     * </pre>
+     */
+    public void hasPermission(network.cow.mooapis.indigo.v1.HasPermissionRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.HasPermissionResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getHasPermissionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all existing roles.
+     * </pre>
      */
     public void listRoles(network.cow.mooapis.indigo.v1.ListRolesRequest request,
         io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.ListRolesResponse> responseObserver) {
@@ -681,6 +834,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Gets the role with specific name.
+     * </pre>
      */
     public void getRole(network.cow.mooapis.indigo.v1.GetRoleRequest request,
         io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.GetRoleResponse> responseObserver) {
@@ -689,6 +845,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Inserts a new role, if it doesn't exist.
+     * </pre>
      */
     public void insertRole(network.cow.mooapis.indigo.v1.InsertRoleRequest request,
         io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.InsertRoleResponse> responseObserver) {
@@ -697,6 +856,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Updates a roles settings (like priority, ...).
+     * </pre>
      */
     public void updateRole(network.cow.mooapis.indigo.v1.UpdateRoleRequest request,
         io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.UpdateRoleResponse> responseObserver) {
@@ -705,6 +867,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Deletes a role if it exists.
+     * </pre>
      */
     public void deleteRole(network.cow.mooapis.indigo.v1.DeleteRoleRequest request,
         io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.DeleteRoleResponse> responseObserver) {
@@ -713,22 +878,42 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Add multiple or one permission to given role, if the role exists.
+     * </pre>
      */
-    public void addRolePermission(network.cow.mooapis.indigo.v1.AddRolePermissionRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddRolePermissionResponse> responseObserver) {
+    public void addRolePermissions(network.cow.mooapis.indigo.v1.AddRolePermissionsRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddRolePermissionsResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getAddRolePermissionMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getAddRolePermissionsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
+     * <pre>
+     * Remove multiple or one permission from given role, if the role exists.
+     * </pre>
      */
-    public void removeRolePermission(network.cow.mooapis.indigo.v1.RemoveRolePermissionRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveRolePermissionResponse> responseObserver) {
+    public void removeRolePermissions(network.cow.mooapis.indigo.v1.RemoveRolePermissionsRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveRolePermissionsResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getRemoveRolePermissionMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getRemoveRolePermissionsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
+     * <pre>
+     * Returns a user by account id.
+     * </pre>
+     */
+    public void getUser(network.cow.mooapis.indigo.v1.GetUserRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.GetUserResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get all roles that are bound to given user.
+     * </pre>
      */
     public void getUserRoles(network.cow.mooapis.indigo.v1.GetUserRolesRequest request,
         io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.GetUserRolesResponse> responseObserver) {
@@ -737,43 +922,58 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Binds an existing role to the user.
+     * </pre>
      */
-    public void addUserRole(network.cow.mooapis.indigo.v1.AddUserRoleRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddUserRoleResponse> responseObserver) {
+    public void addUserRoles(network.cow.mooapis.indigo.v1.AddUserRolesRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddUserRolesResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getAddUserRoleMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getAddUserRolesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
+     * <pre>
+     * Unbinds a role from the user.
+     * </pre>
      */
-    public void removeUserRole(network.cow.mooapis.indigo.v1.RemoveUserRoleRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveUserRoleResponse> responseObserver) {
+    public void removeUserRoles(network.cow.mooapis.indigo.v1.RemoveUserRolesRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveUserRolesResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getRemoveUserRoleMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getRemoveUserRolesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
+     * <pre>
+     * Get all custom bound permissions of given user. 
+     * </pre>
      */
-    public void addUserPermission(network.cow.mooapis.indigo.v1.AddUserPermissionRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddUserPermissionResponse> responseObserver) {
+    public void getUserPermissions(network.cow.mooapis.indigo.v1.GetUserPermissionsRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.GetUserPermissionsResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getAddUserPermissionMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetUserPermissionsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
+     * <pre>
+     * Binds custom permissions to given user.
+     * </pre>
      */
-    public void removeUserPermission(network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse> responseObserver) {
+    public void addUserPermissions(network.cow.mooapis.indigo.v1.AddUserPermissionsRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddUserPermissionsResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getRemoveUserPermissionMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getAddUserPermissionsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
+     * <pre>
+     * Unbinds custom permissions from given user.
+     * </pre>
      */
-    public void hasUserPermission(network.cow.mooapis.indigo.v1.HasUserPermissionRequest request,
-        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.HasUserPermissionResponse> responseObserver) {
+    public void removeUserPermissions(network.cow.mooapis.indigo.v1.RemoveUserPermissionsRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveUserPermissionsResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getHasUserPermissionMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getRemoveUserPermissionsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -799,6 +999,21 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Checks if a given user account would succeed the permission
+     * check of given permissions. For that the roles and the custom
+     * permissions of the user will be used.
+     * </pre>
+     */
+    public network.cow.mooapis.indigo.v1.HasPermissionResponse hasPermission(network.cow.mooapis.indigo.v1.HasPermissionRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getHasPermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List all existing roles.
+     * </pre>
      */
     public network.cow.mooapis.indigo.v1.ListRolesResponse listRoles(network.cow.mooapis.indigo.v1.ListRolesRequest request) {
       return blockingUnaryCall(
@@ -806,6 +1021,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Gets the role with specific name.
+     * </pre>
      */
     public network.cow.mooapis.indigo.v1.GetRoleResponse getRole(network.cow.mooapis.indigo.v1.GetRoleRequest request) {
       return blockingUnaryCall(
@@ -813,6 +1031,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Inserts a new role, if it doesn't exist.
+     * </pre>
      */
     public network.cow.mooapis.indigo.v1.InsertRoleResponse insertRole(network.cow.mooapis.indigo.v1.InsertRoleRequest request) {
       return blockingUnaryCall(
@@ -820,6 +1041,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Updates a roles settings (like priority, ...).
+     * </pre>
      */
     public network.cow.mooapis.indigo.v1.UpdateRoleResponse updateRole(network.cow.mooapis.indigo.v1.UpdateRoleRequest request) {
       return blockingUnaryCall(
@@ -827,6 +1051,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Deletes a role if it exists.
+     * </pre>
      */
     public network.cow.mooapis.indigo.v1.DeleteRoleResponse deleteRole(network.cow.mooapis.indigo.v1.DeleteRoleRequest request) {
       return blockingUnaryCall(
@@ -834,20 +1061,39 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Add multiple or one permission to given role, if the role exists.
+     * </pre>
      */
-    public network.cow.mooapis.indigo.v1.AddRolePermissionResponse addRolePermission(network.cow.mooapis.indigo.v1.AddRolePermissionRequest request) {
+    public network.cow.mooapis.indigo.v1.AddRolePermissionsResponse addRolePermissions(network.cow.mooapis.indigo.v1.AddRolePermissionsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getAddRolePermissionMethod(), getCallOptions(), request);
+          getChannel(), getAddRolePermissionsMethod(), getCallOptions(), request);
     }
 
     /**
+     * <pre>
+     * Remove multiple or one permission from given role, if the role exists.
+     * </pre>
      */
-    public network.cow.mooapis.indigo.v1.RemoveRolePermissionResponse removeRolePermission(network.cow.mooapis.indigo.v1.RemoveRolePermissionRequest request) {
+    public network.cow.mooapis.indigo.v1.RemoveRolePermissionsResponse removeRolePermissions(network.cow.mooapis.indigo.v1.RemoveRolePermissionsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getRemoveRolePermissionMethod(), getCallOptions(), request);
+          getChannel(), getRemoveRolePermissionsMethod(), getCallOptions(), request);
     }
 
     /**
+     * <pre>
+     * Returns a user by account id.
+     * </pre>
+     */
+    public network.cow.mooapis.indigo.v1.GetUserResponse getUser(network.cow.mooapis.indigo.v1.GetUserRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get all roles that are bound to given user.
+     * </pre>
      */
     public network.cow.mooapis.indigo.v1.GetUserRolesResponse getUserRoles(network.cow.mooapis.indigo.v1.GetUserRolesRequest request) {
       return blockingUnaryCall(
@@ -855,38 +1101,53 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Binds an existing role to the user.
+     * </pre>
      */
-    public network.cow.mooapis.indigo.v1.AddUserRoleResponse addUserRole(network.cow.mooapis.indigo.v1.AddUserRoleRequest request) {
+    public network.cow.mooapis.indigo.v1.AddUserRolesResponse addUserRoles(network.cow.mooapis.indigo.v1.AddUserRolesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getAddUserRoleMethod(), getCallOptions(), request);
+          getChannel(), getAddUserRolesMethod(), getCallOptions(), request);
     }
 
     /**
+     * <pre>
+     * Unbinds a role from the user.
+     * </pre>
      */
-    public network.cow.mooapis.indigo.v1.RemoveUserRoleResponse removeUserRole(network.cow.mooapis.indigo.v1.RemoveUserRoleRequest request) {
+    public network.cow.mooapis.indigo.v1.RemoveUserRolesResponse removeUserRoles(network.cow.mooapis.indigo.v1.RemoveUserRolesRequest request) {
       return blockingUnaryCall(
-          getChannel(), getRemoveUserRoleMethod(), getCallOptions(), request);
+          getChannel(), getRemoveUserRolesMethod(), getCallOptions(), request);
     }
 
     /**
+     * <pre>
+     * Get all custom bound permissions of given user. 
+     * </pre>
      */
-    public network.cow.mooapis.indigo.v1.AddUserPermissionResponse addUserPermission(network.cow.mooapis.indigo.v1.AddUserPermissionRequest request) {
+    public network.cow.mooapis.indigo.v1.GetUserPermissionsResponse getUserPermissions(network.cow.mooapis.indigo.v1.GetUserPermissionsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getAddUserPermissionMethod(), getCallOptions(), request);
+          getChannel(), getGetUserPermissionsMethod(), getCallOptions(), request);
     }
 
     /**
+     * <pre>
+     * Binds custom permissions to given user.
+     * </pre>
      */
-    public network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse removeUserPermission(network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest request) {
+    public network.cow.mooapis.indigo.v1.AddUserPermissionsResponse addUserPermissions(network.cow.mooapis.indigo.v1.AddUserPermissionsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getRemoveUserPermissionMethod(), getCallOptions(), request);
+          getChannel(), getAddUserPermissionsMethod(), getCallOptions(), request);
     }
 
     /**
+     * <pre>
+     * Unbinds custom permissions from given user.
+     * </pre>
      */
-    public network.cow.mooapis.indigo.v1.HasUserPermissionResponse hasUserPermission(network.cow.mooapis.indigo.v1.HasUserPermissionRequest request) {
+    public network.cow.mooapis.indigo.v1.RemoveUserPermissionsResponse removeUserPermissions(network.cow.mooapis.indigo.v1.RemoveUserPermissionsRequest request) {
       return blockingUnaryCall(
-          getChannel(), getHasUserPermissionMethod(), getCallOptions(), request);
+          getChannel(), getRemoveUserPermissionsMethod(), getCallOptions(), request);
     }
   }
 
@@ -912,6 +1173,22 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Checks if a given user account would succeed the permission
+     * check of given permissions. For that the roles and the custom
+     * permissions of the user will be used.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.HasPermissionResponse> hasPermission(
+        network.cow.mooapis.indigo.v1.HasPermissionRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getHasPermissionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List all existing roles.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.ListRolesResponse> listRoles(
         network.cow.mooapis.indigo.v1.ListRolesRequest request) {
@@ -920,6 +1197,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Gets the role with specific name.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.GetRoleResponse> getRole(
         network.cow.mooapis.indigo.v1.GetRoleRequest request) {
@@ -928,6 +1208,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Inserts a new role, if it doesn't exist.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.InsertRoleResponse> insertRole(
         network.cow.mooapis.indigo.v1.InsertRoleRequest request) {
@@ -936,6 +1219,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Updates a roles settings (like priority, ...).
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.UpdateRoleResponse> updateRole(
         network.cow.mooapis.indigo.v1.UpdateRoleRequest request) {
@@ -944,6 +1230,9 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Deletes a role if it exists.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.DeleteRoleResponse> deleteRole(
         network.cow.mooapis.indigo.v1.DeleteRoleRequest request) {
@@ -952,22 +1241,42 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Add multiple or one permission to given role, if the role exists.
+     * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.AddRolePermissionResponse> addRolePermission(
-        network.cow.mooapis.indigo.v1.AddRolePermissionRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.AddRolePermissionsResponse> addRolePermissions(
+        network.cow.mooapis.indigo.v1.AddRolePermissionsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getAddRolePermissionMethod(), getCallOptions()), request);
+          getChannel().newCall(getAddRolePermissionsMethod(), getCallOptions()), request);
     }
 
     /**
+     * <pre>
+     * Remove multiple or one permission from given role, if the role exists.
+     * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.RemoveRolePermissionResponse> removeRolePermission(
-        network.cow.mooapis.indigo.v1.RemoveRolePermissionRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.RemoveRolePermissionsResponse> removeRolePermissions(
+        network.cow.mooapis.indigo.v1.RemoveRolePermissionsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getRemoveRolePermissionMethod(), getCallOptions()), request);
+          getChannel().newCall(getRemoveRolePermissionsMethod(), getCallOptions()), request);
     }
 
     /**
+     * <pre>
+     * Returns a user by account id.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.GetUserResponse> getUser(
+        network.cow.mooapis.indigo.v1.GetUserRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get all roles that are bound to given user.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.GetUserRolesResponse> getUserRoles(
         network.cow.mooapis.indigo.v1.GetUserRolesRequest request) {
@@ -976,59 +1285,76 @@ public final class IndigoServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Binds an existing role to the user.
+     * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.AddUserRoleResponse> addUserRole(
-        network.cow.mooapis.indigo.v1.AddUserRoleRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.AddUserRolesResponse> addUserRoles(
+        network.cow.mooapis.indigo.v1.AddUserRolesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getAddUserRoleMethod(), getCallOptions()), request);
+          getChannel().newCall(getAddUserRolesMethod(), getCallOptions()), request);
     }
 
     /**
+     * <pre>
+     * Unbinds a role from the user.
+     * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.RemoveUserRoleResponse> removeUserRole(
-        network.cow.mooapis.indigo.v1.RemoveUserRoleRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.RemoveUserRolesResponse> removeUserRoles(
+        network.cow.mooapis.indigo.v1.RemoveUserRolesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getRemoveUserRoleMethod(), getCallOptions()), request);
+          getChannel().newCall(getRemoveUserRolesMethod(), getCallOptions()), request);
     }
 
     /**
+     * <pre>
+     * Get all custom bound permissions of given user. 
+     * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.AddUserPermissionResponse> addUserPermission(
-        network.cow.mooapis.indigo.v1.AddUserPermissionRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.GetUserPermissionsResponse> getUserPermissions(
+        network.cow.mooapis.indigo.v1.GetUserPermissionsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getAddUserPermissionMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetUserPermissionsMethod(), getCallOptions()), request);
     }
 
     /**
+     * <pre>
+     * Binds custom permissions to given user.
+     * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse> removeUserPermission(
-        network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.AddUserPermissionsResponse> addUserPermissions(
+        network.cow.mooapis.indigo.v1.AddUserPermissionsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getRemoveUserPermissionMethod(), getCallOptions()), request);
+          getChannel().newCall(getAddUserPermissionsMethod(), getCallOptions()), request);
     }
 
     /**
+     * <pre>
+     * Unbinds custom permissions from given user.
+     * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.HasUserPermissionResponse> hasUserPermission(
-        network.cow.mooapis.indigo.v1.HasUserPermissionRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.RemoveUserPermissionsResponse> removeUserPermissions(
+        network.cow.mooapis.indigo.v1.RemoveUserPermissionsRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getHasUserPermissionMethod(), getCallOptions()), request);
+          getChannel().newCall(getRemoveUserPermissionsMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_LIST_ROLES = 0;
-  private static final int METHODID_GET_ROLE = 1;
-  private static final int METHODID_INSERT_ROLE = 2;
-  private static final int METHODID_UPDATE_ROLE = 3;
-  private static final int METHODID_DELETE_ROLE = 4;
-  private static final int METHODID_ADD_ROLE_PERMISSION = 5;
-  private static final int METHODID_REMOVE_ROLE_PERMISSION = 6;
-  private static final int METHODID_GET_USER_ROLES = 7;
-  private static final int METHODID_ADD_USER_ROLE = 8;
-  private static final int METHODID_REMOVE_USER_ROLE = 9;
-  private static final int METHODID_ADD_USER_PERMISSION = 10;
-  private static final int METHODID_REMOVE_USER_PERMISSION = 11;
-  private static final int METHODID_HAS_USER_PERMISSION = 12;
+  private static final int METHODID_HAS_PERMISSION = 0;
+  private static final int METHODID_LIST_ROLES = 1;
+  private static final int METHODID_GET_ROLE = 2;
+  private static final int METHODID_INSERT_ROLE = 3;
+  private static final int METHODID_UPDATE_ROLE = 4;
+  private static final int METHODID_DELETE_ROLE = 5;
+  private static final int METHODID_ADD_ROLE_PERMISSIONS = 6;
+  private static final int METHODID_REMOVE_ROLE_PERMISSIONS = 7;
+  private static final int METHODID_GET_USER = 8;
+  private static final int METHODID_GET_USER_ROLES = 9;
+  private static final int METHODID_ADD_USER_ROLES = 10;
+  private static final int METHODID_REMOVE_USER_ROLES = 11;
+  private static final int METHODID_GET_USER_PERMISSIONS = 12;
+  private static final int METHODID_ADD_USER_PERMISSIONS = 13;
+  private static final int METHODID_REMOVE_USER_PERMISSIONS = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1047,6 +1373,10 @@ public final class IndigoServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_HAS_PERMISSION:
+          serviceImpl.hasPermission((network.cow.mooapis.indigo.v1.HasPermissionRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.HasPermissionResponse>) responseObserver);
+          break;
         case METHODID_LIST_ROLES:
           serviceImpl.listRoles((network.cow.mooapis.indigo.v1.ListRolesRequest) request,
               (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.ListRolesResponse>) responseObserver);
@@ -1067,37 +1397,41 @@ public final class IndigoServiceGrpc {
           serviceImpl.deleteRole((network.cow.mooapis.indigo.v1.DeleteRoleRequest) request,
               (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.DeleteRoleResponse>) responseObserver);
           break;
-        case METHODID_ADD_ROLE_PERMISSION:
-          serviceImpl.addRolePermission((network.cow.mooapis.indigo.v1.AddRolePermissionRequest) request,
-              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddRolePermissionResponse>) responseObserver);
+        case METHODID_ADD_ROLE_PERMISSIONS:
+          serviceImpl.addRolePermissions((network.cow.mooapis.indigo.v1.AddRolePermissionsRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddRolePermissionsResponse>) responseObserver);
           break;
-        case METHODID_REMOVE_ROLE_PERMISSION:
-          serviceImpl.removeRolePermission((network.cow.mooapis.indigo.v1.RemoveRolePermissionRequest) request,
-              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveRolePermissionResponse>) responseObserver);
+        case METHODID_REMOVE_ROLE_PERMISSIONS:
+          serviceImpl.removeRolePermissions((network.cow.mooapis.indigo.v1.RemoveRolePermissionsRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveRolePermissionsResponse>) responseObserver);
+          break;
+        case METHODID_GET_USER:
+          serviceImpl.getUser((network.cow.mooapis.indigo.v1.GetUserRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.GetUserResponse>) responseObserver);
           break;
         case METHODID_GET_USER_ROLES:
           serviceImpl.getUserRoles((network.cow.mooapis.indigo.v1.GetUserRolesRequest) request,
               (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.GetUserRolesResponse>) responseObserver);
           break;
-        case METHODID_ADD_USER_ROLE:
-          serviceImpl.addUserRole((network.cow.mooapis.indigo.v1.AddUserRoleRequest) request,
-              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddUserRoleResponse>) responseObserver);
+        case METHODID_ADD_USER_ROLES:
+          serviceImpl.addUserRoles((network.cow.mooapis.indigo.v1.AddUserRolesRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddUserRolesResponse>) responseObserver);
           break;
-        case METHODID_REMOVE_USER_ROLE:
-          serviceImpl.removeUserRole((network.cow.mooapis.indigo.v1.RemoveUserRoleRequest) request,
-              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveUserRoleResponse>) responseObserver);
+        case METHODID_REMOVE_USER_ROLES:
+          serviceImpl.removeUserRoles((network.cow.mooapis.indigo.v1.RemoveUserRolesRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveUserRolesResponse>) responseObserver);
           break;
-        case METHODID_ADD_USER_PERMISSION:
-          serviceImpl.addUserPermission((network.cow.mooapis.indigo.v1.AddUserPermissionRequest) request,
-              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddUserPermissionResponse>) responseObserver);
+        case METHODID_GET_USER_PERMISSIONS:
+          serviceImpl.getUserPermissions((network.cow.mooapis.indigo.v1.GetUserPermissionsRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.GetUserPermissionsResponse>) responseObserver);
           break;
-        case METHODID_REMOVE_USER_PERMISSION:
-          serviceImpl.removeUserPermission((network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest) request,
-              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse>) responseObserver);
+        case METHODID_ADD_USER_PERMISSIONS:
+          serviceImpl.addUserPermissions((network.cow.mooapis.indigo.v1.AddUserPermissionsRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.AddUserPermissionsResponse>) responseObserver);
           break;
-        case METHODID_HAS_USER_PERMISSION:
-          serviceImpl.hasUserPermission((network.cow.mooapis.indigo.v1.HasUserPermissionRequest) request,
-              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.HasUserPermissionResponse>) responseObserver);
+        case METHODID_REMOVE_USER_PERMISSIONS:
+          serviceImpl.removeUserPermissions((network.cow.mooapis.indigo.v1.RemoveUserPermissionsRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveUserPermissionsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1160,19 +1494,21 @@ public final class IndigoServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new IndigoServiceFileDescriptorSupplier())
+              .addMethod(getHasPermissionMethod())
               .addMethod(getListRolesMethod())
               .addMethod(getGetRoleMethod())
               .addMethod(getInsertRoleMethod())
               .addMethod(getUpdateRoleMethod())
               .addMethod(getDeleteRoleMethod())
-              .addMethod(getAddRolePermissionMethod())
-              .addMethod(getRemoveRolePermissionMethod())
+              .addMethod(getAddRolePermissionsMethod())
+              .addMethod(getRemoveRolePermissionsMethod())
+              .addMethod(getGetUserMethod())
               .addMethod(getGetUserRolesMethod())
-              .addMethod(getAddUserRoleMethod())
-              .addMethod(getRemoveUserRoleMethod())
-              .addMethod(getAddUserPermissionMethod())
-              .addMethod(getRemoveUserPermissionMethod())
-              .addMethod(getHasUserPermissionMethod())
+              .addMethod(getAddUserRolesMethod())
+              .addMethod(getRemoveUserRolesMethod())
+              .addMethod(getGetUserPermissionsMethod())
+              .addMethod(getAddUserPermissionsMethod())
+              .addMethod(getRemoveUserPermissionsMethod())
               .build();
         }
       }
