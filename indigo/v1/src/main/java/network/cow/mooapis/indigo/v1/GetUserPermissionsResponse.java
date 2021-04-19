@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetUserPermissionsResponse() {
-    removedRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -53,10 +53,10 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              removedRoleIds_ = new com.google.protobuf.LazyStringArrayList();
+              permissions_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
             }
-            removedRoleIds_.add(s);
+            permissions_.add(s);
             break;
           }
           default: {
@@ -75,7 +75,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        removedRoleIds_ = removedRoleIds_.getUnmodifiableView();
+        permissions_ = permissions_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -94,39 +94,39 @@ private static final long serialVersionUID = 0L;
             network.cow.mooapis.indigo.v1.GetUserPermissionsResponse.class, network.cow.mooapis.indigo.v1.GetUserPermissionsResponse.Builder.class);
   }
 
-  public static final int REMOVED_ROLE_IDS_FIELD_NUMBER = 1;
-  private com.google.protobuf.LazyStringList removedRoleIds_;
+  public static final int PERMISSIONS_FIELD_NUMBER = 1;
+  private com.google.protobuf.LazyStringList permissions_;
   /**
-   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-   * @return A list containing the removedRoleIds.
+   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
+   * @return A list containing the permissions.
    */
   public com.google.protobuf.ProtocolStringList
-      getRemovedRoleIdsList() {
-    return removedRoleIds_;
+      getPermissionsList() {
+    return permissions_;
   }
   /**
-   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-   * @return The count of removedRoleIds.
+   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
+   * @return The count of permissions.
    */
-  public int getRemovedRoleIdsCount() {
-    return removedRoleIds_.size();
+  public int getPermissionsCount() {
+    return permissions_.size();
   }
   /**
-   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
    * @param index The index of the element to return.
-   * @return The removedRoleIds at the given index.
+   * @return The permissions at the given index.
    */
-  public java.lang.String getRemovedRoleIds(int index) {
-    return removedRoleIds_.get(index);
+  public java.lang.String getPermissions(int index) {
+    return permissions_.get(index);
   }
   /**
-   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
    * @param index The index of the value to return.
-   * @return The bytes of the removedRoleIds at the given index.
+   * @return The bytes of the permissions at the given index.
    */
   public com.google.protobuf.ByteString
-      getRemovedRoleIdsBytes(int index) {
-    return removedRoleIds_.getByteString(index);
+      getPermissionsBytes(int index) {
+    return permissions_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -143,8 +143,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < removedRoleIds_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, removedRoleIds_.getRaw(i));
+    for (int i = 0; i < permissions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, permissions_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -157,11 +157,11 @@ private static final long serialVersionUID = 0L;
     size = 0;
     {
       int dataSize = 0;
-      for (int i = 0; i < removedRoleIds_.size(); i++) {
-        dataSize += computeStringSizeNoTag(removedRoleIds_.getRaw(i));
+      for (int i = 0; i < permissions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(permissions_.getRaw(i));
       }
       size += dataSize;
-      size += 1 * getRemovedRoleIdsList().size();
+      size += 1 * getPermissionsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -178,8 +178,8 @@ private static final long serialVersionUID = 0L;
     }
     network.cow.mooapis.indigo.v1.GetUserPermissionsResponse other = (network.cow.mooapis.indigo.v1.GetUserPermissionsResponse) obj;
 
-    if (!getRemovedRoleIdsList()
-        .equals(other.getRemovedRoleIdsList())) return false;
+    if (!getPermissionsList()
+        .equals(other.getPermissionsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -191,9 +191,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getRemovedRoleIdsCount() > 0) {
-      hash = (37 * hash) + REMOVED_ROLE_IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getRemovedRoleIdsList().hashCode();
+    if (getPermissionsCount() > 0) {
+      hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getPermissionsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -328,7 +328,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      removedRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -358,10 +358,10 @@ private static final long serialVersionUID = 0L;
       network.cow.mooapis.indigo.v1.GetUserPermissionsResponse result = new network.cow.mooapis.indigo.v1.GetUserPermissionsResponse(this);
       int from_bitField0_ = bitField0_;
       if (((bitField0_ & 0x00000001) != 0)) {
-        removedRoleIds_ = removedRoleIds_.getUnmodifiableView();
+        permissions_ = permissions_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
-      result.removedRoleIds_ = removedRoleIds_;
+      result.permissions_ = permissions_;
       onBuilt();
       return result;
     }
@@ -410,13 +410,13 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(network.cow.mooapis.indigo.v1.GetUserPermissionsResponse other) {
       if (other == network.cow.mooapis.indigo.v1.GetUserPermissionsResponse.getDefaultInstance()) return this;
-      if (!other.removedRoleIds_.isEmpty()) {
-        if (removedRoleIds_.isEmpty()) {
-          removedRoleIds_ = other.removedRoleIds_;
+      if (!other.permissions_.isEmpty()) {
+        if (permissions_.isEmpty()) {
+          permissions_ = other.permissions_;
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          ensureRemovedRoleIdsIsMutable();
-          removedRoleIds_.addAll(other.removedRoleIds_);
+          ensurePermissionsIsMutable();
+          permissions_.addAll(other.permissions_);
         }
         onChanged();
       }
@@ -450,112 +450,112 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList removedRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureRemovedRoleIdsIsMutable() {
+    private com.google.protobuf.LazyStringList permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensurePermissionsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        removedRoleIds_ = new com.google.protobuf.LazyStringArrayList(removedRoleIds_);
+        permissions_ = new com.google.protobuf.LazyStringArrayList(permissions_);
         bitField0_ |= 0x00000001;
        }
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @return A list containing the removedRoleIds.
+     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
+     * @return A list containing the permissions.
      */
     public com.google.protobuf.ProtocolStringList
-        getRemovedRoleIdsList() {
-      return removedRoleIds_.getUnmodifiableView();
+        getPermissionsList() {
+      return permissions_.getUnmodifiableView();
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @return The count of removedRoleIds.
+     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
+     * @return The count of permissions.
      */
-    public int getRemovedRoleIdsCount() {
-      return removedRoleIds_.size();
+    public int getPermissionsCount() {
+      return permissions_.size();
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
      * @param index The index of the element to return.
-     * @return The removedRoleIds at the given index.
+     * @return The permissions at the given index.
      */
-    public java.lang.String getRemovedRoleIds(int index) {
-      return removedRoleIds_.get(index);
+    public java.lang.String getPermissions(int index) {
+      return permissions_.get(index);
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
      * @param index The index of the value to return.
-     * @return The bytes of the removedRoleIds at the given index.
+     * @return The bytes of the permissions at the given index.
      */
     public com.google.protobuf.ByteString
-        getRemovedRoleIdsBytes(int index) {
-      return removedRoleIds_.getByteString(index);
+        getPermissionsBytes(int index) {
+      return permissions_.getByteString(index);
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
      * @param index The index to set the value at.
-     * @param value The removedRoleIds to set.
+     * @param value The permissions to set.
      * @return This builder for chaining.
      */
-    public Builder setRemovedRoleIds(
+    public Builder setPermissions(
         int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  ensureRemovedRoleIdsIsMutable();
-      removedRoleIds_.set(index, value);
+  ensurePermissionsIsMutable();
+      permissions_.set(index, value);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @param value The removedRoleIds to add.
+     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
+     * @param value The permissions to add.
      * @return This builder for chaining.
      */
-    public Builder addRemovedRoleIds(
+    public Builder addPermissions(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  ensureRemovedRoleIdsIsMutable();
-      removedRoleIds_.add(value);
+  ensurePermissionsIsMutable();
+      permissions_.add(value);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @param values The removedRoleIds to add.
+     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
+     * @param values The permissions to add.
      * @return This builder for chaining.
      */
-    public Builder addAllRemovedRoleIds(
+    public Builder addAllPermissions(
         java.lang.Iterable<java.lang.String> values) {
-      ensureRemovedRoleIdsIsMutable();
+      ensurePermissionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, removedRoleIds_);
+          values, permissions_);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearRemovedRoleIds() {
-      removedRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    public Builder clearPermissions() {
+      permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @param value The bytes of the removedRoleIds to add.
+     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
+     * @param value The bytes of the permissions to add.
      * @return This builder for chaining.
      */
-    public Builder addRemovedRoleIdsBytes(
+    public Builder addPermissionsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      ensureRemovedRoleIdsIsMutable();
-      removedRoleIds_.add(value);
+      ensurePermissionsIsMutable();
+      permissions_.add(value);
       onChanged();
       return this;
     }

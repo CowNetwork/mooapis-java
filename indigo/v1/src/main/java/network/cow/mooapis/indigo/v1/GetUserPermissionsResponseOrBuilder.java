@@ -8,27 +8,27 @@ public interface GetUserPermissionsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-   * @return A list containing the removedRoleIds.
+   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
+   * @return A list containing the permissions.
    */
   java.util.List<java.lang.String>
-      getRemovedRoleIdsList();
+      getPermissionsList();
   /**
-   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-   * @return The count of removedRoleIds.
+   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
+   * @return The count of permissions.
    */
-  int getRemovedRoleIdsCount();
+  int getPermissionsCount();
   /**
-   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
    * @param index The index of the element to return.
-   * @return The removedRoleIds at the given index.
+   * @return The permissions at the given index.
    */
-  java.lang.String getRemovedRoleIds(int index);
+  java.lang.String getPermissions(int index);
   /**
-   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
    * @param index The index of the value to return.
-   * @return The bytes of the removedRoleIds at the given index.
+   * @return The bytes of the permissions at the given index.
    */
   com.google.protobuf.ByteString
-      getRemovedRoleIdsBytes(int index);
+      getPermissionsBytes(int index);
 }
