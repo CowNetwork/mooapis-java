@@ -402,6 +402,37 @@ public final class IndigoServiceGrpc {
     return getRemoveUserPermissionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.HasUserPermissionRequest,
+      network.cow.mooapis.indigo.v1.HasUserPermissionResponse> getHasUserPermissionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "HasUserPermission",
+      requestType = network.cow.mooapis.indigo.v1.HasUserPermissionRequest.class,
+      responseType = network.cow.mooapis.indigo.v1.HasUserPermissionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.HasUserPermissionRequest,
+      network.cow.mooapis.indigo.v1.HasUserPermissionResponse> getHasUserPermissionMethod() {
+    io.grpc.MethodDescriptor<network.cow.mooapis.indigo.v1.HasUserPermissionRequest, network.cow.mooapis.indigo.v1.HasUserPermissionResponse> getHasUserPermissionMethod;
+    if ((getHasUserPermissionMethod = IndigoServiceGrpc.getHasUserPermissionMethod) == null) {
+      synchronized (IndigoServiceGrpc.class) {
+        if ((getHasUserPermissionMethod = IndigoServiceGrpc.getHasUserPermissionMethod) == null) {
+          IndigoServiceGrpc.getHasUserPermissionMethod = getHasUserPermissionMethod =
+              io.grpc.MethodDescriptor.<network.cow.mooapis.indigo.v1.HasUserPermissionRequest, network.cow.mooapis.indigo.v1.HasUserPermissionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "HasUserPermission"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  network.cow.mooapis.indigo.v1.HasUserPermissionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  network.cow.mooapis.indigo.v1.HasUserPermissionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new IndigoServiceMethodDescriptorSupplier("HasUserPermission"))
+              .build();
+        }
+      }
+    }
+    return getHasUserPermissionMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -516,6 +547,13 @@ public final class IndigoServiceGrpc {
       asyncUnimplementedUnaryCall(getRemoveUserPermissionMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void hasUserPermission(network.cow.mooapis.indigo.v1.HasUserPermissionRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.HasUserPermissionResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getHasUserPermissionMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -602,6 +640,13 @@ public final class IndigoServiceGrpc {
                 network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest,
                 network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse>(
                   this, METHODID_REMOVE_USER_PERMISSION)))
+          .addMethod(
+            getHasUserPermissionMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                network.cow.mooapis.indigo.v1.HasUserPermissionRequest,
+                network.cow.mooapis.indigo.v1.HasUserPermissionResponse>(
+                  this, METHODID_HAS_USER_PERMISSION)))
           .build();
     }
   }
@@ -722,6 +767,14 @@ public final class IndigoServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getRemoveUserPermissionMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void hasUserPermission(network.cow.mooapis.indigo.v1.HasUserPermissionRequest request,
+        io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.HasUserPermissionResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getHasUserPermissionMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -827,6 +880,13 @@ public final class IndigoServiceGrpc {
     public network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse removeUserPermission(network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest request) {
       return blockingUnaryCall(
           getChannel(), getRemoveUserPermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public network.cow.mooapis.indigo.v1.HasUserPermissionResponse hasUserPermission(network.cow.mooapis.indigo.v1.HasUserPermissionRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getHasUserPermissionMethod(), getCallOptions(), request);
     }
   }
 
@@ -946,6 +1006,14 @@ public final class IndigoServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getRemoveUserPermissionMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<network.cow.mooapis.indigo.v1.HasUserPermissionResponse> hasUserPermission(
+        network.cow.mooapis.indigo.v1.HasUserPermissionRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getHasUserPermissionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_ROLES = 0;
@@ -960,6 +1028,7 @@ public final class IndigoServiceGrpc {
   private static final int METHODID_REMOVE_USER_ROLE = 9;
   private static final int METHODID_ADD_USER_PERMISSION = 10;
   private static final int METHODID_REMOVE_USER_PERMISSION = 11;
+  private static final int METHODID_HAS_USER_PERMISSION = 12;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1025,6 +1094,10 @@ public final class IndigoServiceGrpc {
         case METHODID_REMOVE_USER_PERMISSION:
           serviceImpl.removeUserPermission((network.cow.mooapis.indigo.v1.RemoveUserPermissionRequest) request,
               (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.RemoveUserPermissionResponse>) responseObserver);
+          break;
+        case METHODID_HAS_USER_PERMISSION:
+          serviceImpl.hasUserPermission((network.cow.mooapis.indigo.v1.HasUserPermissionRequest) request,
+              (io.grpc.stub.StreamObserver<network.cow.mooapis.indigo.v1.HasUserPermissionResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1099,6 +1172,7 @@ public final class IndigoServiceGrpc {
               .addMethod(getRemoveUserRoleMethod())
               .addMethod(getAddUserPermissionMethod())
               .addMethod(getRemoveUserPermissionMethod())
+              .addMethod(getHasUserPermissionMethod())
               .build();
         }
       }
