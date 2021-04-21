@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private AddUserRolesRequest() {
     userAccountId_ = "";
-    roleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    roleIds_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -58,12 +58,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              roleIds_ = new com.google.protobuf.LazyStringArrayList();
+              roleIds_ = new java.util.ArrayList<network.cow.mooapis.indigo.v1.RoleIdentifier>();
               mutable_bitField0_ |= 0x00000001;
             }
-            roleIds_.add(s);
+            roleIds_.add(
+                input.readMessage(network.cow.mooapis.indigo.v1.RoleIdentifier.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -82,7 +82,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        roleIds_ = roleIds_.getUnmodifiableView();
+        roleIds_ = java.util.Collections.unmodifiableList(roleIds_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -140,38 +140,43 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ROLE_IDS_FIELD_NUMBER = 2;
-  private com.google.protobuf.LazyStringList roleIds_;
+  private java.util.List<network.cow.mooapis.indigo.v1.RoleIdentifier> roleIds_;
   /**
-   * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-   * @return A list containing the roleIds.
+   * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getRoleIdsList() {
+  @java.lang.Override
+  public java.util.List<network.cow.mooapis.indigo.v1.RoleIdentifier> getRoleIdsList() {
     return roleIds_;
   }
   /**
-   * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-   * @return The count of roleIds.
+   * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
    */
+  @java.lang.Override
+  public java.util.List<? extends network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder> 
+      getRoleIdsOrBuilderList() {
+    return roleIds_;
+  }
+  /**
+   * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
+   */
+  @java.lang.Override
   public int getRoleIdsCount() {
     return roleIds_.size();
   }
   /**
-   * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-   * @param index The index of the element to return.
-   * @return The roleIds at the given index.
+   * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
    */
-  public java.lang.String getRoleIds(int index) {
+  @java.lang.Override
+  public network.cow.mooapis.indigo.v1.RoleIdentifier getRoleIds(int index) {
     return roleIds_.get(index);
   }
   /**
-   * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the roleIds at the given index.
+   * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
    */
-  public com.google.protobuf.ByteString
-      getRoleIdsBytes(int index) {
-    return roleIds_.getByteString(index);
+  @java.lang.Override
+  public network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder getRoleIdsOrBuilder(
+      int index) {
+    return roleIds_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -192,7 +197,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userAccountId_);
     }
     for (int i = 0; i < roleIds_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roleIds_.getRaw(i));
+      output.writeMessage(2, roleIds_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -206,13 +211,9 @@ private static final long serialVersionUID = 0L;
     if (!getUserAccountIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userAccountId_);
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < roleIds_.size(); i++) {
-        dataSize += computeStringSizeNoTag(roleIds_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getRoleIdsList().size();
+    for (int i = 0; i < roleIds_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, roleIds_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -378,6 +379,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getRoleIdsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -385,8 +387,12 @@ private static final long serialVersionUID = 0L;
       super.clear();
       userAccountId_ = "";
 
-      roleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      if (roleIdsBuilder_ == null) {
+        roleIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        roleIdsBuilder_.clear();
+      }
       return this;
     }
 
@@ -415,11 +421,15 @@ private static final long serialVersionUID = 0L;
       network.cow.mooapis.indigo.v1.AddUserRolesRequest result = new network.cow.mooapis.indigo.v1.AddUserRolesRequest(this);
       int from_bitField0_ = bitField0_;
       result.userAccountId_ = userAccountId_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        roleIds_ = roleIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (roleIdsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          roleIds_ = java.util.Collections.unmodifiableList(roleIds_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.roleIds_ = roleIds_;
+      } else {
+        result.roleIds_ = roleIdsBuilder_.build();
       }
-      result.roleIds_ = roleIds_;
       onBuilt();
       return result;
     }
@@ -472,15 +482,31 @@ private static final long serialVersionUID = 0L;
         userAccountId_ = other.userAccountId_;
         onChanged();
       }
-      if (!other.roleIds_.isEmpty()) {
-        if (roleIds_.isEmpty()) {
-          roleIds_ = other.roleIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureRoleIdsIsMutable();
-          roleIds_.addAll(other.roleIds_);
+      if (roleIdsBuilder_ == null) {
+        if (!other.roleIds_.isEmpty()) {
+          if (roleIds_.isEmpty()) {
+            roleIds_ = other.roleIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureRoleIdsIsMutable();
+            roleIds_.addAll(other.roleIds_);
+          }
+          onChanged();
         }
-        onChanged();
+      } else {
+        if (!other.roleIds_.isEmpty()) {
+          if (roleIdsBuilder_.isEmpty()) {
+            roleIdsBuilder_.dispose();
+            roleIdsBuilder_ = null;
+            roleIds_ = other.roleIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            roleIdsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getRoleIdsFieldBuilder() : null;
+          } else {
+            roleIdsBuilder_.addAllMessages(other.roleIds_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -588,114 +614,244 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList roleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private java.util.List<network.cow.mooapis.indigo.v1.RoleIdentifier> roleIds_ =
+      java.util.Collections.emptyList();
     private void ensureRoleIdsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        roleIds_ = new com.google.protobuf.LazyStringArrayList(roleIds_);
+        roleIds_ = new java.util.ArrayList<network.cow.mooapis.indigo.v1.RoleIdentifier>(roleIds_);
         bitField0_ |= 0x00000001;
        }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        network.cow.mooapis.indigo.v1.RoleIdentifier, network.cow.mooapis.indigo.v1.RoleIdentifier.Builder, network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder> roleIdsBuilder_;
+
     /**
-     * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-     * @return A list containing the roleIds.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getRoleIdsList() {
-      return roleIds_.getUnmodifiableView();
+    public java.util.List<network.cow.mooapis.indigo.v1.RoleIdentifier> getRoleIdsList() {
+      if (roleIdsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(roleIds_);
+      } else {
+        return roleIdsBuilder_.getMessageList();
+      }
     }
     /**
-     * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-     * @return The count of roleIds.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
      */
     public int getRoleIdsCount() {
-      return roleIds_.size();
+      if (roleIdsBuilder_ == null) {
+        return roleIds_.size();
+      } else {
+        return roleIdsBuilder_.getCount();
+      }
     }
     /**
-     * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-     * @param index The index of the element to return.
-     * @return The roleIds at the given index.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
      */
-    public java.lang.String getRoleIds(int index) {
-      return roleIds_.get(index);
+    public network.cow.mooapis.indigo.v1.RoleIdentifier getRoleIds(int index) {
+      if (roleIdsBuilder_ == null) {
+        return roleIds_.get(index);
+      } else {
+        return roleIdsBuilder_.getMessage(index);
+      }
     }
     /**
-     * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the roleIds at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getRoleIdsBytes(int index) {
-      return roleIds_.getByteString(index);
-    }
-    /**
-     * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-     * @param index The index to set the value at.
-     * @param value The roleIds to set.
-     * @return This builder for chaining.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
      */
     public Builder setRoleIds(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRoleIdsIsMutable();
-      roleIds_.set(index, value);
-      onChanged();
+        int index, network.cow.mooapis.indigo.v1.RoleIdentifier value) {
+      if (roleIdsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRoleIdsIsMutable();
+        roleIds_.set(index, value);
+        onChanged();
+      } else {
+        roleIdsBuilder_.setMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-     * @param value The roleIds to add.
-     * @return This builder for chaining.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
+     */
+    public Builder setRoleIds(
+        int index, network.cow.mooapis.indigo.v1.RoleIdentifier.Builder builderForValue) {
+      if (roleIdsBuilder_ == null) {
+        ensureRoleIdsIsMutable();
+        roleIds_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        roleIdsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
+     */
+    public Builder addRoleIds(network.cow.mooapis.indigo.v1.RoleIdentifier value) {
+      if (roleIdsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRoleIdsIsMutable();
+        roleIds_.add(value);
+        onChanged();
+      } else {
+        roleIdsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
      */
     public Builder addRoleIds(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRoleIdsIsMutable();
-      roleIds_.add(value);
-      onChanged();
+        int index, network.cow.mooapis.indigo.v1.RoleIdentifier value) {
+      if (roleIdsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRoleIdsIsMutable();
+        roleIds_.add(index, value);
+        onChanged();
+      } else {
+        roleIdsBuilder_.addMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-     * @param values The roleIds to add.
-     * @return This builder for chaining.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
+     */
+    public Builder addRoleIds(
+        network.cow.mooapis.indigo.v1.RoleIdentifier.Builder builderForValue) {
+      if (roleIdsBuilder_ == null) {
+        ensureRoleIdsIsMutable();
+        roleIds_.add(builderForValue.build());
+        onChanged();
+      } else {
+        roleIdsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
+     */
+    public Builder addRoleIds(
+        int index, network.cow.mooapis.indigo.v1.RoleIdentifier.Builder builderForValue) {
+      if (roleIdsBuilder_ == null) {
+        ensureRoleIdsIsMutable();
+        roleIds_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        roleIdsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
      */
     public Builder addAllRoleIds(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureRoleIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, roleIds_);
-      onChanged();
+        java.lang.Iterable<? extends network.cow.mooapis.indigo.v1.RoleIdentifier> values) {
+      if (roleIdsBuilder_ == null) {
+        ensureRoleIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, roleIds_);
+        onChanged();
+      } else {
+        roleIdsBuilder_.addAllMessages(values);
+      }
       return this;
     }
     /**
-     * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-     * @return This builder for chaining.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
      */
     public Builder clearRoleIds() {
-      roleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
+      if (roleIdsBuilder_ == null) {
+        roleIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        roleIdsBuilder_.clear();
+      }
       return this;
     }
     /**
-     * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-     * @param value The bytes of the roleIds to add.
-     * @return This builder for chaining.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
      */
-    public Builder addRoleIdsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureRoleIdsIsMutable();
-      roleIds_.add(value);
-      onChanged();
+    public Builder removeRoleIds(int index) {
+      if (roleIdsBuilder_ == null) {
+        ensureRoleIdsIsMutable();
+        roleIds_.remove(index);
+        onChanged();
+      } else {
+        roleIdsBuilder_.remove(index);
+      }
       return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
+     */
+    public network.cow.mooapis.indigo.v1.RoleIdentifier.Builder getRoleIdsBuilder(
+        int index) {
+      return getRoleIdsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
+     */
+    public network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder getRoleIdsOrBuilder(
+        int index) {
+      if (roleIdsBuilder_ == null) {
+        return roleIds_.get(index);  } else {
+        return roleIdsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
+     */
+    public java.util.List<? extends network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder> 
+         getRoleIdsOrBuilderList() {
+      if (roleIdsBuilder_ != null) {
+        return roleIdsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(roleIds_);
+      }
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
+     */
+    public network.cow.mooapis.indigo.v1.RoleIdentifier.Builder addRoleIdsBuilder() {
+      return getRoleIdsFieldBuilder().addBuilder(
+          network.cow.mooapis.indigo.v1.RoleIdentifier.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
+     */
+    public network.cow.mooapis.indigo.v1.RoleIdentifier.Builder addRoleIdsBuilder(
+        int index) {
+      return getRoleIdsFieldBuilder().addBuilder(
+          index, network.cow.mooapis.indigo.v1.RoleIdentifier.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
+     */
+    public java.util.List<network.cow.mooapis.indigo.v1.RoleIdentifier.Builder> 
+         getRoleIdsBuilderList() {
+      return getRoleIdsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        network.cow.mooapis.indigo.v1.RoleIdentifier, network.cow.mooapis.indigo.v1.RoleIdentifier.Builder, network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder> 
+        getRoleIdsFieldBuilder() {
+      if (roleIdsBuilder_ == null) {
+        roleIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            network.cow.mooapis.indigo.v1.RoleIdentifier, network.cow.mooapis.indigo.v1.RoleIdentifier.Builder, network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder>(
+                roleIds_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        roleIds_ = null;
+      }
+      return roleIdsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

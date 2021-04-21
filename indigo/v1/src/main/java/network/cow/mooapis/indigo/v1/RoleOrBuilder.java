@@ -9,7 +9,7 @@ public interface RoleOrBuilder extends
 
   /**
    * <pre>
-   * The id of the role, e.g. `minecraft_player`
+   * The id of the role, i.e. a uuid
    * </pre>
    *
    * <code>string id = 1 [json_name = "id"];</code>
@@ -18,7 +18,7 @@ public interface RoleOrBuilder extends
   java.lang.String getId();
   /**
    * <pre>
-   * The id of the role, e.g. `minecraft_player`
+   * The id of the role, i.e. a uuid
    * </pre>
    *
    * <code>string id = 1 [json_name = "id"];</code>
@@ -29,12 +29,52 @@ public interface RoleOrBuilder extends
 
   /**
    * <pre>
+   * Name of the role, e.g. `admin`.
+   * </pre>
+   *
+   * <code>string name = 2 [json_name = "name"];</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * Name of the role, e.g. `admin`.
+   * </pre>
+   *
+   * <code>string name = 2 [json_name = "name"];</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
+   * Type of the role, e.g. `minecraft`
+   * </pre>
+   *
+   * <code>string type = 3 [json_name = "type"];</code>
+   * @return The type.
+   */
+  java.lang.String getType();
+  /**
+   * <pre>
+   * Type of the role, e.g. `minecraft`
+   * </pre>
+   *
+   * <code>string type = 3 [json_name = "type"];</code>
+   * @return The bytes for type.
+   */
+  com.google.protobuf.ByteString
+      getTypeBytes();
+
+  /**
+   * <pre>
    * Priority of the role is used when multiple roles
    * get assigned to a user and we have to determine which
    * properties get inherited or overwritten by which roles.
    * </pre>
    *
-   * <code>int32 priority = 2 [json_name = "priority"];</code>
+   * <code>int32 priority = 4 [json_name = "priority"];</code>
    * @return The priority.
    */
   int getPriority();
@@ -47,7 +87,7 @@ public interface RoleOrBuilder extends
    * will be used to determine which overwrites which.
    * </pre>
    *
-   * <code>bool transient = 3 [json_name = "transient"];</code>
+   * <code>bool transient = 5 [json_name = "transient"];</code>
    * @return The transient.
    */
   boolean getTransient();
@@ -58,7 +98,7 @@ public interface RoleOrBuilder extends
    * for this role across all systems (Minecraft network, webpages, ...).
    * </pre>
    *
-   * <code>string color = 4 [json_name = "color"];</code>
+   * <code>string color = 6 [json_name = "color"];</code>
    * @return The color.
    */
   java.lang.String getColor();
@@ -68,7 +108,7 @@ public interface RoleOrBuilder extends
    * for this role across all systems (Minecraft network, webpages, ...).
    * </pre>
    *
-   * <code>string color = 4 [json_name = "color"];</code>
+   * <code>string color = 6 [json_name = "color"];</code>
    * @return The bytes for color.
    */
   com.google.protobuf.ByteString
@@ -80,7 +120,7 @@ public interface RoleOrBuilder extends
    * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
    * </pre>
    *
-   * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+   * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
    * @return A list containing the permissions.
    */
   java.util.List<java.lang.String>
@@ -91,7 +131,7 @@ public interface RoleOrBuilder extends
    * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
    * </pre>
    *
-   * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+   * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
    * @return The count of permissions.
    */
   int getPermissionsCount();
@@ -101,7 +141,7 @@ public interface RoleOrBuilder extends
    * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
    * </pre>
    *
-   * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+   * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
    * @param index The index of the element to return.
    * @return The permissions at the given index.
    */
@@ -112,7 +152,7 @@ public interface RoleOrBuilder extends
    * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
    * </pre>
    *
-   * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+   * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the permissions at the given index.
    */

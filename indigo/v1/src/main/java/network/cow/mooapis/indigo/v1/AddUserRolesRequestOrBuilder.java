@@ -20,27 +20,26 @@ public interface AddUserRolesRequestOrBuilder extends
       getUserAccountIdBytes();
 
   /**
-   * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-   * @return A list containing the roleIds.
+   * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<network.cow.mooapis.indigo.v1.RoleIdentifier> 
       getRoleIdsList();
   /**
-   * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-   * @return The count of roleIds.
+   * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
+   */
+  network.cow.mooapis.indigo.v1.RoleIdentifier getRoleIds(int index);
+  /**
+   * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
    */
   int getRoleIdsCount();
   /**
-   * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-   * @param index The index of the element to return.
-   * @return The roleIds at the given index.
+   * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
    */
-  java.lang.String getRoleIds(int index);
+  java.util.List<? extends network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder> 
+      getRoleIdsOrBuilderList();
   /**
-   * <code>repeated string role_ids = 2 [json_name = "roleIds"];</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the roleIds at the given index.
+   * <code>repeated .cow.indigo.v1.RoleIdentifier role_ids = 2 [json_name = "roleIds"];</code>
    */
-  com.google.protobuf.ByteString
-      getRoleIdsBytes(int index);
+  network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder getRoleIdsOrBuilder(
+      int index);
 }

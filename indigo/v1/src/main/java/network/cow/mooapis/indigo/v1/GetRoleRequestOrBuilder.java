@@ -8,14 +8,17 @@ public interface GetRoleRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string role_id = 1 [json_name = "roleId"];</code>
+   * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
+   * @return Whether the roleId field is set.
+   */
+  boolean hasRoleId();
+  /**
+   * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
    * @return The roleId.
    */
-  java.lang.String getRoleId();
+  network.cow.mooapis.indigo.v1.RoleIdentifier getRoleId();
   /**
-   * <code>string role_id = 1 [json_name = "roleId"];</code>
-   * @return The bytes for roleId.
+   * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
    */
-  com.google.protobuf.ByteString
-      getRoleIdBytes();
+  network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder getRoleIdOrBuilder();
 }

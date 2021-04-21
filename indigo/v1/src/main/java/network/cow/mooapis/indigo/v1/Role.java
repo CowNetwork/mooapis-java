@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private Role() {
     id_ = "";
+    name_ = "";
+    type_ = "";
     color_ = "";
     permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -58,23 +60,35 @@ private static final long serialVersionUID = 0L;
             id_ = s;
             break;
           }
-          case 16: {
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            type_ = s;
+            break;
+          }
+          case 32: {
 
             priority_ = input.readInt32();
             break;
           }
-          case 24: {
+          case 40: {
 
             transient_ = input.readBool();
             break;
           }
-          case 34: {
+          case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
             color_ = s;
             break;
           }
-          case 42: {
+          case 58: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               permissions_ = new com.google.protobuf.LazyStringArrayList();
@@ -122,7 +136,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_;
   /**
    * <pre>
-   * The id of the role, e.g. `minecraft_player`
+   * The id of the role, i.e. a uuid
    * </pre>
    *
    * <code>string id = 1 [json_name = "id"];</code>
@@ -143,7 +157,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The id of the role, e.g. `minecraft_player`
+   * The id of the role, i.e. a uuid
    * </pre>
    *
    * <code>string id = 1 [json_name = "id"];</code>
@@ -164,7 +178,99 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PRIORITY_FIELD_NUMBER = 2;
+  public static final int NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object name_;
+  /**
+   * <pre>
+   * Name of the role, e.g. `admin`.
+   * </pre>
+   *
+   * <code>string name = 2 [json_name = "name"];</code>
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Name of the role, e.g. `admin`.
+   * </pre>
+   *
+   * <code>string name = 2 [json_name = "name"];</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TYPE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object type_;
+  /**
+   * <pre>
+   * Type of the role, e.g. `minecraft`
+   * </pre>
+   *
+   * <code>string type = 3 [json_name = "type"];</code>
+   * @return The type.
+   */
+  @java.lang.Override
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Type of the role, e.g. `minecraft`
+   * </pre>
+   *
+   * <code>string type = 3 [json_name = "type"];</code>
+   * @return The bytes for type.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PRIORITY_FIELD_NUMBER = 4;
   private int priority_;
   /**
    * <pre>
@@ -173,7 +279,7 @@ private static final long serialVersionUID = 0L;
    * properties get inherited or overwritten by which roles.
    * </pre>
    *
-   * <code>int32 priority = 2 [json_name = "priority"];</code>
+   * <code>int32 priority = 4 [json_name = "priority"];</code>
    * @return The priority.
    */
   @java.lang.Override
@@ -181,7 +287,7 @@ private static final long serialVersionUID = 0L;
     return priority_;
   }
 
-  public static final int TRANSIENT_FIELD_NUMBER = 3;
+  public static final int TRANSIENT_FIELD_NUMBER = 5;
   private boolean transient_;
   /**
    * <pre>
@@ -191,7 +297,7 @@ private static final long serialVersionUID = 0L;
    * will be used to determine which overwrites which.
    * </pre>
    *
-   * <code>bool transient = 3 [json_name = "transient"];</code>
+   * <code>bool transient = 5 [json_name = "transient"];</code>
    * @return The transient.
    */
   @java.lang.Override
@@ -199,7 +305,7 @@ private static final long serialVersionUID = 0L;
     return transient_;
   }
 
-  public static final int COLOR_FIELD_NUMBER = 4;
+  public static final int COLOR_FIELD_NUMBER = 6;
   private volatile java.lang.Object color_;
   /**
    * <pre>
@@ -207,7 +313,7 @@ private static final long serialVersionUID = 0L;
    * for this role across all systems (Minecraft network, webpages, ...).
    * </pre>
    *
-   * <code>string color = 4 [json_name = "color"];</code>
+   * <code>string color = 6 [json_name = "color"];</code>
    * @return The color.
    */
   @java.lang.Override
@@ -229,7 +335,7 @@ private static final long serialVersionUID = 0L;
    * for this role across all systems (Minecraft network, webpages, ...).
    * </pre>
    *
-   * <code>string color = 4 [json_name = "color"];</code>
+   * <code>string color = 6 [json_name = "color"];</code>
    * @return The bytes for color.
    */
   @java.lang.Override
@@ -247,7 +353,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PERMISSIONS_FIELD_NUMBER = 5;
+  public static final int PERMISSIONS_FIELD_NUMBER = 7;
   private com.google.protobuf.LazyStringList permissions_;
   /**
    * <pre>
@@ -255,7 +361,7 @@ private static final long serialVersionUID = 0L;
    * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
    * </pre>
    *
-   * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+   * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
    * @return A list containing the permissions.
    */
   public com.google.protobuf.ProtocolStringList
@@ -268,7 +374,7 @@ private static final long serialVersionUID = 0L;
    * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
    * </pre>
    *
-   * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+   * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
    * @return The count of permissions.
    */
   public int getPermissionsCount() {
@@ -280,7 +386,7 @@ private static final long serialVersionUID = 0L;
    * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
    * </pre>
    *
-   * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+   * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
    * @param index The index of the element to return.
    * @return The permissions at the given index.
    */
@@ -293,7 +399,7 @@ private static final long serialVersionUID = 0L;
    * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
    * </pre>
    *
-   * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+   * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the permissions at the given index.
    */
@@ -319,17 +425,23 @@ private static final long serialVersionUID = 0L;
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+    }
+    if (!getTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type_);
+    }
     if (priority_ != 0) {
-      output.writeInt32(2, priority_);
+      output.writeInt32(4, priority_);
     }
     if (transient_ != false) {
-      output.writeBool(3, transient_);
+      output.writeBool(5, transient_);
     }
     if (!getColorBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, color_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, color_);
     }
     for (int i = 0; i < permissions_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, permissions_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, permissions_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -343,16 +455,22 @@ private static final long serialVersionUID = 0L;
     if (!getIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+    }
+    if (!getTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type_);
+    }
     if (priority_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, priority_);
+        .computeInt32Size(4, priority_);
     }
     if (transient_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, transient_);
+        .computeBoolSize(5, transient_);
     }
     if (!getColorBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, color_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, color_);
     }
     {
       int dataSize = 0;
@@ -379,6 +497,10 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!getType()
+        .equals(other.getType())) return false;
     if (getPriority()
         != other.getPriority()) return false;
     if (getTransient()
@@ -400,6 +522,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType().hashCode();
     hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
     hash = (53 * hash) + getPriority();
     hash = (37 * hash) + TRANSIENT_FIELD_NUMBER;
@@ -546,6 +672,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
+      name_ = "";
+
+      type_ = "";
+
       priority_ = 0;
 
       transient_ = false;
@@ -582,6 +712,8 @@ private static final long serialVersionUID = 0L;
       network.cow.mooapis.indigo.v1.Role result = new network.cow.mooapis.indigo.v1.Role(this);
       int from_bitField0_ = bitField0_;
       result.id_ = id_;
+      result.name_ = name_;
+      result.type_ = type_;
       result.priority_ = priority_;
       result.transient_ = transient_;
       result.color_ = color_;
@@ -642,6 +774,14 @@ private static final long serialVersionUID = 0L;
         id_ = other.id_;
         onChanged();
       }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
+      if (!other.getType().isEmpty()) {
+        type_ = other.type_;
+        onChanged();
+      }
       if (other.getPriority() != 0) {
         setPriority(other.getPriority());
       }
@@ -695,7 +835,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <pre>
-     * The id of the role, e.g. `minecraft_player`
+     * The id of the role, i.e. a uuid
      * </pre>
      *
      * <code>string id = 1 [json_name = "id"];</code>
@@ -715,7 +855,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The id of the role, e.g. `minecraft_player`
+     * The id of the role, i.e. a uuid
      * </pre>
      *
      * <code>string id = 1 [json_name = "id"];</code>
@@ -736,7 +876,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The id of the role, e.g. `minecraft_player`
+     * The id of the role, i.e. a uuid
      * </pre>
      *
      * <code>string id = 1 [json_name = "id"];</code>
@@ -755,7 +895,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The id of the role, e.g. `minecraft_player`
+     * The id of the role, i.e. a uuid
      * </pre>
      *
      * <code>string id = 1 [json_name = "id"];</code>
@@ -769,7 +909,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The id of the role, e.g. `minecraft_player`
+     * The id of the role, i.e. a uuid
      * </pre>
      *
      * <code>string id = 1 [json_name = "id"];</code>
@@ -788,6 +928,198 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * Name of the role, e.g. `admin`.
+     * </pre>
+     *
+     * <code>string name = 2 [json_name = "name"];</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Name of the role, e.g. `admin`.
+     * </pre>
+     *
+     * <code>string name = 2 [json_name = "name"];</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Name of the role, e.g. `admin`.
+     * </pre>
+     *
+     * <code>string name = 2 [json_name = "name"];</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Name of the role, e.g. `admin`.
+     * </pre>
+     *
+     * <code>string name = 2 [json_name = "name"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Name of the role, e.g. `admin`.
+     * </pre>
+     *
+     * <code>string name = 2 [json_name = "name"];</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object type_ = "";
+    /**
+     * <pre>
+     * Type of the role, e.g. `minecraft`
+     * </pre>
+     *
+     * <code>string type = 3 [json_name = "type"];</code>
+     * @return The type.
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Type of the role, e.g. `minecraft`
+     * </pre>
+     *
+     * <code>string type = 3 [json_name = "type"];</code>
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Type of the role, e.g. `minecraft`
+     * </pre>
+     *
+     * <code>string type = 3 [json_name = "type"];</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Type of the role, e.g. `minecraft`
+     * </pre>
+     *
+     * <code>string type = 3 [json_name = "type"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      
+      type_ = getDefaultInstance().getType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Type of the role, e.g. `minecraft`
+     * </pre>
+     *
+     * <code>string type = 3 [json_name = "type"];</code>
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      type_ = value;
+      onChanged();
+      return this;
+    }
+
     private int priority_ ;
     /**
      * <pre>
@@ -796,7 +1128,7 @@ private static final long serialVersionUID = 0L;
      * properties get inherited or overwritten by which roles.
      * </pre>
      *
-     * <code>int32 priority = 2 [json_name = "priority"];</code>
+     * <code>int32 priority = 4 [json_name = "priority"];</code>
      * @return The priority.
      */
     @java.lang.Override
@@ -810,7 +1142,7 @@ private static final long serialVersionUID = 0L;
      * properties get inherited or overwritten by which roles.
      * </pre>
      *
-     * <code>int32 priority = 2 [json_name = "priority"];</code>
+     * <code>int32 priority = 4 [json_name = "priority"];</code>
      * @param value The priority to set.
      * @return This builder for chaining.
      */
@@ -827,7 +1159,7 @@ private static final long serialVersionUID = 0L;
      * properties get inherited or overwritten by which roles.
      * </pre>
      *
-     * <code>int32 priority = 2 [json_name = "priority"];</code>
+     * <code>int32 priority = 4 [json_name = "priority"];</code>
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
@@ -846,7 +1178,7 @@ private static final long serialVersionUID = 0L;
      * will be used to determine which overwrites which.
      * </pre>
      *
-     * <code>bool transient = 3 [json_name = "transient"];</code>
+     * <code>bool transient = 5 [json_name = "transient"];</code>
      * @return The transient.
      */
     @java.lang.Override
@@ -861,7 +1193,7 @@ private static final long serialVersionUID = 0L;
      * will be used to determine which overwrites which.
      * </pre>
      *
-     * <code>bool transient = 3 [json_name = "transient"];</code>
+     * <code>bool transient = 5 [json_name = "transient"];</code>
      * @param value The transient to set.
      * @return This builder for chaining.
      */
@@ -879,7 +1211,7 @@ private static final long serialVersionUID = 0L;
      * will be used to determine which overwrites which.
      * </pre>
      *
-     * <code>bool transient = 3 [json_name = "transient"];</code>
+     * <code>bool transient = 5 [json_name = "transient"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTransient() {
@@ -896,7 +1228,7 @@ private static final long serialVersionUID = 0L;
      * for this role across all systems (Minecraft network, webpages, ...).
      * </pre>
      *
-     * <code>string color = 4 [json_name = "color"];</code>
+     * <code>string color = 6 [json_name = "color"];</code>
      * @return The color.
      */
     public java.lang.String getColor() {
@@ -917,7 +1249,7 @@ private static final long serialVersionUID = 0L;
      * for this role across all systems (Minecraft network, webpages, ...).
      * </pre>
      *
-     * <code>string color = 4 [json_name = "color"];</code>
+     * <code>string color = 6 [json_name = "color"];</code>
      * @return The bytes for color.
      */
     public com.google.protobuf.ByteString
@@ -939,7 +1271,7 @@ private static final long serialVersionUID = 0L;
      * for this role across all systems (Minecraft network, webpages, ...).
      * </pre>
      *
-     * <code>string color = 4 [json_name = "color"];</code>
+     * <code>string color = 6 [json_name = "color"];</code>
      * @param value The color to set.
      * @return This builder for chaining.
      */
@@ -959,7 +1291,7 @@ private static final long serialVersionUID = 0L;
      * for this role across all systems (Minecraft network, webpages, ...).
      * </pre>
      *
-     * <code>string color = 4 [json_name = "color"];</code>
+     * <code>string color = 6 [json_name = "color"];</code>
      * @return This builder for chaining.
      */
     public Builder clearColor() {
@@ -974,7 +1306,7 @@ private static final long serialVersionUID = 0L;
      * for this role across all systems (Minecraft network, webpages, ...).
      * </pre>
      *
-     * <code>string color = 4 [json_name = "color"];</code>
+     * <code>string color = 6 [json_name = "color"];</code>
      * @param value The bytes for color to set.
      * @return This builder for chaining.
      */
@@ -1003,7 +1335,7 @@ private static final long serialVersionUID = 0L;
      * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
      * </pre>
      *
-     * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+     * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
      * @return A list containing the permissions.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1016,7 +1348,7 @@ private static final long serialVersionUID = 0L;
      * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
      * </pre>
      *
-     * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+     * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
      * @return The count of permissions.
      */
     public int getPermissionsCount() {
@@ -1028,7 +1360,7 @@ private static final long serialVersionUID = 0L;
      * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
      * </pre>
      *
-     * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+     * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
      * @param index The index of the element to return.
      * @return The permissions at the given index.
      */
@@ -1041,7 +1373,7 @@ private static final long serialVersionUID = 0L;
      * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
      * </pre>
      *
-     * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+     * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the permissions at the given index.
      */
@@ -1055,7 +1387,7 @@ private static final long serialVersionUID = 0L;
      * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
      * </pre>
      *
-     * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+     * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
      * @param index The index to set the value at.
      * @param value The permissions to set.
      * @return This builder for chaining.
@@ -1076,7 +1408,7 @@ private static final long serialVersionUID = 0L;
      * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
      * </pre>
      *
-     * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+     * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
      * @param value The permissions to add.
      * @return This builder for chaining.
      */
@@ -1096,7 +1428,7 @@ private static final long serialVersionUID = 0L;
      * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
      * </pre>
      *
-     * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+     * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
      * @param values The permissions to add.
      * @return This builder for chaining.
      */
@@ -1114,7 +1446,7 @@ private static final long serialVersionUID = 0L;
      * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
      * </pre>
      *
-     * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+     * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
      * @return This builder for chaining.
      */
     public Builder clearPermissions() {
@@ -1129,7 +1461,7 @@ private static final long serialVersionUID = 0L;
      * A permission is a dot seperated string which only contains [a-Z0-9&#92;*].
      * </pre>
      *
-     * <code>repeated string permissions = 5 [json_name = "permissions"];</code>
+     * <code>repeated string permissions = 7 [json_name = "permissions"];</code>
      * @param value The bytes of the permissions to add.
      * @return This builder for chaining.
      */

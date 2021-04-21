@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RemoveUserRolesResponse() {
-    removedRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    removedRoleIds_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -51,12 +51,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              removedRoleIds_ = new com.google.protobuf.LazyStringArrayList();
+              removedRoleIds_ = new java.util.ArrayList<network.cow.mooapis.indigo.v1.RoleIdentifier>();
               mutable_bitField0_ |= 0x00000001;
             }
-            removedRoleIds_.add(s);
+            removedRoleIds_.add(
+                input.readMessage(network.cow.mooapis.indigo.v1.RoleIdentifier.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -75,7 +75,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        removedRoleIds_ = removedRoleIds_.getUnmodifiableView();
+        removedRoleIds_ = java.util.Collections.unmodifiableList(removedRoleIds_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -95,38 +95,43 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REMOVED_ROLE_IDS_FIELD_NUMBER = 1;
-  private com.google.protobuf.LazyStringList removedRoleIds_;
+  private java.util.List<network.cow.mooapis.indigo.v1.RoleIdentifier> removedRoleIds_;
   /**
-   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-   * @return A list containing the removedRoleIds.
+   * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getRemovedRoleIdsList() {
+  @java.lang.Override
+  public java.util.List<network.cow.mooapis.indigo.v1.RoleIdentifier> getRemovedRoleIdsList() {
     return removedRoleIds_;
   }
   /**
-   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-   * @return The count of removedRoleIds.
+   * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
    */
+  @java.lang.Override
+  public java.util.List<? extends network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder> 
+      getRemovedRoleIdsOrBuilderList() {
+    return removedRoleIds_;
+  }
+  /**
+   * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+   */
+  @java.lang.Override
   public int getRemovedRoleIdsCount() {
     return removedRoleIds_.size();
   }
   /**
-   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-   * @param index The index of the element to return.
-   * @return The removedRoleIds at the given index.
+   * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
    */
-  public java.lang.String getRemovedRoleIds(int index) {
+  @java.lang.Override
+  public network.cow.mooapis.indigo.v1.RoleIdentifier getRemovedRoleIds(int index) {
     return removedRoleIds_.get(index);
   }
   /**
-   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the removedRoleIds at the given index.
+   * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
    */
-  public com.google.protobuf.ByteString
-      getRemovedRoleIdsBytes(int index) {
-    return removedRoleIds_.getByteString(index);
+  @java.lang.Override
+  public network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder getRemovedRoleIdsOrBuilder(
+      int index) {
+    return removedRoleIds_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -144,7 +149,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < removedRoleIds_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, removedRoleIds_.getRaw(i));
+      output.writeMessage(1, removedRoleIds_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -155,13 +160,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    {
-      int dataSize = 0;
-      for (int i = 0; i < removedRoleIds_.size(); i++) {
-        dataSize += computeStringSizeNoTag(removedRoleIds_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getRemovedRoleIdsList().size();
+    for (int i = 0; i < removedRoleIds_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, removedRoleIds_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -323,13 +324,18 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getRemovedRoleIdsFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      removedRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      if (removedRoleIdsBuilder_ == null) {
+        removedRoleIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        removedRoleIdsBuilder_.clear();
+      }
       return this;
     }
 
@@ -357,11 +363,15 @@ private static final long serialVersionUID = 0L;
     public network.cow.mooapis.indigo.v1.RemoveUserRolesResponse buildPartial() {
       network.cow.mooapis.indigo.v1.RemoveUserRolesResponse result = new network.cow.mooapis.indigo.v1.RemoveUserRolesResponse(this);
       int from_bitField0_ = bitField0_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        removedRoleIds_ = removedRoleIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (removedRoleIdsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          removedRoleIds_ = java.util.Collections.unmodifiableList(removedRoleIds_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.removedRoleIds_ = removedRoleIds_;
+      } else {
+        result.removedRoleIds_ = removedRoleIdsBuilder_.build();
       }
-      result.removedRoleIds_ = removedRoleIds_;
       onBuilt();
       return result;
     }
@@ -410,15 +420,31 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(network.cow.mooapis.indigo.v1.RemoveUserRolesResponse other) {
       if (other == network.cow.mooapis.indigo.v1.RemoveUserRolesResponse.getDefaultInstance()) return this;
-      if (!other.removedRoleIds_.isEmpty()) {
-        if (removedRoleIds_.isEmpty()) {
-          removedRoleIds_ = other.removedRoleIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureRemovedRoleIdsIsMutable();
-          removedRoleIds_.addAll(other.removedRoleIds_);
+      if (removedRoleIdsBuilder_ == null) {
+        if (!other.removedRoleIds_.isEmpty()) {
+          if (removedRoleIds_.isEmpty()) {
+            removedRoleIds_ = other.removedRoleIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureRemovedRoleIdsIsMutable();
+            removedRoleIds_.addAll(other.removedRoleIds_);
+          }
+          onChanged();
         }
-        onChanged();
+      } else {
+        if (!other.removedRoleIds_.isEmpty()) {
+          if (removedRoleIdsBuilder_.isEmpty()) {
+            removedRoleIdsBuilder_.dispose();
+            removedRoleIdsBuilder_ = null;
+            removedRoleIds_ = other.removedRoleIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            removedRoleIdsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getRemovedRoleIdsFieldBuilder() : null;
+          } else {
+            removedRoleIdsBuilder_.addAllMessages(other.removedRoleIds_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -450,114 +476,244 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList removedRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private java.util.List<network.cow.mooapis.indigo.v1.RoleIdentifier> removedRoleIds_ =
+      java.util.Collections.emptyList();
     private void ensureRemovedRoleIdsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        removedRoleIds_ = new com.google.protobuf.LazyStringArrayList(removedRoleIds_);
+        removedRoleIds_ = new java.util.ArrayList<network.cow.mooapis.indigo.v1.RoleIdentifier>(removedRoleIds_);
         bitField0_ |= 0x00000001;
        }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        network.cow.mooapis.indigo.v1.RoleIdentifier, network.cow.mooapis.indigo.v1.RoleIdentifier.Builder, network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder> removedRoleIdsBuilder_;
+
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @return A list containing the removedRoleIds.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getRemovedRoleIdsList() {
-      return removedRoleIds_.getUnmodifiableView();
+    public java.util.List<network.cow.mooapis.indigo.v1.RoleIdentifier> getRemovedRoleIdsList() {
+      if (removedRoleIdsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(removedRoleIds_);
+      } else {
+        return removedRoleIdsBuilder_.getMessageList();
+      }
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @return The count of removedRoleIds.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
      */
     public int getRemovedRoleIdsCount() {
-      return removedRoleIds_.size();
+      if (removedRoleIdsBuilder_ == null) {
+        return removedRoleIds_.size();
+      } else {
+        return removedRoleIdsBuilder_.getCount();
+      }
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @param index The index of the element to return.
-     * @return The removedRoleIds at the given index.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
      */
-    public java.lang.String getRemovedRoleIds(int index) {
-      return removedRoleIds_.get(index);
+    public network.cow.mooapis.indigo.v1.RoleIdentifier getRemovedRoleIds(int index) {
+      if (removedRoleIdsBuilder_ == null) {
+        return removedRoleIds_.get(index);
+      } else {
+        return removedRoleIdsBuilder_.getMessage(index);
+      }
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the removedRoleIds at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getRemovedRoleIdsBytes(int index) {
-      return removedRoleIds_.getByteString(index);
-    }
-    /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @param index The index to set the value at.
-     * @param value The removedRoleIds to set.
-     * @return This builder for chaining.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
      */
     public Builder setRemovedRoleIds(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRemovedRoleIdsIsMutable();
-      removedRoleIds_.set(index, value);
-      onChanged();
+        int index, network.cow.mooapis.indigo.v1.RoleIdentifier value) {
+      if (removedRoleIdsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRemovedRoleIdsIsMutable();
+        removedRoleIds_.set(index, value);
+        onChanged();
+      } else {
+        removedRoleIdsBuilder_.setMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @param value The removedRoleIds to add.
-     * @return This builder for chaining.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     */
+    public Builder setRemovedRoleIds(
+        int index, network.cow.mooapis.indigo.v1.RoleIdentifier.Builder builderForValue) {
+      if (removedRoleIdsBuilder_ == null) {
+        ensureRemovedRoleIdsIsMutable();
+        removedRoleIds_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        removedRoleIdsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     */
+    public Builder addRemovedRoleIds(network.cow.mooapis.indigo.v1.RoleIdentifier value) {
+      if (removedRoleIdsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRemovedRoleIdsIsMutable();
+        removedRoleIds_.add(value);
+        onChanged();
+      } else {
+        removedRoleIdsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
      */
     public Builder addRemovedRoleIds(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRemovedRoleIdsIsMutable();
-      removedRoleIds_.add(value);
-      onChanged();
+        int index, network.cow.mooapis.indigo.v1.RoleIdentifier value) {
+      if (removedRoleIdsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRemovedRoleIdsIsMutable();
+        removedRoleIds_.add(index, value);
+        onChanged();
+      } else {
+        removedRoleIdsBuilder_.addMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @param values The removedRoleIds to add.
-     * @return This builder for chaining.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     */
+    public Builder addRemovedRoleIds(
+        network.cow.mooapis.indigo.v1.RoleIdentifier.Builder builderForValue) {
+      if (removedRoleIdsBuilder_ == null) {
+        ensureRemovedRoleIdsIsMutable();
+        removedRoleIds_.add(builderForValue.build());
+        onChanged();
+      } else {
+        removedRoleIdsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     */
+    public Builder addRemovedRoleIds(
+        int index, network.cow.mooapis.indigo.v1.RoleIdentifier.Builder builderForValue) {
+      if (removedRoleIdsBuilder_ == null) {
+        ensureRemovedRoleIdsIsMutable();
+        removedRoleIds_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        removedRoleIdsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
      */
     public Builder addAllRemovedRoleIds(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureRemovedRoleIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, removedRoleIds_);
-      onChanged();
+        java.lang.Iterable<? extends network.cow.mooapis.indigo.v1.RoleIdentifier> values) {
+      if (removedRoleIdsBuilder_ == null) {
+        ensureRemovedRoleIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, removedRoleIds_);
+        onChanged();
+      } else {
+        removedRoleIdsBuilder_.addAllMessages(values);
+      }
       return this;
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @return This builder for chaining.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
      */
     public Builder clearRemovedRoleIds() {
-      removedRoleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
+      if (removedRoleIdsBuilder_ == null) {
+        removedRoleIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        removedRoleIdsBuilder_.clear();
+      }
       return this;
     }
     /**
-     * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-     * @param value The bytes of the removedRoleIds to add.
-     * @return This builder for chaining.
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
      */
-    public Builder addRemovedRoleIdsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureRemovedRoleIdsIsMutable();
-      removedRoleIds_.add(value);
-      onChanged();
+    public Builder removeRemovedRoleIds(int index) {
+      if (removedRoleIdsBuilder_ == null) {
+        ensureRemovedRoleIdsIsMutable();
+        removedRoleIds_.remove(index);
+        onChanged();
+      } else {
+        removedRoleIdsBuilder_.remove(index);
+      }
       return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     */
+    public network.cow.mooapis.indigo.v1.RoleIdentifier.Builder getRemovedRoleIdsBuilder(
+        int index) {
+      return getRemovedRoleIdsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     */
+    public network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder getRemovedRoleIdsOrBuilder(
+        int index) {
+      if (removedRoleIdsBuilder_ == null) {
+        return removedRoleIds_.get(index);  } else {
+        return removedRoleIdsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     */
+    public java.util.List<? extends network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder> 
+         getRemovedRoleIdsOrBuilderList() {
+      if (removedRoleIdsBuilder_ != null) {
+        return removedRoleIdsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(removedRoleIds_);
+      }
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     */
+    public network.cow.mooapis.indigo.v1.RoleIdentifier.Builder addRemovedRoleIdsBuilder() {
+      return getRemovedRoleIdsFieldBuilder().addBuilder(
+          network.cow.mooapis.indigo.v1.RoleIdentifier.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     */
+    public network.cow.mooapis.indigo.v1.RoleIdentifier.Builder addRemovedRoleIdsBuilder(
+        int index) {
+      return getRemovedRoleIdsFieldBuilder().addBuilder(
+          index, network.cow.mooapis.indigo.v1.RoleIdentifier.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+     */
+    public java.util.List<network.cow.mooapis.indigo.v1.RoleIdentifier.Builder> 
+         getRemovedRoleIdsBuilderList() {
+      return getRemovedRoleIdsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        network.cow.mooapis.indigo.v1.RoleIdentifier, network.cow.mooapis.indigo.v1.RoleIdentifier.Builder, network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder> 
+        getRemovedRoleIdsFieldBuilder() {
+      if (removedRoleIdsBuilder_ == null) {
+        removedRoleIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            network.cow.mooapis.indigo.v1.RoleIdentifier, network.cow.mooapis.indigo.v1.RoleIdentifier.Builder, network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder>(
+                removedRoleIds_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        removedRoleIds_ = null;
+      }
+      return removedRoleIdsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetRoleRequest() {
-    roleId_ = "";
   }
 
   @java.lang.Override
@@ -50,9 +49,16 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            network.cow.mooapis.indigo.v1.RoleIdentifier.Builder subBuilder = null;
+            if (roleId_ != null) {
+              subBuilder = roleId_.toBuilder();
+            }
+            roleId_ = input.readMessage(network.cow.mooapis.indigo.v1.RoleIdentifier.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(roleId_);
+              roleId_ = subBuilder.buildPartial();
+            }
 
-            roleId_ = s;
             break;
           }
           default: {
@@ -88,41 +94,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ROLE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object roleId_;
+  private network.cow.mooapis.indigo.v1.RoleIdentifier roleId_;
   /**
-   * <code>string role_id = 1 [json_name = "roleId"];</code>
+   * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
+   * @return Whether the roleId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRoleId() {
+    return roleId_ != null;
+  }
+  /**
+   * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
    * @return The roleId.
    */
   @java.lang.Override
-  public java.lang.String getRoleId() {
-    java.lang.Object ref = roleId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      roleId_ = s;
-      return s;
-    }
+  public network.cow.mooapis.indigo.v1.RoleIdentifier getRoleId() {
+    return roleId_ == null ? network.cow.mooapis.indigo.v1.RoleIdentifier.getDefaultInstance() : roleId_;
   }
   /**
-   * <code>string role_id = 1 [json_name = "roleId"];</code>
-   * @return The bytes for roleId.
+   * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRoleIdBytes() {
-    java.lang.Object ref = roleId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      roleId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder getRoleIdOrBuilder() {
+    return getRoleId();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -139,8 +133,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getRoleIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, roleId_);
+    if (roleId_ != null) {
+      output.writeMessage(1, getRoleId());
     }
     unknownFields.writeTo(output);
   }
@@ -151,8 +145,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getRoleIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, roleId_);
+    if (roleId_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getRoleId());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,8 +164,11 @@ private static final long serialVersionUID = 0L;
     }
     network.cow.mooapis.indigo.v1.GetRoleRequest other = (network.cow.mooapis.indigo.v1.GetRoleRequest) obj;
 
-    if (!getRoleId()
-        .equals(other.getRoleId())) return false;
+    if (hasRoleId() != other.hasRoleId()) return false;
+    if (hasRoleId()) {
+      if (!getRoleId()
+          .equals(other.getRoleId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -182,8 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRoleId().hashCode();
+    if (hasRoleId()) {
+      hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoleId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,8 +317,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      roleId_ = "";
-
+      if (roleIdBuilder_ == null) {
+        roleId_ = null;
+      } else {
+        roleId_ = null;
+        roleIdBuilder_ = null;
+      }
       return this;
     }
 
@@ -345,7 +349,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public network.cow.mooapis.indigo.v1.GetRoleRequest buildPartial() {
       network.cow.mooapis.indigo.v1.GetRoleRequest result = new network.cow.mooapis.indigo.v1.GetRoleRequest(this);
-      result.roleId_ = roleId_;
+      if (roleIdBuilder_ == null) {
+        result.roleId_ = roleId_;
+      } else {
+        result.roleId_ = roleIdBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -394,9 +402,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(network.cow.mooapis.indigo.v1.GetRoleRequest other) {
       if (other == network.cow.mooapis.indigo.v1.GetRoleRequest.getDefaultInstance()) return this;
-      if (!other.getRoleId().isEmpty()) {
-        roleId_ = other.roleId_;
-        onChanged();
+      if (other.hasRoleId()) {
+        mergeRoleId(other.getRoleId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -427,80 +434,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object roleId_ = "";
+    private network.cow.mooapis.indigo.v1.RoleIdentifier roleId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.indigo.v1.RoleIdentifier, network.cow.mooapis.indigo.v1.RoleIdentifier.Builder, network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder> roleIdBuilder_;
     /**
-     * <code>string role_id = 1 [json_name = "roleId"];</code>
+     * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
+     * @return Whether the roleId field is set.
+     */
+    public boolean hasRoleId() {
+      return roleIdBuilder_ != null || roleId_ != null;
+    }
+    /**
+     * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
      * @return The roleId.
      */
-    public java.lang.String getRoleId() {
-      java.lang.Object ref = roleId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        roleId_ = s;
-        return s;
+    public network.cow.mooapis.indigo.v1.RoleIdentifier getRoleId() {
+      if (roleIdBuilder_ == null) {
+        return roleId_ == null ? network.cow.mooapis.indigo.v1.RoleIdentifier.getDefaultInstance() : roleId_;
       } else {
-        return (java.lang.String) ref;
+        return roleIdBuilder_.getMessage();
       }
     }
     /**
-     * <code>string role_id = 1 [json_name = "roleId"];</code>
-     * @return The bytes for roleId.
+     * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
      */
-    public com.google.protobuf.ByteString
-        getRoleIdBytes() {
-      java.lang.Object ref = roleId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        roleId_ = b;
-        return b;
+    public Builder setRoleId(network.cow.mooapis.indigo.v1.RoleIdentifier value) {
+      if (roleIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        roleId_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        roleIdBuilder_.setMessage(value);
       }
+
+      return this;
     }
     /**
-     * <code>string role_id = 1 [json_name = "roleId"];</code>
-     * @param value The roleId to set.
-     * @return This builder for chaining.
+     * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
      */
     public Builder setRoleId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      roleId_ = value;
-      onChanged();
+        network.cow.mooapis.indigo.v1.RoleIdentifier.Builder builderForValue) {
+      if (roleIdBuilder_ == null) {
+        roleId_ = builderForValue.build();
+        onChanged();
+      } else {
+        roleIdBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
     }
     /**
-     * <code>string role_id = 1 [json_name = "roleId"];</code>
-     * @return This builder for chaining.
+     * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
+     */
+    public Builder mergeRoleId(network.cow.mooapis.indigo.v1.RoleIdentifier value) {
+      if (roleIdBuilder_ == null) {
+        if (roleId_ != null) {
+          roleId_ =
+            network.cow.mooapis.indigo.v1.RoleIdentifier.newBuilder(roleId_).mergeFrom(value).buildPartial();
+        } else {
+          roleId_ = value;
+        }
+        onChanged();
+      } else {
+        roleIdBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
      */
     public Builder clearRoleId() {
-      
-      roleId_ = getDefaultInstance().getRoleId();
-      onChanged();
+      if (roleIdBuilder_ == null) {
+        roleId_ = null;
+        onChanged();
+      } else {
+        roleId_ = null;
+        roleIdBuilder_ = null;
+      }
+
       return this;
     }
     /**
-     * <code>string role_id = 1 [json_name = "roleId"];</code>
-     * @param value The bytes for roleId to set.
-     * @return This builder for chaining.
+     * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
      */
-    public Builder setRoleIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+    public network.cow.mooapis.indigo.v1.RoleIdentifier.Builder getRoleIdBuilder() {
       
-      roleId_ = value;
       onChanged();
-      return this;
+      return getRoleIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
+     */
+    public network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder getRoleIdOrBuilder() {
+      if (roleIdBuilder_ != null) {
+        return roleIdBuilder_.getMessageOrBuilder();
+      } else {
+        return roleId_ == null ?
+            network.cow.mooapis.indigo.v1.RoleIdentifier.getDefaultInstance() : roleId_;
+      }
+    }
+    /**
+     * <code>.cow.indigo.v1.RoleIdentifier role_id = 1 [json_name = "roleId"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        network.cow.mooapis.indigo.v1.RoleIdentifier, network.cow.mooapis.indigo.v1.RoleIdentifier.Builder, network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder> 
+        getRoleIdFieldBuilder() {
+      if (roleIdBuilder_ == null) {
+        roleIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            network.cow.mooapis.indigo.v1.RoleIdentifier, network.cow.mooapis.indigo.v1.RoleIdentifier.Builder, network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder>(
+                getRoleId(),
+                getParentForChildren(),
+                isClean());
+        roleId_ = null;
+      }
+      return roleIdBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
