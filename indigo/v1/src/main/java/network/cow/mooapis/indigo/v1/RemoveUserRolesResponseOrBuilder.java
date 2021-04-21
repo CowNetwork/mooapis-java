@@ -8,26 +8,27 @@ public interface RemoveUserRolesResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+   * @return A list containing the removedRoleIds.
    */
-  java.util.List<network.cow.mooapis.indigo.v1.RoleIdentifier> 
+  java.util.List<java.lang.String>
       getRemovedRoleIdsList();
   /**
-   * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
-   */
-  network.cow.mooapis.indigo.v1.RoleIdentifier getRemovedRoleIds(int index);
-  /**
-   * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+   * @return The count of removedRoleIds.
    */
   int getRemovedRoleIdsCount();
   /**
-   * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+   * @param index The index of the element to return.
+   * @return The removedRoleIds at the given index.
    */
-  java.util.List<? extends network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder> 
-      getRemovedRoleIdsOrBuilderList();
+  java.lang.String getRemovedRoleIds(int index);
   /**
-   * <code>repeated .cow.indigo.v1.RoleIdentifier removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+   * <code>repeated string removed_role_ids = 1 [json_name = "removedRoleIds"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the removedRoleIds at the given index.
    */
-  network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder getRemovedRoleIdsOrBuilder(
-      int index);
+  com.google.protobuf.ByteString
+      getRemovedRoleIdsBytes(int index);
 }

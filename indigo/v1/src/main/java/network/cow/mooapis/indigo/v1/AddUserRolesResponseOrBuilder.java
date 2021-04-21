@@ -8,26 +8,27 @@ public interface AddUserRolesResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .cow.indigo.v1.RoleIdentifier added_role_ids = 1 [json_name = "addedRoleIds"];</code>
+   * <code>repeated string added_role_ids = 1 [json_name = "addedRoleIds"];</code>
+   * @return A list containing the addedRoleIds.
    */
-  java.util.List<network.cow.mooapis.indigo.v1.RoleIdentifier> 
+  java.util.List<java.lang.String>
       getAddedRoleIdsList();
   /**
-   * <code>repeated .cow.indigo.v1.RoleIdentifier added_role_ids = 1 [json_name = "addedRoleIds"];</code>
-   */
-  network.cow.mooapis.indigo.v1.RoleIdentifier getAddedRoleIds(int index);
-  /**
-   * <code>repeated .cow.indigo.v1.RoleIdentifier added_role_ids = 1 [json_name = "addedRoleIds"];</code>
+   * <code>repeated string added_role_ids = 1 [json_name = "addedRoleIds"];</code>
+   * @return The count of addedRoleIds.
    */
   int getAddedRoleIdsCount();
   /**
-   * <code>repeated .cow.indigo.v1.RoleIdentifier added_role_ids = 1 [json_name = "addedRoleIds"];</code>
+   * <code>repeated string added_role_ids = 1 [json_name = "addedRoleIds"];</code>
+   * @param index The index of the element to return.
+   * @return The addedRoleIds at the given index.
    */
-  java.util.List<? extends network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder> 
-      getAddedRoleIdsOrBuilderList();
+  java.lang.String getAddedRoleIds(int index);
   /**
-   * <code>repeated .cow.indigo.v1.RoleIdentifier added_role_ids = 1 [json_name = "addedRoleIds"];</code>
+   * <code>repeated string added_role_ids = 1 [json_name = "addedRoleIds"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the addedRoleIds at the given index.
    */
-  network.cow.mooapis.indigo.v1.RoleIdentifierOrBuilder getAddedRoleIdsOrBuilder(
-      int index);
+  com.google.protobuf.ByteString
+      getAddedRoleIdsBytes(int index);
 }

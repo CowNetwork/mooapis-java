@@ -233,77 +233,75 @@ public final class Indigo {
       "ndigo.v1.RoleR\005roles\"w\n\023AddUserRolesRequ" +
       "est\022&\n\017user_account_id\030\001 \001(\tR\ruserAccoun" +
       "tId\0228\n\010role_ids\030\002 \003(\0132\035.cow.indigo.v1.Ro" +
-      "leIdentifierR\007roleIds\"[\n\024AddUserRolesRes" +
-      "ponse\022C\n\016added_role_ids\030\001 \003(\0132\035.cow.indi" +
-      "go.v1.RoleIdentifierR\014addedRoleIds\"z\n\026Re" +
-      "moveUserRolesRequest\022&\n\017user_account_id\030" +
-      "\001 \001(\tR\ruserAccountId\0228\n\010role_ids\030\002 \003(\0132\035" +
-      ".cow.indigo.v1.RoleIdentifierR\007roleIds\"b" +
-      "\n\027RemoveUserRolesResponse\022G\n\020removed_rol" +
-      "e_ids\030\001 \003(\0132\035.cow.indigo.v1.RoleIdentifi" +
-      "erR\016removedRoleIds\"C\n\031GetUserPermissions" +
-      "Request\022&\n\017user_account_id\030\001 \001(\tR\ruserAc" +
-      "countId\">\n\032GetUserPermissionsResponse\022 \n" +
-      "\013permissions\030\001 \003(\tR\013permissions\"e\n\031AddUs" +
-      "erPermissionsRequest\022&\n\017user_account_id\030" +
-      "\001 \001(\tR\ruserAccountId\022 \n\013permissions\030\002 \003(" +
-      "\tR\013permissions\"I\n\032AddUserPermissionsResp" +
-      "onse\022+\n\021added_permissions\030\001 \003(\tR\020addedPe" +
-      "rmissions\"h\n\034RemoveUserPermissionsReques" +
-      "t\022&\n\017user_account_id\030\001 \001(\tR\ruserAccountI" +
-      "d\022 \n\013permissions\030\002 \003(\tR\013permissions\"P\n\035R" +
-      "emoveUserPermissionsResponse\022/\n\023removed_" +
-      "permissions\030\001 \003(\tR\022removedPermissions\"\260\001" +
-      "\n\004Role\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004na" +
-      "me\022\022\n\004type\030\003 \001(\tR\004type\022\032\n\010priority\030\004 \001(\005" +
-      "R\010priority\022\034\n\ttransient\030\005 \001(\010R\ttransient" +
-      "\022\024\n\005color\030\006 \001(\tR\005color\022 \n\013permissions\030\007 " +
-      "\003(\tR\013permissions\"\177\n\004User\022\035\n\naccount_id\030\001" +
-      " \001(\tR\taccountId\022)\n\005roles\030\002 \003(\0132\023.cow.ind" +
-      "igo.v1.RoleR\005roles\022-\n\022custom_permissions" +
-      "\030\003 \003(\tR\021customPermissions\"j\n\016RoleIdentif" +
-      "ier\022\024\n\004uuid\030\001 \001(\tH\000R\004uuid\022<\n\007name_id\030\002 \001" +
-      "(\0132!.cow.indigo.v1.RoleNameIdentifierH\000R" +
-      "\006nameIdB\004\n\002id\"<\n\022RoleNameIdentifier\022\022\n\004n" +
-      "ame\030\001 \001(\tR\004name\022\022\n\004type\030\002 \001(\tR\004type2\205\013\n\r" +
-      "IndigoService\022Z\n\rHasPermission\022#.cow.ind" +
-      "igo.v1.HasPermissionRequest\032$.cow.indigo" +
-      ".v1.HasPermissionResponse\022N\n\tListRoles\022\037" +
-      ".cow.indigo.v1.ListRolesRequest\032 .cow.in" +
-      "digo.v1.ListRolesResponse\022H\n\007GetRole\022\035.c" +
-      "ow.indigo.v1.GetRoleRequest\032\036.cow.indigo" +
-      ".v1.GetRoleResponse\022Q\n\nInsertRole\022 .cow." +
-      "indigo.v1.InsertRoleRequest\032!.cow.indigo" +
-      ".v1.InsertRoleResponse\022Q\n\nUpdateRole\022 .c" +
-      "ow.indigo.v1.UpdateRoleRequest\032!.cow.ind" +
-      "igo.v1.UpdateRoleResponse\022Q\n\nDeleteRole\022" +
-      " .cow.indigo.v1.DeleteRoleRequest\032!.cow." +
-      "indigo.v1.DeleteRoleResponse\022i\n\022AddRoleP" +
-      "ermissions\022(.cow.indigo.v1.AddRolePermis" +
-      "sionsRequest\032).cow.indigo.v1.AddRolePerm" +
-      "issionsResponse\022r\n\025RemoveRolePermissions" +
-      "\022+.cow.indigo.v1.RemoveRolePermissionsRe" +
-      "quest\032,.cow.indigo.v1.RemoveRolePermissi" +
-      "onsResponse\022H\n\007GetUser\022\035.cow.indigo.v1.G" +
-      "etUserRequest\032\036.cow.indigo.v1.GetUserRes" +
-      "ponse\022W\n\014GetUserRoles\022\".cow.indigo.v1.Ge" +
-      "tUserRolesRequest\032#.cow.indigo.v1.GetUse" +
-      "rRolesResponse\022W\n\014AddUserRoles\022\".cow.ind" +
-      "igo.v1.AddUserRolesRequest\032#.cow.indigo." +
-      "v1.AddUserRolesResponse\022`\n\017RemoveUserRol" +
-      "es\022%.cow.indigo.v1.RemoveUserRolesReques" +
-      "t\032&.cow.indigo.v1.RemoveUserRolesRespons" +
-      "e\022i\n\022GetUserPermissions\022(.cow.indigo.v1." +
-      "GetUserPermissionsRequest\032).cow.indigo.v" +
-      "1.GetUserPermissionsResponse\022i\n\022AddUserP" +
-      "ermissions\022(.cow.indigo.v1.AddUserPermis" +
-      "sionsRequest\032).cow.indigo.v1.AddUserPerm" +
-      "issionsResponse\022r\n\025RemoveUserPermissions" +
-      "\022+.cow.indigo.v1.RemoveUserPermissionsRe" +
-      "quest\032,.cow.indigo.v1.RemoveUserPermissi" +
-      "onsResponseBI\n\035network.cow.mooapis.indig" +
-      "o.v1P\001Z&github.com/cownetwork/indigo/v1;" +
-      "indigob\006proto3"
+      "leIdentifierR\007roleIds\"<\n\024AddUserRolesRes" +
+      "ponse\022$\n\016added_role_ids\030\001 \003(\tR\014addedRole" +
+      "Ids\"z\n\026RemoveUserRolesRequest\022&\n\017user_ac" +
+      "count_id\030\001 \001(\tR\ruserAccountId\0228\n\010role_id" +
+      "s\030\002 \003(\0132\035.cow.indigo.v1.RoleIdentifierR\007" +
+      "roleIds\"C\n\027RemoveUserRolesResponse\022(\n\020re" +
+      "moved_role_ids\030\001 \003(\tR\016removedRoleIds\"C\n\031" +
+      "GetUserPermissionsRequest\022&\n\017user_accoun" +
+      "t_id\030\001 \001(\tR\ruserAccountId\">\n\032GetUserPerm" +
+      "issionsResponse\022 \n\013permissions\030\001 \003(\tR\013pe" +
+      "rmissions\"e\n\031AddUserPermissionsRequest\022&" +
+      "\n\017user_account_id\030\001 \001(\tR\ruserAccountId\022 " +
+      "\n\013permissions\030\002 \003(\tR\013permissions\"I\n\032AddU" +
+      "serPermissionsResponse\022+\n\021added_permissi" +
+      "ons\030\001 \003(\tR\020addedPermissions\"h\n\034RemoveUse" +
+      "rPermissionsRequest\022&\n\017user_account_id\030\001" +
+      " \001(\tR\ruserAccountId\022 \n\013permissions\030\002 \003(\t" +
+      "R\013permissions\"P\n\035RemoveUserPermissionsRe" +
+      "sponse\022/\n\023removed_permissions\030\001 \003(\tR\022rem" +
+      "ovedPermissions\"\260\001\n\004Role\022\016\n\002id\030\001 \001(\tR\002id" +
+      "\022\022\n\004name\030\002 \001(\tR\004name\022\022\n\004type\030\003 \001(\tR\004type" +
+      "\022\032\n\010priority\030\004 \001(\005R\010priority\022\034\n\ttransien" +
+      "t\030\005 \001(\010R\ttransient\022\024\n\005color\030\006 \001(\tR\005color" +
+      "\022 \n\013permissions\030\007 \003(\tR\013permissions\"\177\n\004Us" +
+      "er\022\035\n\naccount_id\030\001 \001(\tR\taccountId\022)\n\005rol" +
+      "es\030\002 \003(\0132\023.cow.indigo.v1.RoleR\005roles\022-\n\022" +
+      "custom_permissions\030\003 \003(\tR\021customPermissi" +
+      "ons\"j\n\016RoleIdentifier\022\024\n\004uuid\030\001 \001(\tH\000R\004u" +
+      "uid\022<\n\007name_id\030\002 \001(\0132!.cow.indigo.v1.Rol" +
+      "eNameIdentifierH\000R\006nameIdB\004\n\002id\"<\n\022RoleN" +
+      "ameIdentifier\022\022\n\004name\030\001 \001(\tR\004name\022\022\n\004typ" +
+      "e\030\002 \001(\tR\004type2\205\013\n\rIndigoService\022Z\n\rHasPe" +
+      "rmission\022#.cow.indigo.v1.HasPermissionRe" +
+      "quest\032$.cow.indigo.v1.HasPermissionRespo" +
+      "nse\022N\n\tListRoles\022\037.cow.indigo.v1.ListRol" +
+      "esRequest\032 .cow.indigo.v1.ListRolesRespo" +
+      "nse\022H\n\007GetRole\022\035.cow.indigo.v1.GetRoleRe" +
+      "quest\032\036.cow.indigo.v1.GetRoleResponse\022Q\n" +
+      "\nInsertRole\022 .cow.indigo.v1.InsertRoleRe" +
+      "quest\032!.cow.indigo.v1.InsertRoleResponse" +
+      "\022Q\n\nUpdateRole\022 .cow.indigo.v1.UpdateRol" +
+      "eRequest\032!.cow.indigo.v1.UpdateRoleRespo" +
+      "nse\022Q\n\nDeleteRole\022 .cow.indigo.v1.Delete" +
+      "RoleRequest\032!.cow.indigo.v1.DeleteRoleRe" +
+      "sponse\022i\n\022AddRolePermissions\022(.cow.indig" +
+      "o.v1.AddRolePermissionsRequest\032).cow.ind" +
+      "igo.v1.AddRolePermissionsResponse\022r\n\025Rem" +
+      "oveRolePermissions\022+.cow.indigo.v1.Remov" +
+      "eRolePermissionsRequest\032,.cow.indigo.v1." +
+      "RemoveRolePermissionsResponse\022H\n\007GetUser" +
+      "\022\035.cow.indigo.v1.GetUserRequest\032\036.cow.in" +
+      "digo.v1.GetUserResponse\022W\n\014GetUserRoles\022" +
+      "\".cow.indigo.v1.GetUserRolesRequest\032#.co" +
+      "w.indigo.v1.GetUserRolesResponse\022W\n\014AddU" +
+      "serRoles\022\".cow.indigo.v1.AddUserRolesReq" +
+      "uest\032#.cow.indigo.v1.AddUserRolesRespons" +
+      "e\022`\n\017RemoveUserRoles\022%.cow.indigo.v1.Rem" +
+      "oveUserRolesRequest\032&.cow.indigo.v1.Remo" +
+      "veUserRolesResponse\022i\n\022GetUserPermission" +
+      "s\022(.cow.indigo.v1.GetUserPermissionsRequ" +
+      "est\032).cow.indigo.v1.GetUserPermissionsRe" +
+      "sponse\022i\n\022AddUserPermissions\022(.cow.indig" +
+      "o.v1.AddUserPermissionsRequest\032).cow.ind" +
+      "igo.v1.AddUserPermissionsResponse\022r\n\025Rem" +
+      "oveUserPermissions\022+.cow.indigo.v1.Remov" +
+      "eUserPermissionsRequest\032,.cow.indigo.v1." +
+      "RemoveUserPermissionsResponseBI\n\035network" +
+      ".cow.mooapis.indigo.v1P\001Z&github.com/cow" +
+      "network/indigo/v1;indigob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
