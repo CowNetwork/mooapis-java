@@ -36,4 +36,33 @@ public interface UpdateRoleRequestOrBuilder extends
    * <code>.cow.indigo.v1.Role role_data = 2 [json_name = "roleData"];</code>
    */
   network.cow.mooapis.indigo.v1.RoleOrBuilder getRoleDataOrBuilder();
+
+  /**
+   * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+   * @return A list containing the fieldMasks.
+   */
+  java.util.List<network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask> getFieldMasksList();
+  /**
+   * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+   * @return The count of fieldMasks.
+   */
+  int getFieldMasksCount();
+  /**
+   * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+   * @param index The index of the element to return.
+   * @return The fieldMasks at the given index.
+   */
+  network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask getFieldMasks(int index);
+  /**
+   * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+   * @return A list containing the enum numeric values on the wire for fieldMasks.
+   */
+  java.util.List<java.lang.Integer>
+  getFieldMasksValueList();
+  /**
+   * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of fieldMasks at the given index.
+   */
+  int getFieldMasksValue(int index);
 }

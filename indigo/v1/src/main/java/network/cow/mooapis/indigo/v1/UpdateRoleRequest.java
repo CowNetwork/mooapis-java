@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UpdateRoleRequest() {
+    fieldMasks_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -38,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,6 +76,29 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 24: {
+            int rawValue = input.readEnum();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              fieldMasks_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            fieldMasks_.add(rawValue);
+            break;
+          }
+          case 26: {
+            int length = input.readRawVarint32();
+            int oldLimit = input.pushLimit(length);
+            while(input.getBytesUntilLimit() > 0) {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                fieldMasks_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              fieldMasks_.add(rawValue);
+            }
+            input.popLimit(oldLimit);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -89,6 +114,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        fieldMasks_ = java.util.Collections.unmodifiableList(fieldMasks_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -104,6 +132,188 @@ private static final long serialVersionUID = 0L;
     return network.cow.mooapis.indigo.v1.Indigo.internal_static_cow_indigo_v1_UpdateRoleRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             network.cow.mooapis.indigo.v1.UpdateRoleRequest.class, network.cow.mooapis.indigo.v1.UpdateRoleRequest.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * Used to determine which fields to use from role_data
+   * </pre>
+   *
+   * Protobuf enum {@code cow.indigo.v1.UpdateRoleRequest.FieldMask}
+   */
+  public enum FieldMask
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Includes all other fieldmasks
+     * </pre>
+     *
+     * <code>FIELD_MASK_ALL = 0;</code>
+     */
+    FIELD_MASK_ALL(0),
+    /**
+     * <pre>
+     * Includes all other fieldmasks except PERMISSIONS
+     * </pre>
+     *
+     * <code>FIELD_MASK_ALL_PROPERTIES = 1;</code>
+     */
+    FIELD_MASK_ALL_PROPERTIES(1),
+    /**
+     * <code>FIELD_MASK_NAME = 2;</code>
+     */
+    FIELD_MASK_NAME(2),
+    /**
+     * <code>FIELD_MASK_TYPE = 3;</code>
+     */
+    FIELD_MASK_TYPE(3),
+    /**
+     * <code>FIELD_MASK_PRIORITY = 4;</code>
+     */
+    FIELD_MASK_PRIORITY(4),
+    /**
+     * <code>FIELD_MASK_TRANSIENCE = 5;</code>
+     */
+    FIELD_MASK_TRANSIENCE(5),
+    /**
+     * <code>FIELD_MASK_COLOR = 6;</code>
+     */
+    FIELD_MASK_COLOR(6),
+    /**
+     * <code>FIELD_MASK_PERMISSIONS = 7;</code>
+     */
+    FIELD_MASK_PERMISSIONS(7),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Includes all other fieldmasks
+     * </pre>
+     *
+     * <code>FIELD_MASK_ALL = 0;</code>
+     */
+    public static final int FIELD_MASK_ALL_VALUE = 0;
+    /**
+     * <pre>
+     * Includes all other fieldmasks except PERMISSIONS
+     * </pre>
+     *
+     * <code>FIELD_MASK_ALL_PROPERTIES = 1;</code>
+     */
+    public static final int FIELD_MASK_ALL_PROPERTIES_VALUE = 1;
+    /**
+     * <code>FIELD_MASK_NAME = 2;</code>
+     */
+    public static final int FIELD_MASK_NAME_VALUE = 2;
+    /**
+     * <code>FIELD_MASK_TYPE = 3;</code>
+     */
+    public static final int FIELD_MASK_TYPE_VALUE = 3;
+    /**
+     * <code>FIELD_MASK_PRIORITY = 4;</code>
+     */
+    public static final int FIELD_MASK_PRIORITY_VALUE = 4;
+    /**
+     * <code>FIELD_MASK_TRANSIENCE = 5;</code>
+     */
+    public static final int FIELD_MASK_TRANSIENCE_VALUE = 5;
+    /**
+     * <code>FIELD_MASK_COLOR = 6;</code>
+     */
+    public static final int FIELD_MASK_COLOR_VALUE = 6;
+    /**
+     * <code>FIELD_MASK_PERMISSIONS = 7;</code>
+     */
+    public static final int FIELD_MASK_PERMISSIONS_VALUE = 7;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FieldMask valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static FieldMask forNumber(int value) {
+      switch (value) {
+        case 0: return FIELD_MASK_ALL;
+        case 1: return FIELD_MASK_ALL_PROPERTIES;
+        case 2: return FIELD_MASK_NAME;
+        case 3: return FIELD_MASK_TYPE;
+        case 4: return FIELD_MASK_PRIORITY;
+        case 5: return FIELD_MASK_TRANSIENCE;
+        case 6: return FIELD_MASK_COLOR;
+        case 7: return FIELD_MASK_PERMISSIONS;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<FieldMask>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        FieldMask> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<FieldMask>() {
+            public FieldMask findValueByNumber(int number) {
+              return FieldMask.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return network.cow.mooapis.indigo.v1.UpdateRoleRequest.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final FieldMask[] VALUES = values();
+
+    public static FieldMask valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private FieldMask(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:cow.indigo.v1.UpdateRoleRequest.FieldMask)
   }
 
   public static final int ROLE_ID_FIELD_NUMBER = 1;
@@ -158,6 +368,64 @@ private static final long serialVersionUID = 0L;
     return getRoleData();
   }
 
+  public static final int FIELD_MASKS_FIELD_NUMBER = 3;
+  private java.util.List<java.lang.Integer> fieldMasks_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+      java.lang.Integer, network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask> fieldMasks_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask>() {
+            public network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask convert(java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask result = network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask.valueOf(from);
+              return result == null ? network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask.UNRECOGNIZED : result;
+            }
+          };
+  /**
+   * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+   * @return A list containing the fieldMasks.
+   */
+  @java.lang.Override
+  public java.util.List<network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask> getFieldMasksList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask>(fieldMasks_, fieldMasks_converter_);
+  }
+  /**
+   * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+   * @return The count of fieldMasks.
+   */
+  @java.lang.Override
+  public int getFieldMasksCount() {
+    return fieldMasks_.size();
+  }
+  /**
+   * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+   * @param index The index of the element to return.
+   * @return The fieldMasks at the given index.
+   */
+  @java.lang.Override
+  public network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask getFieldMasks(int index) {
+    return fieldMasks_converter_.convert(fieldMasks_.get(index));
+  }
+  /**
+   * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+   * @return A list containing the enum numeric values on the wire for fieldMasks.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+  getFieldMasksValueList() {
+    return fieldMasks_;
+  }
+  /**
+   * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of fieldMasks at the given index.
+   */
+  @java.lang.Override
+  public int getFieldMasksValue(int index) {
+    return fieldMasks_.get(index);
+  }
+  private int fieldMasksMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -172,11 +440,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (roleId_ != null) {
       output.writeMessage(1, getRoleId());
     }
     if (roleData_ != null) {
       output.writeMessage(2, getRoleData());
+    }
+    if (getFieldMasksList().size() > 0) {
+      output.writeUInt32NoTag(26);
+      output.writeUInt32NoTag(fieldMasksMemoizedSerializedSize);
+    }
+    for (int i = 0; i < fieldMasks_.size(); i++) {
+      output.writeEnumNoTag(fieldMasks_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -194,6 +470,18 @@ private static final long serialVersionUID = 0L;
     if (roleData_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getRoleData());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < fieldMasks_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeEnumSizeNoTag(fieldMasks_.get(i));
+      }
+      size += dataSize;
+      if (!getFieldMasksList().isEmpty()) {  size += 1;
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(dataSize);
+      }fieldMasksMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -220,6 +508,7 @@ private static final long serialVersionUID = 0L;
       if (!getRoleData()
           .equals(other.getRoleData())) return false;
     }
+    if (!fieldMasks_.equals(other.fieldMasks_)) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -238,6 +527,10 @@ private static final long serialVersionUID = 0L;
     if (hasRoleData()) {
       hash = (37 * hash) + ROLE_DATA_FIELD_NUMBER;
       hash = (53 * hash) + getRoleData().hashCode();
+    }
+    if (getFieldMasksCount() > 0) {
+      hash = (37 * hash) + FIELD_MASKS_FIELD_NUMBER;
+      hash = (53 * hash) + fieldMasks_.hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -384,6 +677,8 @@ private static final long serialVersionUID = 0L;
         roleData_ = null;
         roleDataBuilder_ = null;
       }
+      fieldMasks_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -410,6 +705,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public network.cow.mooapis.indigo.v1.UpdateRoleRequest buildPartial() {
       network.cow.mooapis.indigo.v1.UpdateRoleRequest result = new network.cow.mooapis.indigo.v1.UpdateRoleRequest(this);
+      int from_bitField0_ = bitField0_;
       if (roleIdBuilder_ == null) {
         result.roleId_ = roleId_;
       } else {
@@ -420,6 +716,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.roleData_ = roleDataBuilder_.build();
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        fieldMasks_ = java.util.Collections.unmodifiableList(fieldMasks_);
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.fieldMasks_ = fieldMasks_;
       onBuilt();
       return result;
     }
@@ -474,6 +775,16 @@ private static final long serialVersionUID = 0L;
       if (other.hasRoleData()) {
         mergeRoleData(other.getRoleData());
       }
+      if (!other.fieldMasks_.isEmpty()) {
+        if (fieldMasks_.isEmpty()) {
+          fieldMasks_ = other.fieldMasks_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureFieldMasksIsMutable();
+          fieldMasks_.addAll(other.fieldMasks_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -502,6 +813,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private network.cow.mooapis.indigo.v1.RoleIdentifier roleId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -739,6 +1051,146 @@ private static final long serialVersionUID = 0L;
         roleData_ = null;
       }
       return roleDataBuilder_;
+    }
+
+    private java.util.List<java.lang.Integer> fieldMasks_ =
+      java.util.Collections.emptyList();
+    private void ensureFieldMasksIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        fieldMasks_ = new java.util.ArrayList<java.lang.Integer>(fieldMasks_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+     * @return A list containing the fieldMasks.
+     */
+    public java.util.List<network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask> getFieldMasksList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask>(fieldMasks_, fieldMasks_converter_);
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+     * @return The count of fieldMasks.
+     */
+    public int getFieldMasksCount() {
+      return fieldMasks_.size();
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+     * @param index The index of the element to return.
+     * @return The fieldMasks at the given index.
+     */
+    public network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask getFieldMasks(int index) {
+      return fieldMasks_converter_.convert(fieldMasks_.get(index));
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+     * @param index The index to set the value at.
+     * @param value The fieldMasks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFieldMasks(
+        int index, network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFieldMasksIsMutable();
+      fieldMasks_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+     * @param value The fieldMasks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFieldMasks(network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFieldMasksIsMutable();
+      fieldMasks_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+     * @param values The fieldMasks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllFieldMasks(
+        java.lang.Iterable<? extends network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask> values) {
+      ensureFieldMasksIsMutable();
+      for (network.cow.mooapis.indigo.v1.UpdateRoleRequest.FieldMask value : values) {
+        fieldMasks_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFieldMasks() {
+      fieldMasks_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+     * @return A list containing the enum numeric values on the wire for fieldMasks.
+     */
+    public java.util.List<java.lang.Integer>
+    getFieldMasksValueList() {
+      return java.util.Collections.unmodifiableList(fieldMasks_);
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of fieldMasks at the given index.
+     */
+    public int getFieldMasksValue(int index) {
+      return fieldMasks_.get(index);
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of fieldMasks at the given index.
+     * @return This builder for chaining.
+     */
+    public Builder setFieldMasksValue(
+        int index, int value) {
+      ensureFieldMasksIsMutable();
+      fieldMasks_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+     * @param value The enum numeric value on the wire for fieldMasks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFieldMasksValue(int value) {
+      ensureFieldMasksIsMutable();
+      fieldMasks_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .cow.indigo.v1.UpdateRoleRequest.FieldMask field_masks = 3 [json_name = "fieldMasks"];</code>
+     * @param values The enum numeric values on the wire for fieldMasks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllFieldMasksValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureFieldMasksIsMutable();
+      for (int value : values) {
+        fieldMasks_.add(value);
+      }
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
