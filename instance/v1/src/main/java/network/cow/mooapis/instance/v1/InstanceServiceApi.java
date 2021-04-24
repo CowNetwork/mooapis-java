@@ -44,6 +44,21 @@ public final class InstanceServiceApi {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cow_instance_v1_GetInstanceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_instance_v1_InstanceStartedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_instance_v1_InstanceStartedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_instance_v1_InstanceEndedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_instance_v1_InstanceEndedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cow_instance_v1_InstanceStateChangedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cow_instance_v1_InstanceStateChangedEvent_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -67,16 +82,25 @@ public final class InstanceServiceApi {
       "e.v1.InstanceR\010instance\"$\n\022GetInstanceRe" +
       "quest\022\016\n\002id\030\001 \001(\tR\002id\"L\n\023GetInstanceResp" +
       "onse\0225\n\010instance\030\001 \001(\0132\031.cow.instance.v1" +
-      ".InstanceR\010instance2\220\002\n\017InstanceService\022" +
-      "Y\n\006Create\022&.cow.instance.v1.CreateInstan" +
-      "ceRequest\032\'.cow.instance.v1.CreateInstan" +
-      "ceResponse\022P\n\003End\022#.cow.instance.v1.EndI" +
-      "nstanceRequest\032$.cow.instance.v1.EndInst" +
-      "anceResponse\022P\n\003Get\022#.cow.instance.v1.Ge" +
-      "tInstanceRequest\032$.cow.instance.v1.GetIn" +
-      "stanceResponseBO\n\037network.cow.mooapis.in" +
-      "stance.v1P\001Z*github.com/cownetwork/insta" +
-      "nce/v1;instanceb\006proto3"
+      ".InstanceR\010instance\"M\n\024InstanceStartedEv" +
+      "ent\0225\n\010instance\030\001 \001(\0132\031.cow.instance.v1." +
+      "InstanceR\010instance\"K\n\022InstanceEndedEvent" +
+      "\0225\n\010instance\030\001 \001(\0132\031.cow.instance.v1.Ins" +
+      "tanceR\010instance\"\276\001\n\031InstanceStateChanged" +
+      "Event\0225\n\010instance\030\001 \001(\0132\031.cow.instance.v" +
+      "1.InstanceR\010instance\0224\n\tnew_state\030\002 \001(\0132" +
+      "\027.google.protobuf.StructR\010newState\0224\n\tol" +
+      "d_state\030\003 \001(\0132\027.google.protobuf.StructR\010" +
+      "oldState2\220\002\n\017InstanceService\022Y\n\006Create\022&" +
+      ".cow.instance.v1.CreateInstanceRequest\032\'" +
+      ".cow.instance.v1.CreateInstanceResponse\022" +
+      "P\n\003End\022#.cow.instance.v1.EndInstanceRequ" +
+      "est\032$.cow.instance.v1.EndInstanceRespons" +
+      "e\022P\n\003Get\022#.cow.instance.v1.GetInstanceRe" +
+      "quest\032$.cow.instance.v1.GetInstanceRespo" +
+      "nseBO\n\037network.cow.mooapis.instance.v1P\001" +
+      "Z*github.com/cownetwork/instance/v1;inst" +
+      "anceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -120,6 +144,24 @@ public final class InstanceServiceApi {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cow_instance_v1_GetInstanceResponse_descriptor,
         new java.lang.String[] { "Instance", });
+    internal_static_cow_instance_v1_InstanceStartedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_cow_instance_v1_InstanceStartedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_instance_v1_InstanceStartedEvent_descriptor,
+        new java.lang.String[] { "Instance", });
+    internal_static_cow_instance_v1_InstanceEndedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_cow_instance_v1_InstanceEndedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_instance_v1_InstanceEndedEvent_descriptor,
+        new java.lang.String[] { "Instance", });
+    internal_static_cow_instance_v1_InstanceStateChangedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_cow_instance_v1_InstanceStateChangedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cow_instance_v1_InstanceStateChangedEvent_descriptor,
+        new java.lang.String[] { "Instance", "NewState", "OldState", });
     network.cow.mooapis.instance.v1.Types.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }
