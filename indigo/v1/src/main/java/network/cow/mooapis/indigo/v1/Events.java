@@ -34,21 +34,20 @@ public final class Events {
   static {
     java.lang.String[] descriptorData = {
       "\n\032cow/indigo/v1/events.proto\022\rcow.indigo" +
-      ".v1\032\032cow/indigo/v1/indigo.proto\"\221\002\n\031User" +
+      ".v1\032\032cow/indigo/v1/indigo.proto\"\367\001\n\031User" +
       "PermissionUpdateEvent\022\'\n\004user\030\001 \001(\0132\023.co" +
       "w.indigo.v1.UserR\004user\022G\n\006action\030\002 \001(\0162/" +
       ".cow.indigo.v1.UserPermissionUpdateEvent" +
-      ".ActionR\006action\"\201\001\n\006Action\022\025\n\021ACTION_PER" +
-      "M_ADDED\020\000\022\027\n\023ACTION_PERM_REMOVED\020\001\022\025\n\021AC" +
-      "TION_ROLE_ADDED\020\002\022\027\n\023ACTION_ROLE_REMOVED" +
-      "\020\003\022\027\n\023ACTION_ROLE_UPDATED\020\004\"\275\001\n\017RoleUpda" +
-      "teEvent\022\'\n\004role\030\001 \001(\0132\023.cow.indigo.v1.Ro" +
-      "leR\004role\022=\n\006action\030\002 \001(\0162%.cow.indigo.v1" +
-      ".RoleUpdateEvent.ActionR\006action\"B\n\006Actio" +
-      "n\022\020\n\014ACTION_ADDED\020\000\022\022\n\016ACTION_DELETED\020\001\022" +
-      "\022\n\016ACTION_UPDATED\020\002BI\n\035network.cow.mooap" +
-      "is.indigo.v1P\001Z&github.com/cownetwork/in" +
-      "digo/v1;indigob\006proto3"
+      ".ActionR\006action\"h\n\006Action\022\025\n\021ACTION_PERM" +
+      "_ADDED\020\000\022\027\n\023ACTION_PERM_REMOVED\020\001\022\025\n\021ACT" +
+      "ION_ROLE_ADDED\020\002\022\027\n\023ACTION_ROLE_REMOVED\020" +
+      "\003\"\275\001\n\017RoleUpdateEvent\022\'\n\004role\030\001 \001(\0132\023.co" +
+      "w.indigo.v1.RoleR\004role\022=\n\006action\030\002 \001(\0162%" +
+      ".cow.indigo.v1.RoleUpdateEvent.ActionR\006a" +
+      "ction\"B\n\006Action\022\020\n\014ACTION_ADDED\020\000\022\022\n\016ACT" +
+      "ION_DELETED\020\001\022\022\n\016ACTION_UPDATED\020\002BI\n\035net" +
+      "work.cow.mooapis.indigo.v1P\001Z&github.com" +
+      "/cownetwork/indigo/v1;indigob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

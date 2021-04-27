@@ -128,10 +128,6 @@ private static final long serialVersionUID = 0L;
      * <code>ACTION_ROLE_REMOVED = 3;</code>
      */
     ACTION_ROLE_REMOVED(3),
-    /**
-     * <code>ACTION_ROLE_UPDATED = 4;</code>
-     */
-    ACTION_ROLE_UPDATED(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -151,10 +147,6 @@ private static final long serialVersionUID = 0L;
      * <code>ACTION_ROLE_REMOVED = 3;</code>
      */
     public static final int ACTION_ROLE_REMOVED_VALUE = 3;
-    /**
-     * <code>ACTION_ROLE_UPDATED = 4;</code>
-     */
-    public static final int ACTION_ROLE_UPDATED_VALUE = 4;
 
 
     public final int getNumber() {
@@ -185,7 +177,6 @@ private static final long serialVersionUID = 0L;
         case 1: return ACTION_PERM_REMOVED;
         case 2: return ACTION_ROLE_ADDED;
         case 3: return ACTION_ROLE_REMOVED;
-        case 4: return ACTION_ROLE_UPDATED;
         default: return null;
       }
     }
